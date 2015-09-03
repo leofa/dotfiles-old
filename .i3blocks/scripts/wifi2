@@ -1,0 +1,64 @@
+#!/bin/bash
+# Copyright (C) 2014 Alexander Keller <github@nycroth.com>
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#------------------------------------------------------------------------
+
+INTERFACE="${BLOCK_INSTANCE:-wlan0}"
+
+#------------------------------------------------------------------------
+
+# As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
+# connection (think desktop), the corresponding block should not be displayed.
+[[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit
+
+#------------------------------------------------------------------------
+
+NETWORK_MANAGER_DEVICE=$(dbus-send --system --print-reply=literal --dest=org.freedesktop.NetworkManager \
+                                   /org/freedesktop/NetworkManager \
+                                   org.freedesktop.NetworkManager.GetDeviceByIpIface string:$INTERFACE)
+
+NETWORK_MANAGER_ACCESS_POINT=$(dbus-send --system --print-reply=literal --dest=org.freedesktop.NetworkManager \
+                                         $NETWORK_MANAGER_DEVICE org.freedesktop.DBus.Properties.Get \
+                                         string:org.freedesktop.NetworkManager.Device.Wireless \
+                                         string:ActiveAccessPoint | xargs | cut -d' ' -f2)
+
+NETWORK_MANAGER_ACCESS_POINT_STRENGTH=$(dbus-send --system --print-reply=literal --dest=org.freedesktop.NetworkManager \
+                                                  $NETWORK_MANAGER_ACCESS_POINT org.freedesktop.DBus.Properties.Get \
+                                                  string:org.freedesktop.NetworkManager.AccessPoint \
+                                                  string:Strength | xargs | cut -d' ' -f3)
+
+QUALITY=$NETWORK_MANAGER_ACCESS_POINT_STRENGTH
+
+#------------------------------------------------------------------------
+
+if [ -n "$QUALITY" ]; then
+
+  echo $QUALITY% # full text
+  echo $QUALITY% # short text
+
+  # color
+  if [[ $QUALITY -ge 80 ]]; then
+      echo "#A1B56C" #groen
+  elif [[ $QUALITY -lt 80 ]]; then
+      echo "#F7CA88" #geel
+  elif [[ $QUALITY -lt 60 ]]; then
+      echo "#DC9656" #oranje
+  elif [[ $QUALITY -lt 40 ]]; then
+      echo "#AB4642" #rood
+  fi
+  
+fi

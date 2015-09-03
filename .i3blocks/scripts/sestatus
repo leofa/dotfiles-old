@@ -1,0 +1,5 @@
+#!/bin/sh
+
+getenforce
+getenforce
+echo "#ff7070"

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=Als achtergrond instellen...
+Name[nl]=Als achtergrond instellen...
+Icon[nl_NL]=view-preview
+Icon[nl]=view-preview
+ToolbarLabel[nl_NL]=Als achtergrond instellen...
+ToolbarLabel[nl]=Als achtergrond instellen...
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=sh -c 'feh --bg-fill %f && i3-msg workspace  wall'
+MimeTypes=image/*;

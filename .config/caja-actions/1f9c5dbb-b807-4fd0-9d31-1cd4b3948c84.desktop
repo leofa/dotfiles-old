@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=Bewerk configuratiebestand...
+Name[nl]=Bewerk configuratiebestand...
+Icon[nl_NL]=gtk-edit
+Icon[nl]=gtk-edit
+ToolbarLabel[nl_NL]=Bewerk configuratiebestand...
+ToolbarLabel[nl]=Bewerk configuratiebestand...
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=gvim %f
+MimeTypes=application/x-desktop;
+Folders=*;

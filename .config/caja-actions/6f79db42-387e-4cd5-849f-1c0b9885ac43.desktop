@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=Als beheerder openen...
+Name[nl]=Als beheerder openen...
+Tooltip[nl_NL]=Open huidige folder als beheerder
+Tooltip[nl]=Open huidige folder als beheerder
+Icon[nl_NL]=document-encrypt
+Icon[nl]=document-encrypt
+TargetLocation=true
+TargetToolbar=true
+ToolbarLabel[nl_NL]=Als beheerder openen...
+ToolbarLabel[nl]=Als beheerder openen...
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=gksu-polkit caja %U
+MimeTypes=inode/directory;

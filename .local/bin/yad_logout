@@ -1,0 +1,27 @@
+#! /bin/bash
+
+action=$(yad --width 300 --entry --title "Systeem afsluiten.." \
+    --image=system-logout \
+    --button="gtk-ok:0" --button="gtk-close:1" \
+    --text "kies actie:" \
+    --entry-text \
+    "Afsluiten" "Herstarten" "Pauzestand" "Afmelden" "Vergrendelen")
+ret=$?
+
+[[ $ret -eq 1 ]] && exit 0
+
+if [[ $ret -eq 2 ]]; then
+    gdmflexiserver --startnew &
+    exit 0
+fi
+
+case $action in
+	Afsluiten*) cmd="systemctl poweroff" ;;
+    Herstarten*) cmd="systemctl reboot" ;;
+    Pauzestand*) cmd="systemctl suspend" ;;
+    Afmelden*) cmd="i3-msg exit" ;;
+    Vergrendelen*) cmd="i3lock -i ~/Afbeeldingen/Lockscreen/lockscreen.png" ;;
+    *) exit 1 ;;        
+esac
+
+eval exec $cmd

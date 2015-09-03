@@ -1,0 +1,11 @@
+#!/bin/sh
+TITLE=$(xdotool getactivewindow getwindowname | cut -c 1-60 2>/dev/null || echo "None")
+echo $TITLE
+echo $TITLE
+echo "#93B6C2"
+
+case $BLOCK_BUTTON in
+  1) i3-msg floating toggle ;;
+  2) xkill ;;
+  3) xdotool getactivewindow windowraise windowunmap ;;
+esac

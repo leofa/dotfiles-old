@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=Als email-bijlage versturen...
+Name[nl]=Als email-bijlage versturen...
+Icon[nl_NL]=mail-send
+Icon[nl]=mail-send
+ToolbarLabel[nl_NL]=Als email-bijlage versturen...
+ToolbarLabel[nl]=Als email-bijlage versturen...
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=geary-attach %F
+MimeTypes=text/*;image/*;application/*;!inode/directory;

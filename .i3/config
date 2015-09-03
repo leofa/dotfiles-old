@@ -1,0 +1,333 @@
+#i3 config file (by LeoFa)
+#
+#please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# meta key
+set $mod Mod4
+
+# fonts
+font pango: Source Code Pro, FontAwesome Regular, Icons 9
+
+# move windows with mouse+$mod
+floating_modifier $mod
+
+# wallpaperz
+#exec_always wallchanger
+exec feh --bg-fill ~/.wallpaper/archlinux-blue.png
+
+# autostarts
+#exec chromium --no-startup-window
+exec sleep 10; geary --hidden
+#exec unclutter
+exec caffeine
+exec /usr/bin/lxpolkit
+#exec /usr/lib/mate-notification-daemon
+exec dunst
+exec compton -b --config ~/.config/compton.conf
+exec menutray 
+exec clipit -dn
+#exec sleep 2; dropboxd
+#exec qbittorrent
+#exec sleep 2; insync start
+#exec sleep 2; syncthing-gtk -m
+#exec_always blueman-applet
+exec xset dpms s 900 900
+exec sleep 10; batnotify > /dev/null
+exec caja --no-default-window --no-desktop
+exec redshift
+exec sleep 10; termite --name 'scratch_termite'
+#exec --no-startup-id /usr/bin/steam -silent
+#exec autokey-gtk
+#exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+#exec stalonetray
+
+# keycombo's
+bindsym $mod+slash exec wallchanger
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+c exec chromium
+bindsym $mod+i exec chromium --incognito
+bindsym $mod+b exec caja --browser --no-desktop
+bindsym $mod+backslash exec chromium --show-app-list
+bindsym $mod+m exec geary
+bindsym $mod+t exec subl
+bindsym $mod+g exec gvim -geom=120x42+200+23
+bindsym $mod+Shift+XF86AudioMute exec pavucontrol
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
+bindsym $mod+a exec rofi -show run
+bindsym $mod+Tab exec rofi -show window 
+bindsym $mod+Shift+Return exec termite --name "scratch_termite"
+bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
+#bindsym $mod+minus exec stalonetray
+
+# make windows behave (focus, float, move)
+for_window [class="?"] focus
+for_window [class="[.]*"] focus
+for_window [instance="Urxvt_scratchpad|stalonetray"] floating enable, move scratchpad
+for_window [window_role="bubble|pop-up"] focus, floating enable
+for_window [class="Guvcview|Klavaro|sun-awt-X11-XFramePeer|net-sourceforge-jnlp-controlpanel-CommandLine|Minecraft*|net-minecraft-bootstrap-Bootstrap|Insync|Gvim|eom|Engrampa|radiotray|Galculator|xpad|Java|Blueman-manager|Blueman-services|Lxappearance|Caffeine|Pavucontrol|Transmission-gtk|Preferences*|Skype|Catfish|Google Keep|Pocket"] focus, floating enable
+for_window [class="Insync.py|Eog|Gvim|feh|xpad"] floating enable, move absolute center
+for_window [title="Event Tester|Onboard|Taakbeheer - Chromium|Firefox-voorkeuren|$bewerken$|Config$|Edit$|Taakbeheer$|Schijfgebruik|Hoofdmenu|Settings$|Geluidsrecorder|Configuratie|Eigenschappen$|Info$|Configuration$|Beheer$|Voorkeuren$|Preferences$|Uiterlijk-voorkeuren|Song History"] focus, floating enable
+for_window [instance="mate-search-tool|yad|gsimplecal|qbittorrent|gcr-viewer|WiFi-Menu|gl"] focus, floating enable
+for_window [instance="gl|mpv|play.google.com__books"] focus, floating disable
+for_window [instance="scratch_termite"]  move scratchpad, move position 700px 394px, move scratchpad
+
+# move windows to workspaces
+#assign [instance="urxvt|termite"] $WS1
+assign [window_role="browser"] $WS2
+assign [instance="QupZilla Browser"] $WS2
+assign [class="Caja"] $WS3
+assign [class="Geary|libreoffice*|Abiword|Atril|Xournal"] $WS4
+assign [instance="crx_pkclgpgponpjmpfokoepglboejdobkpl|play.google.com__books"] $WS4
+assign [instance="medit|pluma|sublime_text|geany"] $WS5
+assign [instance="quodlibet|banshee|deadbeef|google-musicmanager"] $WS6
+assign [class="Lollypop|Spotify"] $WS6
+assign [instance="Plex|Kodi"] $WS6
+assign [class="Cheese|Guvcview|YACReader|Gimp|Inkscape|simple-scan|Gthumb"] $WS7
+assign [class="Wine|Steam|dontstarve|frogatto|supertuxkart|Gnome-chess"] $WS8
+assign [instance="Steam"] $WS8
+assign [class="htop|Virt-manager|VirtualBox"] $WS9
+assign [instance="mate-system-monitor|gparted"] $WS9
+
+# workspace names / variables 
+set $WS1 1  
+set $WS2 2  @www
+#set $WS3 3  data
+set $WS3 3  data
+set $WS4 4  gtd
+#set $WS4 4  prod
+set $WS5 5  code
+#ser $WS5 5  text
+set $WS6 6  play
+set $WS7 7  pics
+set $WS8 8  game
+set $WS9 9  etc.
+set $WS0 10  news
+
+# multimonitor support
+workspace "$WS1" output eDP1
+workspace "$WS2" output HDMI1
+workspace "$WS3" output eDP1
+workspace "$WS4" output eDP1
+workspace "$WS5" output eDP1
+workspace "$WS6" output HDMI1
+workspace "$WS7" output HDMI1
+workspace "$WS8" output HDMI1
+workspace "$WS9" output eDP1
+workspace "$WS0" output eDP1
+
+# workspace_layout tabbed
+force_display_urgency_hint 500 ms
+
+# floating window sizes
+floating_minimum_size 86 x 20
+floating_maximum_size -1 x -1
+
+# focus urgent
+bindsym $mod+u [urgent=latest] focus
+
+# bar modus
+bindsym $mod+Shift+h bar mode toggle
+
+# cycle through active workspaces
+bindsym $mod+period workspace next
+bindsym $mod+comma workspace prev
+
+# brightness control
+bindsym --release XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym --release XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym --release $mod+XF86MonBrightnessDown exec xbacklight -set 0
+bindsym --release $mod+XF86MonBrightnessUp exec xbacklight -set 100
+
+# sound control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +10% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -10% && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle && pkill -SIGRTMIN+10 i3blocks
+
+# cmus control
+bindsym $mod+XF86AudioRaiseVolume exec cmus-remote player-prev
+bindsym $mod+XF86AudioLowerRaise exec cmus-remote -p
+bindsym $mod+XF86AudioMute exec cmus-remote player-next
+
+# take screenshot
+bindsym $mod+Print exec "scrot -d 3 -q 100 -e 'mv $f ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png; eog --fullscreen ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png'"
+bindsym $mod+Shift+Print exec "scrot -u -d 3 -q 100 -e 'mv $f ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png; eog --fullscreen ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png'"
+
+# windows borders
+new_window pixel 2
+new_float pixel 2
+#hide_edge_borders vertical
+
+# scratchpad
+bindsym $MOD+SHIFT+plus move scratchpad
+bindsym $mod+plus scratchpad show
+#bindsym $mod+plus [instance="scratch_termite"] scratchpad show
+bindsym $mod+minus [instance="stalonetray"] scratchpad show
+
+# kill focused window
+bindsym $mod+q kill
+bindsym --release $mod+x exec xkill
+
+# change border
+bindsym $mod+Shift+t border toggle
+
+# other
+focus_follows_mouse no
+popup_during_fullscreen smart
+force_display_urgency_hint 500 ms
+workspace_auto_back_and_forth no
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+F11 fullscreen
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+Shift+period focus parent
+
+# focus the child container
+bindsym $mod+Shift+comma focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS0
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
+
+# lockscreen
+exec xautolock -time 30 -locker "i3lock -i ~/Afbeeldingen/Lockscreen/lockscreen.png" -detectsleep
+#set $Locker i3lock -i ~/Afbeeldingen/Lockscreen/lockscreen.png
+
+# logout menu (translated to dutch)
+set $mode_system   (A)fmelden   (V)ergrendelen   (P)auzeer   (H)erstarten   (S)top
+mode "$mode_system" {
+    bindsym v exec $Locker, mode "default"
+    bindsym a exec i3-msg exit, mode "default"
+    bindsym p exec systemctl suspend, mode "default"
+    bindsym h exec i3-msg systemctl reboot, mode "default"
+    bindsym s exec i3-msg systemctl poweroff, mode "default"  
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym XF86PowerOff mode "$mode_system"
+bindsym $mod+XF86PowerOff exec systemctl suspend
+bindsym $mod+Escape exec $Locker
+
+# resize window (you can also use the mouse)
+mode "  " {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "  "
+
+# i3bar 
+bar {
+  position top
+        #mode hide
+        #status_command i3status
+        status_command i3blocks
+        bindsym button5 nop
+        bindsym button4 nop
+        tray_output eDP1
+        separator_symbol "〉" #"◾"
+        strip_workspace_numbers yes
+colors {
+    separator #586e75 
+    background #2d2d2d
+    statusline #C7C7C7
+    focused_workspace  #586e75 #586e75 #ffffff
+    active_workspace #2d2d2d #2d2d2d #ffffff
+    inactive_workspace #49575C #49575C #C7C7C7
+    urgent_workspace #AE4544 #AE4544 #ffffff
+  }
+}
+
+# colors
+client.focused #586e75 #586e75 #F9F9F9 #268bd2
+client.focused_inactive #323e42 #323e42 #93a1a1 #002b36
+client.unfocused #2D2D2D #2d2d2d #c7c7c7 #002b36
+client.urgent #dc322f #dc322f #F9F9F9 #dc322f
+
+# i3gaps
+smart_gaps on
+smart_borders on
+gaps outer 0
+gaps inner 1
+
+# the end :P

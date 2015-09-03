@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+#while true;do
+
+# Directories Containing Pictures
+DIR0="/home/faruk/Afbeeldingen/Wallpapers"
+DIR1="/home/faruk/Afbeeldingen/Linux"
+#DIR2="/usr/share/backgrounds"
+#DIR3="/home/faruk/Afbeeldingen/GoT"
+
+# Make sure spaces do not break our script.
+#IFS='
+#'
+
+# Command to Select a random jpg file from directory
+# Delete the *.jpg to select any file but it may return a folder
+#PIC=$(find "$DIR0" -type f -name "*.jpg" | shuf -n1)
+PIC=$(find "$DIR0" "$DIR1" -type f -name "*.jpg" -o -name "*.png" | shuf -n1)
+#PIC=$(find "$DIR0" "$DIR1" "$DIR2" -type f -name "*.jpg" | shuf -n1)
+#PIC=$(find "$DIR0" "$DIR1" "$DIR2" "$DIR3" -type f -name "*.jpg" | shuf -n1)
+
+# Command to set Background Image, !!The reason it wasn't working here was because the path to the image had to be included too. Note that "picture_filename" and "picture-filename" are both separate and valid entries.
+# it's important to quote $PIC variable to avoid special characters issue (ie. space) in the file path
+#gsettings set org.gnome.desktop.background picture-uri "$PIC"
+#gsettings set org.mate.background picture-filename "$PIC"
+feh --bg-fill "$PIC"
+
+#mateconftool-2 -t string -s /desktop/mate/background/picture_filename "$PIC"
+#mateconftool-2 -t string -s /desktop/mate/background/picture-filename "$PIC"
+
+# specify how long to wait in seconds between changes
+#if [ -f /usr/bin/sleep ]; then sleep 900; fi
+#done
+
+#Save the script above as a script. I simply named it wallpaper_changer.sh
+
+#-make the file executable by typing: chmod 700 /home/me/where-it-is/wallpaper_changer.sh
+
+#-then type: sh /home/me/where-it-is/wallpaper_changer.sh &
+
+#-You may want to add the command '/home/me/where-it-is/wallpaper_changer.sh &' to your startup applications

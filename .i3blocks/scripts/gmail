@@ -1,0 +1,38 @@
+
+#!/bin/bash
+
+# Script to get unread google mail.
+# Result added to file ~/.gmail (for conky)
+
+# User and password secured
+. ~/.private/accounts
+
+COUNT=`curl -su $MAIL_USER:$MAIL_PASS https://mail.google.com/mail/feed/atom || echo "<fullcount></fullcount>"`
+COUNT=`echo "$COUNT" | grep -oPm1 "(?<=<fullcount>)[^<]+" `
+ 
+echo $COUNT
+#echo "#F7CA88"
+
+if [ "$COUNT" != "0" ]; then
+    if [ "$COUNT" = "1" ];then
+        WORD="mail";
+        echo "#B294BB";
+       exit 0;
+    else
+        WORD="mails";
+        echo "#CC6666";
+       exit 0;:
+    fi
+fi
+#------------------------------------------------------------------------
+
+case $BLOCK_BUTTON in
+   3) chromium --app=https://inbox.google.com/ ;;
+#  1) ;; # left click
+#  2) ;; # middle click
+  1) geary ;; # right click
+#  4) ;; # scroll up
+#  5) ;; # scroll down
+esac
+
+

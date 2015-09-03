@@ -1,0 +1,10 @@
+#!/bin/sh
+#DATE=$(date '+%a %d %b  %H:%M')
+DATE=$(date '+ %H:%M')
+echo $DATE
+
+case $BLOCK_BUTTON in
+    1) gsimplecal ;;
+    3) xdotool getactivewindow windowraise windowunmap ;;
+    2) chromium --app=https://www.google.com/calendar/render#main_7 ;; 
+esac 

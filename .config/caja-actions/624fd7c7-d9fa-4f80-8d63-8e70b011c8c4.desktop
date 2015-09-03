@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=New Caja action
+Name[nl]=New Caja action
+Icon[nl_NL]=window_new
+Icon[nl]=window_new
+TargetContext=false
+TargetToolbar=true
+ToolbarLabel[nl_NL]=New Caja action
+ToolbarLabel[nl]=New Caja action
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=caja-actions-config-tool 

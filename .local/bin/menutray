@@ -1,0 +1,590 @@
+#!/usr/bin/perl
+
+# Copyright (C) 2011-2015 Daniel "Trizen" Șuteu <echo dHJpemVueEBnbWFpbC5jb20K | base64 -d>.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# Program: menutray
+# License: GPLv3
+# Created on: 03 March 2011
+# Latest edit on: 07 March 2015
+
+# Websites: https://github.com/trizen/menutray
+#           http://trizenx.blogspot.ro/2012/02/menutray.html
+
+use 5.014;
+use Encode qw(decode_utf8);
+use Linux::DesktopFiles 0.08;
+
+my $pkgname = 'menutray';
+my $version = '0.43';
+my $gtk_v   = '2';          # Version of GTK+
+
+my ($icons, $create_menu, $reconfigure, $update_config);
+
+our ($CONFIG, $SCHEMA);
+
+my $home_dir =
+     $ENV{HOME}
+  || $ENV{LOGDIR}
+  || (getpwuid($<))[7]
+  || `echo -n ~`;
+
+my $xdg_config_home = "$home_dir/.config";
+
+my $config_dir  = "$xdg_config_home/$pkgname";
+my $config_file = "$config_dir/config.pl";
+my $schema_file = "$config_dir/schema.pl";
+my $menufile    = "$config_dir/menu.pl";
+
+sub output_usage {
+    print <<"HELP";
+usage: $0 [options]
+
+options:
+    -g    : generate a simple menu
+    -i    : generate a menu with icons
+    -u    : update the configuration file
+    -r    : regenerate the configuration file
+    -gtk3 : use Gtk3 instead of Gtk2
+
+help:
+    -h  : print this message and exit
+    -v  : print version number and exit
+
+* Menu   : $menufile
+* Config : $config_file
+* Schema : $schema_file\n
+HELP
+}
+
+my $config_help = <<"HELP";
+
+|| FILTERING
+    | skip_filename_re    : Skip a .desktop file if its name matches the regex.
+                            Name is from the last slash to the end. (filename.desktop)
+                            Example: qr/^(?:gimp|urxvt)\\b/,    # skips 'gimp' and 'urxvt'
+
+    | skip_entry          : Skip a destkop file if the value from a given key matches the regex.
+                            Example: [
+                                {key => 'Name', re => qr/(?:about|terminal)/i},
+                                {key => 'Exec', re => qr/^urxvt/},
+                            ],
+
+    | substitutions       : Substitute, by using a regex, in the values of the desktop files.
+                            Example: [
+                                {key => 'Exec', re => qr/urxvt/, value => 'sakura'},
+                                {key => 'Exec', re => qr/\\\\\\\\/,  value => '\\\\', global => 1},    # for wine apps
+                            ],
+
+
+|| ICON SETTINGS
+    | icon_type           : Menu icon type (menu, small-toolbar, large-toolbar, button, dialog)
+    | icon_size           : Icon size in pixels (only for absolute icon paths) (default: [16, 16])
+    | missing_image       : Use this icon for missing icons (default: gtk-missing-image)
+
+
+|| KEYS
+    | tooltip_keys        : Valid keys for the tooltip text.
+                            Example: ['Comment[es]', 'Comment'],
+
+    | name_keys           : Valid keys for the item names.
+                            Example: ['Name[fr]', 'GenericName[fr]', 'Name'],   # french menu
+
+
+|| PATHS
+    | desktop_files_paths   : Absolute paths which contains .desktop files.
+                              Example: [
+                                '/usr/share/applications',
+                                '/home/faruk/.local/share/applications"),
+                              ],
+
+
+|| NOTES
+    | Regular expressions:
+        * use qr/RE/ instead of 'RE'
+        * use qr/RE/i for case insenstive mode
+HELP
+
+if (@ARGV) {
+    while (defined(my $arg = shift @ARGV)) {
+        if ($arg eq '-i') {
+            $icons = 1;
+            $create_menu //= 1;
+        }
+        elsif ($arg eq '-g') {
+            $create_menu //= 1;
+        }
+        elsif ($arg eq '-r') {
+            $reconfigure = 1;
+        }
+        elsif ($arg eq '-u') {
+            $update_config = 1;
+        }
+        elsif ($arg eq '-v') {
+            print "$pkgname $version\n";
+            exit 0;
+        }
+        elsif ($arg eq '-gtk3' or $arg eq '--gtk3') {
+            $create_menu //= 1;
+            $gtk_v = '3';
+        }
+        elsif ($arg eq '-h' or $arg eq '--help' or $arg eq '-?') {
+            output_usage();
+            exit 0;
+        }
+        else {
+            die "$0: option `$arg' is invalid!\n";
+        }
+    }
+}
+
+if (not -d $config_dir) {
+    require File::Path;
+    File::Path::make_path($config_dir)
+      or die "Can't create directory '${config_dir}': $!";
+}
+
+my $config_documentation = <<"EOD";
+#!/usr/bin/perl
+
+# $pkgname - configuration file
+# This file will be updated automatically every time when is needed.
+# Any additional comment and/or indentation will be lost.
+
+=for comment
+$config_help
+=cut
+
+EOD
+
+my %CONFIG = (
+    'Linux::DesktopFiles' => {
+
+        keep_unknown_categories => 1,
+        unknown_category_key    => 'other',
+
+        skip_entry       => [   {key => 'Name', re => qr/(?:about|lxsession|FLUID|ffado-mixer|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Mate-AccountsDialog|Caffeine|Autokey|Clipit|Redshift|Sabnzbd+|Keyboard*|Windows|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|OpenJDK*|QT4*)/i},
+                                {key => 'Exec', re => qr/^nmcli_dmenu/},    
+			        {key => 'Exec', re => qr/^yelp/},         
+				{key => 'Exec', re =>qr/^lxsession/},      
+   			        {key => 'Exec', re => qr/^gksu-properties/},         
+					{key => 'Exec', re => qr/^ffado-mixer/},
+					{key => 'Exec', re => qr/^fluid/},
+				],
+        substitutions    => [
+                                {key => 'Exec', re => qr/frogatto/, value => '/usr/bin/frogatto  --height 768 --width 1366 --widescreen --fullscreen'},
+                            ],
+        skip_filename_re => undef,
+
+        terminalize            => 1,
+        terminal               => $ENV{TERM} || 'urxvt',
+        terminalization_format => q{%s -e '%s'},
+
+        desktop_files_paths => [
+                                '/usr/share/applications',
+                                '/home/faruk/Bureaublad',
+                              ],
+    },
+
+    set_tooltips => 1,
+
+    name_keys    => ['Name[nl]','Name'],
+    tooltip_keys => ['Comment[nl]','Comment'],
+
+    editor                 => 'subl',
+    icon_type              => 'menu',
+    icon_size              => [22, 22],
+    missing_image          => 'gtk-missing-image',
+    gdk_interpolation_type => 'hyper',
+
+    VERSION => $version,
+             );
+
+sub dump_configuration {
+    require Data::Dump;
+    open my $config_fh, '>', $config_file
+      or die "Can't open file '${config_file}' for write: $!";
+    my $dumped_config = q{our $CONFIG = } . Data::Dump::dump(\%CONFIG) . "\n";
+    print $config_fh $config_documentation, $dumped_config;
+    close $config_fh;
+}
+
+if (not -e $config_file or $reconfigure) {
+    dump_configuration();
+}
+
+if (not -e $schema_file) {
+    if (-e (my $etc_schema_file = "/etc/xdg/$pkgname/schema.pl")) {
+        require File::Copy;
+        File::Copy::copy($etc_schema_file, $schema_file)
+          or die "$0: can't copy file `$etc_schema_file' to `$schema_file': $!\n";
+    }
+    else {
+        die "$0: schema file `$schema_file' does not exists!\n";
+    }
+}
+
+require $schema_file;    # Load the configuration files
+
+# Remove user's defined values
+my @valid_keys = grep exists $CONFIG{$_}, keys %{$CONFIG};
+@CONFIG{@valid_keys} = @{$CONFIG}{@valid_keys};
+
+# Keep user's defined values
+#@CONFIG{keys %{$CONFIG}} = values %{$CONFIG};
+
+if ($CONFIG{VERSION} != $version) {
+    $update_config = 1;
+    $CONFIG{VERSION} = $version;
+}
+
+my $desk_obj = Linux::DesktopFiles->new(
+    %{$CONFIG{'Linux::DesktopFiles'}},
+
+    home_dir   => $home_dir,
+    categories => [map $_->{cat}[0], grep exists $_->{cat}, @$SCHEMA],
+
+    keys_to_keep =>
+      [@{$CONFIG{name_keys}}, 'Exec', $icons ? 'Icon' : (), $CONFIG{set_tooltips} ? @{$CONFIG{tooltip_keys}} : ()],
+
+    keep_empty_categories => 0,
+    case_insensitive_cats => 1,
+                                       );
+
+my $comment = '# # ' x 10;
+my ($inside_cat, $generated_menu);
+
+if ($create_menu) {
+    generate_menu();
+}
+
+sub tooltip {
+
+    my $var_name = shift;
+    my $text     = decode_utf8(shift);
+
+    <<"TOOLTIP";
+    $var_name->set_property('tooltip_text', "\Q$text\E");
+TOOLTIP
+}
+
+sub image_from_file {
+    my ($var, $icon_filename) = @_;
+
+    return <<"ICON_FROM_XPM" if $icon_filename =~ /\.xpm\z/i;
+    $var->set_image('Gtk${gtk_v}::Image'->new_from_pixbuf('Gtk${gtk_v}::Gdk::Pixbuf'->new_from_file("\Q$icon_filename\E")->scale_simple($CONFIG{icon_size}[0],$CONFIG{icon_size}[1],q{$CONFIG{gdk_interpolation_type}})));
+ICON_FROM_XPM
+
+    return <<"ICON_FROM_FILE";
+    $var->set_image('Gtk${gtk_v}::Image'->new_from_pixbuf('Gtk${gtk_v}::Gdk::Pixbuf'->new_from_file_at_size("\Q$icon_filename\E",$CONFIG{icon_size}[0],$CONFIG{icon_size}[1])));
+ICON_FROM_FILE
+}
+
+sub image_from_icon_name {
+    my ($var, $icon_name) = @_;
+    <<"ICON_FROM_NAME";
+    $var->set_image('Gtk${gtk_v}::Image'->new_from_icon_name("\Q$icon_name\E",q{$CONFIG{icon_type}}));
+ICON_FROM_NAME
+}
+
+sub missing_image {
+    my ($var) = @_;
+    <<"ICON_FROM_STOCK";
+    $var->set_image('Gtk${gtk_v}::Image'->new_from_stock(q{$CONFIG{missing_image}},q{$CONFIG{icon_type}}));
+ICON_FROM_STOCK
+}
+
+sub system_command {
+    my $var     = shift;
+    my $command = decode_utf8(shift);
+    <<"SIGNAL_CONNECT";
+    $var->signal_connect('activate', sub {system "\Q$command\E &"});
+SIGNAL_CONNECT
+}
+
+sub new_item {
+    my $var   = shift;
+    my $label = decode_utf8(shift);
+    my $type  = $icons ? "Gtk${gtk_v}::ImageMenuItem" : "Gtk${gtk_v}::MenuItem";
+    return <<"ITEM";
+    my $var = '${type}'->new("\Q$label\E");
+ITEM
+}
+
+sub select_icon {
+    my ($var, $icon_name) = @_;
+
+    if (defined($icon_name) and $icon_name ne q{}) {
+        if (chr ord $icon_name eq '/') {
+            return image_from_file($var, $icon_name);
+        }
+        else {
+            return image_from_icon_name($var, $icon_name);
+        }
+    }
+
+    missing_image($var);
+}
+
+sub begin_category {
+    my ($var, $cat_name, $icon_name) = @_;
+
+    $generated_menu .= <<"CATEGORY_HEADER" . new_item($var, $cat_name);
+\n    $comment\U$cat_name\E $comment
+{
+    my \$apps = 'Gtk${gtk_v}::Menu'->new;
+CATEGORY_HEADER
+
+    if ($icons && defined($icon_name)) {
+        $generated_menu .= select_icon($var, $icon_name);
+    }
+
+    return 1;
+}
+
+sub end_category {
+    my ($var) = @_;
+    <<"END_OF_CAT";
+    $var->set_submenu(\$apps);
+    \$menu->append($var);
+}
+END_OF_CAT
+}
+
+sub push_app {
+    my ($entries, $cat_name, $icon_name) = @_;
+
+    my @menu_items;
+    foreach my $entry (@{$entries}) {
+        my $item;
+        my $item_var = '$app';
+
+        foreach my $nkey (@{$CONFIG{name_keys}}) {
+            if (defined $entry->{$nkey}) {
+                $item = "{\n" . new_item($item_var, $entry->{$nkey}) . system_command($item_var, $entry->{Exec});
+                last;
+            }
+        }
+
+        $item // next;    # skip entries without a `Name` field
+
+        if ($CONFIG{set_tooltips}) {
+            foreach my $tkey (@{$CONFIG{tooltip_keys}}) {
+                if (defined $entry->{$tkey}) {
+                    $item .= tooltip($item_var, $entry->{$tkey});
+                    last;
+                }
+            }
+        }
+
+        if ($icons) {
+            $item .= select_icon($item_var, $entry->{Icon} || ($entry->{Exec} =~ /^(\S+)/));
+        }
+        push @menu_items, $item . <<"APPEND";
+    \$apps->append($item_var);
+}
+APPEND
+    }
+
+    @menu_items || return;    # skip creating empty categories
+
+    my $cat_var = '$cat';
+    begin_category($cat_var, $cat_name, $icon_name);
+
+    $generated_menu .= join(q{}, map $_->[1], sort { $a->[0] cmp $b->[0] }
+                              map [lc($_) => $_], @menu_items)
+      . end_category($cat_var);
+    1;
+}
+
+sub add_item {
+    my ($command, $name, $icon) = @_;
+
+    my $var_name = '$item';
+    $generated_menu .= "{\n" . new_item($var_name, $name);
+
+    if ($icons && defined($icon)) {
+        $generated_menu .= select_icon($var_name, $icon);
+    }
+
+    $generated_menu .= system_command($var_name, $command) . ($inside_cat ? <<"IN_SUBMENU" : <<"IN_MENU");
+    \$apps->append($var_name);
+}\n
+IN_SUBMENU
+    \$menu->append($var_name);
+}\n
+IN_MENU
+    return 1;
+}
+
+sub generate_menu {
+    $generated_menu = <<"HEADER";
+#!/usr/bin/perl
+
+# File generated by $pkgname v$version
+
+# DO NOT edit this file!
+# Any change in this file will be lost!
+# Edit '$schema_file' instead!
+
+use utf8;
+use Gtk${gtk_v} ('-init');
+
+my \$menu = 'Gtk${gtk_v}::Menu'->new;
+my \$icon = 'Gtk${gtk_v}::StatusIcon'->new;
+
+\$icon->set_from_icon_name('menutray');
+\$icon->set_visible(1);
+\$icon->signal_connect('button-release-event', \\&show_icon_menu);
+
+load_menu();
+
+sub show_icon_menu {
+HEADER
+
+    $generated_menu .= $gtk_v == 2 ? <<'GTK2' : <<'GTK3';
+    $menu->popup(undef, undef, sub {return Gtk2::StatusIcon::position_menu($menu, 0, 0, $icon)}, [1, 1], 0, 0);
+GTK2
+    $menu->popup(undef, undef, sub {return Gtk3::StatusIcon::position_menu($menu, $icon)}, [1, 1], 0, 0);
+GTK3
+
+    $generated_menu .= <<'EOT';
+    return 1;
+}
+
+sub load_menu {
+EOT
+
+    my $categories = $desk_obj->parse_desktop_files;
+
+    foreach my $schema (@$SCHEMA) {
+        if (exists $schema->{cat}) {
+            exists($categories->{my $category = lc($schema->{cat}[0]) =~ tr/_a-z0-9/_/cr}) || next;
+            push_app(\@{$categories->{$category}}, $schema->{cat}[1], $schema->{cat}[2]);
+        }
+        elsif (exists $schema->{item}) {
+            add_item(@{$schema->{item}});
+        }
+        elsif (exists $schema->{menutray}) {
+            my ($label, $icon) = @{$schema->{menutray}};
+            push_app(
+                     [
+                      {
+                       Exec    => "$CONFIG{editor} $menufile",
+                       Name    => "Menu",
+                       Icon    => $icon,
+                       Comment => 'Open the menu file for inspection',
+                      },
+                      {
+                       Exec    => "$CONFIG{editor} $schema_file",
+                       Name    => "Schema",
+                       Icon    => $icon,
+                       Comment => 'Open the schema file to customize the menu'
+                      },
+                      {
+                       Exec    => "$CONFIG{editor} $config_file",
+                       Name    => "Config",
+                       Icon    => $icon,
+                       Comment => 'Open the configuration file'
+                      },
+                     ],
+                     $label, $icon
+                    );
+        }
+        elsif (exists $schema->{begin_cat}) {
+            $inside_cat = 1;
+            begin_category(@{$schema->{begin_cat}});
+        }
+        elsif (exists $schema->{end_cat}) {
+            $inside_cat = 0;
+            $generated_menu .= end_category($schema->{end_cat});
+        }
+        elsif (exists $schema->{tree}) {
+            push_app(@{$schema->{tree}});
+        }
+        elsif (exists $schema->{exit}) {
+            my ($name, $icon) = @{$schema->{exit}};
+
+            my $var_name = "\$quit";
+            $generated_menu .= "{\n" . new_item($var_name, $name);
+
+            if ($CONFIG{set_tooltips}) {
+                $generated_menu .= tooltip($var_name, "Close this application.");
+            }
+
+            if ($icons && defined($icon)) {
+                $generated_menu .= select_icon($var_name, $icon);
+            }
+
+            $generated_menu .= <<"QUIT";
+    $var_name->signal_connect('activate', sub { Gtk${gtk_v}->main_quit; exit });
+    \$menu->append($var_name);
+}
+QUIT
+        }
+        elsif (exists $schema->{regenerate}) {
+            my ($name, $icon) = @{$schema->{regenerate}};
+
+            require Cwd;
+            my $regenerate_exec =
+              join(q{ }, $^X, quotemeta(Cwd::abs_path($0)), $gtk_v eq '3' ? '-gtk3' : (), $icons ? '-i' : '-g');
+
+            my $var_name = "\$regenerate";
+            $generated_menu .= "{\n" . new_item($var_name, $name);
+
+            if ($CONFIG{set_tooltips}) {
+                $generated_menu .= tooltip($var_name, "Regenerate this menu.");
+            }
+
+            if ($icons && defined($icon)) {
+                $generated_menu .= select_icon($var_name, $icon);
+            }
+
+            $generated_menu .= <<"REGENERATE_ITEM";
+    $var_name->signal_connect('activate', sub {system "\Q$regenerate_exec\E &"; 'Gtk${gtk_v}'->main_quit; exit});
+    \$menu->append($var_name);
+}
+REGENERATE_ITEM
+        }
+        elsif (exists $schema->{raw}) {
+            $generated_menu .= $schema->{raw};
+        }
+        elsif (exists $schema->{sep}) {
+            $generated_menu .= <<"SEPARATOR";
+\n    \$menu->append('Gtk${gtk_v}::SeparatorMenuItem'->new);
+SEPARATOR
+        }
+    }
+
+    $generated_menu .= <<"FOOTER";
+    \$menu->show_all;
+    return 1;
+}
+'Gtk${gtk_v}'->main;
+FOOTER
+
+    open my $menu_fh, '>:encoding(UTF-8)', $menufile
+      or die "$0: Can't open file '${menufile}' for write: $!";
+    print $menu_fh $generated_menu;
+    close $menu_fh;
+}
+
+dump_configuration() if $update_config;
+
+## Load the menu with 'do'
+#-f $menufile ? (do($menufile) || die "$0: Can't run the menu file '${menufile}': $!") : usage();
+
+## Load the menu with 'exec'
+(-f $menufile) ? exec($^X, $menufile) : do { output_usage(); exit 1 };  # this cleans up some memory and works nicely with Gtk3

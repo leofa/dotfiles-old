@@ -1,0 +1,49 @@
+[global]
+    font = "Noto Sans 10"
+    allow_markup = yes
+    format = "<b>%s %p</b>\n%b"
+    sort = yes
+    indicate_hidden = true
+    # geometry = "x5"
+    idle_threshold = 0
+    ignore_newline = yes
+    geometry = "300x5-10-10"
+    alignment = center
+    show_age_threshold = 60
+    sticky_history = yes
+    follow = mouse  
+    word_wrap = yes
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 10
+    separator_color = frame
+    # transparency = 10
+    shrink = yes
+    # startup_notification = true
+    dmenu = "/usr/bin/dmenu -p dunst: -nb #FFFFFF -nf #000000 -sb #94DBFF -sf #000000"
+    browser = /usr/bin/chromium
+
+[frame]
+    width = 2
+    color = "#586E75"
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+period
+    history = ctrl+grave
+    context = ctrl+shift+space
+
+[urgency_low]
+    background = "#DADCDE"
+    foreground = "#000000"
+    timeout = 6
+
+[urgency_normal]
+    background = "#C8DED8"
+    foreground = "#000000"
+    timeout = 8
+
+[urgency_critical]
+    background = "#DEC8C9"
+    foreground = "#000000"
+    timeout = 10
