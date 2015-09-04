@@ -1,5 +1,8 @@
 # dotfiles
 my personal config files for a minimal desktop on my acer c720p chromebook running Arch Linux. (i3wm, i3blocks, termite, vim, menutray etc.)
 
-[screenshot]
-https://lh3.googleusercontent.com/U2WcQCOIbvUthuNy_uRnwHmESTWjTz6jMfirw22fYeca9PodG5bIAl4wEJAJPnw0O0LL50dWFKBJx0HEN838utH-tosQLmBsO6jAwuUzuL_4xft-UxibqyCr4J1NwDROQOTprAAO10BJ8ViKETLnQ2E_6a26BvB6TKjb_3-VIaZgbZglumsW5fCu_95Q-hjm1Y_74d49XpEzucXhNbdmxqIqWBYzSXwUAPTF6RHPMAJT9Jbz3hXSap8zufcf-NH5SoZl56BVpHbyVFVmscE1DMJnd3ekdLWWZNGqHGSjxGSMvOk-aXORry6zmw27g4j_fswTXz67oS56KHZHvyY_d_4zXzXZRbuh61SnjxxY7qrrQgFJv0Cjew_dI1PPQcG2-YSYPw5sJ-PYwoPiHmmYZdMJbCPkUOuNJ7VlR7geu64mhmay4ArgarLKppQu4SK_RFB5kj-H6r9Sj63LmkLRkbe6arVa-UKNC_8FYBz-RWsDhqMhKbIqMZ-q9Ij4nQm5VmgtLMeLio9sA1iwQcGJK9ap=w1217-h684-no
+[screenshots]
+(https://www.dropbox.com/s/5yibzrv9j2zjrgy/Schermafdruk_02-09-2015_21%3A45%3A28.png?dl=0)
+(https://www.dropbox.com/s/j5o0nz1fjhb0fab/Schermafdruk_02-09-2015_21%3A52%3A03.png?dl=0)
+(https://www.dropbox.com/s/ov9hikup2na6sqe/Schermafdruk_02-09-2015_21%3A53%3A21.png?dl=0)
+(https://www.dropbox.com/s/8bzkcem8p5zmuy6/Schermafdruk_02-09-2015_21%3A59%3A37.png?dl=0)
