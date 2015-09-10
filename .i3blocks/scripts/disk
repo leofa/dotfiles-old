@@ -42,7 +42,5 @@ END {
 '
 case $BLOCK_BUTTON in
   1) caja ;;
-  2) df -h | yad --mouse --no-buttons --text-info --text-align=left --width=600 --height=255 ;;
   3) mate-search-tool ;;
 esac
-

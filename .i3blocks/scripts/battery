@@ -60,13 +60,13 @@ if ($status eq 'Discharging') {
 		print "#E65B5A\n";
 	} elsif ($percent < 21) {
 		print "#F0D6A3\n";
-	} elsif ($percent < 31) {
-		print "#B9BD8E\n";
+#	} elsif ($percent < 31) {
+#		print "#B9BD8E\n";
 #	} elsif ($percent < 41) {
 #		print "#8ABEB7\n";
 	}
 
-	if ($percent < 6) {
+	if ($percent < 8) {
 		exit(33);
 	}
 }

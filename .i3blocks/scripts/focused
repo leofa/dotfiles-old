@@ -6,6 +6,8 @@ echo "#93B6C2"
 
 case $BLOCK_BUTTON in
   1) i3-msg floating toggle ;;
-  2) xkill ;;
-  3) xdotool getactivewindow windowraise windowunmap ;;
+  2) i3-msg layout tabbed ;;
+  3) i3-msg layout toggle split ;;
+  4) i3-msg workspace next ;;
+  5) i3-msg workspace prev ;;	  
 esac

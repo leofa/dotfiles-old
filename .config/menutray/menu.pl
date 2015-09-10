@@ -110,6 +110,13 @@ sub load_menu {
     $apps->append($app);
 }
 {
+    my $app = 'Gtk2::ImageMenuItem'->new("gVim");
+    $app->signal_connect('activate', sub {system "gvim &"});
+    $app->set_property('tooltip_text', "GTK2\ enhanced\ vim\ text\ editor");
+    $app->set_image('Gtk2::Image'->new_from_icon_name("gvim",q{menu}));
+    $apps->append($app);
+}
+{
     my $app = 'Gtk2::ImageMenuItem'->new("MATE\ Zoekprogramma");
     $app->signal_connect('activate', sub {system "mate\-search\-tool &"});
     $app->set_property('tooltip_text', "Documenten\ en\ mappen\ vinden\ op\ naam\ of\ inhoud");
@@ -124,24 +131,10 @@ sub load_menu {
     $apps->append($app);
 }
 {
-    my $app = 'Gtk2::ImageMenuItem'->new("Schijven");
-    $app->signal_connect('activate', sub {system "gnome\-disks &"});
-    $app->set_property('tooltip_text', "Schijfstations\ en\ media\ beheren");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("gnome\-disks",q{menu}));
-    $apps->append($app);
-}
-{
     my $app = 'Gtk2::ImageMenuItem'->new("Tekens\ en\ symbolen");
     $app->signal_connect('activate', sub {system "gucharmap &"});
     $app->set_property('tooltip_text', "Speciale\ tekens\ invoegen\ in\ documenten");
     $app->set_image('Gtk2::Image'->new_from_icon_name("accessories\-character\-map",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Vi\ IMproved");
-    $app->signal_connect('activate', sub {system "gvim\ \-f &"});
-    $app->set_property('tooltip_text', "Krachtige\ vi\-editor");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("gvim",q{menu}));
     $apps->append($app);
 }
 {
@@ -167,6 +160,13 @@ sub load_menu {
     my $apps = 'Gtk2::Menu'->new;
     my $cat = 'Gtk2::ImageMenuItem'->new("Ontwikkeling");
     $cat->set_image('Gtk2::Image'->new_from_icon_name("applications\-development",q{menu}));
+{
+    my $app = 'Gtk2::ImageMenuItem'->new("gitg");
+    $app->signal_connect('activate', sub {system "gitg\ \-\-no\-wd &"});
+    $app->set_property('tooltip_text', "Git\-repository\-viewer");
+    $app->set_image('Gtk2::Image'->new_from_icon_name("gitg",q{menu}));
+    $apps->append($app);
+}
 {
     my $app = 'Gtk2::ImageMenuItem'->new("Icon\ Browser");
     $app->signal_connect('activate', sub {system "yad\-icon\-browser &"});
@@ -214,27 +214,6 @@ sub load_menu {
     my $cat = 'Gtk2::ImageMenuItem'->new("Games");
     $cat->set_image('Gtk2::Image'->new_from_icon_name("applications\-games",q{menu}));
 {
-    my $app = 'Gtk2::ImageMenuItem'->new("FEZ");
-    $app->signal_connect('activate', sub {system "steam\ steam\:\/\/rungameid\/224760 &"});
-    $app->set_property('tooltip_text', "Play\ this\ game\ on\ Steam");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("steam_icon_224760",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Frogatto");
-    $app->signal_connect('activate', sub {system "\/usr\/bin\/\/usr\/bin\/frogatto\ \ \-\-height\ 768\ \-\-width\ 1366\ \-\-widescreen\ \-\-fullscreen &"});
-    $app->set_property('tooltip_text', "Old\-school\ 2D\ platformer");
-    $app->set_image('Gtk2::Image'->new_from_pixbuf('Gtk2::Gdk::Pixbuf'->new_from_file_at_size("\/opt\/frogatto\/images\/window\-icon\.png",22,22)));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Mahjongg");
-    $app->signal_connect('activate', sub {system "gnome\-mahjongg &"});
-    $app->set_property('tooltip_text', "Verwijder\ de\ stapel\ stenen\ door\ ze\ paarsgewijs\ weg\ te\ halen");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("gnome\-mahjongg",q{menu}));
-    $apps->append($app);
-}
-{
     my $app = 'Gtk2::ImageMenuItem'->new("Minecraft");
     $app->signal_connect('activate', sub {system "minecraft &"});
     $app->set_property('tooltip_text', "A\ game\ about\ placing\ blocks\ while\ running\ from\ skeletons\.");
@@ -242,24 +221,10 @@ sub load_menu {
     $apps->append($app);
 }
 {
-    my $app = 'Gtk2::ImageMenuItem'->new("Schaken");
-    $app->signal_connect('activate', sub {system "gnome\-chess &"});
-    $app->set_property('tooltip_text', "Play\ the\ classic\ two\-player\ board\ game\ of\ chess");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("gnome\-chess",q{menu}));
-    $apps->append($app);
-}
-{
     my $app = 'Gtk2::ImageMenuItem'->new("Steam");
     $app->signal_connect('activate', sub {system "\/usr\/bin\/steam &"});
     $app->set_property('tooltip_text', "Application\ for\ managing\ and\ playing\ games\ on\ Steam");
     $app->set_image('Gtk2::Image'->new_from_icon_name("steam",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Super\ Meat\ Boy");
-    $app->signal_connect('activate', sub {system "steam\ steam\:\/\/rungameid\/40800 &"});
-    $app->set_property('tooltip_text', "Play\ this\ game\ on\ Steam");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("steam_icon_40800",q{menu}));
     $apps->append($app);
 }
     $cat->set_submenu($apps);
@@ -289,7 +254,7 @@ sub load_menu {
     my $app = 'Gtk2::ImageMenuItem'->new("Gcolor2");
     $app->signal_connect('activate', sub {system "gcolor2 &"});
     $app->set_property('tooltip_text', "Choose\ colours\ from\ palette\ or\ screen");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("gcolor2",q{menu}));
+    $app->set_image('Gtk2::Image'->new_from_pixbuf('Gtk2::Gdk::Pixbuf'->new_from_file_at_size("\/usr\/share\/pixmaps\/gcolor2\/icon\.png",22,22)));
     $apps->append($app);
 }
 {
@@ -337,6 +302,13 @@ sub load_menu {
     my $cat = 'Gtk2::ImageMenuItem'->new("Multimedia");
     $cat->set_image('Gtk2::Image'->new_from_icon_name("applications\-multimedia",q{menu}));
 {
+    my $app = 'Gtk2::ImageMenuItem'->new("bomi");
+    $app->signal_connect('activate', sub {system "bomi\ \-\-wake &"});
+    $app->set_property('tooltip_text', "Play\ your\ media");
+    $app->set_image('Gtk2::Image'->new_from_icon_name("bomi",q{menu}));
+    $apps->append($app);
+}
+{
     my $app = 'Gtk2::ImageMenuItem'->new("Cheese");
     $app->signal_connect('activate', sub {system "cheese &"});
     $app->set_property('tooltip_text', "Foto\'s\ en\ video\'s\ met\ een\ webcam\ maken\,\ met\ leuke\ visuele\ effecten");
@@ -344,17 +316,17 @@ sub load_menu {
     $apps->append($app);
 }
 {
+    my $app = 'Gtk2::ImageMenuItem'->new("DeaDBeeF");
+    $app->signal_connect('activate', sub {system "deadbeef &"});
+    $app->set_property('tooltip_text', "Listen\ to\ music");
+    $app->set_image('Gtk2::Image'->new_from_icon_name("deadbeef",q{menu}));
+    $apps->append($app);
+}
+{
     my $app = 'Gtk2::ImageMenuItem'->new("Kodi\ Media\ Center");
     $app->signal_connect('activate', sub {system "kodi &"});
     $app->set_property('tooltip_text', "Manage\ and\ view\ your\ media");
     $app->set_image('Gtk2::Image'->new_from_icon_name("kodi",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Lollypop");
-    $app->signal_connect('activate', sub {system "lollypop &"});
-    $app->set_property('tooltip_text', "Je\ muziekverzameling\ beluisteren\ en\ beheren");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("lollypop",q{menu}));
     $apps->append($app);
 }
 {
@@ -375,13 +347,6 @@ sub load_menu {
     my $app = 'Gtk2::ImageMenuItem'->new("Radio\ Tray");
     $app->signal_connect('activate', sub {system "radiotray &"});
     $app->set_image('Gtk2::Image'->new_from_icon_name("radiotray",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("VLC\ Media\ Player");
-    $app->signal_connect('activate', sub {system "\/usr\/bin\/vlc\ \-\-started\-from\-file &"});
-    $app->set_property('tooltip_text', "Uw\ multimediastreams\ afspelen\,\ opnemen\ en\ uitzenden");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("vlc",q{menu}));
     $apps->append($app);
 }
     $cat->set_submenu($apps);
@@ -422,6 +387,13 @@ sub load_menu {
     $apps->append($app);
 }
 {
+    my $app = 'Gtk2::ImageMenuItem'->new("Iceweasel");
+    $app->signal_connect('activate', sub {system "iceweasel &"});
+    $app->set_property('tooltip_text', "Verken\ het\ internet");
+    $app->set_image('Gtk2::Image'->new_from_icon_name("iceweasel",q{menu}));
+    $apps->append($app);
+}
+{
     my $app = 'Gtk2::ImageMenuItem'->new("Insync");
     $app->signal_connect('activate', sub {system "insync\ start &"});
     $app->set_property('tooltip_text', "Launch\ Insync");
@@ -432,6 +404,13 @@ sub load_menu {
     my $app = 'Gtk2::ImageMenuItem'->new("Midori");
     $app->signal_connect('activate', sub {system "midori &"});
     $app->set_property('tooltip_text', "Surfen\ op\ het\ web");
+    $app->set_image('Gtk2::Image'->new_from_icon_name("midori",q{menu}));
+    $apps->append($app);
+}
+{
+    my $app = 'Gtk2::ImageMenuItem'->new("Midori\ Privé\-surfen");
+    $app->signal_connect('activate', sub {system "midori\ \-\-private &"});
+    $app->set_property('tooltip_text', "Open\ een\ nieuw\ privé\-surfvenster");
     $app->set_image('Gtk2::Image'->new_from_icon_name("midori",q{menu}));
     $apps->append($app);
 }
@@ -447,13 +426,6 @@ sub load_menu {
     $app->signal_connect('activate', sub {system "qupzilla &"});
     $app->set_property('tooltip_text', "Een\ snelle\ en\ veilige\ webbrowser");
     $app->set_image('Gtk2::Image'->new_from_icon_name("qupzilla",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Remmina");
-    $app->signal_connect('activate', sub {system "remmina &"});
-    $app->set_property('tooltip_text', "Verbinding\ maken\ met\ bureaubladen\ op\ afstand");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("remmina",q{menu}));
     $apps->append($app);
 }
 {
@@ -573,13 +545,6 @@ sub load_menu {
     $apps->append($app);
 }
 {
-    my $app = 'Gtk2::ImageMenuItem'->new("GParted");
-    $app->signal_connect('activate', sub {system "\/usr\/bin\/gparted_polkit &"});
-    $app->set_property('tooltip_text', "Partities\ aanmaken\,\ ordenen\ en\ verwijderen");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("gparted",q{menu}));
-    $apps->append($app);
-}
-{
     my $app = 'Gtk2::ImageMenuItem'->new("Htop");
     $app->signal_connect('activate', sub {system "xterm\-color\ \-e\ \'htop\' &"});
     $app->set_property('tooltip_text', "Show\ System\ Processes");
@@ -607,13 +572,6 @@ sub load_menu {
     $app->set_image('Gtk2::Image'->new_from_icon_name("utilities\-terminal",q{menu}));
     $apps->append($app);
 }
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Virtuele\ machine\ beheerder");
-    $app->signal_connect('activate', sub {system "virt\-manager &"});
-    $app->set_property('tooltip_text', "Manage\ virtual\ machines");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("virt\-manager",q{menu}));
-    $apps->append($app);
-}
     $cat->set_submenu($apps);
     $menu->append($cat);
 }
@@ -623,6 +581,13 @@ sub load_menu {
     my $apps = 'Gtk2::Menu'->new;
     my $cat = 'Gtk2::ImageMenuItem'->new("Instellingen");
     $cat->set_image('Gtk2::Image'->new_from_icon_name("preferences\-desktop",q{menu}));
+{
+    my $app = 'Gtk2::ImageMenuItem'->new("3D\ Acceleration");
+    $app->signal_connect('activate', sub {system "driconf &"});
+    $app->set_property('tooltip_text', "Change\ 3D\ Acceleration\ options");
+    $app->set_image('Gtk2::Image'->new_from_pixbuf('Gtk2::Gdk::Pixbuf'->new_from_file_at_size("\/usr\/share\/driconf\/driconf\-icon\.png",22,22)));
+    $apps->append($app);
+}
 {
     my $app = 'Gtk2::ImageMenuItem'->new("Bestandsbeheer");
     $app->signal_connect('activate', sub {system "caja\-file\-management\-properties &"});
@@ -663,13 +628,6 @@ sub load_menu {
     $app->signal_connect('activate', sub {system "lxappearance &"});
     $app->set_property('tooltip_text', "Past\ uiterlijk\ en\ bediening\ aan\ van\ uw\ bureaublad\ en\ toepassingen");
     $app->set_image('Gtk2::Image'->new_from_icon_name("preferences\-desktop\-theme",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("Voorkeurstoepassingen");
-    $app->signal_connect('activate', sub {system "libfm\-pref\-apps &"});
-    $app->set_property('tooltip_text', "Kies\ toepassingen\ die\ worden\ aangeroepen\ bij\ een\ klik\ op\ een\ webkoppeling\ of\ e\-mailadres");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("preferences\-desktop",q{menu}));
     $apps->append($app);
 }
     $cat->set_submenu($apps);
