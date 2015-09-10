@@ -16,6 +16,9 @@ fi
 #skype fix
 #export PULSE_LATENCY_MSEC=60
 
+# git/ssh terminal password prompt
+unset SSH_ASKPASS
+
 # wrap output of journal 
 export SYSTEMD_LESS=FRXMK journalctl
 
