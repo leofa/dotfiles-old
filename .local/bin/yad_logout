@@ -20,7 +20,7 @@ case $action in
     Herstarten*) cmd="systemctl reboot" ;;
     Pauzestand*) cmd="systemctl suspend" ;;
     Afmelden*) cmd="i3-msg exit" ;;
-    Vergrendelen*) cmd="i3lock -i ~/Afbeeldingen/Lockscreen/lockscreen.png" ;;
+    Vergrendelen*) cmd="i3lock -i ~/.wallpaper/lockscreen.png" ;;
     *) exit 1 ;;        
 esac
 

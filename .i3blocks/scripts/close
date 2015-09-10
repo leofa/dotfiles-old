@@ -1,0 +1,5 @@
+#!/bin/sh
+case $BLOCK_BUTTON in
+  3) sh -c xkill > /dev/null;;
+  1) xdotool getactivewindow windowraise windowunmap ;;
+esac

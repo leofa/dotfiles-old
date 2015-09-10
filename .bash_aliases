@@ -23,7 +23,7 @@ alias disks='df -h; btrfs filesystem df /'
 alias bsd='ssh faruk@192.168.1.10'
 alias dd='dcfldd'
 alias gksu='gksu-polkit'
-alias refl='sudo /usr/bin/reflector --protocol http --country Netherlands --fastest 30 --sort score --number 3 --save /etc/pacman.d/mirrorlist; cat /etc/pacman.d/mirrorlist'
+alias refl='sudo /usr/bin/reflector --protocol http --fastest 30 --sort score --number 3 --save /etc/pacman.d/mirrorlist; cat /etc/pacman.d/mirrorlist'
 alias Yl='yaourt -Qm' #lokale pakketen
 alias Yf='yaourt -Qet' #niet standaard foreign
 alias err='dmesg -l err'
@@ -71,6 +71,7 @@ alias lan='sudo dhcpcd enp0s20u1'
 alias mp3='parallel -j4 ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac *.m4a'
 alias i3blk='vim ~/.i3blocks.conf'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
+alias fcr='cd; rm -f flash_chromebook_rom.sh; curl -L -O https://johnlewis.ie/flash_chromebook_rom.sh; sudo -E bash flash_chromebook_rom.sh'
 
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && gvim "$file"; }

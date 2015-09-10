@@ -13,15 +13,13 @@ fi
 #POWERLINE_BASH_SELECT=1
 #. /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
 
-#for x-login
-#for sd_cmd in systemctl systemd-analyze systemd-run; do
-#        alias $sd_cmd='DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket" '$sd_cmd
-#done
-
 #skype fix
 #export PULSE_LATENCY_MSEC=60
 
-# java apps
+# wrap output of journal 
+export SYSTEMD_LESS=FRXMK journalctl
+
+# use gtk for java apps
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # ruby PATH
@@ -30,7 +28,6 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # go PATH
 export GOPATH=~/go
 export PATH=$PATH:~/go/bin
-
 
 #browser
 export BROWSER=chromium
@@ -64,7 +61,7 @@ if [ "$TERM" = "linux" ]; then
 
     [[ -f $HOME/.dircolors_256 ]] && eval $(dircolors -b $HOME/.dircolors_256)
 
-    export TERM='xterm-256color'
+    export TERM='xterm-termite'
 
      B='\[\e[1;34m\]'
     LB='\[\e[34m\]'
