@@ -51,5 +51,4 @@ if ($cpu_usage >= $t_crit) {
 } elsif ($cpu_usage >= $t_warn) {
     print "#F7CA88\n";
 }
-
 exit 0;

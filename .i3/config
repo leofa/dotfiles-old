@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # fonts
-font pango: Source Code Pro, FontAwesome Regular, Icons 9
+font pango: Source Code Pro SemiBold, FontAwesome Regular, Icons Regular 9.3
 
 # move windows with mouse+$mod
 floating_modifier $mod
@@ -43,7 +43,7 @@ exec termite --name 'scratch_termite'
 bindsym $mod+slash exec wallchanger
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+c exec chromium
-bindsym $mod+i exec chromium --incognito
+bindsym $mod+i exec iceweasel
 bindsym $mod+b exec caja --browser --no-desktop
 bindsym $mod+backslash exec chromium --show-app-list
 bindsym $mod+m exec geary

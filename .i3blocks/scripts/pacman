@@ -1,0 +1,3 @@
+#/bin/sh
+PACMAN=$(pacman -Qu | wc -l)
+echo $PACMAN

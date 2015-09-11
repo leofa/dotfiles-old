@@ -197,13 +197,6 @@ sub load_menu {
     $app->set_image('Gtk2::Image'->new_from_icon_name("klavaro",q{menu}));
     $apps->append($app);
 }
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Math");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-math &"});
-    $app->set_property('tooltip_text', "Create\ and\ edit\ scientific\ formulas\ and\ equations\ by\ using\ Math\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-math",q{menu}));
-    $apps->append($app);
-}
     $cat->set_submenu($apps);
     $menu->append($cat);
 }
@@ -279,13 +272,6 @@ sub load_menu {
     $apps->append($app);
 }
 {
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Draw");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-draw &"});
-    $app->set_property('tooltip_text', "Create\ and\ edit\ drawings\,\ flow\ charts\ and\ logos\ by\ using\ Draw\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-draw",q{menu}));
-    $apps->append($app);
-}
-{
     my $app = 'Gtk2::ImageMenuItem'->new("MATE\ kleur\ selectie");
     $app->signal_connect('activate', sub {system "mate\-color\-select &"});
     $app->set_property('tooltip_text', "Kies\ kleuren\ van\ het\ palet\ of\ het\ scherm");
@@ -313,13 +299,6 @@ sub load_menu {
     $app->signal_connect('activate', sub {system "cheese &"});
     $app->set_property('tooltip_text', "Foto\'s\ en\ video\'s\ met\ een\ webcam\ maken\,\ met\ leuke\ visuele\ effecten");
     $app->set_image('Gtk2::Image'->new_from_icon_name("cheese",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("DeaDBeeF");
-    $app->signal_connect('activate', sub {system "deadbeef &"});
-    $app->set_property('tooltip_text', "Listen\ to\ music");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("deadbeef",q{menu}));
     $apps->append($app);
 }
 {
@@ -456,55 +435,6 @@ sub load_menu {
     $app->signal_connect('activate', sub {system "evince &"});
     $app->set_property('tooltip_text', "Documenten\ weergeven");
     $app->set_image('Gtk2::Image'->new_from_icon_name("evince",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice");
-    $app->signal_connect('activate', sub {system "libreoffice &"});
-    $app->set_property('tooltip_text', "The\ office\ productivity\ suite\ compatible\ to\ the\ open\ and\ standardized\ ODF\ document\ format\.\ Supported\ by\ The\ Document\ Foundation\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-startcenter",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Base");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-base &"});
-    $app->set_property('tooltip_text', "Manage\ databases\,\ create\ queries\ and\ reports\ to\ track\ and\ manage\ your\ information\ by\ using\ Base\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-base",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Calc");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-calc &"});
-    $app->set_property('tooltip_text', "Perform\ calculations\,\ analyze\ information\ and\ manage\ lists\ in\ spreadsheets\ by\ using\ Calc\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-calc",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Draw");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-draw &"});
-    $app->set_property('tooltip_text', "Create\ and\ edit\ drawings\,\ flow\ charts\ and\ logos\ by\ using\ Draw\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-draw",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Impress");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-impress &"});
-    $app->set_property('tooltip_text', "Create\ and\ edit\ presentations\ for\ slideshows\,\ meeting\ and\ Web\ pages\ by\ using\ Impress\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-impress",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Math");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-math &"});
-    $app->set_property('tooltip_text', "Create\ and\ edit\ scientific\ formulas\ and\ equations\ by\ using\ Math\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-math",q{menu}));
-    $apps->append($app);
-}
-{
-    my $app = 'Gtk2::ImageMenuItem'->new("LibreOffice\ Writer");
-    $app->signal_connect('activate', sub {system "libreoffice\ \-\-writer &"});
-    $app->set_property('tooltip_text', "Create\ and\ edit\ text\ and\ graphics\ in\ letters\,\ reports\,\ documents\ and\ Web\ pages\ by\ using\ Writer\.");
-    $app->set_image('Gtk2::Image'->new_from_icon_name("libreoffice\-writer",q{menu}));
     $apps->append($app);
 }
 {
