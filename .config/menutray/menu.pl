@@ -41,7 +41,7 @@ sub load_menu {
 {
     my $item = 'Gtk2::ImageMenuItem'->new("Tekstverwerker");
     $item->set_image('Gtk2::Image'->new_from_icon_name("medit",q{menu}));
-    $item->signal_connect('activate', sub {system "subl &"});
+    $item->signal_connect('activate', sub {system "gvim &"});
     $menu->append($item);
 }
 
@@ -128,6 +128,13 @@ sub load_menu {
     $app->signal_connect('activate', sub {system "mate\-screenshot\ \-\-interactive &"});
     $app->set_property('tooltip_text', "Afbeeldingen\ van\ uw\ bureaublad\ of\ vensters\ maken");
     $app->set_image('Gtk2::Image'->new_from_icon_name("applets\-screenshooter",q{menu}));
+    $apps->append($app);
+}
+{
+    my $app = 'Gtk2::ImageMenuItem'->new("Schijven");
+    $app->signal_connect('activate', sub {system "gnome\-disks &"});
+    $app->set_property('tooltip_text', "Schijfstations\ en\ media\ beheren");
+    $app->set_image('Gtk2::Image'->new_from_icon_name("gnome\-disks",q{menu}));
     $apps->append($app);
 }
 {
@@ -512,10 +519,9 @@ sub load_menu {
     my $cat = 'Gtk2::ImageMenuItem'->new("Instellingen");
     $cat->set_image('Gtk2::Image'->new_from_icon_name("preferences\-desktop",q{menu}));
 {
-    my $app = 'Gtk2::ImageMenuItem'->new("3D\ Acceleration");
-    $app->signal_connect('activate', sub {system "driconf &"});
-    $app->set_property('tooltip_text', "Change\ 3D\ Acceleration\ options");
-    $app->set_image('Gtk2::Image'->new_from_pixbuf('Gtk2::Gdk::Pixbuf'->new_from_file_at_size("\/usr\/share\/driconf\/driconf\-icon\.png",22,22)));
+    my $app = 'Gtk2::ImageMenuItem'->new("ARandR");
+    $app->signal_connect('activate', sub {system "arandr &"});
+    $app->set_image('Gtk2::Image'->new_from_icon_name("display",q{menu}));
     $apps->append($app);
 }
 {
@@ -571,7 +577,7 @@ sub load_menu {
     $cat->set_image('Gtk2::Image'->new_from_icon_name("mozo",q{menu}));
 {
     my $app = 'Gtk2::ImageMenuItem'->new("Config");
-    $app->signal_connect('activate', sub {system "subl\ \/home\/faruk\/\.config\/menutray\/config\.pl &"});
+    $app->signal_connect('activate', sub {system "gvim\ \/home\/faruk\/\.config\/menutray\/config\.pl &"});
     $app->set_image('Gtk2::Image'->new_from_icon_name("gtk\-edit",q{menu}));
     $apps->append($app);
 }
@@ -583,13 +589,13 @@ sub load_menu {
 }
 {
     my $app = 'Gtk2::ImageMenuItem'->new("Menu");
-    $app->signal_connect('activate', sub {system "subl\ \/home\/faruk\/\.config\/menutray\/menu\.pl &"});
+    $app->signal_connect('activate', sub {system "gvim\ \/home\/faruk\/\.config\/menutray\/menu\.pl &"});
     $app->set_image('Gtk2::Image'->new_from_icon_name("gtk\-edit",q{menu}));
     $apps->append($app);
 }
 {
     my $app = 'Gtk2::ImageMenuItem'->new("Menutray");
-    $app->signal_connect('activate', sub {system "gksu\-polkit\ subl\ \/usr\/bin\/menutray &"});
+    $app->signal_connect('activate', sub {system "gksu\-polkit\ gvim\ \/usr\/bin\/menutray &"});
     $app->set_image('Gtk2::Image'->new_from_icon_name("gtk\-edit",q{menu}));
     $apps->append($app);
 }
@@ -601,7 +607,7 @@ sub load_menu {
 }
 {
     my $app = 'Gtk2::ImageMenuItem'->new("Schema");
-    $app->signal_connect('activate', sub {system "subl\ \/home\/faruk\/\.config\/menutray\/schema\.pl &"});
+    $app->signal_connect('activate', sub {system "gvim\ \/home\/faruk\/\.config\/menutray\/schema\.pl &"});
     $app->set_image('Gtk2::Image'->new_from_icon_name("gtk\-edit",q{menu}));
     $apps->append($app);
 }

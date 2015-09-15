@@ -8,7 +8,7 @@ set t_Co=256
 set guitablabel=%M\ %t
 set encoding=utf8
 set guioptions=m
+set number
 set lines=42 columns=125
 set laststatus=2
 set showtabline=2
-set noshowmode

@@ -34,11 +34,11 @@ our $SCHEMA = [
     #          COMMAND             LABEL                ICON
     {item => ['rofi -show run',  'Uitvoeren..',       'system-run']},
     {item => ['i3-sensible-terminal',         'Terminalvenster',          'terminal']},
-    {item => ['subl',        'Tekstverwerker', 'medit']},
+    {item => ['gvim',        'Tekstverwerker', 'medit']},
     {item => ['chromium',      'Webbrowser',       'web-browser']},
     {item => ['geary',        'E-mailprogramma', 'internet-mail']},
     {item => ['xdotool key Super_L+backslash', 'Chromium-apps', 'chromium-app-list']}, 
-    {item => ['caja',       'Bestandsbeheerder',      'file-manager']},
+    {item => ['caja --browser',       'Bestandsbeheerder',      'file-manager']},
     {item => ['mate-search-tool',         'Zoek bestanden..',    'tracker']},
 
 #    {sep        => line},      
@@ -66,17 +66,17 @@ our $SCHEMA = [
     #{cat => ['consoleonly', 'CLI Applications',   'applications-utilities']},
         
     {tree => [[
-	     { Name => "Menu", Exec => "subl /home/faruk/.config/menutray/menu.pl", Icon => "gtk-edit", },
-             { Name => "Config", Exec => "subl /home/faruk/.config/menutray/config.pl", Icon => "gtk-edit", },
-             { Name => "Schema", Exec => "subl /home/faruk/.config/menutray/schema.pl", Icon => "gtk-edit", },
-             { Name => "Menutray", Exec => "gksu-polkit subl /usr/bin/menutray", Icon => "gtk-edit", },   
+	     { Name => "Menu", Exec => "gvim /home/faruk/.config/menutray/menu.pl", Icon => "gtk-edit", },
+             { Name => "Config", Exec => "gvim /home/faruk/.config/menutray/config.pl", Icon => "gtk-edit", },
+             { Name => "Schema", Exec => "gvim /home/faruk/.config/menutray/schema.pl", Icon => "gtk-edit", },
+             { Name => "Menutray", Exec => "gksu-polkit gvim /usr/bin/menutray", Icon => "gtk-edit", },   
              { Name => "Reload", Exec => "pkill perl; menutray -r -i -u", Icon => "reload", },
 	     { Name => "Exit", Exec => "pkill perl", Icon => "exit", },
 	     ], 'Hoofdmenu', 'mozo']},
 	     
     #{tree => [[
-    #          { Name => "i3 Configuratiebestand", Exec => "subl ~/.i3/config", Icon => "wmtweaks", },
-	  #    { Name => "i3 Paneel instellen", Exec => "subl ~/.i3status.conf", Icon => "panel", },              
+    #          { Name => "i3 Configuratiebestand", Exec => "gvim ~/.i3/config", Icon => "wmtweaks", },
+	  #    { Name => "i3 Paneel instellen", Exec => "gvim ~/.i3status.conf", Icon => "panel", },              
 	  #    { Name => "i3 Handleiding", Exec => "i3-msg workspace $WS2; exec chromium http://i3wm.org/docs/userguide.html", Icon => "help-browser", },
     #          ], 'i3 Vensterbeheer', 'window-manager']},
 

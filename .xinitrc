@@ -29,5 +29,8 @@ xset r 113
 xset r 114
 xset r 116
 
+#typematic delay/ rate
+xset r rate 200 30
+
 exec i3
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1 

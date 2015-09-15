@@ -64,7 +64,7 @@ if [ "$TERM" = "linux" ]; then
 
     [[ -f $HOME/.dircolors_256 ]] && eval $(dircolors -b $HOME/.dircolors_256)
 
-    export TERM='xterm-termite'
+    export TERM='xterm-color'
 
      B='\[\e[1;34m\]'
     LB='\[\e[34m\]'

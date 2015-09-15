@@ -16,7 +16,7 @@ exec wallchanger
 #exec feh --bg-fill ~/.wallpaper/archlinux-blue.png
 
 # autostarts
-exec chromium --no-startup-window
+#exec chromium --no-startup-window
 #exec sleep 10; geary --hidden
 #exec unclutter
 exec caffeine
@@ -33,7 +33,7 @@ exec clipit -dn
 #exec_always blueman-applet
 exec xset dpms s 900 900
 #exec sleep 10; batnotify > /dev/null
-exec caja --no-default-window --no-desktop
+#exec caja --no-default-window --no-desktop
 exec redshift-gtk
 exec termite --name 'scratch_termite'
 #exec --no-startup-id /usr/bin/steam -silent
@@ -44,10 +44,10 @@ bindsym $mod+slash exec wallchanger
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+c exec chromium
 bindsym $mod+i exec iceweasel
-bindsym $mod+b exec caja --browser --no-desktop
+bindsym $mod+b exec caja --browser
 bindsym $mod+backslash exec chromium --show-app-list
 bindsym $mod+m exec geary
-bindsym $mod+t exec subl
+bindsym $mod+t exec subl3
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
@@ -76,15 +76,15 @@ assign [instance="QupZilla Browser"] $WS2
 assign [class="Caja"] $WS3
 assign [class="Geary|libreoffice*|Abiword|Atril"] $WS4
 assign [instance="gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|play.google.com__books|evince"] $WS4
-assign [instance="medit|pluma|ubl|sublime_text|geany|xournal"] $WS5
-assign [instance="quodlibet|banshee|deadbeef|google-musicmanager"] $WS6
+assign [instance="ltbin|medit|pluma|ubl|sublime_text|geany|xournal"] $WS5
+assign [instance="audacious|quodlibet|banshee|deadbeef|google-musicmanager"] $WS6
 assign [class="Lollypop|Spotify"] $WS6
 assign [instance="Plex|Kodi"] $WS6
 assign [class="Cheese|Guvcview|YACReader|Gimp|Inkscape|simple-scan|Gthumb"] $WS7
 assign [class="Wine|Steam|dontstarve|frogatto|supertuxkart|Gnome-chess"] $WS8
 assign [instance="Steam"] $WS8
 assign [class="htop|Virt-manager|VirtualBox"] $WS9
-assign [instance="mate-system-monitor|gparted"] $WS9
+assign [instance="pacaur|mate-system-monitor|gparted"] $WS9
 
 # workspace names / variables 
 set $WS1 1  
@@ -275,7 +275,8 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym XF86PowerOff mode "$mode_system"
+#bindsym XF86PowerOff mode "$mode_system"
+bindsym XF86PowerOff exec yad_logout # gtk logout dialog
 bindsym $mod+XF86PowerOff exec systemctl suspend
 bindsym $mod+Escape exec $Locker
 
