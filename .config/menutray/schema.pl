@@ -38,26 +38,26 @@ our $SCHEMA = [
     {item => ['chromium',      'Webbrowser',       'web-browser']},
     {item => ['geary',        'E-mailprogramma', 'internet-mail']},
     {item => ['xdotool key Super_L+backslash', 'Chromium-apps', 'chromium-app-list']}, 
-    {item => ['caja --browser',       'Bestandsbeheerder',      'file-manager']},
+    {item => ['caja --browser --no-desktop',       'Bestandsbeheerder',      'file-manager']},
     {item => ['mate-search-tool',         'Zoek bestanden..',    'tracker']},
 
 #    {sep        => line},      
     {sep        => line},      
 
     #          NAME            LABEL                ICON
-    {cat => ['utility',     'Hulpapps', 'gtk-help']},
-    {cat => ['development', 'Ontwikkeling', 'applications-development']},
-    {cat => ['education',   'Educatie',   'applications-science']},
+    {cat => ['utility',     'Hulpapps', 'gnome-util']},
+    {cat => ['development', 'Ontwikkeling', 'applications-ide']},
+    {cat => ['education',   'Educatie',   'applications-education']},
     {cat => ['game',        'Games',       'applications-games']},
-    {cat => ['graphics',    'Grafisch',    'preferences-desktop-theme']},
-    {cat => ['audiovideo',  'Multimedia',  'applications-multimedia']},
-    {cat => ['network',     'Internet',     'applications-internet']},
-    {cat => ['office',      'Kantoor',      'applications-office']},
-    {cat => ['system',      'Systeem',      'preferences-system']},
+    {cat => ['graphics',    'Grafisch',    'applications-photography']},
+    {cat => ['audiovideo',  'Multimedia',  'gnome-multimedia']},
+    {cat => ['network',     'Internet',     'gnome-globe']},
+    {cat => ['office',      'Kantoor',      'package_office']},
+    {cat => ['system',      'Systeem',      'package_system']},
 #    {tree => [[
 #              { Name => "name", Exec => "exec", Icon => "icon", },
 #              ], 'Configuratie', 'code']},
-    {cat => ['other',       'Instellingen',      'preferences-desktop']},
+    {cat => ['other',       'Instellingen',      'package_settings']},
 
     #{cat => ['qt',          'QT Applications',    'qtlogo']},
     #{cat => ['gtk',         'GTK Applications',   'gnome-applications']},
@@ -66,13 +66,13 @@ our $SCHEMA = [
     #{cat => ['consoleonly', 'CLI Applications',   'applications-utilities']},
         
     {tree => [[
-	     { Name => "Menu", Exec => "gvim /home/faruk/.config/menutray/menu.pl", Icon => "gtk-edit", },
-             { Name => "Config", Exec => "gvim /home/faruk/.config/menutray/config.pl", Icon => "gtk-edit", },
-             { Name => "Schema", Exec => "gvim /home/faruk/.config/menutray/schema.pl", Icon => "gtk-edit", },
-             { Name => "Menutray", Exec => "gksu-polkit gvim /usr/bin/menutray", Icon => "gtk-edit", },   
+	     { Name => "Menu", Exec => "gvim ~/.config/menutray/menu.pl", Icon => "gtk-edit", },
+             { Name => "Config", Exec => "gvim ~/.config/menutray/config.pl", Icon => "gtk-edit", },
+             { Name => "Schema", Exec => "gvim ~/.config/menutray/schema.pl", Icon => "gtk-edit", },
+             { Name => "Menutray", Exec => "gvim ~/.local/bin/menutray", Icon => "gtk-edit", },   
              { Name => "Reload", Exec => "pkill perl; menutray -r -i -u", Icon => "reload", },
 	     { Name => "Exit", Exec => "pkill perl", Icon => "exit", },
-	     ], 'Hoofdmenu', 'mozo']},
+	     ], 'Hoofdmenu', 'menutray']},
 	     
     #{tree => [[
     #          { Name => "i3 Configuratiebestand", Exec => "gvim ~/.i3/config", Icon => "wmtweaks", },
@@ -81,9 +81,9 @@ our $SCHEMA = [
     #          ], 'i3 Vensterbeheer', 'window-manager']},
 
  #   {sep        => line},      
-   # {sep        => line},      
+ # {sep        => line},      
     
-   # {item => ['i3-msg workspace $WS2; exec chromium https://www.archlinux.org/', 'Over Arch Linux®', 'archlinux']},    
+    # {item => ['i3-msg workspace $WS2; exec chromium https://www.archlinux.org/', 'Over Arch Linux®', 'info']},    
    # {item => ['i3-msg workspace $WS2; exec chromium https://bbs.archlinux.org/', 'Arch Forums', 'users']},
    # {item => ['i3-msg workspace $WS2; exec chromium https://wiki.archlinux.org/', 'Arch Wiki','help-browser']},
      

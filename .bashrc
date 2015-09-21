@@ -7,6 +7,8 @@ fi
 #if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
 #if [ -f /usr/bin/alsi ]; then alsi -l; fi
 
+export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+
 # powerline 
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
@@ -64,7 +66,7 @@ if [ "$TERM" = "linux" ]; then
 
     [[ -f $HOME/.dircolors_256 ]] && eval $(dircolors -b $HOME/.dircolors_256)
 
-    export TERM='xterm-color'
+    export TERM='xterm-256color'
 
      B='\[\e[1;34m\]'
     LB='\[\e[34m\]'
@@ -93,7 +95,7 @@ else
       export PS1="$GY[$Y\u$GY@$P\h$GY:$B\W$GY]$W\$(get_prompt_symbol) "
     fi
   else
-    export TERM='xterm-color'
+    export TERM='xterm-256color'
   fi
 #}}}
 

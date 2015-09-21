@@ -107,7 +107,7 @@ my $config_help = <<"HELP";
     | desktop_files_paths   : Absolute paths which contains .desktop files.
                               Example: [
                                 '/usr/share/applications',
-                                '/home/faruk/.local/share/applications"),
+                                '~/.local/share/applications',
                               ],
 
 
@@ -175,7 +175,7 @@ my %CONFIG = (
         keep_unknown_categories => 1,
         unknown_category_key    => 'other',
 
-        skip_entry       => [   {key => 'Name', re => qr/(?:about|lxsession|FLUID|ffado-mixer|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Mate-AccountsDialog|Caffeine|Autokey|Clipit|Redshift|Sabnzbd+|Keyboard*|Windows|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|OpenJDK*|QT4*)/i},
+        skip_entry       => [   {key => 'Name', re => qr/(?:about|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Caffeine|Autokey|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|OpenJDK*|QT4*)/i},
                                 {key => 'Exec', re => qr/^nmcli_dmenu/},    
 			        {key => 'Exec', re => qr/^yelp/},         
 				{key => 'Exec', re =>qr/^lxsession/},      
@@ -189,12 +189,12 @@ my %CONFIG = (
         skip_filename_re => undef,
 
         terminalize            => 1,
-        terminal               => $ENV{TERM} || 'urxvt',
+        terminal               => $ENV{TERM} || 'xterm-termite',
         terminalization_format => q{%s -e '%s'},
 
         desktop_files_paths => [
                                 '/usr/share/applications',
-                                '/home/faruk/Bureaublad',
+                                '/home/faruk/Desktop',
                               ],
     },
 
@@ -203,7 +203,7 @@ my %CONFIG = (
     name_keys    => ['Name[nl]','Name'],
     tooltip_keys => ['Comment[nl]','Comment'],
 
-    editor                 => 'subl',
+    editor                 => 'gvim',
     icon_type              => 'menu',
     icon_size              => [22, 22],
     missing_image          => 'gtk-missing-image',

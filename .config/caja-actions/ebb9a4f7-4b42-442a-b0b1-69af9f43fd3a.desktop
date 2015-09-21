@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=Nieuw venster
+Name[nl]=Nieuw venster
+Icon[nl_NL]=folder-new
+Icon[nl]=folder-new
+TargetContext=false
+TargetToolbar=true
+ToolbarLabel[nl_NL]=Nieuw venster
+ToolbarLabel[nl]=Nieuw venster
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=caja  --browser %u
+Path=%f

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#while true;do
+while true;do
 
 # Directories Containing Pictures
 DIR0="/home/faruk/Afbeeldingen/Wallpapers"
@@ -9,8 +9,8 @@ DIR1="/home/faruk/Afbeeldingen/Linux"
 #DIR3="/home/faruk/Afbeeldingen/GoT"
 
 # Make sure spaces do not break our script.
-#IFS='
-#'
+IFS='
+'
 
 # Command to Select a random jpg file from directory
 # Delete the *.jpg to select any file but it may return a folder
@@ -29,8 +29,8 @@ feh --bg-fill "$PIC"
 #mateconftool-2 -t string -s /desktop/mate/background/picture-filename "$PIC"
 
 # specify how long to wait in seconds between changes
-#if [ -f /usr/bin/sleep ]; then sleep 900; fi
-#done
+if [ -f /usr/bin/sleep ]; then sleep 300; fi
+done
 
 #Save the script above as a script. I simply named it wallpaper_changer.sh
 

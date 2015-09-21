@@ -15,5 +15,5 @@ Profiles=profile-zero;
 [X-Action-Profile profile-zero]
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
-Exec=gksu-polkit caja %U
+Exec=gksu caja %U
 MimeTypes=inode/directory;

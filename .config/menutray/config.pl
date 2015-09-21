@@ -42,7 +42,7 @@
     | desktop_files_paths   : Absolute paths which contains .desktop files.
                               Example: [
                                 '/usr/share/applications',
-                                '/home/faruk/.local/share/applications"),
+                                '~/.local/share/applications',
                               ],
 
 
@@ -54,17 +54,17 @@
 =cut
 
 our $CONFIG = {
-  "editor"                 => "subl",
+  "editor"                 => "gvim",
   "gdk_interpolation_type" => "hyper",
   "icon_size"              => [22, 22],
   "icon_type"              => "menu",
   "Linux::DesktopFiles"    => {
-                                desktop_files_paths     => ["/usr/share/applications", "/home/faruk/Bureaublad"],
+                                desktop_files_paths     => ["/usr/share/applications", "/home/faruk/Desktop"],
                                 keep_unknown_categories => 1,
                                 skip_entry              => [
                                                              {
                                                                key => "Name",
-                                                               re  => qr/(?^ui:(?:about|lxsession|FLUID|ffado-mixer|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Mate-AccountsDialog|Caffeine|Autokey|Clipit|Redshift|Sabnzbd+|Keyboard*|Windows|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|OpenJDK*|QT4*))/,
+                                                               re  => qr/(?^ui:(?:about|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Caffeine|Autokey|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|OpenJDK*|QT4*))/,
                                                              },
                                                              { key => "Exec", re => qr/(?^u:^nmcli_dmenu)/ },
                                                              { key => "Exec", re => qr/(?^u:^yelp)/ },
@@ -81,7 +81,7 @@ our $CONFIG = {
                                                                value => "/usr/bin/frogatto  --height 768 --width 1366 --widescreen --fullscreen",
                                                              },
                                                            ],
-                                terminal                => "xterm-color",
+                                terminal                => "xterm-256color",
                                 terminalization_format  => "%s -e '%s'",
                                 terminalize             => 1,
                                 unknown_category_key    => "other",

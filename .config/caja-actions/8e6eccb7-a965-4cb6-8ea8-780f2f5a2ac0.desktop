@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=Nieuw tabblad
+Name[nl]=Nieuw tabblad
+Icon[nl_NL]=gtk-add
+Icon[nl]=gtk-add
+TargetContext=false
+TargetToolbar=true
+ToolbarLabel[nl_NL]=Nieuw tabblad
+ToolbarLabel[nl]=Nieuw tabblad
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=sh -c 'xdotool key Ctrl+t'

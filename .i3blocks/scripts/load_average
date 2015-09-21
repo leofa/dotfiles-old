@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-load="$(cut -d ' ' -f1 /proc/loadavg)"
+load="$(cut -d ' ' -f2 /proc/loadavg)"
 cpus="$(nproc)"
 
 # full text
@@ -32,3 +32,7 @@ awk -v cpus=$cpus -v cpuload=$load '
         }
     }
 '
+case $BLOCK_BUTTON in
+  3) termite --exec htop --name 'htop_term' ;;
+  1) termite --exec glances --name 'glances_term' ;;
+esac
