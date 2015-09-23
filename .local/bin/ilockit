@@ -1,0 +1,10 @@
+#!/bin/bash
+
+image=/tmp/screen.png
+icon=$HOME/.i3/lock.png
+
+scrot $image
+convert $image -scale 10% -scale 1000% -fill black -colorize 25% $image
+convert $image $icon -gravity center -composite -matte  $image
+
+i3lock -e -u -n -i $image
