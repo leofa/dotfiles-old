@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-load="$(cut -d ' ' -f2 /proc/loadavg)"
+load="$(cut -d ' ' -f1 /proc/loadavg)"
 cpus="$(nproc)"
 
 # full text
@@ -27,7 +27,7 @@ echo "$load"
 awk -v cpus=$cpus -v cpuload=$load '
     BEGIN {
         if (cpus <= cpuload) {
-            print "#E65B5A";
+            # print "#E65B5A";
             exit 0;
         }
     }

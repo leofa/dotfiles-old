@@ -37,7 +37,7 @@ xset r 116
 exec wallchanger &
 #feh --bg-fill ~/.wallpaper/archlinux-blue.png &
 chromium --no-startup-window &
-caja --no-default-window --no-desktop &
+#caja --no-default-window --no-desktop &
 xbacklight -set 75 &
 compton -b --config ~/.config/compton.conf &
 xset dpms s 900 900 &
@@ -50,8 +50,8 @@ clipit -dn &
 #exec stalonetray
 sh -c 'menutray -r -u -i' &
 batnotify > /dev/null &
-#xss-lock -- i3lock -u -d -i ~/.wallpaper/lockscreen.png &
-#xautolock -time 30 -locker "i3lock -u -d -i ~/.wallpaper/lockscreen.png" -detectsleep &
+xss-lock -- ilockit  &
+xautolock -time 30 -locker "ilockit" -detectsleep &
 #------------------------------------------------
 
 exec i3

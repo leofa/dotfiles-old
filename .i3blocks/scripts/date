@@ -6,6 +6,6 @@ echo $DATE
 
 case $BLOCK_BUTTON in
     1) gsimplecal ;;
-    3) xdotool getactivewindow windowraise windowunmap ;;
-    2) chromium --app=https://www.google.com/calendar/render#main_7 ;; 
+    2) chromium  --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki ;;
+    3) chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn ;; 
 esac 

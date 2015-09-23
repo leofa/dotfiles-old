@@ -31,9 +31,8 @@ bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Me
 #bindsym $mod+minus exec stalonetray
 
 #focus windows
-for_window [instance="Chromium|geary|caja|ws1_termite|glances_term|htop_term"] focus
+for_window [instance="subl3|Chromium|geary|caja|ws1_termite|pacaur|glances_term|htop_term"] focus
 for_window [window_role="browser|app|bubble|pop-up"] focus
-
 
 #float windows
 for_window [window_role="app|bubble|pop-up"] floating enable
@@ -53,7 +52,7 @@ assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
 assign [instance="QupZilla Browser"] $WS2
 assign [instance="caja"] $WS3
-assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
+assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4 
 assign [instance="subl3|sublime_text|geany"] $WS5
 assign [instance="audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
@@ -241,7 +240,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-msg exit
 
 # lockscreen
-set $Locker i3lock -d -u -i ~/.wallpaper/lockscreen.png
+set $Locker ilockit
 
 # logout menu (translated to dutch)
 set $mode_system   (A)fmelden   (V)ergrendelen   (P)auzeer   (H)erstarten   (S)top
@@ -255,46 +254,48 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-#bindsym XF86PowerOff mode "$mode_system"
+# bindsym XF86PowerOff mode "$mode_system"
 bindsym XF86PowerOff exec yad_logout # gtk logout dialog
 bindsym $mod+XF86PowerOff exec systemctl suspend
 bindsym $mod+Escape exec $Locker
 
 # resize window (you can also use the mouse)
 mode "  " {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+     bindsym j resize shrink width 10 px or 10 ppt
+     bindsym k resize grow height 10 px or 10 ppt
+     bindsym l resize shrink height 10 px or 10 ppt
+     bindsym semicolon resize grow width 10 px or 10 ppt
+     bindsym Left resize shrink width 10 px or 10 ppt
+     bindsym Down resize grow height 10 px or 10 ppt 
+     bindsym Up resize shrink height 10 px or 10 ppt
+     bindsym Right resize grow width 10 px or 10 ppt
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "  "
 
 # i3bar 
 bar {
-  position top
-  workspace_buttons yes
-  #mode hide
-  #status_command i3status
-  status_command i3blocks
-  bindsym button5 nop
-        bindsym button4 nop
-        tray_output eDP1
-        separator_symbol "〉" #"◾"
-        strip_workspace_numbers yes
+     position top
+     workspace_buttons yes
+     #mode hide
+     #status_command i3status
+     status_command i3blocks
+     bindsym button5 nop
+     bindsym button4 nop
+     tray_output eDP1
+     separator_symbol "〉" #"◾"
+     strip_workspace_numbers yes
+
+# bar colors
 colors {
-    separator #586e75 
-    background #2d2d2d
-    statusline #C7C7C7
-    focused_workspace  #586e75 #586e75 #ffffff
-    active_workspace #2d2d2d #2d2d2d #ffffff
-    inactive_workspace #49575C #49575C #C7C7C7
-    urgent_workspace #AE4544 #AE4544 #ffffff
+     separator #586e75 
+     background #2d2d2d
+     statusline #C7C7C7
+     focused_workspace  #586e75 #586e75 #ffffff
+     active_workspace #2d2d2d #2d2d2d #ffffff
+     inactive_workspace #49575C #49575C #C7C7C7
+     urgent_workspace #AE4544 #AE4544 #ffffff
   }
 }
 
@@ -310,4 +311,4 @@ smart_borders on
 gaps outer 0
 gaps inner 1
 
-# the end :P
+#end

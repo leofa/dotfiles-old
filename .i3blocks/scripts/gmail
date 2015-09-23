@@ -27,10 +27,10 @@ fi
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-   1) i3msg exec --no-startup-id /usr/bin/chromium --app=https://inbox.google.com/ ;;
+   1) /usr/bin/chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl ;;
 #  1) ;; # left click
 #  2) ;; # middle click
-  3) i3msg exec --no-startup-id /usr/bin/geary ;; # right click
+  3) /usr/bin/geary ;; # right click
 #  4) ;; # scroll up
 #  5) ;; # scroll down
 esac

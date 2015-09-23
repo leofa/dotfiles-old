@@ -139,7 +139,7 @@ else
 
   ## BASH HISTORY #{{{
     # make multiple shells share the same history file
-    export HISTSIZE=1000            # bash history will save N commands
+    export HISTSIZE=1000           # bash history will save N commands
     export HISTFILESIZE=${HISTSIZE} # bash will remember N commands
     export HISTCONTROL=ignoreboth   # ingore duplicates and spaces
     export HISTIGNORE='&:ls:ll:la:cd:exit:clear:history'
