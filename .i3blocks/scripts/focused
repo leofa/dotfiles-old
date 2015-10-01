@@ -1,5 +1,5 @@
 #!/bin/sh
-TITLE=$(xdotool getactivewindow getwindowname | cut -c 1-60 2>/dev/null || echo "None")
+TITLE=$(xdotool getactivewindow getwindowname |  cut -c 1-60 | cut -d'"' -f2 || echo "None") 
 echo $TITLE
 echo $TITLE
 echo "#93B6C2"
