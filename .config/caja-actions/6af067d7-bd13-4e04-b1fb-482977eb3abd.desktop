@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Action
+Name[nl_NL]=Mediainfo
+Name[nl]=Mediainfo
+Icon[nl_NL]=stock_view-details
+Icon[nl]=stock_view-details
+ToolbarLabel[nl_NL]=Mediainfo
+ToolbarLabel[nl]=Mediainfo
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=sh -c "touch /tmp/mediainfo; mediainfo %u > /tmp/mediainfo; gvim /tmp/mediainfo"
+ExecutionMode=Terminal
+MimeTypes=audio/*;video/*;
