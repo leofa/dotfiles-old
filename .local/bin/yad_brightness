@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# script to change brightness using xbacklight and yad
+
+if [ -d "/sys/class/backlight/intel_backlight" ]; then
+	read MAX < /sys/class/backlight/intel_backlight/max_brightness
+	read CURR < /sys/class/backlight/intel_backlight/brightness
+else
+	read MAX < /sys/class/backlight/acpi_video0/max_brightness
+	read CURR < /sys/class/backlight/acpi_video0/brightness
+fi
+
+PCT=$(echo "scale=1;$CURR/$MAX*100" | bc | sed 's/[.].*//')
+
+NEW=$(yad --scale --value=$PCT --min-value=0 --max-value=100 \
+	--title="Display brightness" --on-top --mouse --skip-taskbar --window-icon=display \
+	--image=system-brightness --width=300 --text="   Set the brightness of your display:")
+
+xbacklight -set $NEW
+
+exit 0
