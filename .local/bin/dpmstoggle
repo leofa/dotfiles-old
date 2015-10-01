@@ -1,0 +1,27 @@
+#!/bin/bash
+
+##
+# dpmstoggle.sh -- toggle dpms and X screen blanking
+#
+# usage         -- dpmstoggle.sh
+#
+# notes         -- designed for use from window manager
+#               -- determines dpms status using lockfile
+##
+
+lockfile="/tmp/dpms.lock"
+
+if [[ ! -e "$lockfile" ]]
+then
+	xset s off -dpms
+    pkill xautolock
+	touch "$lockfile"
+    notify-send -u critical "DPMS" "Slaapstand scherm is onderbroken."
+else
+	xset s on +dpms
+    xautolock -time 30 -locker "ilockit" -detectsleep &    
+	rm "$lockfile"
+    notify-send "DPMS" "Slaapstand scherm is aan."
+fi
+
+exit 0
