@@ -47,7 +47,7 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
 
 !font
-URxvt.font: xft:Source Code Pro:size=10,xft:FontAwesome Regular:size=9,xft:Icons:size=9
+URxvt.font: xft:Hack:size=10,xft:FontAwesome Regular:size=9
 !URxvt.letterSpace: -1
 
 !icon

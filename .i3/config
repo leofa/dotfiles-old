@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # fonts
-font pango: Source Code Pro SemiBold, FontAwesome Regular, Icons Regular 9
+font pango: Source Code Pro SemiBold, FontAwesome Regular 9
 
 # move windows with mouse+$mod
 floating_modifier $mod
@@ -18,8 +18,9 @@ bindsym $mod+slash exec chromium --show-app-list
 bindsym $mod+t exec subl3
 bindsym $mod+c exec chromium
 bindsym $mod+i exec iceweasel
-bindsym $mod+b exec caja --browser
-bindsym $mod+p exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi
+bindsym $mod+b exec caja
+bindsym $mod+p exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
+#bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
 bindsym $mod+m exec geary
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
@@ -28,7 +29,6 @@ bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
-#bindsym $mod+minus exec stalonetray
 
 #focus windows
 for_window [instance="subl3|Chromium|geary|caja|ws1_termite|pacaur|glances_term|htop_term"] focus
@@ -37,41 +37,44 @@ for_window [window_role="browser|app|bubble|pop-up"] focus
 #float windows
 for_window [window_role="app|bubble|pop-up"] floating enable
 for_window [title="Event Tester"] floating enable
-for_window [instance="blueman-manager|blueman-services|lxappearance|catfish|caffeinne|pavucontrol|transmission-gtk|catfish|xpad|galculator|engrampa|eom|gvim|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|klavaro|gpicview|simplescreenrecorder|radiotray|lxappearance|mate-search-tool|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|Urxvt_scratchpad|stalonetray"] floating enable
-for_window [instance="mpv|play.google.com__books|crx_aohghmighlieiainnegkcijnfilokake"] floating disable
+for_window [instance="gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
+for_window [instance="crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #google books, docs, inbox/ netflix 
 
 #scratchpad + move windows
-for_window [instance="Urxvt_scratchpad|stalonetray"] move scratchpad
 for_window [instance="scratch_termite"]  move scratchpad, move position 700px 394px, move scratchpad
-for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  move scratchpad, move position 1050px 454px, move scratchpad, scratchpad show 
+for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  move scratchpad, move position 1050px 454px, move scratchpad, scratchpad show #google music player
 for_window [instance="gpicview"] move absolute center
 for_window [instance="insync"] move position 945px 22px
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
-assign [instance="QupZilla Browser"] $WS2
 assign [instance="caja"] $WS3
-assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4 
+assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
 assign [instance="subl3|sublime_text|geany"] $WS5
-assign [instance="audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
+assign [instance="crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [instance="Steam|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
-assign [instance="htop|virt-manager|virtualBox|htop_term|glances_term|pacaur|mate-system-monitor|gparted|gnome-disks|gitg|seahorse"] $WS9
+assign [instance="htop|virt-manager|virtualBox|htop_term|log_term|glances_term|pacaur|mate-system-monitor|gparted|gnome-disks|gitg|seahorse"] $WS9
 
 # workspace names / variables 
-set $WS1 1  
-set $WS2 2  @www
-set $WS3 3  data
-set $WS4 4  gtd
-set $WS5 5  code
+#set $WS1 1  
+#set $WS1 1  
+set $WS1 1  
+set $WS2 2  @www 
+set $WS3 3  data 
+#set $WS4 4  gtd
+set $WS4 4  gtd 
+set $WS5 5  code 
 #set $WS5 5  text
-set $WS6 6  play
-set $WS7 7  pics
-set $WS8 8  game
-set $WS9 9  adm
-set $WS0 10  news
-#set $WS1 1  
+set $WS6 6  play 
+set $WS7 7  pics 
+set $WS8 8  game 
+set $WS9 9  adm 
+set $WS0 10  news 
+
+#only icons
+#set $WS1 1  
 #set $WS2 2  
 #set $WS3 3  
 #set $WS4 4  
@@ -81,6 +84,9 @@ set $WS0 10  news
 #set $WS8 8  
 #set $WS9 9  
 #set $WS0 10  
+
+#https://github.com/olemartinorg/i3-alternating-layout
+exec --no-startup-id ~/.i3/alternating_layouts.py
 
 # multimonitor support
 workspace "$WS1" output eDP1
@@ -134,12 +140,10 @@ bindsym $mod+Shift+Print exec "scrot -u -d 3 -q 100 -e 'mv $f ~/Afbeeldingen/Sch
 # windows borders
 new_window pixel 2
 new_float pixel 2
-#hide_edge_borders vertical
 
 # scratchpad
 bindsym $MOD+SHIFT+plus move scratchpad
 bindsym $mod+plus scratchpad show
-#bindsym $mod+minus [instance="stalonetray"] scratchpad show
 
 # kill focused window
 bindsym $mod+q kill
@@ -153,6 +157,12 @@ focus_follows_mouse no
 popup_during_fullscreen smart
 force_display_urgency_hint 500 ms
 workspace_auto_back_and_forth no
+
+# i3gaps
+smart_gaps on
+smart_borders on
+gaps outer 0
+gaps inner 1
 
 # change focus
 bindsym $mod+j focus left
@@ -232,35 +242,22 @@ bindsym $mod+Shift+0 move container to workspace $WS0
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# restart i3 inplace
 bindsym $mod+Shift+r restart
 
 # exit i3
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+e exec yad_exit
 
 # lockscreen
 set $Locker ilockit
 
-# logout menu (translated to dutch)
-set $mode_system   (A)fmelden   (V)ergrendelen   (P)auzeer   (H)erstarten   (S)top
-mode "$mode_system" {
-    bindsym v exec $Locker, mode "default"
-    bindsym a exec i3-msg exit, mode "default"
-    bindsym p exec systemctl suspend, mode "default"
-    bindsym h exec i3-msg systemctl reboot, mode "default"
-    bindsym s exec i3-msg systemctl poweroff, mode "default"  
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-# bindsym XF86PowerOff mode "$mode_system"
 bindsym XF86PowerOff exec yad_logout # gtk logout dialog
 bindsym $mod+XF86PowerOff exec systemctl suspend
 bindsym $mod+Escape exec $Locker
 
-# resize window (you can also use the mouse)
-mode "  " {
+# resize window
+bindsym $mod+r mode "  "
+mode "  " {
      bindsym j resize shrink width 10 px or 10 ppt
      bindsym k resize grow height 10 px or 10 ppt
      bindsym l resize shrink height 10 px or 10 ppt
@@ -272,43 +269,31 @@ mode "  " {
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
-bindsym $mod+r mode "  "
 
 # i3bar 
 bar {
      position top
+     height 21     
      workspace_buttons yes
-     #mode hide
-     #status_command i3status
      status_command i3blocks
      bindsym button5 nop
      bindsym button4 nop
      tray_output eDP1
      separator_symbol "〉" #"◾"
      strip_workspace_numbers yes
-
-# bar colors
 colors {
      separator #586e75 
      background #2d2d2d
-     statusline #C7C7C7
+     statusline #c7c7c7
      focused_workspace  #586e75 #586e75 #ffffff
      active_workspace #2d2d2d #2d2d2d #ffffff
-     inactive_workspace #49575C #49575C #C7C7C7
-     urgent_workspace #AE4544 #AE4544 #ffffff
+     inactive_workspace #455057 #455057 #c7c7c7
+     urgent_workspace #ae4544 #ae4544 #ffffff
   }
 }
 
 # colors
-client.focused #586e75 #586e75 #F9F9F9 #268bd2
+client.focused #586e75 #586e75 #f9f9f9 #268bd2
 client.focused_inactive #323e42 #323e42 #93a1a1 #002b36
-client.unfocused #2D2D2D #2d2d2d #c7c7c7 #002b36
-client.urgent #dc322f #dc322f #F9F9F9 #dc322f
-
-# i3gaps
-smart_gaps on
-smart_borders on
-gaps outer 0
-gaps inner 1
-
-#end
+client.unfocused #2d2d2d #2d2d2d #c7c7c7 #002b36
+client.urgent #dc322f #dc322f #f9f9f9 #dc322f

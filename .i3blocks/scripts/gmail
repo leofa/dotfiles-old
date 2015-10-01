@@ -27,10 +27,6 @@ fi
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-   1) /usr/bin/chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl ;;
-#  1) ;; # left click
-#  2) ;; # middle click
-  3) /usr/bin/geary ;; # right click
-#  4) ;; # scroll up
-#  5) ;; # scroll down
+   1) chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl  "$@" > /dev/null ;;
+  3) geary  "$@" > /dev/null ;; 
 esac

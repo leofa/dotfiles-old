@@ -8,8 +8,8 @@ external_viewer = chromium --profile-directory=Default --app-id=ejjicmeblgpmajng
 clock_format = %a %d %b %H:%M:%S
 force_lang = nl_NL.utf8
 mainwindow_decorated = 1
-mainwindow_keep_above = 0
-mainwindow_sticky = 0
+mainwindow_keep_above = 1
+mainwindow_sticky = 1
 mainwindow_skip_taskbar = 1
 mainwindow_resizable = 1
 mainwindow_position = none 

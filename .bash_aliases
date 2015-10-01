@@ -25,7 +25,7 @@ alias gksu='gksu-polkit'
 alias refl='sudo reflector --verbose --country 'Netherlands' -l 200 -p http --sort rate --number 3 --save /etc/pacman.d/mirrorlist; cat /etc/pacman.d/mirrorlist'
 alias Yl='yaourt -Qm' #lokale pakketen
 alias Yf='yaourt -Qet' #niet standaard foreign
-alias err='dmesg -l err'
+alias err='dmesg -l err; systemctl --failed'
 alias warn='dmesg -l warn'
 alias blame='systemd-analyze; systemd-analyze blame'
 alias log='journalctl -f | ccze -A'
@@ -66,13 +66,16 @@ alias nas='ssh faruk@192.168.1.10'
 alias box='ssh faruk@192.168.1.122'
 alias keys='xmodmap -pke'
 alias freemem='sudo /sbin/sysctl -w vm.drop_caches=3'
-alias startx='startx -- -keeptty -nolisten tcp > ~/.xorg.log 2>&1'
+#alias startx='startx -- -keeptty -nolisten tcp > ~/.xorg.log 2>&1'
 alias lan='sudo dhcpcd enp0s20u1'
 alias mp3='parallel -j4 ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac *.m4a'
 alias i3blk='vim ~/.i3blocks.conf'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 alias flash_rom='cd; rm -f ~/flash_chromebook_rom.sh; curl -L -O https://johnlewis.ie/flash_chromebook_rom.sh; sudo -E bash flash_chromebook_rom.sh'
-alias aws='wiki-search'
+alias ws='wiki-search'
+alias bin='cd ~/.local/bin'
+alias blocks='cd ~/.i3blocks/scripts'
+
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && gvim "$file"; }
 

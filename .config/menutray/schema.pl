@@ -37,7 +37,7 @@ our $SCHEMA = [
     {item => ['gvim',        'Tekstverwerker', 'medit']},
     {item => ['chromium',      'Webbrowser',       'web-browser']},
     {item => ['geary',        'E-mailprogramma', 'internet-mail']},
-    {item => ['xdotool key Super_L+backslash', 'Chromium-apps', 'chromium-app-list']}, 
+    {item => ['chromium --show-app-list', 'Chromium-apps', 'chromium-app-list']}, 
     {item => ['caja --browser --no-desktop',       'Bestandsbeheerder',      'file-manager']},
     {item => ['mate-search-tool',         'Zoek bestanden..',    'tracker']},
 
@@ -52,12 +52,13 @@ our $SCHEMA = [
     {cat => ['graphics',    'Grafisch',    'applications-photography']},
     {cat => ['audiovideo',  'Multimedia',  'gnome-multimedia']},
     {cat => ['network',     'Internet',     'gnome-globe']},
+    {cat => ['other',       'Web-apps',     'applications-utilities']},
     {cat => ['office',      'Kantoor',      'package_office']},
     {cat => ['system',      'Systeem',      'package_system']},
 #    {tree => [[
 #              { Name => "name", Exec => "exec", Icon => "icon", },
 #              ], 'Configuratie', 'code']},
-    {cat => ['other',       'Instellingen',      'package_settings']},
+    {cat => ['settings',       'Instellingen',      'package_settings']},
 
     #{cat => ['qt',          'QT Applications',    'qtlogo']},
     #{cat => ['gtk',         'GTK Applications',   'gnome-applications']},

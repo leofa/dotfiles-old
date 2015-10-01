@@ -1,4 +1,4 @@
-set guifont=Source\ Code\ Pro\ 10
+set guifont=Hack\ 10
 let g:solarized_termcolors=256
 set background=dark
 colorscheme base16-ashes

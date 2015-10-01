@@ -37,6 +37,9 @@ export PATH=$PATH:~/go/bin
 #browser
 export BROWSER=chromium
 
+#ranger
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
 ## OVERALL CONDITIONALS {{{
 _islinux=false
 [[ "$(uname -s)" =~ Linux|GNU|GNU/* ]] && _islinux=true

@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 INSTANCE="${1:-BAT0}"
-ALERT_LOW="${2:-10}" # color will turn red under this value (default: 10%)
+ALERT_LOW="${2:-11}" # color will turn red under this value (default: 10%)
 UPOWER="/usr/bin/upower"
 
 if [ ! -x "$UPOWER" ]; then
@@ -39,7 +39,7 @@ $UPOWER -i /org/freedesktop/UPower/devices/battery_$INSTANCE |
 }
 END {
 	if (state == "charging")
-		label = ""
+		label = ""
 	else if (percentage == "100%")
 		label = ""
 	else if (percentage > 75)
@@ -48,10 +48,12 @@ END {
 		label = ""
 	else if (percentage > 25)
 		label = ""
-	else 
+    else if (percentage > 10) 
 		label = ""
-
-	# full text
+    else if (percentage > 0) 
+		label = ""
+	
+    # full text
 	print label " " percentage
 
 	# short text
@@ -63,3 +65,12 @@ END {
 		print "#ed6b6b"
 }
 '
+#------------------------------------------------------------------------
+
+case $BLOCK_BUTTON in
+  1) dpmstoggle ;; # left click, control DPMS 
+  3) togglered ;;  # right click, redshift on/off
+  2) yad_logout ;; # logout dialog
+  5) xbacklight -inc 10 ;; # scroll up, increase brightness
+  4) xbacklight -dec 10 ;; # scroll down, decrease brightness
+esac

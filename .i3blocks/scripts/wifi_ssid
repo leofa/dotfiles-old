@@ -44,7 +44,7 @@ esac
 IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^\/]+).* scope global/ && print \$1 and exit")
 
 case $BLOCK_BUTTON in
-   1) xdotool key Super_L+slash ;; # google search/ chrome launcher
+   1) xdotool key Super_L+slash ;; # chrome launcher shortcut
    3) termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" ;; #wifi connect
    2) echo -n "$IPADDR" | xclip -q -se c | notify-send 'IP-adres' 'naar klembord gekopieerd' ;; #copy ip to clipboard
 esac
