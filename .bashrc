@@ -3,6 +3,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
 #prompt
 #if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
 #if [ -f /usr/bin/alsi ]; then alsi -l; fi
@@ -35,7 +39,10 @@ export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 
 #browser
-export BROWSER=chromium
+export BROWSER=/usr/bin/xdg-open
+
+#steam native runtime
+export STEAM_RUNTIME=0
 
 #ranger
 export RANGER_LOAD_DEFAULT_RC=FALSE

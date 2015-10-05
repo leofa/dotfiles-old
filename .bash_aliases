@@ -28,9 +28,9 @@ alias Yf='yaourt -Qet' #niet standaard foreign
 alias err='dmesg -l err; systemctl --failed'
 alias warn='dmesg -l warn'
 alias blame='systemd-analyze; systemd-analyze blame'
-alias log='journalctl -f | ccze -A'
-alias log0='journalctl -b -0 | ccze -A'
-alias log1='journalctl -b -1| ccze -A'
+alias log='journalctl -f | ccze -A' #follow log
+alias log0='journalctl -b -0 | ccze -A' #current log 
+alias log1='journalctl -b -1 | ccze -A' #previous log
 alias mirr='sudo vi /etc/pacman.d/mirrorlist'
 alias mgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias egrub='sudo vi /boot/grub/grub.cfg'
@@ -60,10 +60,10 @@ alias i3cnf='vi ~/.i3/config'
 alias i3stat='vi ~/.i3status.conf'
 alias aeq='alsamixer -D equal'
 alias mix='alsamixer -c 0'
-alias pi='ssh faruk@192.168.1.132'
-alias osmc='ssh osmc@192.168.1.149'
+alias pi='ssh faruk@192.168.1.113'
+alias osmc='ssh osmc@192.168.1.112'
 alias nas='ssh faruk@192.168.1.10'
-alias box='ssh faruk@192.168.1.122'
+alias box='ssh faruk@192.168.1.110'
 alias keys='xmodmap -pke'
 alias freemem='sudo /sbin/sysctl -w vm.drop_caches=3'
 #alias startx='startx -- -keeptty -nolisten tcp > ~/.xorg.log 2>&1'
@@ -75,6 +75,7 @@ alias flash_rom='cd; rm -f ~/flash_chromebook_rom.sh; curl -L -O https://johnlew
 alias ws='wiki-search'
 alias bin='cd ~/.local/bin'
 alias blocks='cd ~/.i3blocks/scripts'
+alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && gvim "$file"; }

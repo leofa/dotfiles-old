@@ -1,5 +1,5 @@
 #/bin/sh
-PACMAN=$(pacman -Qu | wc -l)
+PACMAN=$(pacaur -Qu | wc -l)
 echo $PACMAN
 
 #------------------------------------------------------------------------

@@ -34,10 +34,10 @@ our $SCHEMA = [
     #          COMMAND             LABEL                ICON
     {item => ['rofi -show run',  'Uitvoeren..',       'system-run']},
     {item => ['i3-sensible-terminal',         'Terminalvenster',          'terminal']},
-    {item => ['gvim',        'Tekstverwerker', 'medit']},
+    {item => ['subl3',        'Tekstverwerker', 'medit']},
     {item => ['chromium',      'Webbrowser',       'web-browser']},
     {item => ['geary',        'E-mailprogramma', 'internet-mail']},
-    {item => ['chromium --show-app-list', 'Chromium-apps', 'chromium-app-list']}, 
+#    {item => ['chromium --show-app-list', 'Chromium-apps', 'chromium-app-list']}, 
     {item => ['caja --browser --no-desktop',       'Bestandsbeheerder',      'file-manager']},
     {item => ['mate-search-tool',         'Zoek bestanden..',    'tracker']},
 
@@ -48,7 +48,7 @@ our $SCHEMA = [
     {cat => ['utility',     'Hulpapps', 'gnome-util']},
     {cat => ['development', 'Ontwikkeling', 'applications-ide']},
     {cat => ['education',   'Educatie',   'applications-education']},
-    {cat => ['game',        'Games',       'applications-games']},
+    {cat => ['game',        'Games',       'applications-arcade']},
     {cat => ['graphics',    'Grafisch',    'applications-photography']},
     {cat => ['audiovideo',  'Multimedia',  'gnome-multimedia']},
     {cat => ['network',     'Internet',     'gnome-globe']},

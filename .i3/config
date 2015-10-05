@@ -11,6 +11,10 @@ font pango: Source Code Pro SemiBold, FontAwesome Regular 9
 # move windows with mouse+$mod
 floating_modifier $mod
 
+#i3 swag \O_o/
+exec i3-msg workspace 1 '   WM '
+bindsym $mod+Shift+i exec i3-msg workspace 1 '   WM '
+
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite'
 bindsym $mod+backslash exec i3-sensible-terminal 
@@ -20,8 +24,8 @@ bindsym $mod+c exec chromium
 bindsym $mod+i exec iceweasel
 bindsym $mod+b exec caja
 bindsym $mod+p exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
-#bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
-bindsym $mod+m exec geary
+bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
+#bindsym $mod+m exec geary
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
@@ -32,19 +36,30 @@ bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Me
 
 #focus windows
 for_window [instance="subl3|Chromium|geary|caja|ws1_termite|pacaur|glances_term|htop_term"] focus
-for_window [window_role="browser|app|bubble|pop-up"] focus
+for_window [window_role="browser|app|bubble"] focus
+for_window [window_role="popup"] no_focus
 
 #float windows
-for_window [window_role="app|bubble|pop-up"] floating enable
-for_window [title="Event Tester"] floating enable
-for_window [instance="gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
-for_window [instance="crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #google books, docs, inbox/ netflix 
+for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
+for_window [window_type="dialog|menu"] floating enable
+for_window [title="Event Tester"] floating enable, sticky
+for_window [instance="gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
+for_window [instance="crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #google books|docs|inbox|netflix
 
-#scratchpad + move windows
-for_window [instance="scratch_termite"]  move scratchpad, move position 700px 394px, move scratchpad
-for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  move scratchpad, move position 1050px 454px, move scratchpad, scratchpad show #google music player
-for_window [instance="gpicview"] move absolute center
-for_window [instance="insync"] move position 945px 22px
+#scratchpad, move windows + sticky
+for_window [instance="scratch_termite"]  move scratchpad, move position 700 415, move scratchpad
+for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position 1050 450, focus,  move scratchpad, scratchpad show #google music player
+for_window [class="(?i)Gpicview"] focus, move position center
+for_window [instance="insync"] move position 945 22
+for_window [class="(?i)pavucontrol"] move position mouse
+for_window [instance="file_progress"] focus
+
+#window actions
+bindsym $mod+Shift+s sticky toggle
+bindsym $mod+y fullscreen disable; floating enable; resize set 580 342; sticky enable; move position 772 415 
+
+#window titles
+for_window [class="(?i)"] title_format   "     %title"
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
@@ -54,39 +69,39 @@ assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpf
 assign [instance="subl3|sublime_text|geany"] $WS5
 assign [instance="crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
-assign [instance="Steam|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
+assign [instance="sol|Steam|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
 assign [instance="htop|virt-manager|virtualBox|htop_term|log_term|glances_term|pacaur|mate-system-monitor|gparted|gnome-disks|gitg|seahorse"] $WS9
 
 # workspace names / variables 
 #set $WS1 1  
-#set $WS1 1  
-set $WS1 1  
-set $WS2 2  @www 
-set $WS3 3  data 
+#set $WS1 1  
+#set $WS1 1  
+#set $WS2 2  @www 
+#set $WS3 3  data 
 #set $WS4 4  gtd
-set $WS4 4  gtd 
-set $WS5 5  code 
+#set $WS4 4  gtd 
+#set $WS5 5  code 
 #set $WS5 5  text
-set $WS6 6  play 
-set $WS7 7  pics 
-set $WS8 8  game 
-set $WS9 9  adm 
-set $WS0 10  news 
+#set $WS6 6  play 
+#set $WS7 7  pics 
+#set $WS8 8  game 
+#set $WS9 9  adm 
+#set $WS0 10  news 
 
 #only icons
-#set $WS1 1  
-#set $WS2 2  
-#set $WS3 3  
-#set $WS4 4  
-#set $WS5 5  
-#set $WS6 6  
-#set $WS7 7  
-#set $WS8 8  
-#set $WS9 9  
-#set $WS0 10  
+set $WS1 1  
+set $WS2 2  
+set $WS3 3  
+set $WS4 4  
+set $WS5 5  
+set $WS6 6  
+set $WS7 7  
+set $WS8 8  
+set $WS9 9  
+set $WS0 10  
 
 #https://github.com/olemartinorg/i3-alternating-layout
-exec --no-startup-id ~/.i3/alternating_layouts.py
+#exec dbus-launch --exit-with-session sh -c "if [ -f ~/.i3/alternating_layouts.py ]; then ~/.i3/alternating_layouts.py; fi"
 
 # multimonitor support
 workspace "$WS1" output eDP1
@@ -134,12 +149,12 @@ bindsym $mod+XF86AudioLowerRaise exec cmus-remote -p
 bindsym $mod+XF86AudioMute exec cmus-remote player-next
 
 # take screenshot + show
-bindsym $mod+Print exec "scrot -d 3 -q 100 -e 'mv $f ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png; gpicview ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png'"
-bindsym $mod+Shift+Print exec "scrot -u -d 3 -q 100 -e 'mv $f ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png; gpicview ~/Afbeeldingen/Schermafdruk/Schermafdruk_%d-%m-%Y_%T.png'"
+bindsym $mod+Print exec scrot_desk
+bindsym $mod+Shift+Print exec scrot_win
 
 # windows borders
 new_window pixel 2
-new_float pixel 2
+new_float pixel 3
 
 # scratchpad
 bindsym $MOD+SHIFT+plus move scratchpad
@@ -272,15 +287,16 @@ mode "  " {
 
 # i3bar 
 bar {
-     position top
-     height 21     
-     workspace_buttons yes
      status_command i3blocks
+     position top
+     #height 22     
+     workspace_buttons yes
+     strip_workspace_numbers yes
+     separator_symbol "〉" #"◾"
      bindsym button5 nop
      bindsym button4 nop
      tray_output eDP1
-     separator_symbol "〉" #"◾"
-     strip_workspace_numbers yes
+     tray_padding 3     
 colors {
      separator #586e75 
      background #2d2d2d
@@ -294,6 +310,6 @@ colors {
 
 # colors
 client.focused #586e75 #586e75 #f9f9f9 #268bd2
-client.focused_inactive #323e42 #323e42 #93a1a1 #002b36
+client.focused_inactive #455057 #455057 #c7c7c7 #002b36
 client.unfocused #2d2d2d #2d2d2d #c7c7c7 #002b36
 client.urgent #dc322f #dc322f #f9f9f9 #dc322f

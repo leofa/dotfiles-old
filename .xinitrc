@@ -31,6 +31,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
  
 xset +fp /usr/share/fonts/local   # load custom fonts
 xset fp rehash
@@ -39,6 +40,11 @@ export SSH_AUTH_SOCK              # gnome-keyring
 export DESKTOP_SESSION=gnome      # for qt icons
 xsetroot -cursor_name left_ptr &  # x cursor
 
+#dpms
+xset s off
+xset -dpms
+xset s noblank
+
 #fix repeat of arrow keys
 xset r 111
 xset r 113
@@ -46,25 +52,25 @@ xset r 114
 xset r 116
 
 #typematic delay/ rate
-#xset r rate 200 30
+xset r rate 200 20
 
 # autostarts ----------------------------------
-wallchanger &
+
+wallchanger "$@" > /dev/null &
 #feh --bg-fill ~/.wallpaper/archlinux-blue.png &
-#chromium --no-startup-window &
+chromium --first-exec-after-boot --no-startup-window &
 #caja --no-default-window --no-desktop &
 xbacklight -set 65 &
 compton -b --config ~/.config/compton.conf &
-xset dpms s 900 900 &
 lxpolkit &
 dunst &
 redshift &
 clipit -dn &
-sh -c 'menutray -r -u -i' &
-batnotify &
+sh -c 'menutray -r -u -i' "$@" > /dev/null &
+batnotify "$@" > /dev/null &
 #xss-lock -- ilockit  &
 #xautolock -detectsleep -time 15 -locker "systemctl suspend" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'Powersaving on in a few seconds....'"  &
 #------------------------------------------------
 
-exec i3
+i3
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1

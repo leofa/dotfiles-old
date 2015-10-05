@@ -13,25 +13,29 @@
     sticky_history = yes
     follow = mouse  
     word_wrap = yes
+    show_indicators = yes
+    line_height = 0   
     separator_height = 2
     padding = 10
     horizontal_padding = 10
     separator_color = frame
     # transparency = 10
     shrink = yes
-    # startup_notification = true
+    startup_notification = false
     dmenu = "/usr/bin/dmenu -p dunst: -nb #FFFFFF -nf #000000 -sb #94DBFF -sf #000000"
     browser = /usr/bin/chromium
-
+    icon_position = off
+    icon_folders = /usr/share/icons/Flattr/16x16/status/:/usr/share/icons/Flattr/16x16/devices/
+    
 [frame]
     width = 2
     color = "#586E75"
 
 [shortcuts]
     close = ctrl+space
-    close_all = ctrl+shift+period
+    close_all = ctrl+shift+space
     history = ctrl+grave
-    context = ctrl+shift+space
+    context = ctrl+shift+period
 
 [urgency_low]
     background = "#DADCDE"
@@ -47,3 +51,58 @@
     background = "#DEC8C9"
     foreground = "#000000"
     timeout = 10
+
+
+# Every section that isn't one of the above is interpreted as a rules to
+# override settings for certain messages.
+# Messages can be matched by "appname", "summary", "body", "icon", "category",
+# "msg_urgency" and you can override the "timeout", "urgency", "foreground",
+# "background", "new_icon" and "format".
+# Shell-like globbing will get expanded.
+#
+# SCRIPTING
+# You can specify a script that gets run when the rule matches by
+# setting the "script" option.
+# The script will be called as follows:
+#   script appname summary body icon urgency
+# where urgency can be "LOW", "NORMAL" or "CRITICAL".
+# 
+# NOTE: if you don't want a notification to be displayed, set the format
+# to "".
+# NOTE: It might be helpful to run dunst -print in a terminal in order
+# to find fitting options for rules.
+
+#[espeak]
+#    summary = "*"
+#    script = dunst_espeak.sh
+
+#[script-test]
+#    summary = "*script*"
+#    script = dunst_test.sh
+
+#[ignore]
+#    # This notification will not be displayed
+#    summary = "foobar"
+#    format = ""
+
+#[signed_on]
+#    appname = Pidgin
+#    summary = "*signed on*"
+#    urgency = low
+#
+#[signed_off]
+#    appname = Pidgin
+#    summary = *signed off*
+#    urgency = low
+#
+#[says]
+#    appname = Pidgin
+#    summary = *says*
+#    urgency = critical
+#
+#[twitter]
+#    appname = Pidgin
+#    summary = *twitter.com*
+#    urgency = normal
+#
+# vim: ft=cfg
