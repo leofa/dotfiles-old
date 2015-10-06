@@ -64,7 +64,7 @@ our $CONFIG = {
                                 skip_entry              => [
                                                              {
                                                                key => "Name",
-                                                               re  => qr/(?^ui:(?:about|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Caffeine|Autokey|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|Qt4 *|Qt As*|Qt Di*|Qt Li*|Qt QD*))/,
+                                                               re  => qr/(?^u:(?:about|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Caffeine|Autokey|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|Qt4 *|Qt As*|Qt Di*|Qt Li*|Qt QD*|Qt V4*|mpv))/,
                                                              },
                                                              { key => "Exec", re => qr/(?^u:^nmcli_dmenu)/ },
                                                              { key => "Exec", re => qr/(?^u:^yelp)/ },

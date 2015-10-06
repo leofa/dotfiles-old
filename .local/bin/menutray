@@ -175,7 +175,7 @@ my %CONFIG = (
         keep_unknown_categories => 1,
         unknown_category_key    => 'other',
 
-        skip_entry       => [   {key => 'Name', re => qr/(?:about|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Caffeine|Autokey|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|Qt4 *|Qt As*|Qt Di*|Qt Li*|Qt QD*)/i},
+        skip_entry       => [   {key => 'Name', re => qr/(?:about|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Caffeine|Autokey|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|Qt4 *|Qt As*|Qt Di*|Qt Li*|Qt QD*|Qt V4*|mpv)/},
                                 {key => 'Exec', re => qr/^nmcli_dmenu/},    
 			        {key => 'Exec', re => qr/^yelp/},         
 				{key => 'Exec', re =>qr/^lxsession/},      

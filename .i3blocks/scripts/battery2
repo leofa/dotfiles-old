@@ -49,8 +49,8 @@ END {
 	else if (percentage > 25)
 		label = ""
     else if (percentage > 10) 
-		label = ""
-    else if (percentage > 0) 
+		label = ""
+    else  
 		label = ""
 	
     # full text

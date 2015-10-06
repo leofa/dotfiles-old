@@ -47,12 +47,13 @@ for_window [instance="gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blu
 for_window [instance="crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
-for_window [instance="scratch_termite"]  move scratchpad, move position 700 415, move scratchpad
+for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad
 for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position 1050 450, focus,  move scratchpad, scratchpad show #google music player
 for_window [class="(?i)Gpicview"] focus, move position center
 for_window [instance="insync"] move position 945 22
 for_window [class="(?i)pavucontrol"] move position mouse
 for_window [instance="file_progress"] focus
+for_window [class="(?i)gsimplecal"] move position 1118 22
 
 #window actions
 bindsym $mod+Shift+s sticky toggle
@@ -289,14 +290,14 @@ mode "  " {
 bar {
      status_command i3blocks
      position top
-     #height 22     
+     height 21    
      workspace_buttons yes
      strip_workspace_numbers yes
      separator_symbol "〉" #"◾"
      bindsym button5 nop
      bindsym button4 nop
      tray_output eDP1
-     tray_padding 3     
+     tray_padding 2     
 colors {
      separator #586e75 
      background #2d2d2d

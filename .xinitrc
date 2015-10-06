@@ -31,7 +31,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+#source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+eval $(dbus-launch --sh-syntax --exit-with-session)
  
 xset +fp /usr/share/fonts/local   # load custom fonts
 xset fp rehash
