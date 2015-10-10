@@ -39,7 +39,7 @@ export GOPATH=~/go
 export PATH=$PATH:~/go/bin
 
 #browser
-export BROWSER=/usr/bin/xdg-open
+export BROWSER=/usr/bin/chromium
 
 #steam native runtime
 export STEAM_RUNTIME=0

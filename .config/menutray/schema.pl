@@ -82,27 +82,27 @@ our $SCHEMA = [
     #          ], 'i3 Vensterbeheer', 'window-manager']},
 
  #   {sep        => line},      
- # {sep        => line},      
+ #{sep        => line},      
     
-    # {item => ['i3-msg workspace $WS2; exec chromium https://www.archlinux.org/', 'Over Arch Linux®', 'info']},    
-   # {item => ['i3-msg workspace $WS2; exec chromium https://bbs.archlinux.org/', 'Arch Forums', 'users']},
-   # {item => ['i3-msg workspace $WS2; exec chromium https://wiki.archlinux.org/', 'Arch Wiki','help-browser']},
+#  {item => ['i3-msg workspace $WS2; exec chromium https://www.archlinux.org/', 'Over Arch Linux®', 'info']},    
+ #  {item => ['i3-msg workspace $WS2; exec chromium https://bbs.archlinux.org/', 'Arch Forums', 'users']},
+ #  {item => ['i3-msg workspace $WS2; exec chromium https://wiki.archlinux.org/', 'Arch Wiki','help-browser']},
      
   #  {sep        => line},      
     {sep        => line},      
 
   #  {regenerate => ['Opnieuw laden', 'reload']},
    # {exit       => ['Menu sluiten', 'exit']},
-    {item => ['xdotool getactivewindow windowraise windowunmap',         'Sluiten ',          'gtk-close']},
+   # {item => ['xdotool getactivewindow windowraise windowunmap',         'Sluiten ',          'gtk-close']},
     
     #{tree => [[
      #        { Name => "Afmelden", Exec => "i3-msg exit", Icon => "system-log-out", },
       #       { Name => "Vergrendelen", Exec => "i3lock -i /home/faruk/Afbeeldingen/lockscreen.png && sleep 1", Icon => "system-lock-screen", },
-       #      { Name => "Pauzestand", Exec => "systemctl suspend", Icon => "system-suspend", },
+      #      { Name => "Pauzestand", Exec => "systemctl suspend", Icon => "system-suspend", },
         #     { Name => "Herstarten", Exec => "systemctl reboot", Icon => "system-reboot", },
          #    { Name => "Afsluiten", Exec => "systemctl poweroff", Icon => "system-shutdown", },
 	     #], 'Afmelden..', 'system-log-out']},
-
+    {item => ['pkill perl; menutray -r -i -u; i3-msg restart', 'Vernieuwen', 'reload']},
     {item => ['yad_logout', 'Afsluiten..', 'window-close']},
 
 

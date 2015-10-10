@@ -6,26 +6,27 @@
 set $mod Mod4
 
 # fonts
-font pango: Source Code Pro SemiBold, FontAwesome Regular 9
+font pango: Source Code Pro Semibold, FontAwesome Regular 9
 
 # move windows with mouse+$mod
 floating_modifier $mod
 
-#i3 swag \O_o/
-exec i3-msg workspace 1 '   WM '
-bindsym $mod+Shift+i exec i3-msg workspace 1 '   WM '
+# i3 swag \O_o/
+exec i3-msg workspace 0 '  '
+bindsym $mod+Shift+i exec exec i3-msg workspace 0 ' ''
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite'
 bindsym $mod+backslash exec i3-sensible-terminal 
 bindsym $mod+slash exec chromium --show-app-list
-bindsym $mod+t exec subl3
+bindsym $mod+t exec subl3 
 bindsym $mod+c exec chromium
 bindsym $mod+i exec iceweasel
 bindsym $mod+b exec caja
+bindsym $mod+m exec geary
+#bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
 bindsym $mod+p exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
-bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
-#bindsym $mod+m exec geary
+bindsym --release $mod+Shift+p exec xdotool type --clearmodifiers `xclip -selection c -out`  #extra paste command
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
@@ -33,27 +34,31 @@ bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
+bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 
 #focus windows
-for_window [instance="subl3|Chromium|geary|caja|ws1_termite|pacaur|glances_term|htop_term"] focus
-for_window [window_role="browser|app|bubble"] focus
-for_window [window_role="popup"] no_focus
+no_focus [window_role="pop-up"]
+focus_on_window_activation focus
+for_window [class="(?i)"] focus
 
 #float windows
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
-for_window [title="Event Tester"] floating enable, sticky
-for_window [instance="gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
+for_window [title="Event Tester|Taakbeheer -*"] floating enable, sticky enable
+for_window [instance="xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
 for_window [instance="crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
 for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad
 for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position 1050 450, focus,  move scratchpad, scratchpad show #google music player
-for_window [class="(?i)Gpicview"] focus, move position center
+for_window [class="(?i)Gpicview"]  move position center
 for_window [instance="insync"] move position 945 22
 for_window [class="(?i)pavucontrol"] move position mouse
-for_window [instance="file_progress"] focus
-for_window [class="(?i)gsimplecal"] move position 1118 22
+for_window [instance="file_progress"] sticky enable
+for_window [class="(?i)gsimplecal"] move position 1118 21
+
+#layout
+for_window [workspace="$WS2|$WS4"] layout tabbed
 
 #window actions
 bindsym $mod+Shift+s sticky toggle
@@ -71,7 +76,7 @@ assign [instance="subl3|sublime_text|geany"] $WS5
 assign [instance="crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [instance="sol|Steam|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
-assign [instance="htop|virt-manager|virtualBox|htop_term|log_term|glances_term|pacaur|mate-system-monitor|gparted|gnome-disks|gitg|seahorse"] $WS9
+assign [instance="htop|virt-manager|virtualBox|log_term|pacaur|glances_term|htop_term|pacaur|mate-system-monitor|gparted|gnome-disks|gitg|seahorse"] $WS9
 
 # workspace names / variables 
 #set $WS1 1  
@@ -120,7 +125,7 @@ workspace "$WS0" output eDP1
 force_display_urgency_hint 500 ms
 
 # floating window sizes
-floating_minimum_size 86 x 20
+floating_minimum_size 96 x 25
 floating_maximum_size -1 x -1
 
 # focus urgent
@@ -154,7 +159,7 @@ bindsym $mod+Print exec scrot_desk
 bindsym $mod+Shift+Print exec scrot_win
 
 # windows borders
-new_window pixel 2
+new_window pixel 3
 new_float pixel 3
 
 # scratchpad
@@ -164,6 +169,10 @@ bindsym $mod+plus scratchpad show
 # kill focused window
 bindsym $mod+q kill
 bindsym --release $mod+x exec xkill
+
+# mouse actions 
+bindsym --whole-window $mod+button2 kill
+bindsym --whole-window $mod+button3 floating toggle
 
 # change border
 bindsym $mod+Shift+t border toggle
@@ -297,7 +306,7 @@ bar {
      bindsym button5 nop
      bindsym button4 nop
      tray_output eDP1
-     tray_padding 2     
+     tray_padding 3     
 colors {
      separator #586e75 
      background #2d2d2d
