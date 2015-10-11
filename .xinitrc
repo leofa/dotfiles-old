@@ -55,8 +55,11 @@ xset r 116
 #typematic delay/ rate
 xset r rate 200 20
 
-# autostarts ----------------------------------
-
+# autostart ----------------------------------
+/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately &
+#system-config-printer-applet &
+#blueman-applet &
+#xdg-user-dirs-gtk-update
 wallchanger "$@" > /dev/null &
 #feh --bg-fill ~/.wallpaper/archlinux-blue.png &
 chromium --first-exec-after-boot --no-startup-window &

@@ -58,6 +58,9 @@ endif
 "Always show current position
 set ruler
 
+" Highlight current line
+set cursorline  
+
 " Height of the command bar
 set cmdheight=1
 
@@ -93,6 +96,7 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch 
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -132,7 +136,7 @@ endif
 " Colorscheme
 if has("gui_running")
     set background=dark
-    colorscheme base16-ashes
+    colorscheme base16-tomorrow
 else
     colorscheme ron
     let g:colors_name="ron"
@@ -160,10 +164,16 @@ endif
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-set noswapfile
+" set nobackup
+" set nowb
+" set noswapfile
 
+" Turn on backup, but write backup to tmp directory.
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -523,7 +533,7 @@ func! DeleteTillSlash()
         else
             let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
         endif
-    endif   
+    endif
 
     return g:cmd_edited
 endfunc

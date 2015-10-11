@@ -3,10 +3,10 @@
 while true;do
 
 # Directories Containing Pictures
-DIR0="/home/faruk/Afbeeldingen/Wallpaper"
-DIR1="/home/faruk/Afbeeldingen/Linux"
+DIR0="/home/faruk/Dropbox/Wallpaper"
+DIR1="/home/faruk/Dropbox/Linux"
 #DIR2="/usr/share/backgrounds"
-DIR3="/home/faruk/Afbeeldingen/GoT"
+DIR3="/home/faruk/Dropbox/GoT"
 
 # Make sure spaces do not break our script.
 IFS='
