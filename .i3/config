@@ -12,8 +12,8 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 floating_modifier $mod
 
 # i3 swag \O_o/
-exec i3-msg workspace 0 '  '
-bindsym $mod+Shift+i exec exec i3-msg workspace 0 ' ''
+exec i3-msg workspace 0   
+bindsym $mod+Shift+i workspace 0   
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite'
@@ -44,7 +44,7 @@ for_window [class="(?i)"] focus
 #float windows
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
-for_window [title="Event Tester|Taakbeheer -*"] floating enable, sticky enable
+for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
 for_window [instance="xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
 for_window [instance="crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #google books|docs|inbox|netflix
 
@@ -106,8 +106,8 @@ set $WS8 8 
 set $WS9 9  
 set $WS0 10  
 
-#https://github.com/olemartinorg/i3-alternating-layout
-#exec dbus-launch --exit-with-session sh -c "if [ -f ~/.i3/alternating_layouts.py ]; then ~/.i3/alternating_layouts.py; fi"
+# https://github.com/olemartinorg/i3-alternating-layout
+exec dbus-launch --exit-with-session sh -c "if [ -f ~/.i3/alternating_layouts.py ]; then ~/.i3/alternating_layouts.py; fi"
 
 # multimonitor support
 workspace "$WS1" output eDP1
@@ -171,6 +171,8 @@ bindsym $mod+q kill
 bindsym --release $mod+x exec xkill
 
 # mouse actions 
+bindsym --release button2 kill
+bindsym --release button3 floating toggle
 bindsym --whole-window $mod+button2 kill
 bindsym --whole-window $mod+button3 floating toggle
 
