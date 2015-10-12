@@ -1,0 +1,4 @@
+#! /bin/bash
+pacaur -Qqem > ~/dotfiles/.pacman/aur.txt
+pacman -Qqen > ~/dotfiles/.pacman/repos.txt
+cp /etc/pacman.conf ~/dotfiles/.pacman/pacman.conf
