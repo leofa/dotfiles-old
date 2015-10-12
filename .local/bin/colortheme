@@ -3,7 +3,7 @@
 #           http://frexx.de/xterm-256-notes/data/colortable16.sh
 # Modified by Aaron Griffin
 # and further by Kazuo Teramoto
-# added improvements by leofa
+# added more improvements by leofa
 
 usage() {
   echo "colortheme:"
@@ -99,9 +99,15 @@ EOF
 }
 
 pac(){
-  #clear
-  
-  initializeANSI
+	f=3 b=4
+	for j in f b; do
+	  for i in {0..7}; do
+	    printf -v $j$i %b "\e[${!j}${i}m"
+	  done
+	done
+	bld=$'\e[1m'
+	rst=$'\e[0m'
+	inv=$'\e[7m'
 
   cat << EOF
 
