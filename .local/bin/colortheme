@@ -11,6 +11,7 @@ usage() {
   echo "     -b: boxes"
   echo "     -i: invaders"
   echo "     -p: pacman"
+  echo "     -t: tux"
   echo "    -la: list all"
   echo "     -h: this"
 }
@@ -98,7 +99,7 @@ invaders() {
 EOF
 }
 
-pac(){
+pacman() {
 	f=3 b=4
 	for j in f b; do
 	  for i in {0..7}; do
@@ -130,7 +131,18 @@ $rst
 EOF
 }
 
-arch(){
+arch() {
+initializeANSI()
+{
+  esc=""
+
+  redf="${esc}[31m";     greenf="${esc}[32m"
+  yellowf="${esc}[33m"   bluef="${esc}[34m";   
+  cyanf="${esc}[36m";    purplef="${esc}[35m"   
+                      
+  boldon="${esc}[1m";    
+  reset="${esc}[0m"
+}
 
 initializeANSI
 
@@ -146,29 +158,81 @@ ${redf}   ■■       ■■ ${greenf}   ■■       ■■ ${yellowf}   ■�
 EOF
 }
 
+tux() {
+initializeANSI()
+{
+  esc=""
+
+  blackf="${esc}[30m";   redf="${esc}[31m";    greenf="${esc}[32m"
+  yellowf="${esc}[33m"   bluef="${esc}[34m";   purplef="${esc}[35m"
+  cyanf="${esc}[36m";    whitef="${esc}[37m"
+  
+  blackb="${esc}[40m";   redb="${esc}[41m";    greenb="${esc}[42m"
+  yellowb="${esc}[43m"   blueb="${esc}[44m";   purpleb="${esc}[45m"
+  cyanb="${esc}[46m";    whiteb="${esc}[47m"
+
+  boldon="${esc}[1m";    boldoff="${esc}[22m"
+  italicson="${esc}[3m"; italicsoff="${esc}[23m"
+  ulon="${esc}[4m";      uloff="${esc}[24m"
+  invon="${esc}[7m";     invoff="${esc}[27m"
+
+  reset="${esc}[0m"
+}
+
+initializeANSI
+
+tuxbg=${cyanb}     # color behind tux
+tuxfg=${blackf}     # tux line color
+
+cat << EOF
+
+${tuxfg}${tuxbg}
+                                                     
+                      ▄█████▄                        
+                     █████████                       
+                    ${whiteb}████████▀██${tuxbg}                      
+                   ${whiteb}██████████▄██${tuxbg}                     
+                   ${whiteb}██▀▀███▀▀████${tuxbg}                     
+                   ${whiteb}████ █ ██ ███${tuxbg}                     
+                   ${yellowb}█         ████${tuxbg}                    
+                   ${yellowb}█       ▄ ████${tuxbg}                    
+                   ${yellowb}███▀▀▀▀▀▄${whiteb}▀████${tuxbg}                    
+                   ${whiteb}██▀▀▀▀▀▀   ███${tuxbg}▄                   
+                 ▄█${whiteb}▀          █████${tuxbg}                  
+                ${whiteb}███           ██████${tuxbg}                 
+               ${whiteb}███             ██████${tuxbg}                
+              ${whiteb}█▀██              ██████${tuxbg}               
+              ${whiteb}█ █               █ ████${tuxbg}               
+              ${whiteb}█ █               ██ ███${tuxbg}               
+             ${whiteb}██ ▀               █▀ ████${tuxbg}              
+             ${whiteb}███                   ████${tuxbg}              
+            ${whiteb}█████               ███ ███${tuxbg}              
+            ${yellowb}█▀▀███${whiteb}             █████████${tuxbg}             
+           ▄${yellowb}█   ███${whiteb}           █${yellowb}▀ ████  ▀█${tuxbg}            
+         ▄█${yellowb}▀     ████${whiteb}         █${yellowb}   ▀     █${tuxbg}            
+        █${yellowb}         ████${whiteb}     █  █${yellowb}         ██${tuxbg}           
+         █${yellowb}         ██${whiteb}       █ █${yellowb}          ▀█${tuxbg}          
+        █${yellowb}           █${whiteb}      █  █${yellowb}          █${tuxbg}           
+        █${yellowb}           ███████████${yellowb}        ▄${tuxbg}▀            
+         █${yellowb}▄         █${tuxbg} ▀▀▀▀▀▀▀ █${yellowb}      ▄${tuxbg}▀              
+           ▀▀▀▀▀${yellowb}▄▄▄█${tuxbg}▀         ▀${yellowb}▄    █${tuxbg}                
+                                ▀▀▀▀${tuxbg}                 
+${reset}
+EOF
+}
+
 case $1 in
-  -b)
-    boxes
-    ;;
-  -i)
-    invaders
-    ;;
-  -p)
-    pac
-    ;;
-  -a)
-    arch
-    ;;
-  -la)
-    boxes
-    invaders
-    pac
-    arch
-    ;;
-  -h)
-    usage
-    ;;
-  *)
-    boxes
-    ;;
+  -b) boxes ;;
+  -i) invaders ;;
+  -p) pacman ;;
+  -a) arch ;;
+  -t) tux ;;
+  -la) 
+      tux 
+      boxes 
+      invaders 
+      pacman 
+      arch ;;
+  -h) usage ;;
+  *) boxes ;;
 esac
