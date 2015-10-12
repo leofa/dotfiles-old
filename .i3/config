@@ -106,9 +106,6 @@ set $WS8 8 
 set $WS9 9  
 set $WS0 10  
 
-# https://github.com/olemartinorg/i3-alternating-layout
-exec dbus-launch --exit-with-session sh -c "if [ -f ~/.i3/alternating_layouts.py ]; then ~/.i3/alternating_layouts.py; fi"
-
 # multimonitor support
 workspace "$WS1" output eDP1
 workspace "$WS2" output HDMI1
