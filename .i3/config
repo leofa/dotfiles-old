@@ -76,7 +76,7 @@ assign [instance="subl3|sublime_text|geany"] $WS5
 assign [instance="crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [instance="sol|Steam|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
-assign [instance="htop|virt-manager|virtualBox|log_term|pacaur|glances_term|htop_term|pacaur|mate-system-monitor|gparted|gnome-disks|gitg|seahorse"] $WS9
+assign [instance="htop|virt-manager|log_term|pacaur|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
 
 # workspace names / variables 
 #set $WS1 1  

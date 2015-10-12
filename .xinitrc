@@ -61,7 +61,7 @@ xset r rate 200 20
 #blueman-applet &
 #xdg-user-dirs-gtk-update
 wallchanger "$@" > /dev/null &
-#feh --bg-fill ~/.wallpaper/archlinux-blue.png &
+#feh --bg-fill ~/.wallpaper/arch-lowpolly-color-logo.png &
 chromium --first-exec-after-boot --no-startup-window &
 #caja --no-default-window --no-desktop &
 xbacklight -set 65 &
@@ -70,7 +70,7 @@ lxpolkit &
 dunst &
 redshift &
 clipit -dn &
-sh -c 'menutray -r -u -i' "$@" > /dev/null &
+menutray -r -u -i &
 batnotify "$@" > /dev/null &
 #xss-lock -- ilockit  &
 #xautolock -detectsleep -time 15 -locker "systemctl suspend" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'Powersaving on in a few seconds....'"  &
