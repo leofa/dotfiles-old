@@ -3,6 +3,7 @@ aisleriot
 alsa-utils
 android-tools
 android-udev
+arandr
 arch-wiki-docs
 arch-wiki-lite
 archey3
@@ -23,6 +24,7 @@ blueman
 bluez
 bluez-plugins
 bluez-utils
+breeze-icons
 btrfs-progs
 bzip2
 bzr
@@ -31,6 +33,7 @@ caja-actions
 caja-extensions-common
 caja-gksu
 caja-image-converter
+catfish
 ccache
 ccze
 chromium
@@ -72,6 +75,7 @@ file
 filesystem
 findutils
 flex
+freerdp
 frei0r-plugins
 frogatto
 galculator-gtk2
@@ -104,6 +108,7 @@ gstreamer0.10-bad-plugins
 gstreamer0.10-ffmpeg
 gstreamer0.10-ugly-plugins
 gthumb
+gtypist
 gucharmap
 gufw
 guvcview
@@ -129,10 +134,8 @@ iputils
 irqbalance
 iw
 jfsutils
-jre8-openjdk-infinality
 jshon
 keepassx
-klavaro
 kodi
 less
 lib32-cairo-infinality-ultimate
@@ -186,6 +189,7 @@ obexfs
 openssh
 p7zip
 pacman
+pacmatic
 parallel
 patch
 pavucontrol
@@ -243,6 +247,7 @@ t1-urw-fonts-ib
 tar
 texinfo
 thefuck
+tig
 tk
 tmux
 ttf-droid
@@ -260,6 +265,7 @@ vi
 vim-airline
 vim-spell-nl
 vim-systemd
+virt-manager
 vte3-ng
 w3m
 wget

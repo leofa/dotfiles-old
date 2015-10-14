@@ -32,15 +32,14 @@ size_hints = true
 foreground = #c5c8c6
 foreground_bold = #ffffff
 #foreground_dim = #888888
-background = #ededed
-#background = #000000
-cursor = #929593
+background = #1d1f21
+cursor = #912226
 
-# 20% background transparency (requires a compositor)
-background = rgba(20, 20, 20, 0.90)
+# 15% background transparency (requires a compositor)
+#background = rgba(10, 10, 10, 0.90)
 
 # if unset, will reverse foreground and background
-#highlight = #929593
+#highlight = #d6d6d6
 
 # colors from color0 to color254 can be set
 # Black + Grey

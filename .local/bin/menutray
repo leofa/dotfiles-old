@@ -189,7 +189,7 @@ my %CONFIG = (
         skip_filename_re => undef,
 
         terminalize            => 1,
-        terminal               => $ENV{TERM} || 'xterm-termite',
+        terminal               => $ENV{TERM} || 'termite',
         terminalization_format => q{%s -e '%s'},
 
         desktop_files_paths => [

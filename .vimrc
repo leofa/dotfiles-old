@@ -119,7 +119,7 @@ set number
 syntax enable 
 
 try
-    colorscheme ron
+    colorscheme tomorrow-night
 catch
 endtry
 
@@ -136,10 +136,10 @@ endif
 " Colorscheme
 if has("gui_running")
     set background=dark
-    colorscheme base16-tomorrow
+    colorscheme tomorrow-night
 else
-    colorscheme ron
-    let g:colors_name="ron"
+    colorscheme tomorrow-night
+    let g:colors_name="tomorrow-night"
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -338,7 +338,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 
 " => vim-airline config (force color)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme="bubblegum"
+let g:airline_theme="tomorrow"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'

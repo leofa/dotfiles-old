@@ -1,7 +1,7 @@
 #mijn bash aliases
 #
 alias pauze='sudo pm-suspend'
-alias U='pacaur -Su' 
+alias U='pacupd' 
 alias Un='pacaur -Su --noconfirm --noedit'
 alias Ud='pacaur -Su --aur --devel'
 alias S='pacaur -Ss'
@@ -77,6 +77,7 @@ alias ws='wiki-search'
 alias bin='cd ~/.local/bin'
 alias blocks='cd ~/.i3blocks/scripts'
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+alias tetris='vitetris'
 
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && gvim "$file"; }

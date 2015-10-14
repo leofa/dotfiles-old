@@ -1,7 +1,7 @@
 set guifont=Hack\ 10
 let g:solarized_termcolors=256
 set background=dark
-colorscheme base16-ashes
+colorscheme tomorrow-night-eighties
 set guioptions-=T
 set guioptions-=e
 set t_Co=256

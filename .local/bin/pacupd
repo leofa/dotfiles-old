@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# A script for updating Archlinux using pacmatic and pacaur
+
+export pacman_program="pacaur"
+export pacdiff_program="sudo pacdiff"
+pacmatic -Su
+#pacmatic -Syu disable this run sync database from systemd.timer
+#read -p "Press enter to continue..."
