@@ -33,7 +33,6 @@ caja-actions
 caja-extensions-common
 caja-gksu
 caja-image-converter
-catfish
 ccache
 ccze
 chromium
@@ -86,7 +85,6 @@ gcolor2
 geary
 gettext
 gimp
-gitg
 glances
 glibc
 gnome-chess
@@ -96,7 +94,6 @@ gnome-keyring
 gnome-settings-daemon
 gnome-themes-standard
 gpart
-gparted
 gpicview
 gptfdisk
 grep
@@ -108,7 +105,6 @@ gstreamer0.10-bad-plugins
 gstreamer0.10-ffmpeg
 gstreamer0.10-ugly-plugins
 gthumb
-gtypist
 gucharmap
 gufw
 guvcview
@@ -134,6 +130,7 @@ iputils
 irqbalance
 iw
 jfsutils
+jre8-openjdk-infinality
 jshon
 keepassx
 kodi
@@ -167,7 +164,6 @@ m4
 make
 man-db
 man-pages
-mate-system-monitor
 mate-utils
 mdadm
 mediainfo
@@ -179,6 +175,7 @@ mtools
 nano
 ncdu
 netctl
+newsbeuter
 nfs-utils
 nilfs-utils
 nspluginwrapper
@@ -220,6 +217,7 @@ redshift
 reflector
 reiserfsprogs
 remmina
+rofi
 rsync
 s-nail
 sane
@@ -245,6 +243,7 @@ system-config-printer
 systemd-sysvcompat
 t1-urw-fonts-ib
 tar
+termite
 texinfo
 thefuck
 tig
@@ -283,12 +282,13 @@ xf86-input-mouse
 xf86-video-intel
 xfsprogs
 xorg-server
-xorg-server-utils
-xorg-utils
+xorg-xbacklight
 xorg-xev
 xorg-xfd
 xorg-xfontsel
+xorg-xgamma
 xorg-xinit
+xorg-xinput
 xorg-xkill
 xorg-xvinfo
 xorg-xwininfo

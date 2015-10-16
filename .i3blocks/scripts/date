@@ -5,7 +5,7 @@ DATE=$(date '+ %a  %H:%M')
 echo $DATE
 
 case $BLOCK_BUTTON in
-    1) gsimplecal ;;
-    2) chromium  --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki ;;
-    3) chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn ;; 
+    1) gsimplecal  & "$@" > /dev/null ;;
+    2) chromium  --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki  & "$@" > /dev/null ;;
+    3) chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn  & "$@" > /dev/null ;; 
 esac 

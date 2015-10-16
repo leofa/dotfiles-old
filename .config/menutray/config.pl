@@ -64,7 +64,7 @@ our $CONFIG = {
                                 skip_entry              => [
                                                              {
                                                                key => "Name",
-                                                               re  => qr/(?^u:(?:about|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|lxsession-edit|CMake|Caffeine|Autokey|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|Qt4 *|Qt As*|Qt Di*|Qt Li*|Qt QD*|Qt V4*|mpv))/,
+                                                               re  => qr/(?^u:(?:about|mate-search-tool|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|Htop|lxsession-edit|CMake|Caffeine|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|Qt4 *|Qt As*|Qt Di*|Qt Li*|Qt QD*|Qt V4*|mpv))/,
                                                              },
                                                              { key => "Exec", re => qr/(?^u:^nmcli_dmenu)/ },
                                                              { key => "Exec", re => qr/(?^u:^yelp)/ },
@@ -82,7 +82,7 @@ our $CONFIG = {
                                                              },
                                                            ],
                                 terminal                => "xterm-256color",
-                                terminalization_format  => "%s -e '%s'",
+                                terminalization_format  => "-e '%s' --hold",
                                 terminalize             => 1,
                                 unknown_category_key    => "other",
                               },

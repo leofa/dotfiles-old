@@ -34,11 +34,11 @@ our $SCHEMA = [
     #          COMMAND             LABEL                ICON
     {item => ['rofi -show run',  'Uitvoeren..',       'system-run']},
     {item => ['i3-sensible-terminal',         'Terminalvenster',          'terminal']},
-    {item => ['subl3',        'Tekstverwerker', 'medit']},
+    {item => ['subl3',        'Tekstverwerker', 'gvim']},
     {item => ['chromium',      'Webbrowser',       'web-browser']},
-    {item => ['geary',        'E-mailprogramma', 'internet-mail']},
+    {item => ['geary',        'E-mailprogramma', 'evolution']},
 #    {item => ['chromium --show-app-list', 'Chromium-apps', 'chromium-app-list']}, 
-    {item => ['caja --browser --no-desktop',       'Bestandsbeheerder',      'file-manager']},
+    {item => ['caja --browser --no-desktop',       'Bestandsbeheerder',      'system-file-manager']},
     {item => ['mate-search-tool',         'Zoek bestanden..',    'tracker']},
 
 #    {sep        => line},      

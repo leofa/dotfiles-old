@@ -29,7 +29,7 @@ bindsym $mod+p exec chromium --profile-directory=Default --app-id=fahmaaghhglfmo
 bindsym --release $mod+Shift+p exec xdotool type --clearmodifiers `xclip -selection c -out`  #extra paste command
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
+bindsym $mod+d exec j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
 bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
@@ -45,17 +45,19 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
-for_window [instance="xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
-for_window [instance="crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #google books|docs|inbox|netflix
+for_window [instance="vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
+for_window [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #jb live|google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
 for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad
 for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position 1050 450, focus,  move scratchpad, scratchpad show #google music player
 for_window [class="(?i)Gpicview"]  move position center
-for_window [instance="insync"] move position 945 22
-for_window [class="(?i)pavucontrol"] move position mouse
+for_window [instance="insync"] move position 945 21
+for_window [class="(?i)pavucontrol"] move position 860 21
 for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position 1118 21
+for_window [instance="(?i)ald.mindbrain.io"] move position 708 21
+for_window [instance="WiFi-Menu"]  move position  712 21
 
 #layout
 for_window [workspace="$WS2|$WS4"] layout tabbed
@@ -74,7 +76,7 @@ assign [window_role="browser"] $WS2
 assign [instance="caja"] $WS3
 assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
 assign [instance="subl3|sublime_text|geany"] $WS5
-assign [instance="crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
+assign [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [instance="sol|Steam|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
 assign [instance="remmina|htop|virt-manager|log_term|pacaur|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
@@ -153,8 +155,8 @@ bindsym $mod+XF86AudioLowerRaise exec cmus-remote -p
 bindsym $mod+XF86AudioMute exec cmus-remote player-next
 
 # take screenshot + show
-bindsym $mod+Print exec scrot_desk
-bindsym $mod+Shift+Print exec scrot_win
+bindsym Print exec scrot_desk 
+bindsym $mod+Print exec scrot_win
 
 # windows borders
 new_window pixel 3
@@ -302,7 +304,7 @@ bar {
      height 21    
      workspace_buttons yes
      strip_workspace_numbers yes
-     separator_symbol "〉" #"◾"
+     separator_symbol "〉"
      bindsym button5 nop
      bindsym button4 nop
      tray_output eDP1

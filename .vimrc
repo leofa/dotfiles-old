@@ -65,7 +65,7 @@ set cursorline
 set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
-" set hid
+set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -139,7 +139,7 @@ if has("gui_running")
     colorscheme tomorrow-night
 else
     colorscheme tomorrow-night
-    let g:colors_name="tomorrow-night"
+    let g:solarized_termcolors=256    
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language

@@ -53,7 +53,7 @@ END {
     else  
 		label = ""
 	
-    # full text
+    # full text & "$@" > /dev/null;
 	print label " " percentage
 
 	# short text
@@ -68,9 +68,9 @@ END {
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) dpmstoggle ;; # left click, control DPMS 
-  3) togglered ;;  # right click, redshift on/off
-  2) yad_logout ;; # logout dialog
+  1) dpmstoggle & "$@" > /dev/null ;; # left click, control DPMS 
+  3) togglered & "$@" > /dev/null ;;  # right click, redshift on/off
+  2) yad_logout & "$@" > /dev/null ;; # logout dialog
   5) xbacklight -inc 10 ;; # scroll up, increase brightness
   4) xbacklight -dec 10 ;; # scroll down, decrease brightness
 esac

@@ -7,6 +7,6 @@ echo "$used"
 #echo "$used/$total"
 
 case $BLOCK_BUTTON in
-  1) termite --exec "sh -c 'journalctl -f | ccze -A'" --name 'log_term' --hold ;;
-  3) termite --exec "sh -c 'journalctl -b -0 | ccze -A; journalctl -f | ccze -A'" --name 'log_term' --hold ;;
+  1) termite --exec "sh -c 'journalctl -f | ccze -A'" --name 'log_term' --hold & "$@" > /dev/null ;;
+  3) termite --exec "sh -c 'journalctl -b -0 | ccze -A; journalctl -f | ccze -A'" --name 'log_term' --hold & "$@" > /dev/null ;;
 esac
