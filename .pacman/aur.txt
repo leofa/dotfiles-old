@@ -13,6 +13,7 @@ dropbox-experimental
 flattr-icon-theme-git
 freshplayerplugin
 gksu-polkit-git
+gmusicbrowser
 hal-flash
 i3-gaps-next-git
 i3blocks
@@ -40,6 +41,7 @@ numix-frost-themes
 numix-icon-theme-git
 pacaur
 package-query
+perl-gtk2-notify
 perl-linux-desktopfiles
 pkgcacheclean
 playerctl

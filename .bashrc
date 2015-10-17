@@ -10,6 +10,7 @@ fi
 #prompt
 #if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
 #if [ -f /usr/bin/alsi ]; then alsi -l; fi
+#if [ -f ~/.local/bin/todo ]; then todo; fi
 
 export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 
@@ -42,7 +43,7 @@ export PATH=$PATH:~/go/bin
 export BROWSER=/usr/bin/chromium
 
 #steam native runtime
-export STEAM_RUNTIME=0
+export STEAM_RUNTIME=1
 
 #ranger
 export RANGER_LOAD_DEFAULT_RC=FALSE
@@ -450,5 +451,5 @@ else
       }
     fi
   #}}}
-#}}}
+#}}}echo 
 eval $(dircolors ~/.dircolors)
