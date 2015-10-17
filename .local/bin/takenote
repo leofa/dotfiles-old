@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+
+ARG=$@
+ARG=${ARG// /_}
+NOTESDIR=~/a.f.unver@gmail.com/notities
+NOTE=$(date +%a%d%m.%k%M%S)
+[ ! -z $ARG ] && NOTE=${NOTE}_$ARG
+
+[ ! -d "$NOTESDIR" ] && mkdir $NOTESDIR
+cd $NOTESDIR
+touch $NOTE
+
+cat << EOD >> $NOTE
+Notitie $@
+gemaakt op $(date +"%A %d %B %Y, %T")
+-----------------------------------------
+
+-----------------------------------------
+EOD
+
+vim $NOTE +4
+
+echo "notitie opgeslagen in $NOTESDIR/$NOTE"
+
+exit 0

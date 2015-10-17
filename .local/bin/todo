@@ -1,0 +1,109 @@
+#!/bin/bash
+
+## This script allows you to manage a list of tasks. Use it as a reminder.
+## Tips: add `todo' at the end of your ~/.bashrc to run it on every shell opening ;)
+
+## By Vivien DIDELOT aka v0n
+## Last modification: 10 mar 11
+## Translated by leofa to dutch
+
+set -e
+
+SCRIPT=$(basename $0)
+TODOLIST="$HOME/a.f.unver@gmail.com/taken"
+ERROR=65
+
+if [ ! -e "$TODOLIST" ] ; then
+    touch "$TODOLIST"
+    echo "$SCRIPT: \`$TODOLIST' aangemaakt."
+fi
+
+LINES=$(wc -l < "$TODOLIST")
+
+while getopts "hlad:p:c" OPTION
+do
+    case $OPTION in
+        h) # help
+            echo "Gebruik:"
+            printf "%-32s- %s\n" "$SCRIPT [-l]" "takenlijst tonen"
+            printf "%-32s- %s\n" "$SCRIPT [-a] 'doe je ding'" "voeg taak toe (haakjes zijn optioneel)"
+            printf "%-32s- %s\n" "$SCRIPT -dX" "verwijder taak nummer \`X'"
+            printf "%-32s- %s\n" "$SCRIPT -pX" "toon taak nummer \`X'"
+            printf "%-32s- %s\n" "$SCRIPT -c" "takenlijst opschonen (verwijder bestand)"
+            exit 0 ;;
+        l) # list, done after
+            ;;
+        a) # add, done after
+            ;;
+        p) # print
+            if [ ! -z "$(echo $OPTARG | sed s/[0-9]*//)" ] ; then
+                echo "$SCRIPT: argument moet een integer zijn." >&2
+                exit $ERROR
+            elif [ $OPTARG -lt 1 ] || [ $OPTARG -gt $LINES ] ; then
+                echo "$SCRIPT: argument moet tussen 1 en $LINES zijn." >&2
+                exit $ERROR
+            fi
+            sed -n "${OPTARG}p" "$TODOLIST"
+            exit 0 ;;
+        d) # delete
+            if [ ! -z "$(echo $OPTARG | sed s/[0-9]*//)" ] ; then
+                echo "$SCRIPT: argument moet een integer zijn." >&2
+                exit $ERROR
+            elif [ $OPTARG -lt 1 ] || [ $OPTARG -gt $LINES ] ; then
+                echo "$SCRIPT: argument moet tussen 1 en $LINES zijn." >&2
+                exit $ERROR
+            fi
+            sed -n "${OPTARG}p" "$TODOLIST"
+            read -p "$SCRIPT: taak verwijderen $OPTARG [J/n] ? " QUESTION
+            case $QUESTION in
+                J|j|Y|y|'')
+                    sed -i "${OPTARG}d" "$TODOLIST"
+                    echo "$SCRIPT: taak $OPTARG verwijderd." ;;
+                n)
+                    echo "$SCRIPT: annuleer." ;;
+                *)
+                    echo "$SCRIPT: wat zeg je?" >&2
+                    exit $ERROR ;;
+            esac
+            exit 0 ;;
+        c) # clear
+            read -p "$SCRIPT: opschonen takenlijst [J/n] ? " QUESTION
+            case $QUESTION in
+                J|j|Y|y|'')
+                    rm "$TODOLIST"
+                    echo "$SCRIPT: takenlijst verwijderd." ;;
+                n)
+                    echo "$SCRIPT: annuleer." ;;
+                *)
+                    echo "$SCRIPT: wat zeg je?" >&2
+                    exit $ERROR ;;
+            esac
+            exit 0 ;;
+        *)
+            echo "$SCRIPT: dat klopt niet." >&2
+            echo "help: $SCRIPT -h"
+            exit $ERROR ;;
+    esac
+done
+
+shift $((OPTIND - 1))
+
+if [ $# -eq 0 ]
+then # list tasks
+    if [ $LINES -eq 0 ]
+    then
+        echo "$SCRIPT: heb je weer niks te doen! \O_o/"
+   # clear
+    else
+        echo "TODO: dude er zijn $LINES taken in \`$TODOLIST'."
+        echo "--"
+        cat -n "$TODOLIST"
+        echo ""
+    fi
+else # add task
+    echo "$@" >> "$TODOLIST"
+    echo "$SCRIPT: taak nummer $((LINES + 1)) toegevoegd aan takenlijst."
+fi
+
+exit 0
+
