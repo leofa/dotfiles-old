@@ -72,5 +72,4 @@ push(@metadata, $artist) if $artist;
 my $title = qx(playerctl $player_arg metadata title);
 exit(0) if $?;
 push(@metadata, $title) if $title;
-
 print(join(" - ", @metadata)) if @metadata;

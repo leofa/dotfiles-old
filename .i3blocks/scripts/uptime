@@ -1,6 +1,5 @@
 #!/bin/bash
 #
-# Author: Raphael P. Ribeiro <raphaelpr01@gmail.com> 
 
 uptime=$(</proc/uptime)
 uptime=${uptime%%.*}

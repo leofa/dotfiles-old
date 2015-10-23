@@ -1,7 +1,9 @@
+abiword-gtk2
 alsi
 archlinux-artwork
 bomi
 caja-dropbox
+cava
 chromium-pepper-flash-dev
 chromium-widevine
 compton
@@ -10,6 +12,7 @@ dotfiles
 downgrade
 dropbox-cli
 dropbox-experimental
+firejail
 flattr-icon-theme-git
 freshplayerplugin
 gksu-polkit-git
@@ -53,12 +56,15 @@ python-pyfiglet
 python-pysocks-git
 python-twitter
 python-xlib
+qtpass
 radiotray
 rainbowstream
 rtv
 steam-fonts
 sublime-text-dev
+termite-ranger-fix-git
 thermald
+toilet
 ttf-font-awesome
 ttf-ms-fonts
 unclutter-xfixes-git

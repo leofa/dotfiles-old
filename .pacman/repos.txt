@@ -19,12 +19,12 @@ bash
 bash-completion
 binutils
 bison
+bitlbee
 blueman
 bluez
 bluez-plugins
 bluez-utils
 breeze-icons
-btrfs-progs
 bzip2
 bzr
 caja
@@ -73,6 +73,7 @@ file
 filesystem
 findutils
 flex
+fortune-mod
 freerdp
 frei0r-plugins
 frogatto
@@ -127,11 +128,11 @@ iotop
 iproute2
 iputils
 irqbalance
+irssi
 iw
 jfsutils
 jre8-openjdk-infinality
 jshon
-keepassx
 kodi
 less
 lib32-cairo-infinality-ultimate
@@ -143,7 +144,6 @@ libchamplain
 libnewt
 liboauth
 libraw
-libreoffice-fresh-nl
 libtool
 libva-intel-driver
 libvdpau-va-gl
@@ -164,6 +164,7 @@ make
 man-db
 man-pages
 mate-utils
+mc
 mdadm
 mediainfo
 memtest86+
@@ -193,6 +194,7 @@ pciutils
 pcmciautils
 perl
 perl-file-mimeinfo
+perl-gtk2-webkit
 perl-term-readkey
 pkg-config
 powertop
@@ -230,7 +232,6 @@ sl
 smartmontools
 speedtest-cli
 sshfs
-stalonetray
 steam
 steam-libs
 stlarch-font-ibx
@@ -242,9 +243,7 @@ system-config-printer
 systemd-sysvcompat
 t1-urw-fonts-ib
 tar
-termite
 texinfo
-thefuck
 tig
 tk
 tmux

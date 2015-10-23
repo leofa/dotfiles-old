@@ -18,7 +18,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
-#. /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
+##. /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
 
 #skype fix
 #export PULSE_LATENCY_MSEC=60
@@ -150,7 +150,7 @@ else
 
   ## BASH HISTORY #{{{
     # make multiple shells share the same history file
-    export HISTSIZE=1000           # bash history will save N commands
+    export HISTSIZE=10000           # bash history will save N commands
     export HISTFILESIZE=${HISTSIZE} # bash will remember N commands
     export HISTCONTROL=ignoreboth   # ingore duplicates and spaces
     export HISTIGNORE='&:ls:ll:la:cd:exit:clear:history'

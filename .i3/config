@@ -12,8 +12,8 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 floating_modifier $mod
 
 # i3 swag \O_o/
-exec i3-msg workspace 0   
-bindsym $mod+Shift+i workspace 0   
+exec xdotool key Super_L+Shift+i
+bindsym $mod+Shift+i workspace 0<span font='10.5' weight='light' underline='low'>3</span>
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite'
@@ -45,7 +45,7 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
-for_window [instance="vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
+for_window [instance="qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
 for_window [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #jb live|google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
@@ -57,18 +57,18 @@ for_window [class="(?i)pavucontrol"] move position 860 21
 for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position 1118 21
 for_window [instance="(?i)ald.mindbrain.io"] move position 708 21
-for_window [instance="WiFi-Menu"]  move position  712 21
+for_window [instance="WiFi-Menu"]  resize set 455 445; move position 911 21
 
 #layout
 for_window [workspace="$WS2|$WS4"] layout tabbed
 
 #window actions
 bindsym $mod+Shift+s sticky toggle
-#fullscreen vids to small sticky in corner 
+#fullscreen vids to small sticky in corner aka picture in picture mode 
 bindsym $mod+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 933 518 
 
-#window titles
-for_window [class="(?i)"] title_format   "     %title"
+#window title format mess around with pango
+for_window [class="(?i)"] title_format "<span foreground='#C7C7C7'>[</span>%title<span foreground='#C7C7C7'>]</span> "
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
@@ -76,10 +76,11 @@ assign [window_role="browser"] $WS2
 assign [instance="caja"] $WS3
 assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
 assign [instance="subl3|sublime_text|geany"] $WS5
-assign [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|lollypop|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
+assign [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
-assign [instance="sol|Steam|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
+assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
 assign [instance="remmina|htop|virt-manager|log_term|pacaur|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
+assign [class="(?)Steam"] 7  
 
 # workspace names / variables 
 #set $WS1 1  
@@ -297,8 +298,36 @@ mode "  " {
      bindsym Escape mode "default"
 }
 
-# i3bar 
+# show tray output only with keybinding, use empty modifier key
+bindsym $mod+o bar mode toggle
+
 bar {
+     mode hide
+     hidden_state hide 
+     modifier Mod3  
+     status_command i3blocks
+     position top
+     height 21    
+     workspace_buttons yes
+     strip_workspace_numbers yes
+     separator_symbol "〉"
+     bindsym button5 nop
+     bindsym button4 nop
+     tray_output none
+     tray_padding 3     
+colors {
+     separator #586e75 
+     background #2d2d2d
+     statusline #c7c7c7
+     focused_workspace  #586e75 #586e75 #ffffff
+     active_workspace #2d2d2d #2d2d2d #ffffff
+     inactive_workspace #455057 #455057 #c7c7c7
+     urgent_workspace #ae4544 #ae4544 #ffffff
+  }
+}
+
+bar {
+     modifier Mod3
      status_command i3blocks
      position top
      height 21    

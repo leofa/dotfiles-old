@@ -1,10 +1,7 @@
 #! /bin/bash
 
-dbus-cleanup-sockets 
 killall chromium
 killall yad
 killall sh
 killall perl
-killall dbus-daemon
 killall sleep
-loginctl kill-user faruk

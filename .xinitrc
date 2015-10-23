@@ -71,7 +71,7 @@ dunst &
 redshift &
 clipit -dn &
 menutray -r -u -i &
-unclutter -b --timeout 20 &
+unclutter -b --timeout 30 &
 batnotify "$@" > /dev/null &
 #xss-lock -- ilockit  &
 #xautolock -detectsleep -time 15 -locker "systemctl suspend" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'Powersaving on in a few seconds....'"  &

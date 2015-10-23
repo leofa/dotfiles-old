@@ -1,6 +1,0 @@
-#!/bin/sh
-case $BLOCK_BUTTON in
-  1) xdotool key Super_L+slash ;; # chrome launcher shortcut
- # 2) ;;
-  3) mate-search-tool & "$@" > /dev/null ;;
-esac
