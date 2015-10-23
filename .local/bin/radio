@@ -1,0 +1,70 @@
+#!/bin/bash
+
+#black=`tput setaf 0`
+red=`tput setaf 1`
+green=`tput setaf 2`
+yellow=`tput setaf 3`
+blue=`tput setaf 4`
+magenta=`tput setaf 5`
+cyan=`tput setaf 6`
+red=`tput setaf 1`
+norm=`tput sgr0`
+
+bold=`tput bold`
+#ulbegin=`tput smul`
+#ulend=`tput rmul`
+
+ser="$cyan"
+name="$bold$norm"
+echo '
+        
+                  | _)       
+     _| _` |   _` |  |   _ \ 
+   _| \__,_| \__,_| _| \___/ 
+'                          
+            
+stations=(
+3FM_Serious_Radio="http://icecast.omroep.nl/3fm-bb-aac"
+_alternative="http://icecast.omroep.nl/3fm-alternative-aac"
+_on_stage="http://icecast.omroep.nl/3fm-live-aac"
+_serioustalent="http://icecast.omroep.nl/3fm-serioustalent-aac"	
+Pinguin_Radio="http://pr320.pinguinradio.nl:80/"
+Radio_6_Soul_Jazz="http://icecast.omroep.nl/radio6-bb-mp3"
+_easy_listening="http://icecast.omroep.nl/radio6-easylistening-bb-mp3"
+_back_to_the_old_school="http://icecast.omroep.nl/radio6-oldschool-bb-aac"
+_jazz_jong="http://icecast.omroep.nl/radio6-jazzjong-mp3"
+_world="http://icecast.omroep.nl/radio6-world-bb-mp3"
+_jazz="http://icecast.omroep.nl/radio6-jazz-bb-mp3"
+_grooves="http://icecast.omroep.nl/radio6-grooves-bb-mp3"
+_blues="http://icecast.omroep.nl/radio6-blues-bb-mp3"
+)
+
+#show_inf () {
+ #sed -n '/Name/,/Bitrate/ p' $tfile
+ # }
+
+while(true); do
+  index=0
+  echo
+  for i in "${stations[@]}"; do
+    echo ${ser}$index.${norm} ${name}${i%%=*}${norm}
+    index=$[index+1]
+  done
+
+  echo
+  read -p "${yellow}Station:${norm} " sta
+  echo
+
+  capture="--stream-capture --stream-dump ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
+
+ # tfile=`mktemp`
+  mpv --ao=alsa --vd=null --vo=null --quiet --msg-level=all=info:debug=no:ffmpeg/audio=no:file=no ${capture} --msg-color `echo ${stations[$sta]} | cut -d '=' -f2`
+ 
+  echo -ne "${yellow}\nPress enter to change station ${norm}"
+  read -t 5
+  [[ $? -gt 128 ]] && { echo && exit 0; }
+  #rm $tfile
+  unset -v index sta capture
+done
+
+exit 0
