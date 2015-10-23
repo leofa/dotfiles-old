@@ -46,7 +46,7 @@ for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] f
 for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
 for_window [instance="qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-Menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
-for_window [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] floating disable #jb live|google books|docs|inbox|netflix
+for_window [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|ald.mindbrain.io"] floating disable #jb live|google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
 for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad
@@ -56,8 +56,7 @@ for_window [instance="insync"] move position 945 21
 for_window [class="(?i)pavucontrol"] move position 860 21
 for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position 1118 21
-for_window [instance="(?i)ald.mindbrain.io"] move position 708 21
-for_window [instance="WiFi-Menu"]  resize set 455 445; move position 911 21
+for_window [instance="WiFi-Menu"]  resize set 455 445; move position 912 21
 
 #layout
 for_window [workspace="$WS2|$WS4"] layout tabbed
@@ -298,36 +297,8 @@ mode "  " {
      bindsym Escape mode "default"
 }
 
-# show tray output only with keybinding, use empty modifier key
-bindsym $mod+o bar mode toggle
-
 bar {
-     mode hide
-     hidden_state hide 
-     modifier Mod3  
-     status_command i3blocks
-     position top
-     height 21    
-     workspace_buttons yes
-     strip_workspace_numbers yes
-     separator_symbol "〉"
-     bindsym button5 nop
-     bindsym button4 nop
-     tray_output none
-     tray_padding 3     
-colors {
-     separator #586e75 
-     background #2d2d2d
-     statusline #c7c7c7
-     focused_workspace  #586e75 #586e75 #ffffff
-     active_workspace #2d2d2d #2d2d2d #ffffff
-     inactive_workspace #455057 #455057 #c7c7c7
-     urgent_workspace #ae4544 #ae4544 #ffffff
-  }
-}
-
-bar {
-     modifier Mod3
+     #mode hide
      status_command i3blocks
      position top
      height 21    

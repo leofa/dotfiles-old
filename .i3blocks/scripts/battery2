@@ -68,9 +68,10 @@ END {
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) dpmstoggle & "$@" > /dev/null ;; # left click, control DPMS 
-  3) togglered & "$@" > /dev/null ;;  # right click, redshift on/off
-  2) yad_logout & "$@" > /dev/null ;; # logout dialog
+  3) dpmstoggle & "$@" > /dev/null ;; # left click, control DPMS 
+  2) togglered & "$@" > /dev/null ;;  # right click, redshift on/off
+#  1) yad --no-buttons --text-info --geometry=500x260+$X+20 --class "yad_bat" --margins=10 --filename=<(acpi -V) ;;
+  1) yad_logout & "$@" > /dev/null ;; # logout dialog
   5) xbacklight -inc 10 ;; # scroll up, increase brightness
   4) xbacklight -dec 10 ;; # scroll down, decrease brightness
 esac
