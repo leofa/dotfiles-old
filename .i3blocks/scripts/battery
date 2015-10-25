@@ -1,74 +1,77 @@
-#!/usr/bin/perl
-#
-# Copyright 2014 Pierre Mavro <deimos@deimos.fr>
-# Copyright 2014 Vivien Didelot <vivien@didelot.org>
-#
-# Licensed under the terms of the GNU GPL v3, or any later version.
-#
-# This script is meant to use with i3blocks. It parses the output of the "acpi"
-# command (often provided by a package of the same name) to read the status of
-# the battery, and eventually its remaining time (to full charge or discharge).
-#
-# The color will gradually change for a percentage below 85%, and the urgency
-# (exit code 33) is set if there is less that 5% remaining.
+#!/bin/sh
+# Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 
-use strict;
-use warnings;
-use utf8;
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 
-my $acpi;
-my $status;
-my $percent;
-my $full_text;
-my $short_text;
-my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 
-# read the first line of the "acpi" command output
-open (ACPI, "acpi -b | grep 'Battery $bat_number' |") or die;
-$acpi = <ACPI>;
-close(ACPI);
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# fail on unexpected output
-if ($acpi !~ /: (\w+), (\d+)%/) {
-	die "$acpi\n";
+INSTANCE="${1:-BAT0}"
+ALERT_LOW="${2:-11}" # color will turn red under this value (default: 10%)
+UPOWER="/usr/bin/upower"
+
+if [ ! -x "$UPOWER" ]; then
+	echo "upower not found"
+	exit 1
+fi
+
+$UPOWER -i /org/freedesktop/UPower/devices/battery_$INSTANCE |
+	awk -v alert_low=$ALERT_LOW '
+/state:/ {
+	state = $2
 }
-
-$status = $1;
-$percent = $2;
-$full_text = "$percent%";
-
-if ($status eq 'Discharging') {
-	$full_text .= ' ';
-} elsif ($status eq 'Charging') {
-	$full_text .= ' ';
+/time to full:/ {
+	remaining_time = $4 " " substr ($5, 0, 1)
 }
-
-$short_text = $full_text;
-
-if ($acpi =~ /(\d\d:\d\d):/) {
-	$full_text .= " $1";
+/time to empty:/ {
+	remaining_time = $4 " " substr ($5, 0, 1)
 }
-
-# print text
-print "$full_text\n";
-print "$short_text\n";
-
-# consider color and urgent flag only on discharge
-if ($status eq 'Discharging') {
-
-	if ($percent < 11) {
-		print "#E65B5A\n";
-	} elsif ($percent < 21) {
-		print "#F0D6A3\n";
-#	} elsif ($percent < 31) {
-#		print "#B9BD8E\n";
-#	} elsif ($percent < 41) {
-#		print "#8ABEB7\n";
-	}
-
-	if ($percent < 8) {
-		exit(33);
-	}
+/percentage:/ {
+	percentage = $2;
 }
+END {
+	if (state == "charging")
+		label = ""
+	else if (percentage == "100%")
+		label = ""
+	else if (percentage > 75)
+		label = ""
+	else if (percentage > 50)
+		label = ""
+	else if (percentage > 25)
+		label = ""
+    else if (percentage > 10) 
+		label = ""
+    else  
+		label = ""
+	
+    # full text & "$@" > /dev/null;
+	print label " " percentage
 
-exit(0);
+	# short text
+	print label " " percentage
+
+	# color
+	gsub(/%$/,"",percentage)
+	if (+ percentage < + alert_low)
+		print "#ed6b6b"
+}
+'
+#------------------------------------------------------------------------
+
+case $BLOCK_BUTTON in
+  3) dpmstoggle & "$@" > /dev/null ;; # left click, control DPMS 
+  2) togglered & "$@" > /dev/null ;;  # right click, redshift on/off
+#  1) yad --no-buttons --text-info --geometry=500x260+$X+20 --class "yad_bat" --margins=10 --filename=<(acpi -V) ;;
+  1) yad_logout & "$@" > /dev/null ;; # logout dialog
+  5) xbacklight -inc 10 ;; # scroll up, increase brightness
+  4) xbacklight -dec 10 ;; # scroll down, decrease brightness
+esac

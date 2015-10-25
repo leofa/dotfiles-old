@@ -1,8 +1,8 @@
 #!/bin/sh
-win=$(xdotool getactivewindow) 
-if [ -n "$win" ]; 
+WIN=$(xdotool getactivewindow) 
+if [ -n "$WIN" ]; 
    then echo "X"
-   else exit 0
+   else exit 0 
    fi
 
 case $BLOCK_BUTTON in

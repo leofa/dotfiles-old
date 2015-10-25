@@ -9,6 +9,6 @@ acpi -bt| ccze -A
 echo "
 __________________________ \O_o/
 "
-fortune -s
+fortune -s science
 echo " ______________
 "

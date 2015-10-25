@@ -58,7 +58,7 @@ while(true); do
   capture="--stream-capture --stream-dump ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
 
  # tfile=`mktemp`
-  mpv --ao=alsa --vd=null --vo=null --quiet --msg-level=all=info:debug=no:ffmpeg/audio=no:file=no ${capture} --msg-color `echo ${stations[$sta]} | cut -d '=' -f2`
+  mpv --no-video --ao=alsa --softvol-max=100 --mute=no --volume=100 --vd=null --vo=null --really-quiet --msg-level=all=info:debug=no:ffmpeg/audio=no:file=no ${capture} --msg-color `echo ${stations[$sta]} | cut -d '=' -f2`
  
   echo -ne "${yellow}\nPress enter to change station ${norm}"
   read -t 5

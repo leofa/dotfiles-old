@@ -93,6 +93,7 @@ gnome-disk-utility
 gnome-keyring
 gnome-settings-daemon
 gnome-themes-standard
+gnuchess
 gpart
 gpicview
 gptfdisk
