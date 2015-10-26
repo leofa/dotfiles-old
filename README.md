@@ -15,14 +15,15 @@ etc.
 
 # latest screenshots
 clean
-![ScreenShot](/clean.png)
+![ScreenShot](.scrot/clean.png)
 dirty
-![ScreenShot](/dirty.png) 
+![ScreenShot](.scrot/dirty.png) 
 menutray
-![ScreenShot](/menu.png)
+![ScreenShot](.scrot/menutray.png)
 vim + colortheme
-![ScreenShot](/vim+colortheme.png) 
+![ScreenShot](.scrot/vim+colortheme.png) 
 
-latest wallpaper by <a href="http://deadmetaler.deviantart.com/art/ArchOS-559048877">DeadMetaler</a>
-colors mostly based <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a>
+latest wallpaper by <a href="http://deadmetaler.deviantart.com/art/ArchOS-559048877">DeadMetaler</a>, colors mostly based on <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a> by Chris Kempson
 
+# WIP
+keep on learning, always changing..
