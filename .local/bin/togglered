@@ -1,2 +1,4 @@
 #!/bin/bash
-sh -c 'notify-send -u critical "Redshift" "Schermkleur aangepast."; pkill -USR1 redshift'  
+# toggle redshift, send notification
+notify-send -u critical "Redshift" "Schermkleur aangepast."
+pkill -USR1 redshift

@@ -1,9 +1,9 @@
 #!/bin/bash
-
-# Configuration
+# critical battery notifier
+# configuration
 interval=120    #in seconds
 critical_level=10    #percent
-icon="notification-battery-low"     #notification icon
+icon="notification-battery-low"   #notification icon
 
 while true
 do
@@ -11,7 +11,8 @@ do
            battery_level=`acpi -b | sed 's/.*[dg], //g;s/\%,.*//g'`
            [ $battery_level -le $critical_level ] && \
             notify-send -u critical -i "$icon" -t 15000 \
-            "Batterij is bijna leeg!" "Nog maar $battery_level% over."
+            "Batterij is bijna leeg!" "Nog maar $battery_level% over."   
+           #"Battery almost empty!" "Only $battery_level% left."
         fi
 sleep $interval
 done

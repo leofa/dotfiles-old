@@ -1,4 +1,5 @@
 #! /bin/bash
+# yad gtk logout dialog
 
 action=$(yad --width 300 --entry --title "Systeem afsluiten" \
     --image=system-shutdown \

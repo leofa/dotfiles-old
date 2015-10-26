@@ -167,7 +167,8 @@ bindsym $MOD+SHIFT+plus move scratchpad
 bindsym $mod+plus scratchpad show
 
 # kill focused window
-bindsym $mod+q kill
+#bindsym $mod+q kill
+bindsym $mod+q exec xdotool getactivewindow windowraise windowunmap
 bindsym --release $mod+x exec xkill
 
 # mouse actions 

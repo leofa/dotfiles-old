@@ -1,4 +1,5 @@
 #! /bin/bash
+# yad gtk close session dialog
 
 action=$(yad --width 335 --title "Uitloggen" \
     --image=system-logout \
