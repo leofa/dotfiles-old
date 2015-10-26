@@ -26,4 +26,4 @@ vim + colortheme
 latest wallpaper by <a href="http://deadmetaler.deviantart.com/art/ArchOS-559048877">DeadMetaler</a>, colors mostly based on <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a> by Chris Kempson
 
 # WIP
-keep on learning, always changing..
+keep on learning, ever changing..
