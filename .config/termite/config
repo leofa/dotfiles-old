@@ -75,7 +75,7 @@ color7 = #929593
 color15 = #ecebec
 
 [hints]
-#font = Monospace 12
+#font = Hack 10
 #foreground = #dcdccc
 #background = #3f3f3f
 padding = 10

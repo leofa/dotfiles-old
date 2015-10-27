@@ -159,7 +159,6 @@ elseif has("unix")
     set gfn=Monospace\ 11
 endif
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -342,6 +341,7 @@ let g:airline_theme="tomorrow"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom

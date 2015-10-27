@@ -6,7 +6,7 @@
 set $mod Mod4
 
 # fonts
-font pango: Source Code Pro Semibold, FontAwesome Regular 9
+font pango: Source Code Pro Semibold, Hack, FontAwesome Regular 9
 
 # move windows with mouse+$mod
 floating_modifier $mod

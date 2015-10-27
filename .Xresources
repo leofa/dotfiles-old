@@ -129,7 +129,7 @@ rofi.run-command:                    {cmd}
 ! Command to get extra run targets
 rofi.run-list-command:               
 ! Run command to execute that runs in shell
-rofi.run-shell-command:              {terminal} -e {cmd} +hold
+rofi.run-shell-command:              {terminal} -e {cmd} --hold
 ! Disable history in run/ssh
 rofi.disable-history:                false
 ! Use levenshtein sorting

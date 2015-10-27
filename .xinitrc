@@ -35,6 +35,7 @@ fi
 eval $(dbus-launch --sh-syntax --exit-with-session)
  
 xset +fp /usr/share/fonts/local   # load custom fonts
+xset +fp ~/.local/fonts
 xset fp rehash
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK              # gnome-keyring
