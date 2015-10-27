@@ -14,11 +14,8 @@ fi
 
 export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 
-# powerline 
-#powerline-daemon -q
-#POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
-##. /usr/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+# promptline
+source ~/.shell_prompt.sh
 
 #skype fix
 #export PULSE_LATENCY_MSEC=60

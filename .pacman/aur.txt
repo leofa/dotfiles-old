@@ -48,6 +48,7 @@ perl-gtk2-notify
 perl-linux-desktopfiles
 pkgcacheclean
 playerctl
+powerline-fonts-git
 profile-cleaner
 profile-sync-daemon
 python-arrow
