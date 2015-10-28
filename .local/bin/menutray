@@ -177,11 +177,11 @@ my %CONFIG = (
 
         skip_entry       => [   {key => 'Name', re => qr/(?:about|mate-search-tool|lxsession|lxsession-xdg-autostart|lxsession-xsettings|lxsession-default-apps|Htop|lxsession-edit|CMake|Caffeine|Clipit|Redshift|Caja Dropbox|7-zip*|Avahi*|Root Terminal|urxvt|compton|Feh|Qt4 *|Qt As*|Qt Di*|Qt Li*|Qt QD*|Qt V4*|mpv)/},
                                 {key => 'Exec', re => qr/^nmcli_dmenu/},    
-			        {key => 'Exec', re => qr/^yelp/},         
-				{key => 'Exec', re =>qr/^lxsession/},      
-   			        {key => 'Exec', re => qr/^gksu-properties/},         
-					{key => 'Exec', re => qr/^ffado-mixer/},
-					{key => 'Exec', re => qr/^fluid/},
+	            		        {key => 'Exec', re => qr/^yelp/},         
+     			            	{key => 'Exec', re =>qr/^lxsession/},      
+   			                    {key => 'Exec', re => qr/^gksu-properties/},         
+					            {key => 'Exec', re => qr/^ffado-mixer/},
+					            {key => 'Exec', re => qr/^fluid/},
 				],
         substitutions    => [
                                 {key => 'Exec', re => qr/frogatto/, value => '/usr/bin/frogatto  --height 768 --width 1366 --widescreen --fullscreen'},
@@ -194,7 +194,7 @@ my %CONFIG = (
 
         desktop_files_paths => [
                                 '/usr/share/applications',
-                                '/home/faruk/Desktop',
+                                '/home/faruk/Desktop', #use this for desktop launchers
                               ],
     },
 
@@ -445,7 +445,7 @@ use Gtk${gtk_v} ('-init');
 my \$menu = 'Gtk${gtk_v}::Menu'->new;
 my \$icon = 'Gtk${gtk_v}::StatusIcon'->new;
 
-\$icon->set_from_icon_name('menutray');
+\$icon->set_from_icon_name('start-here');
 \$icon->set_visible(1);
 \$icon->signal_connect('button-release-event', \\&show_icon_menu);
 

@@ -123,13 +123,13 @@ rofi.terminal:                       termite
 ! Ssh client to use
 rofi.ssh-client:                     ssh
 ! Ssh command to execute
-rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
+rofi.ssh-command:                    termite  --execute='{ssh-client} {host}'
 ! Run command to execute
 rofi.run-command:                    {cmd}
 ! Command to get extra run targets
 rofi.run-list-command:               
 ! Run command to execute that runs in shell
-rofi.run-shell-command:              {terminal} -e {cmd} --hold
+rofi.run-shell-command:              termite --execute={cmd} --hold
 ! Disable history in run/ssh
 rofi.disable-history:                false
 ! Use levenshtein sorting

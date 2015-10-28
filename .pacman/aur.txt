@@ -70,6 +70,8 @@ ttf-font-awesome
 ttf-ms-fonts
 unclutter-xfixes-git
 update-hosts-git
+vim-promptline-git
+vim-tmuxline-git
 vitetris
 vte-notification-common
 xcb-util-cursor-git

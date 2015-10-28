@@ -1,0 +1,14 @@
+#!/bin/sh
+pacman=$(pacaur -Qu | wc -l)
+clear
+ufetch && echo "Pacman: $pacman new packages, wakawaka yeah!   ________________ (^-^)/
+"
+inxi -P 
+echo "
+- feelin' hot? -" 
+sensors| ccze -A
+echo "Welcome back, LeoFa  ______________ \O_o/
+"
+fortune -s
+echo " ______________
+"

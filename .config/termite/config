@@ -32,11 +32,11 @@ size_hints = true
 foreground = #c5c8c6
 foreground_bold = #ffffff
 #foreground_dim = #888888
-background = #1d1f21
+#background = #1d1f21
 cursor = #912226
 
 # 15% background transparency (requires a compositor)
-#background = rgba(10, 10, 10, 0.90)
+# background = rgba(10, 10, 10, 0.90)
 
 # if unset, will reverse foreground and background
 #highlight = #d6d6d6

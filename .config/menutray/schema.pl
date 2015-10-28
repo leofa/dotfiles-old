@@ -31,79 +31,67 @@ require "$ENV{HOME}/.config/menutray/config.pl";
 
 our $SCHEMA = [
 
-    #          COMMAND             LABEL                ICON
-    {item => ['rofi -show run',  'Uitvoeren..',       'system-run']},
-    {item => ['i3-sensible-terminal',         'Terminalvenster',          'terminal']},
-    {item => ['subl3',        'Tekstverwerker', 'gvim']},
-    {item => ['chromium',      'Webbrowser',       'web-browser']},
-    {item => ['geary',        'E-mailprogramma', 'evolution']},
-#    {item => ['chromium --show-app-list', 'Chromium-apps', 'chromium-app-list']}, 
-    {item => ['caja --browser --no-desktop',       'Bestandsbeheerder',      'system-file-manager']},
-    {item => ['mate-search-tool',         'Zoek bestanden..',    'tracker']},
+    #          COMMAND                  LABEL                ICON
+    {item => ['rofi -show run',       'Uitvoeren..',       'system-run']},
+    {item => ['i3-sensible-terminal', 'Terminalvenster',   'terminal']},
+    {item => ['subl3',                'Tekstverwerker',    'text-editor']},
+    {item => ['chromium',             'Webbrowser',        'web-browser']},
+    {item => ['geary',                'E-mailprogramma',   'evolution']},
+    {item => ['caja',                 'Bestandsbeheerder', 'system-file-manager']},
+    {item => ['mate-search-tool',     'Zoek bestanden..',  'tracker']},
 
-#    {sep        => line},      
     {sep        => line},      
 
     #          NAME            LABEL                ICON
-    {cat => ['utility',     'Hulpapps', 'gnome-util']},
+    {cat => ['utility',     'Hulpapps',     'gnome-util']},
     {cat => ['development', 'Ontwikkeling', 'applications-ide']},
-    {cat => ['education',   'Educatie',   'applications-education']},
-    {cat => ['game',        'Games',       'applications-arcade']},
-    {cat => ['graphics',    'Grafisch',    'applications-photography']},
-    {cat => ['audiovideo',  'Multimedia',  'gnome-multimedia']},
+    {cat => ['education',   'Educatie',     'applications-education']},
+    {cat => ['game',        'Games',        'applications-arcade']},
+    {cat => ['graphics',    'Grafisch',     'applications-photography']},
+    {cat => ['audiovideo',  'Multimedia',   'gnome-multimedia']},
     {cat => ['network',     'Internet',     'gnome-globe']},
     {cat => ['other',       'Web-apps',     'applications-utilities']},
     {cat => ['office',      'Kantoor',      'package_office']},
     {cat => ['system',      'Systeem',      'package_system']},
-#    {tree => [[
-#              { Name => "name", Exec => "exec", Icon => "icon", },
-#              ], 'Configuratie', 'code']},
-    {cat => ['settings',       'Instellingen',      'package_settings']},
-
-    #{cat => ['qt',          'QT Applications',    'qtlogo']},
-    #{cat => ['gtk',         'GTK Applications',   'gnome-applications']},
-    #{cat => ['x_xfce',      'XFCE Applications',  'applications-other']},
-    #{cat => ['gnome',       'GNOME Applications', 'gnome-applications']},
-    #{cat => ['consoleonly', 'CLI Applications',   'applications-utilities']},
-        
-    {tree => [[
-	     { Name => "Menu", Exec => "gvim ~/.config/menutray/menu.pl", Icon => "gtk-edit", },
-             { Name => "Config", Exec => "gvim ~/.config/menutray/config.pl", Icon => "gtk-edit", },
-             { Name => "Schema", Exec => "gvim ~/.config/menutray/schema.pl", Icon => "gtk-edit", },
-             { Name => "Menutray", Exec => "gvim ~/.local/bin/menutray", Icon => "gtk-edit", },   
-             { Name => "Reload", Exec => "pkill perl; menutray -r -i -u", Icon => "reload", },
-	     { Name => "Exit", Exec => "pkill perl", Icon => "exit", },
-	     ], 'Hoofdmenu', 'menutray']},
-	     
-    #{tree => [[
-    #          { Name => "i3 Configuratiebestand", Exec => "gvim ~/.i3/config", Icon => "wmtweaks", },
-	  #    { Name => "i3 Paneel instellen", Exec => "gvim ~/.i3status.conf", Icon => "panel", },              
-	  #    { Name => "i3 Handleiding", Exec => "i3-msg workspace $WS2; exec chromium http://i3wm.org/docs/userguide.html", Icon => "help-browser", },
-    #          ], 'i3 Vensterbeheer', 'window-manager']},
-
- #   {sep        => line},      
- #{sep        => line},      
+    {cat => ['settings',    'Instellingen', 'package_settings']},
     
-#  {item => ['i3-msg workspace $WS2; exec chromium https://www.archlinux.org/', 'Over Arch Linux®', 'info']},    
- #  {item => ['i3-msg workspace $WS2; exec chromium https://bbs.archlinux.org/', 'Arch Forums', 'users']},
- #  {item => ['i3-msg workspace $WS2; exec chromium https://wiki.archlinux.org/', 'Arch Wiki','help-browser']},
+    # menutray submenu
+    {tree => [[
+                { Name => "Menu", Exec => "gvim ~/.config/menutray/menu.pl", Icon => "gtk-edit", },
+                { Name => "Config", Exec => "gvim ~/.config/menutray/config.pl", Icon => "gtk-edit", },
+                { Name => "Schema", Exec => "gvim ~/.config/menutray/schema.pl", Icon => "gtk-edit", },
+                { Name => "Menutray", Exec => "gvim ~/.local/bin/menutray", Icon => "gtk-edit", },   
+                # be warned killing all perl instances here
+                { Name => "Reload", Exec => "pkill perl; menutray -r -i -u", Icon => "reload", }, 
+	            { Name => "Exit", Exec => "pkill perl", Icon => "exit", },     
+            ], 'Hoofdmenu', 'start-here']},
+    
+    # more menu's if you need them
+    # i3 submenu    
+    #{tree => [[
+    #            { Name => "i3 Website", Exec => "chromium http://i3wm.org", Icon => "window-manager", },
+    #            { Name => "i3 Config", Exec => "gvim ~/.i3/config", Icon => "wmtweaks", },
+    #            { Name => "i3 Bar Config", Exec => "gvim ~/.i3blocks.conf", Icon => "panel", },              
+    #            { Name => "i3 Userguide", Exec => "chromium http://i3wm.org/docs/userguide.html", Icon => "help-browser", },
+    #        ], 'i3wm', 'window-manager']},
+
+    #{sep        => line},      
+    
+    # arch submenu
+    #{tree => [[
+    #            { Name => "Arch Linux website", Exec => "chromium https://www.archlinux.org/", Icon => "archlinux", },    
+    #            { Name => "Arch Forums", Exec => "chromium https://bbs.archlinux.org/", Icon => "users", },
+    #            { Name => "Arch Wiki", Exec => "chromium https://wiki.archlinux.org/", Icon => "help-browser" },
+    #            { Name => "Arch AUR", Exec => "chromium https://aur.archlinux.org/", Icon => "package" },
+    #        ], 'Arch Linux', 'info']},
      
-  #  {sep        => line},      
     {sep        => line},      
 
-  #  {regenerate => ['Opnieuw laden', 'reload']},
-   # {exit       => ['Menu sluiten', 'exit']},
-   # {item => ['xdotool getactivewindow windowraise windowunmap',         'Sluiten ',          'gtk-close']},
-    
-    #{tree => [[
-     #        { Name => "Afmelden", Exec => "i3-msg exit", Icon => "system-log-out", },
-      #       { Name => "Vergrendelen", Exec => "i3lock -i /home/faruk/Afbeeldingen/lockscreen.png && sleep 1", Icon => "system-lock-screen", },
-      #      { Name => "Pauzestand", Exec => "systemctl suspend", Icon => "system-suspend", },
-        #     { Name => "Herstarten", Exec => "systemctl reboot", Icon => "system-reboot", },
-         #    { Name => "Afsluiten", Exec => "systemctl poweroff", Icon => "system-shutdown", },
-	     #], 'Afmelden..', 'system-log-out']},
-    {item => ['pkill perl; menutray -r -i -u; i3-msg restart', 'Vernieuwen', 'reload']},
+    # close window
+    # {item => ['xdotool getactivewindow windowraise windowunmap', 'Sluiten ', 'gtk-close']},
+    # reload inplace
+    {item => ['sh -c "i3-msg restart; pkill perl && menutray -r -i -u"', 'Vernieuwen', 'reload']},
+    # logout dialog
     {item => ['yad_logout', 'Afsluiten..', 'window-close']},
-
 
 ]

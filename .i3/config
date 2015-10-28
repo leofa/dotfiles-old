@@ -67,7 +67,7 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 933 518 
 
 #window title format mess around with pango
-for_window [class="(?i)"] title_format "<span foreground='#C7C7C7'>[</span>%title<span foreground='#C7C7C7'>]</span> "
+for_window [class="(?i)"] title_format "<span  font='10.5' weight='light' foreground='#C7C7C7'> ⧠</span> %title "
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
@@ -150,7 +150,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute && pkill -SIGR
 bindsym XF86AudioMute exec amixer -q set Master mute && pkill -SIGRTMIN+10 i3blocks
 
 # player control
-bindsym $mod+XF86AudioRaiseVolume exec playerctl next
+bindsym $mod+XF86AudioRaiseVolume exec playerctl next
 bindsym $mod+XF86AudioLowerVolume exec playerctl previous
 bindsym $mod+XF86AudioMute exec playerctl play-pause
 

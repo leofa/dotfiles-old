@@ -1,4 +1,10 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disclaimer by LeoFa \O_o/
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Originally not my vimrc, but every function is well documented, wich is very nice! :D, still learning vim.., 
+" credit to the original author! (sorry totally forgot your name :P) 
+"
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -162,17 +168,17 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-" set nobackup
-" set nowb
-" set noswapfile
+" Turn backup off, since most stuff is in SVN, git etc anyway...
+set nobackup
+set nowb
+set noswapfile
 
 " Turn on backup, but write backup to tmp directory.
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
+"set backup
+"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set backupskip=/tmp/*,/private/tmp/*
+"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set writebackup
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -539,3 +545,5 @@ endfunc
 func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
+
+

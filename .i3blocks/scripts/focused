@@ -2,7 +2,7 @@
 WIN=$(xdotool getactivewindow) 
 if [ -n "$WIN" ]; 
    then
-       echo -n '<span foreground="#6D8891">[ </span>'; xtitle | cut -c 1-30 | iconv -c 
+       echo -n "<span font='9' weight='light' foreground='#8A8A8A'>@ </span>"; xtitle | cut -c 1-30 | iconv -c 
    else 
        exit 0
    fi
