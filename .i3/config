@@ -13,8 +13,8 @@ floating_modifier $mod
 
 # i3 swag \O_o/ (playin' with pango)
 exec xdotool key Super_L+Shift+i
-#bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
-bindsym $mod+Shift+i workspace 0<span font='10' weight='heavy'>ⅲ</span>
+bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
+#bindsym $mod+Shift+i workspace 0<span font='10' weight='heavy'>ⅲ</span>
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite'

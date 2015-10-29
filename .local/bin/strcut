@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+while(1):
+    s = str(input())
+    if (len(s) > 100):
+       #s = s[:15] + '...' + s[-15:]
+        s = s[:40] + '..' + s[-1:]       
+    print(s)
+
