@@ -7,5 +7,5 @@ if [ -n "$WIN" ];
 
 case $BLOCK_BUTTON in
   3) sh -c xkill > /dev/null;;
-  1) xdotool getactivewindow windowraise windowunmap ;;
+  1) i3-msg kill ;;
 esac

@@ -11,9 +11,10 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 # move windows with mouse+$mod
 floating_modifier $mod
 
-# i3 swag \O_o/
+# i3 swag \O_o/ (playin' with pango)
 exec xdotool key Super_L+Shift+i
-bindsym $mod+Shift+i workspace 0<span font='10.5' weight='light' underline='low'>3</span>
+#bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
+bindsym $mod+Shift+i workspace 0<span font='10' weight='heavy'>ⅲ</span>
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite'
@@ -167,8 +168,8 @@ bindsym $MOD+SHIFT+plus move scratchpad
 bindsym $mod+plus scratchpad show
 
 # kill focused window
-#bindsym $mod+q kill
-bindsym $mod+q exec xdotool getactivewindow windowraise windowunmap
+bindsym $mod+q kill
+#bindsym $mod+q exec xdotool getactivewindow windowraise windowunmap
 bindsym --release $mod+x exec xkill
 
 # mouse actions 
