@@ -68,6 +68,7 @@ if [ "$TERM" = "linux" ]; then
                         done
                             clear
                         fi
+
 ## PS1 CONFIG {{{
   [[ -f $HOME/.dircolors ]] && eval $(dircolors -b $HOME/.dircolors)
   if $_isxrunning; then

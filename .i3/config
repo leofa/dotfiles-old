@@ -12,7 +12,7 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 floating_modifier $mod
 
 # i3 swag \O_o/ (playin' with pango)
-exec xdotool key Super_L+Shift+i
+exec sh -c 'xdotool key Super_L+Shift+i sleep 3; xdotool key Super_L+Shift+Return'
 bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
 #bindsym $mod+Shift+i workspace 0<span font='10' weight='heavy'>ⅲ</span>
 
@@ -58,6 +58,7 @@ for_window [class="(?i)pavucontrol"] move position 860 21
 for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position 1118 21
 for_window [instance="WiFi-Menu"]  resize set 455 445; move position 912 21
+for_window [class="timeup"] sticky enable
 
 #layout
 for_window [workspace="$WS2|$WS4"] layout tabbed

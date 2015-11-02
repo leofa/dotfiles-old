@@ -2,8 +2,8 @@
 
 while(1):
     s = str(input())
-    if (len(s) > 100):
-       #s = s[:15] + '...' + s[-15:]
-        s = s[:40] + '..' + s[-1:]       
+    if (len(s) > 40):
+       s = s[:30] + '..' + s[-10:] #cut right from center
+       # s = s[:30] + '..' + s[-1:] #cut normal      
     print(s)
 

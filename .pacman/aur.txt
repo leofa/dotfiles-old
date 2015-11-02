@@ -57,6 +57,8 @@ python-pyfiglet
 python-pysocks-git
 python-twitter
 python-xlib
+python2-oauth2
+python2-tweepy-git
 qtpass
 radiotray
 rainbowstream
@@ -68,6 +70,7 @@ thermald
 toilet
 ttf-font-awesome
 ttf-ms-fonts
+turses
 unclutter-xfixes-git
 update-hosts-git
 vim-promptline-git
