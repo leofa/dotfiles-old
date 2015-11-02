@@ -24,26 +24,68 @@ echo '
 '                          
             
 stations=(
-3FM_Serious_Radio="http://icecast.omroep.nl/3fm-bb-aac"
-_alternative="http://icecast.omroep.nl/3fm-alternative-aac"
-_on_stage="http://icecast.omroep.nl/3fm-live-aac"
-_serioustalent="http://icecast.omroep.nl/3fm-serioustalent-aac"	
-Pinguin_Radio="http://pr320.pinguinradio.nl:80/"
-Radio_6_Soul_Jazz="http://icecast.omroep.nl/radio6-bb-mp3"
-_easy_listening="http://icecast.omroep.nl/radio6-easylistening-bb-mp3"
-_back_to_the_old_school="http://icecast.omroep.nl/radio6-oldschool-bb-aac"
-_jazz_jong="http://icecast.omroep.nl/radio6-jazzjong-mp3"
-_world="http://icecast.omroep.nl/radio6-world-bb-mp3"
-_jazz="http://icecast.omroep.nl/radio6-jazz-bb-mp3"
-_grooves="http://icecast.omroep.nl/radio6-grooves-bb-mp3"
-_blues="http://icecast.omroep.nl/radio6-blues-bb-mp3"
+'3FM Serious Radio'="http://icecast.omroep.nl/3fm-bb-aac"
+'3FM: Alternative'="http://icecast.omroep.nl/3fm-alternative-aac"
+'3FM: On Stage'="http://icecast.omroep.nl/3fm-live-aac"
+'3FM: Serious Talent'="http://icecast.omroep.nl/3fm-serioustalent-aac"	
+'Pinguin Radio'="http://pr320.pinguinradio.nl:80/"
+'Pinguin Radio: Classics'="http://pc192.pinguinradio.com/listen.pls"
+'Pinguin Radio: On the Rocks'="http://po192.pinguinradio.com/listen.pls"
+'Pinguin Radio: Aardschok'="http://as192.pinguinradio.com/listen.pls"  
+'Pinguin Radio: Skaradio'="http://sr192.pinguinradio.com/listen.pls"
+'Pinguin Radio: Grooves'="http://pg192.pinguinradio.com/listen.pls"
+'Radio 6 Soul & Jazz'="http://icecast.omroep.nl/radio6-bb-mp3"
+'Radio 6: Easy Listening'="http://icecast.omroep.nl/radio6-easylistening-bb-mp3"
+'Radio 6: Back to the Old School'="http://icecast.omroep.nl/radio6-oldschool-bb-aac"
+'Radio 6: Jazz Jong'="http://icecast.omroep.nl/radio6-jazzjong-mp3"
+'Radio 6: World'="http://icecast.omroep.nl/radio6-world-bb-mp3"
+'Radio 6: Jazz'="http://icecast.omroep.nl/radio6-jazz-bb-mp3"
+'Radio 6: Grooves'="http://icecast.omroep.nl/radio6-grooves-bb-mp3"
+'Radio 6: Blues'="http://icecast.omroep.nl/radio6-blues-bb-mp3"
+'Jupiter Broadcasting Radio'="http://jblive.fm/"
+'Digitally Imported: Chillout'="http://listen.di.fm/public3/chillout.pls"
+'Digitally Imported: Chillout Dreams'="http://listen.di.fm/public3/chilloutdreams.pls"
+'Digitally Imported: Soulful House'="http://listen.di.fm/public3/soulfulhouse.pls"
+'Digitally Imported: Funky House'="http://listen.di.fm/public3/funkyhouse.pls"
+'Digitally Imported: Progressive'="http://listen.di.fm/public3/progressive.pls"
+'Digitally Imported: Lounge'="http://listen.di.fm/public3/lounge.pls"
+'Digitally Imported: PsyChill'="http://listen.di.fm/public3/psychill.pls"
+'SomaFM: Groove Salad'="http://somafm.com/groovesalad.pls"
+'SomaFM: Drone Zone'="http://somafm.com/dronezone.pls"
+'SomaFM: Indie Pop Rocks!'="http://somafm.com/indiepop.pls"
+'SomaFM: Space Station Soma'="http://somafm.com/spacestation.pls"
+'SomaFM: Lush'="http://somafm.com/lush.pls"
+'SomaFM: Secret Agent'="http://somafm.com/secretagent.pls"
+'SomaFM: Underground 80s'="http://somafm.com/u80s.pls"
+'SomaFM: Deep Space One'="http://somafm.com/deepspaceone.pls"
+'SomaFM: Beat Blender'="http://somafm.com/beatblender.pls"
+'SomaFM: Boot Liquor'="http://somafm.com/bootliquor.pls"
+'SomaFM: Suburbs of Goa'="http://somafm.com/suburbsofgoa.pls"
+'SomaFM: Poptron'="http://somafm.com/poptron.pls"
+'SomaFM: Sonic Universe'="http://somafm.com/sonicuniverse.pls"
+'SomaFM: Def Con'="http://somafm.com/defcon.pls"
+'SomaFM: Folk Forward'="http://somafm.com/folkfwd.pls"
+'SomaFM: BAGel Radio'="http://somafm.com/bagel.pls"
+'SomaFM: Fluid'="http://somafm.com/fluid.pls"
+'SomaFM: Illinois Street Lounge'="http://somafm.com/illstreet.pls"
+'SomaFM: The Trip'="http://somafm.com/thetrip.pls"
+'SomaFM: Left Coast 70s'="http://somafm.com/seventies.pls"
+'SomaFM: Cliqhop idm'="http://somafm.com/cliqhop.pls"          
+'SomaFM: Digitalis'="http://somafm.com/digitalis.pls"
+'SomaFM: Dub Step Beyond'="http://somafm.com/dubstep.pls"
+'SomaFM: Seven Inch Soul'="http://somafm.com/7soul.pls"
+'SomaFM: Thistle Radio'="http://somafm.com/thistle.pls"
+'SomaFM: Doomed'="http://somafm.com/doomed.pls"
+'SomaFM: Mission Control'="http://somafm.com/missioncontrol.pls"
+'SomaFM: Covers'="http://somafm.com/covers.pls"
+'SomaFM: Black Rock FM'="http://somafm.com/brfm.pls"
 )
 
 #show_inf () {
- #sed -n '/Name/,/Bitrate/ p' $tfile
- # }
+#    sed -n '/Name/,/Bitrate/ p' $tfile
+#}
 
-while(true); do
+ while(true); do
   index=0
   echo
   for i in "${stations[@]}"; do
@@ -55,15 +97,15 @@ while(true); do
   read -p "${yellow}Station:${norm} " sta
   echo
 
-  capture="--stream-capture --stream-dump ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
+  #capture="--stream-capture --stream-dump ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
 
  # tfile=`mktemp`
-  mpv --no-video --ao=alsa --softvol-max=100 --mute=no --volume=100 --vd=null --vo=null --really-quiet --msg-level=all=info:debug=no:ffmpeg/audio=no:file=no ${capture} --msg-color `echo ${stations[$sta]} | cut -d '=' -f2`
+  mpv --no-cache --quiet --msg-color --no-ytdl `echo ${stations[$sta]} | cut -d '=' -f2`
  
   echo -ne "${yellow}\nPress enter to change station ${norm}"
   read -t 5
   [[ $? -gt 128 ]] && { echo && exit 0; }
-  #rm $tfile
+ # rm $tfile
   unset -v index sta capture
 done
 
