@@ -42,5 +42,6 @@ END {
 '
 case $BLOCK_BUTTON in
   1) caja  & "$@" > /dev/null ;;
+  2) yad_df & "$@" > /dev/null ;;
   3) mate-search-tool  & "$@" > /dev/null ;;
 esac

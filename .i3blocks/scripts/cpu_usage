@@ -11,8 +11,8 @@ use warnings;
 use utf8;
 use Getopt::Long;
 
-# default values
-my $t_warn = 50;
+# default values 
+my $t_warn = 60;
 my $t_crit = 80;
 my $cpu_usage = -1;
 
@@ -41,14 +41,14 @@ close(MPSTAT);
 $cpu_usage eq -1 and die 'Can\'t find CPU information';
 
 # Print short_text, full_text
-printf "%.2f%%\n", $cpu_usage;
-printf "%.2f%%\n", $cpu_usage;
+printf "%.0f%%\n", $cpu_usage;
+printf "%.1f%%\n", $cpu_usage;
 
 # Print color, if needed
 if ($cpu_usage >= $t_crit) {
-    print "#E65B5A\n";
+    print "#C75D50\n";
     exit 0;
 } elsif ($cpu_usage >= $t_warn) {
-    print "#F7CA88\n";
+    print "#D7875F\n";
 }
 exit 0;

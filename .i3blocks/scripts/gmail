@@ -27,6 +27,6 @@ fi
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-   3) chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl & "$@" > /dev/null ;;
-  1) geary & "$@" > /dev/null ;; 
+   3) chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl ;;
+  1) geary ;; 
 esac

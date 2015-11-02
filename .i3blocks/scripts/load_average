@@ -15,6 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 load="$(cut -d ' ' -f1 /proc/loadavg)"
+#load="$(cut -d ' ' -f1-3 /proc/loadavg)"
 cpus="$(nproc)"
 
 # full text
@@ -27,12 +28,12 @@ echo "$load"
 awk -v cpus=$cpus -v cpuload=$load '
     BEGIN {
         if (cpus <= cpuload) {
-            # print "#E65B5A";
+           #  print "#D7875F";
             exit 0;
         }
     }
 '
 case $BLOCK_BUTTON in
-  3) termite --exec htop --name 'htop_term' & "$@" > /dev/null ;;
-  1) termite --exec glances --name 'glances_term' & "$@" > /dev/null ;;
+  3) termite --exec htop --name 'htop_term' --hold & "$@" > /dev/null ;;
+  1) termite --exec glances --name 'glances_term' --hold & "$@" > /dev/null ;;
 esac

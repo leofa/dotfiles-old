@@ -15,6 +15,14 @@
 # time. If you start on 00:00 you will be in stopwatch mode (S), otherwise you
 # will be in countdown timer mode (C).
 
+# added a easy way to use symbol icons below by leofa
+S=⏱
+C=⏲
+#C=
+#S=
+#S=
+#C=
+
 TIME_FRACTION=${1:-300}
 TIME_FORMAT=${2:-%H:%M:%S}
 
@@ -25,7 +33,7 @@ NOW=$(date +%s)
 [ -f $STORE_FILE ] && IFS=, read MODE COUNTER EPOCH < $STORE_FILE
 
 # sanity check and reset it if necessary
-[[ $MODE =~ ^(C|S)$ ]] || MODE=C
+[[ $MODE =~ ^($C|$S)$ ]] || MODE=$C
 [[ $COUNTER =~ ^-?[0-9]+$ ]] || COUNTER=0
 [[ $EPOCH =~ ^-?[0-9]+$ ]] || EPOCH=0
 
@@ -34,8 +42,8 @@ case $BLOCK_BUTTON in
 	3) # right click
 		if [ $EPOCH -eq 0 ]; then
 			case $MODE in
-				S) EPOCH=$(expr $NOW - $COUNTER) ;;
-				C) EPOCH=$(date -d "$COUNTER sec" +%s) ;;
+				$S) EPOCH=$(expr $NOW - $COUNTER) ;;
+				$C) EPOCH=$(date -d "$COUNTER sec" +%s) ;;
 			esac
 		else
 			EPOCH=0
@@ -49,7 +57,7 @@ case $BLOCK_BUTTON in
 		let "COUNTER = $COUNTER $OP $TIME_FRACTION"
 
 		# change mode depending on the counter value
-		[ $COUNTER -le 0 ] && MODE=S || MODE=C
+		[ $COUNTER -le 0 ] && MODE=$S || MODE=$C
 
 		# stop the clock
 		EPOCH=0
@@ -59,8 +67,8 @@ esac
 # update counter if is on
 if [ $EPOCH -gt 0 ]; then
 	case $MODE in
-		S) let "COUNTER = $NOW - $EPOCH" ;;
-		C) let "COUNTER = $EPOCH - $NOW" ;;
+		$S) let "COUNTER = $NOW - $EPOCH" ;;
+		$C) let "COUNTER = $EPOCH - $NOW" ;;
 	esac
 fi
 
@@ -68,7 +76,7 @@ fi
 [ $COUNTER -lt 0 ] && COUNTER=0
 
 # if it reachs 0 trigger the alarm
-[ $MODE = C -a $COUNTER -eq 0 -a $EPOCH -ne 0 ] && EXIT=33
+[ $MODE = $C -a $COUNTER -eq 0 -a $EPOCH -ne 0 ] && EXIT=33
 
 # if instance is set and alarm is set, execute its content
 [ -n "$EXIT" -a -n "$BLOCK_INSTANCE" ] && $BLOCK_INSTANCE && EPOCH=0
@@ -79,6 +87,6 @@ echo "$MODE,$COUNTER,$EPOCH" > $STORE_FILE
 # print
 echo "$MODE $(date -u -d @$COUNTER +$TIME_FORMAT)"
 echo ""
-[ $EPOCH -eq 0 ] && echo "#C7C7C7" || echo "#B5BD68"
+[ $EPOCH -eq 0 ] && echo "#b4b7b4" || echo "#c7c7c7"
 
 exit $EXIT

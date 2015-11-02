@@ -1,6 +1,0 @@
-#!/bin/sh
-
-NAME=$(hostname -s)
-echo $NAME
-echo $NAME
-echo "#393F45"
