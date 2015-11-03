@@ -44,6 +44,7 @@ numix-frost-themes
 numix-icon-theme-git
 pacaur
 package-query
+pass-patched-passmenu-notify-git
 perl-gtk2-notify
 perl-linux-desktopfiles
 pkgcacheclean
@@ -60,7 +61,6 @@ python-xlib
 python2-oauth2
 python2-tweepy-git
 qtpass
-radiotray
 rainbowstream
 rtv
 steam-fonts
