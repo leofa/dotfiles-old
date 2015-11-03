@@ -26,7 +26,7 @@ bindsym $mod+i exec iceweasel
 bindsym $mod+b exec caja
 bindsym $mod+m exec geary
 #bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
-bindsym $mod+p exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
+bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
 bindsym --release $mod+Shift+p exec xdotool type --clearmodifiers `xclip -selection c -out`  #extra paste command
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
@@ -36,6 +36,7 @@ bindsym $mod+Tab exec rofi -show window
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
+bindsym $mod+p exec passmenu --notify #--typeit
 
 #focus windows
 no_focus [window_role="pop-up"]
