@@ -165,7 +165,6 @@ make
 man-db
 man-pages
 mate-utils
-mc
 mdadm
 mediainfo
 memtest86+
