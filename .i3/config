@@ -27,7 +27,6 @@ bindsym $mod+b exec caja
 bindsym $mod+m exec geary
 #bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
 bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
-bindsym --release $mod+Shift+p exec xdotool type --clearmodifiers `xclip -selection c -out`  #extra paste command
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
 bindsym $mod+d exec j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
@@ -36,7 +35,8 @@ bindsym $mod+Tab exec rofi -show window
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
-bindsym $mod+p exec passmenu --notify #--typeit
+bindsym $mod+p exec passmenu --notify 
+bindsym $mod+Shift+p exec qtpass #exec passmenu --typeit
 
 #focus windows
 no_focus [window_role="pop-up"]
@@ -59,7 +59,7 @@ for_window [class="(?i)pavucontrol"] move position 860 21
 for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position 1118 21
 for_window [instance="WiFi-Menu"]  resize set 455 445; move position 912 21
-for_window [class="timeup"] sticky enable
+for_window [class="timeup|QtPass"] sticky enable
 
 #layout
 for_window [workspace="$WS2|$WS4"] layout tabbed
