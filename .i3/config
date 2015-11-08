@@ -33,7 +33,8 @@ bindsym $mod+d exec j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
 bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
-bindsym $mod+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
+bindsym $mod+Shift+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
+bindsym $mod+XF86Reload exec netmenu 
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 bindsym $mod+p exec passmenu --notify 
 bindsym $mod+Shift+p exec qtpass #exec passmenu --typeit
@@ -70,7 +71,7 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 933 518 
 
 #window title format mess around with pango
-for_window [class="(?i)"] title_format "<span  font='10.5' weight='light' foreground='#C7C7C7'> ⧠</span> %title "
+for_window [class="(?i)"] title_format "<span font='9' weight='light' foreground='#C7C7C7'>[</span>%title<span font='9' weight='light' foreground='#C7C7C7'>]</span>"
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
