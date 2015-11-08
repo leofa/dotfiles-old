@@ -43,7 +43,7 @@ Xft.hinstyle:   full
 *.color4:       t_blue
 *.color12:      t_blue
 
-! Magenta (Purple) + Bright Magenta
+! Magenta (Purple) + Br:ight Magenta
 *.color5:       t_purple
 *.color13:      #b777e0
 
@@ -69,9 +69,9 @@ rofi.columns:                        1
 ! Font to use
 rofi.font:                           Source Code Pro Medium 10
 ! Foreground color
-rofi.fg:                             #eceff1
+rofi.fg:                             #c7c7c7
 ! Background color
-rofi.bg:                             #263238
+rofi.bg:                             #2d2d2d
 ! Foreground color for active row
 rofi.fg-active:                      #268BD2
 ! Foreground color for urgent row
@@ -85,17 +85,17 @@ rofi.bg-active:                      #FDF6E3
 ! Background color for urgent row
 rofi.bg-urgent:                      #FDF6E3
 ! Background color for highlighted active row
-rofi.hlbg-active:                    #268BD2
+rofi.hlbg-active:                    #586e75
 ! Background color for highlighted urgent row
 rofi.hlbg-urgent:                    #DC322F
 ! Background color for alternating row
-rofi.bgalt:                          #263238
+rofi.bgalt:                          #3B3B3B
 ! Foreground color for highlighted row
-rofi.hlfg:                           #EEE8D5
+rofi.hlfg:                           #f9f9f9
 ! Background color for highlighted row
 rofi.hlbg:                           #586E75
 ! Border color
-rofi.bc:                             #002B36
+rofi.bc:                             #586e75
 ! Use extended color scheme
 rofi.color-enabled:                  false
 ! Color scheme for normal row
