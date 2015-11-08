@@ -32,7 +32,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 #source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
-eval $(dbus-launch --sh-syntax --exit-with-session)
+#eval $(dbus-launch --sh-syntax --exit-with-session)
  
 xset +fp /usr/share/fonts/local   # load custom fonts
 xset +fp ~/.local/fonts
@@ -57,7 +57,7 @@ xset r 116
 xset r rate 200 20
 
 # autostart ----------------------------------
-/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately &
+#/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately &
 #system-config-printer-applet &
 #blueman-applet &
 #xdg-user-dirs-gtk-update

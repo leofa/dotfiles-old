@@ -1,5 +1,4 @@
 acpi
-aisleriot
 alsa-utils
 android-tools
 android-udev
@@ -7,7 +6,6 @@ arandr
 arch-wiki-docs
 arch-wiki-lite
 archey3
-archiso
 aria2
 asciiquarium
 aspell-nl
@@ -24,14 +22,11 @@ blueman
 bluez
 bluez-plugins
 bluez-utils
-breeze-icons
 bzip2
 bzr
 caja
 caja-actions
 caja-extensions-common
-caja-gksu
-caja-image-converter
 ccache
 ccze
 chromium
@@ -62,7 +57,6 @@ dunst
 e2fsprogs
 elinks
 engrampa
-espeakup
 ethtool
 exfat-utils
 f2fs-tools
@@ -75,10 +69,8 @@ findutils
 flex
 fortune-mod
 freerdp
-frei0r-plugins
 frogatto
 galculator-gtk2
-gamin
 gawk
 gcc-multilib
 gcolor2
@@ -99,11 +91,9 @@ gpicview
 gptfdisk
 grep
 groff
-grub
 gsimplecal
 gst-libav
 gstreamer0.10-bad-plugins
-gstreamer0.10-ffmpeg
 gstreamer0.10-ugly-plugins
 gthumb
 gucharmap
@@ -131,7 +121,6 @@ iputils
 irqbalance
 irssi
 iw
-jfsutils
 jre8-openjdk-infinality
 jshon
 kodi
@@ -234,7 +223,6 @@ speedtest-cli
 sshfs
 steam
 steam-libs
-stlarch-font-ibx
 sudo
 sysfsutils
 syslinux
@@ -244,7 +232,6 @@ systemd-sysvcompat
 t1-urw-fonts-ib
 tar
 texinfo
-tig
 tk
 tmux
 ttf-droid
@@ -292,7 +279,5 @@ xorg-xvinfo
 xorg-xwininfo
 xournal
 xsel
-xvkbd
-yelp
 youtube-dl
 zip

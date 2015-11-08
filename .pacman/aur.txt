@@ -1,5 +1,4 @@
 abiword-gtk2
-alsi
 archlinux-artwork
 bomi
 caja-dropbox
@@ -39,6 +38,7 @@ menutray
 minecraft
 modprobed-db
 nbwmon
+netmenu
 numix-circle-icon-theme-git
 numix-frost-themes
 numix-icon-theme-git
@@ -67,7 +67,6 @@ steam-fonts
 sublime-text-dev
 termite-ranger-fix-git
 thermald
-toilet
 ttf-font-awesome
 ttf-ms-fonts
 turses
