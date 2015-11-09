@@ -62,7 +62,7 @@ xset r rate 200 20
 #blueman-applet &
 #xdg-user-dirs-gtk-update
 wallchanger "$@" > /dev/null &
-feh --bg-fill ~/.wallpaper/archos-by-deadmetaler.png &
+#feh --bg-fill ~/.wallpaper/archos-by-deadmetaler.png &
 chromium --first-exec-after-boot --no-startup-window &
 #caja --no-default-window --no-desktop &
 xbacklight -set 65 &

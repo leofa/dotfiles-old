@@ -2,7 +2,6 @@
 #!/bin/bash
 
 # Script to get unread google mail.
-# Result added to file ~/.gmail (for conky)
 
 # User and password secured
 . ~/.private/accounts

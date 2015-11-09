@@ -173,6 +173,7 @@ ntp
 nxproxy
 obexfs
 openssh
+otf-cantarell-ib
 p7zip
 pacman
 pacmatic
@@ -182,8 +183,10 @@ pavucontrol
 pciutils
 pcmciautils
 perl
+perl-anyevent-i3
 perl-file-mimeinfo
 perl-gtk2-webkit
+perl-json-xs
 perl-term-readkey
 pkg-config
 powertop
