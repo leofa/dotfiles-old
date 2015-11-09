@@ -1,0 +1,13 @@
+#!/bin/bash
+#reddit karma
+#------------------------------------------------------------------------
+
+#who doesn't love diamonds?
+echo "<span foreground='#586E75'>[</span>  <span foreground='#8ABEB7'> $(curl http://www.reddit.com/user/_LeoFa/about.json -s | jshon -e data -e comment_karma)</span> <span foreground='#B294BB'> $(curl http://www.reddit.com/user/_LeoFa/about.json -s | jshon -e data -e link_karma)</span><span foreground='#586E75'>]</span>"
+
+#------------------------------------------------------------------------
+
+case $BLOCK_BUTTON in
+  1) chromium https://www.reddit.com ;; 
+  3) chromium https://www.reddit.com/r/unixporn ;; 
+esac
