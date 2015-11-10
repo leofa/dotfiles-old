@@ -67,11 +67,11 @@ rofi.lines:                          15
 ! Number of columns
 rofi.columns:                        1
 ! Font to use
-rofi.font:                           Hack 10
+rofi.font:                           Hack Bold 10
 ! Foreground color
 rofi.fg:                             #c7c7c7
 ! Background color
-rofi.bg:                             #282A2E
+rofi.bg:                             #2D2D2D
 ! Foreground color for active row
 rofi.fg-active:                      #268BD2
 ! Foreground color for urgent row
@@ -85,11 +85,11 @@ rofi.bg-active:                      #FDF6E3
 ! Background color for urgent row
 rofi.bg-urgent:                      #FDF6E3
 ! Background color for highlighted active row
-rofi.hlbg-active:                    #455057
+rofi.hlbg-active:                    #586E75
 ! Background color for highlighted urgent row
 rofi.hlbg-urgent:                    #DC322F
 ! Background color for alternating row
-rofi.bgalt:                          #212326
+rofi.bgalt:                          #333333
 ! Foreground color for highlighted row
 rofi.hlfg:                           #101112
 ! Background color for highlighted row
@@ -107,11 +107,11 @@ rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
 ! Color scheme window
 rofi.color-window:                   #fdf6e3,#002b36
 ! Border width
-rofi.bw:                             1
+rofi.bw:                             3
 ! Location on screen
 rofi.location:                       0
 ! Padding
-rofi.padding:                        5
+rofi.padding:                        10
 ! Y-offset relative to location
 rofi.yoffset:                        0
 ! X-offset relative to location

@@ -81,7 +81,7 @@ our $CONFIG = {
                                                                value => "/usr/bin/frogatto  --height 768 --width 1366 --widescreen --fullscreen",
                                                              },
                                                            ],
-                                terminal                => "xterm-256color",
+                                terminal                => "linux",
                                 terminalization_format  => "-e '%s' --hold",
                                 terminalize             => 1,
                                 unknown_category_key    => "other",
