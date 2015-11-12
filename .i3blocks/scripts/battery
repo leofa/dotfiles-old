@@ -39,7 +39,7 @@ $UPOWER -i /org/freedesktop/UPower/devices/battery_$INSTANCE |
 }
 END {
 	if (state == "charging")
-		label = ""
+        label = ""
 	else if (percentage == "100%")
 		label = ""
 	else if (percentage > 75)

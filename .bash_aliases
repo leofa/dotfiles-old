@@ -77,8 +77,11 @@ alias flash_rom='cd; rm -f ~/flash_chromebook_rom.sh; curl -L -O https://johnlew
 alias ws='wiki-search'
 alias bin='cd ~/.local/bin'
 alias blocks='cd ~/.i3blocks/scripts'
-alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 alias tetris='vitetris'
+alias news='newsbeuter' 
+alias dots='cd ~/dotfiles'
+alias scanwifi='sudo iw wlp1s0 interface add mon0 type monitor; sudo horst -i mon0 creset'
+alias ct='colortheme'
 
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && gvim "$file"; }

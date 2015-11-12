@@ -106,6 +106,7 @@ gvim
 gzip
 haveged
 hdparm
+horst
 htop
 hunspell-nl
 i3status
@@ -210,6 +211,7 @@ redshift
 reflector
 reiserfsprogs
 remmina
+rng-tools
 rofi
 rsync
 s-nail
@@ -239,6 +241,7 @@ tk
 tmux
 ttf-droid
 ttf-hack-ibx
+ttf-noto-fonts-emoji-ib
 ttf-source-code-pro-ibx
 tumbler
 ufw

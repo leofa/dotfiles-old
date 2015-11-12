@@ -60,7 +60,7 @@ for_window [class="(?i)pavucontrol"] move position 860 21
 for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position 1118 21
 for_window [instance="WiFi-Menu"]  resize set 455 445; move position 912 21
-for_window [class="timeup|QtPass"] sticky enable
+for_window [class="Deluge|timeup|QtPass"] sticky enable
 
 #layout
 for_window [workspace="$WS2|$WS4"] layout tabbed

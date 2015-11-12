@@ -12,6 +12,7 @@ downgrade
 dropbox-cli
 dropbox-experimental
 firejail
+flasciibird
 flattr-icon-theme-git
 freshplayerplugin
 gksu-polkit-git
@@ -21,7 +22,6 @@ i3-gaps-next-git
 i3blocks
 i3lock-git
 iceweasel-bin
-iceweasel-i18n-nl
 insync
 j4-dmenu-desktop
 libchardet
@@ -73,6 +73,7 @@ turses
 unclutter-xfixes-git
 update-hosts-git
 vim-promptline-git
+vim-startify-git
 vim-tmuxline-git
 vitetris
 vte-notification-common
