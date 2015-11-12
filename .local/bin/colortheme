@@ -3,17 +3,26 @@
 #           http://frexx.de/xterm-256-notes/data/colortable16.sh
 # Modified by Aaron Griffin
 # and further by Kazuo Teramoto
-# added more improvements by leofa
+# even further modifications by leofa
+# added various cool scripts i found on git (thanks Scott Garett for archlogo)
+
 
 usage() {
-  echo "colortheme:"
-  echo "     -a: arch"
-  echo "     -b: boxes"
+  echo "
+  # \O_o/
+  colortheme: 
+  organized color-scripts into one 
+  - these are typically used to show terminal colors and \o/
+  ---------------------"
+  echo "     -a: arches"
+  echo "     -c: colors"
   echo "     -i: invaders"
+  echo "     -l: archlogo"
+  echo "    -la: list all"
   echo "     -p: pacman"
   echo "     -t: tux"
-  echo "    -la: list all"
-  echo "     -h: this"
+  echo "     -h: this
+  "
 }
 
 initializeANSI()
@@ -36,7 +45,7 @@ initializeANSI()
   reset="${esc}[0m"
 }
 
-boxes() {
+colors() {
   FGNAMES=(' black ' '  red  ' ' green ' ' yellow' '  blue ' 'magenta' '  cyan ' ' white ')
   BGNAMES=('DFT' 'BLK' 'RED' 'GRN' 'YEL' 'BLU' 'MAG' 'CYN' 'WHT')
   echo "     ┌──────────────────────────────────────────────────────────────────────────┐"
@@ -131,7 +140,7 @@ $rst
 EOF
 }
 
-arch() {
+arches() {
 initializeANSI()
 {
   esc=""
@@ -156,6 +165,53 @@ ${redf}    ■■■■ ■■■■  ${greenf}    ■■■■ ■■■■  ${
 ${redf}   ■■       ■■ ${greenf}   ■■       ■■ ${yellowf}   ■■       ■■ ${bluef}   ■■       ■■  ${purplef}  ■■       ■■ ${cyanf}   ■■       ■■ ${reset}
  
 EOF
+}
+
+
+archlogo() {
+
+L="$(tput sgr0; tput setaf 0)"
+LB="$(tput sgr0; tput setab 0)"
+l="$(tput bold ; tput setaf 0)"
+w="$(tput sgr0; tput setaf 7)"
+WB="$(tput sgr0; tput setab 7)"
+W="$(tput bold ; tput setaf 7)"
+R="$(tput sgr0; tput setaf 1)"
+RB="$(tput sgr0; tput setab 1)"
+r="$(tput bold ; tput setaf 1)"
+G="$(tput sgr0; tput setaf 2)"
+GB="$(tput sgr0; tput setab 2)"
+g="$(tput bold ; tput setaf 2)"
+Y="$(tput sgr0; tput setaf 3)"
+YB="$(tput sgr0; tput setab 3)"
+y="$(tput bold ; tput setaf 3)"
+B="$(tput sgr0; tput setaf 4)"
+BB="$(tput sgr0; tput setab 4)"
+b="$(tput bold ; tput setaf 4)"
+P="$(tput sgr0; tput setaf 5)"
+PB="$(tput sgr0; tput setab 5)"
+p="$(tput bold ; tput setaf 5)"
+C="$(tput sgr0; tput setaf 6)"
+CB="$(tput sgr0; tput setab 6)"
+c="$(tput bold ; tput setaf 6)"
+N="$(tput sgr0)"
+
+echo "$WB                                                                                "
+echo " $N                                                                              $WB "
+echo " $N           $CB $N            $WB                                                     $N $WB "
+echo " $N          $CB   $N           $WB $N$CB                                                   $WB $N $WB "
+echo " $N         $CB     $N          $WB $N$CB                                                   $WB $N $WB "
+echo " $N        $CB       $N         $WB $N$CB    $N  $CB  $N    $CB  $N    $CB $N $CB  $N $CB  $WB $CB    $WB $CB $WB $CB   $WB $CB $WB $CB  $WB $CB $WB $CB   $WB $CB   $WB $N $WB "
+echo " $N       $CB         $N        $WB $N$CB   $N $CB  $N $CB $N $CB   $N $CB $N $CB    $N $CB  $N $CB  $WB $CB    $WB $CB $WB $WB $CB  $WB $CB $WB $CB  $WB $CB  $WB $CB $WB $CB    $WB $N $WB "
+echo " $N      $CB           $N       $WB $N$CB   $N    $CB $N    $CB  $N $CB    $N    $CB  $WB $CB    $WB $CB $WB $CB $WB $CB $WB $CB $WB $CB  $WB $CB   $WB $CB     $WB $N $WB "
+echo " $N     $CB     $N   $CB     $N      $WB $N$CB   $N $CB  $N $CB $N $CB   $N $CB $N $CB    $N $CB  $N $CB  $WB $CB    $WB $CB $WB $CB  $WB $WB $CB $WB $CB  $WB $CB  $WB $CB $WB $CB    $WB $N $WB "
+echo " $N    $CB     $N     $CB     $N     $WB $N$CB   $N $CB  $N $CB $N $CB   $N $CB $N    $CB $N $CB  $N $CB  $WB $WB $WB $WB $CB $WB $CB $WB $CB   $WB $CB  $WB $WB $CB  $WB $CB   $WB $CB   $WB $N $WB "
+echo " $N   $CB      $N     $CB      $N    $WB $N$CB                                                   $WB $N $WB "
+echo " $N  $CB        $N   $CB        $N   $WB $N$CB                                                   $WB $N $WB "
+echo " $N $CB   $N               $CB   $N  $WB                                                     $N $WB "
+echo " $N                                                                              $WB "
+echo "                                                                                $N"
+echo 
 }
 
 tux() {
@@ -222,17 +278,19 @@ EOF
 }
 
 case $1 in
-  -b) boxes ;;
+  -c) colors ;;
   -i) invaders ;;
   -p) pacman ;;
-  -a) arch ;;
+  -a) arches ;;
   -t) tux ;;
+  -l) archlogo ;;
   -la) 
+      archlogo
       tux 
-      boxes 
+      colors 
       invaders 
       pacman 
-      arch ;;
+      arches ;;
   -h) usage ;;
-  *) boxes ;;
+  *) colors ;;
 esac
