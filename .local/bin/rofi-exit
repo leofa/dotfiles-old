@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+# exit session
+
+declare -A item
+declare -A cmd
+
+# logout items
+ex="i3-msg exit"
+cmd['e']=$ex
+item['e']=$ex
+
+lk="loginctl kill-user $USER"
+cmd['k']=$lk
+item['k']=$lk
+
+# generate menu
+function print_menu()
+{
+    for key in ${!item[@]}
+    do
+        echo "$key    ${item[$key]}"
+    done
+}
+
+# show rofi
+function start()
+{
+    print_menu | rofi -dmenu -auto-select -p "exit:" 
+}
+
+# run it
+value="$(start)"
+
+# split input.
+# grab upto first space.
+choice=${value%%\ *}
+# graph remainder, minus space.
+input=${value:$((${#choice}+1))}
+
+# cancelled? bail out
+if test -z ${choice}
+then
+    exit
+fi
+
+# check if choice exists
+if test ${cmd[$choice]+isset}
+then
+    # execute the choice
+    eval echo "executing: ${cmd[$choice]}"
+    eval ${cmd[$choice]}
+else
+    echo "unknown command: ${choice}" | rofi -dmenu -p "error"
+fi

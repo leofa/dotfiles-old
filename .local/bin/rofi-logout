@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# logout dialog
+
+declare -A item
+declare -A cmd
+
+# logout items
+ss="systemctl suspend"
+cmd['s']=$ss
+item['s']=$ss
+
+#sh="systemctl hibernate"
+#cmd['h']=$sh
+#item['h']=$sh
+
+sr="systemctl reboot"
+cmd['r']=$sr
+item['r']=$sr
+
+sp="systemctl poweroff"
+cmd['x']=$sp
+item['x']=$sp
+
+# generate menu
+function print_menu()
+{
+    for key in ${!item[@]}
+    do
+        echo "$key    ${item[$key]}"
+    done
+}
+
+# show rofi
+function start()
+{
+    print_menu | rofi -dmenu -auto-select -p "logout:" 
+}
+
+# run it
+value="$(start)"
+
+# split input.
+# grab upto first space.
+choice=${value%%\ *}
+# graph remainder, minus space.
+input=${value:$((${#choice}+1))}
+
+# cancelled? bail out
+if test -z ${choice}
+then
+    exit
+fi
+
+# check if choice exists
+if test ${cmd[$choice]+isset}
+then
+    # execute the choice
+    eval echo "executing: ${cmd[$choice]}"
+    eval ${cmd[$choice]}
+else
+    echo "unknown command: ${choice}" | rofi -dmenu -p "error"
+fi
