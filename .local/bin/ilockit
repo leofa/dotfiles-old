@@ -1,10 +1,12 @@
 #!/bin/bash
+#pixelated/blurred i3lock lockscreen with lock image
 
 image=/tmp/screen.png
-icon=$HOME/.i3/lock.png
+icon=$HOME/.i3/lock.png #add lock icon here
 
 scrot $image
 convert $image -scale 10% -scale 1000% -fill black -colorize 25% $image
 convert $image $icon -gravity center -composite -matte  $image
-sleep 1
+#add sleep if you have race conditions
+#sleep 0.001
 i3lock -e -u -n -i $image
