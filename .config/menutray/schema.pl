@@ -92,6 +92,6 @@ our $SCHEMA = [
     # reload inplace
     {item => ['sh -c "i3-msg restart; pkill perl && menutray -r -i -u"', 'Vernieuwen', 'reload']},
     # logout dialog
-    {item => ['yad_logout', 'Afsluiten..', 'window-close']},
+    {item => ['rofi-logout', 'Afsluiten..', 'window-close']},
 
 ]

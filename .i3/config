@@ -11,29 +11,31 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 # move windows with mouse+$mod
 floating_modifier $mod
 
-# i3 swag \O_o/ (playin' with pango)
-exec sh -c 'xdotool key Super_L+Shift+i sleep 3; xdotool key Super_L+Shift+Return'
+# i3 swag \O_o/
+exec sh -c 'xdotool key Super_L+Shift+i sleep 1; xdotool key Super_L+Shift+Return' #start with i3 named workspace + terminal in scratchpad
 bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
 #bindsym $mod+Shift+i workspace 0<span font='10' weight='heavy'>ⅲ</span>
 
 # keycombo's
-bindsym $mod+Return exec termite --name 'ws1_termite'
+bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
 bindsym $mod+backslash exec i3-sensible-terminal 
 bindsym $mod+slash exec chromium --show-app-list
 bindsym $mod+t exec subl3 
 bindsym $mod+c exec chromium
 bindsym $mod+i exec iceweasel
 bindsym $mod+b exec caja
+bindsym $mod+Shift+b exec rofi -modi "fb:rofi-fb" -show fb #rofi filebrowser
 bindsym $mod+m exec geary
 #bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
 bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
 bindsym $mod+d exec j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
+bindsym $mod+Shift+d exec rofi -run-command "gksu {cmd}" -show run -p 'gksu' #w00t 
 bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
-bindsym $mod+Shift+XF86Reload exec termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-Menu:' && sudo wifi-menu -o'"
+bindsym $mod+Shift+XF86Reload exec termite --name "wifi-menu" -e "sh -c 'echo 'wifi-menu:' && sudo wifi-menu -o'"
 bindsym $mod+XF86Reload exec netmenu 
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 bindsym $mod+p exec passmenu --notify 
@@ -278,12 +280,12 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec yad_exit
+bindsym $mod+Shift+e exec rofi-exit # rofi exit dialog
 
 # lockscreen
 set $Locker ilockit
 
-bindsym XF86PowerOff exec yad_logout # gtk logout dialog
+bindsym XF86PowerOff exec rofi-logout # rofi logout dialog
 bindsym $mod+XF86PowerOff exec systemctl suspend
 bindsym $mod+Escape exec $Locker
 
