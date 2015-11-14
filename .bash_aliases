@@ -1,8 +1,8 @@
 #mijn bash aliases
 #
 alias pauze='sudo pm-suspend'
-alias U='echo "Pacman backup..."; pacman_bk; echo "done"; echo " "; echo "Read news/ Pacman update..."; pacupd; echo "done" ;echo " "' 
-alias Us='echo "Pacman backup..."; pacman_bk; echo "done"; echo " ";echo "Pacman sync..."; pacaur -Syy; echo "done" ;echo " ";echo "Read news/ Pacman update..."; pacupd; echo "done" ;echo " "'
+alias U='echo "Pacman backup..."; pacbup; echo "done"; echo " "; echo "Read news/ Pacman update..."; pacupd; echo "done" ;echo " "' 
+alias Us='echo "Pacman backup..."; pacbup; echo "done"; echo " ";echo "Pacman sync..."; pacaur -Syy; echo "done" ;echo " ";echo "Read news/ Pacman update..."; pacupd; echo "done" ;echo " "'
 alias Un='pacaur -Su --noconfirm --noedit'
 alias Ud='pacaur -Su --aur --devel'
 alias S='pacaur -Ss'

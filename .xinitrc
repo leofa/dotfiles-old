@@ -81,7 +81,7 @@ clipit -dn &
 menutray -r -u -i &
 unclutter -b --timeout 30 &
 batnotify &
-disable-standby-fs &
+nodpms & 
 #xss-lock --ignore-sleep -n dim-screen -- ilockit &
 xautolock -detectsleep -time 15 -locker "systemctl suspend" &
 

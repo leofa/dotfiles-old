@@ -6,7 +6,7 @@ import i3ipc
 
 i3 = i3ipc.Connection()
 
-parser = ArgumentParser(prog='disable-standby-fs',
+parser = ArgumentParser(prog='nodpms',
         description='''
         Disable standby (dpms) and screensaver when a window becomes fullscreen
         or exits fullscreen-mode. Requires `xorg-xset`.
