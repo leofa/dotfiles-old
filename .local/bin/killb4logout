@@ -5,3 +5,4 @@ killall yad
 killall sh
 killall perl
 killall sleep
+#loginctl kill-user faruk
