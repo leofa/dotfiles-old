@@ -71,41 +71,31 @@ rofi.font:                           Hack Bold 10
 ! Foreground color
 rofi.fg:                             #c7c7c7
 ! Background color
-rofi.bg:                             #2D2D2D
+rofi.bg:                             #2d2d2d
 ! Foreground color for active row
-rofi.fg-active:                      #268BD2
+rofi.fg-active:                      #b5bd68
 ! Foreground color for urgent row
-rofi.fg-urgent:                      #DC322F
+rofi.fg-urgent:                      #cc6666
 ! Foreground color for highlighted active row
-rofi.hlfg-active:                    #FDF6E3
+rofi.hlfg-active:                    #101112
 ! Foreground color for highlighted urgent row
-rofi.hlfg-urgent:                    #FDF6E3
+rofi.hlfg-urgent:                    #101112
 ! Background color for active row
-rofi.bg-active:                      #FDF6E3
+rofi.bg-active:                      #363636
 ! Background color for urgent row
-rofi.bg-urgent:                      #FDF6E3
+rofi.bg-urgent:                      #363636
 ! Background color for highlighted active row
-rofi.hlbg-active:                    #586E75
+rofi.hlbg-active:                    #b5bd68
 ! Background color for highlighted urgent row
-rofi.hlbg-urgent:                    #DC322F
+rofi.hlbg-urgent:                    #cc6666
 ! Background color for alternating row
 rofi.bgalt:                          #333333
 ! Foreground color for highlighted row
 rofi.hlfg:                           #101112
 ! Background color for highlighted row
-rofi.hlbg:                           #80A5A6
+rofi.hlbg:                           #80a5a6
 ! Border color
 rofi.bc:                             #455057
-! Use extended color scheme
-rofi.color-enabled:                  false
-! Color scheme for normal row
-rofi.color-normal:                   #fdf6e3,#002b36,#eee8d5,#455057,#eee8d5
-! Color scheme for urgent row
-rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
-! Color scheme for active row
-rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
-! Color scheme window
-rofi.color-window:                   #fdf6e3,#002b36
 ! Border width
 rofi.bw:                             3
 ! Location on screen
