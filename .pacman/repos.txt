@@ -158,7 +158,6 @@ mdadm
 mediainfo
 memtest86+
 mlocate
-mplayer
 mpv
 mtools
 nano

@@ -61,14 +61,14 @@ export SSH_AUTH_SOCK
 export DESKTOP_SESSION=gnome
 
 #------------------------------------------------
-# autostart some nice programs
+# autostart programs + scripts
 #------------------------------------------------
 
 start-pulseaudio-x11 &
 #system-config-printer-applet &
 #blueman-applet &
 #xdg-user-dirs-gtk-update
-wallchanger &
+wallch &
 #feh --bg-fill ~/.wallpaper/archos-by-deadmetaler.png &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &

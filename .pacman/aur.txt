@@ -1,6 +1,5 @@
 abiword-gtk2
 archlinux-artwork
-bomi
 caja-dropbox
 cava
 chromium-pepper-flash-dev
