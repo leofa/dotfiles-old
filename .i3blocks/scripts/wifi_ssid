@@ -6,15 +6,13 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 
 #------------------------------------------------------------------------
 
-# if the machine has no battery or wireless connection, the corresponding block should not be displayed.
+# if the machine has no battery or wireless connection, the corresponding block should display error.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#586E75'>[</span><span foreground='#B4B7B4'></span><span foreground='#B4B7B4'> X</span><span foreground='#586E75'>]</span>"
 
 SSID=$(iwgetid $INTERFACE -r)
 
-echo $SSID
-echo $SSID
-echo "#8ABEB7"
+echo "<span foreground='#586E75'>[</span><span foreground='#87AFAF'> </span><span foreground='#B4B7B4'>$SSID</span><span foreground='#586E75'>]</span>"
 
 case $1 in
   -4)
@@ -30,7 +28,7 @@ IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^\/]+).* scope global/ && print \
 
 case $BLOCK_BUTTON in
    1) xdotool key Super_L+slash ;; # chrome launcher shortcut
-   3) termite --name "WiFi-Menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" ;; #wifi connect
+   3) xdotool key Super_L+Shift+XF86Reload ;; #wifi connect
    2) echo -n "$IPADDR" | xclip -q -se c | notify-send 'IP-adres' 'naar klembord gekopieerd' ;; #copy ip to clipboard
 esac
 

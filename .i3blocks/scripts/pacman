@@ -1,6 +1,6 @@
 #/bin/sh
-PACMAN=$(pacaur -Qu | wc -l)
-echo $PACMAN
+PACMAN=$(pacman -Qu | wc -l)
+echo "<span foreground='#C7C795'></span><span foreground='#B4B7B4'> $PACMAN</span>"
 
 #------------------------------------------------------------------------
 
