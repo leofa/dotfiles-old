@@ -6,7 +6,7 @@
 # User and password secured
 . ~/.private/accounts
 
-COUNT=`curl -su $MAIL_USER:$MAIL_PASS https://mail.google.com/mail/feed/atom || echo "<fullcount>X</fullcount>"`
+COUNT=`curl -su $MAIL_USER:$MAIL_PASS https://mail.google.com/mail/feed/atom || echo "<fullcount>0</fullcount>"`
 COUNT=`echo "$COUNT" | grep -oPm1 "(?<=<fullcount>)[^<]+" `
 
 echo "<span foreground='#b294bb'></span> <span foreground='#B4B7B4'>$COUNT</span>"

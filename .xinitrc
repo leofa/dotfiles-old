@@ -89,16 +89,6 @@ xautolock -detectsleep -time 15 -locker "systemctl suspend" &
 # start WM/DE
 #------------------------------------------------
 
-session=${1:-i3}
-
-case $session in
-    i3                ) exec i3;;
-    i3log             ) exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1;;
-    i3shmlog          ) exec i3-with-shmlog;;
-    mate              ) exec mate-session;;
-    openbox           ) exec openbox-session;;
-    lxde              ) exec lxsession;;
-    kodi              ) exec kodi-standalone;;
-    *) exec $1;;
-esac
-
+#i3-with-shmlog
+#i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
+i3

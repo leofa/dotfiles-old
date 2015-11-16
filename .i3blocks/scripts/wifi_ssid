@@ -8,7 +8,7 @@ INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 
 # if the machine has no battery or wireless connection, the corresponding block should display error.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#586E75'>[</span><span foreground='#B4B7B4'></span><span foreground='#B4B7B4'> X</span><span foreground='#586E75'>]</span>"
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#586E75'>[</span><span foreground='#B4B7B4'></span><span foreground='#A3685A'> X</span><span foreground='#586E75'>]</span>"
 
 SSID=$(iwgetid $INTERFACE -r)
 
