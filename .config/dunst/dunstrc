@@ -1,5 +1,5 @@
 [global]
-    font = "Noto Sans 10"
+    font = "Hack 10"
     allow_markup = yes
     format = "<b>%s %p</b>\n%b"
     sort = yes
@@ -29,7 +29,7 @@
     
 [frame]
     width = 2
-    color = "#586E75"
+    color = "#455057"
 
 [shortcuts]
     close = ctrl+space
@@ -38,18 +38,18 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#DADCDE"
-    foreground = "#000000"
+    background = "#282a2e"
+    foreground = "#969896"
     timeout = 6
 
 [urgency_normal]
-    background = "#C8DED8"
-    foreground = "#000000"
+    background = "#282a2e"
+    foreground = "#c5c8c6"
     timeout = 8
 
 [urgency_critical]
-    background = "#DEC8C9"
-    foreground = "#000000"
+    background = "#282a2e"
+    foreground = "#cc6666"
     timeout = 10
 
 
