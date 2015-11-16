@@ -38,7 +38,7 @@ fi
 
 #fonts
 xset +fp /usr/share/fonts/local
-xset +fp ~/.local/fonts
+xset +fp ~/.local/share/fonts
 xset fp rehash
 #x cursor
 xsetroot -cursor_name left_ptr &
