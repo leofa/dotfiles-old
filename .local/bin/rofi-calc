@@ -1,0 +1,5 @@
+#!/bin/bash
+ 
+CM1=`xsel -o`
+CM2=`echo $CM1 | rofi -dmenu -p calc: | calc -p`
+echo $CM2 | xsel -i | echo $CM2 | rofi -dmenu -p answer:
