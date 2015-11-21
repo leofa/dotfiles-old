@@ -1,39 +1,17 @@
 #!/bin/sh
-# Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-load="$(cut -d ' ' -f1 /proc/loadavg)"
-#load="$(cut -d ' ' -f1-3 /proc/loadavg)"
-cpus="$(nproc)"
-
-# full text
-echo "$load"
+#load averages
+load1="$(cut -d ' ' -f1 /proc/loadavg)"
+load2="$(cut -d ' ' -f2 /proc/loadavg)"
+load3="$(cut -d ' ' -f3 /proc/loadavg)"
 
 # short text
-echo "$load"
+echo "<span foreground='#B4B7B4'> </span><span foreground='#C5C8C6'>$load1</span><span foreground='#B4B7B4'>₁</span>"
 
-# color if load is too high
-awk -v cpus=$cpus -v cpuload=$load '
-    BEGIN {
-        if (cpus <= cpuload) {
-           #  print "#D7875F";
-            exit 0;
-        }
-    }
-'
+# long text
+#echo "<span foreground='#B4B7B4'> </span><span foreground='#E0E0E0'>$load1₁ </span><span foreground='#C5C8C6'>$load2₅ </span><span foreground='#B4B7B4'>$load3₁₀</span>"
+
 case $BLOCK_BUTTON in
-  3) termite --exec htop --name 'htop_term' --hold & "$@" > /dev/null ;;
-  1) termite --exec glances --name 'glances_term' --hold & "$@" > /dev/null ;;
+  3) i3-msg exec termite --exec htop --name 'htop_term' --hold & "$@" > /dev/null ;;
+  1) i3-msg exec termite --exec glances --name 'glances_term' --hold & "$@" > /dev/null ;;
 esac

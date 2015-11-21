@@ -42,6 +42,8 @@ END {
         label = ""
 	else if (percentage == "100%")
 		label = ""
+	else if (percentage > 99)
+		label = ""
 	else if (percentage > 75)
 		label = ""
 	else if (percentage > 50)
@@ -50,7 +52,7 @@ END {
 		label = ""
     else if (percentage > 10) 
 		label = ""
-    else  
+    else if (percentage > 5)  
 		label = ""
 	
     # full text & "$@" > /dev/null;
@@ -62,7 +64,7 @@ END {
 	# color
 	gsub(/%$/,"",percentage)
 	if (+ percentage < + alert_low)
-		print "#ed6b6b"
+		print "#CC6666"
 }
 '
 #------------------------------------------------------------------------
@@ -70,7 +72,6 @@ END {
 case $BLOCK_BUTTON in
   3) dpmstoggle & "$@" > /dev/null ;; # left click, control DPMS 
   2) togglered & "$@" > /dev/null ;;  # right click, redshift on/off
-#  1) yad --no-buttons --text-info --geometry=500x260+$X+20 --class "yad_bat" --margins=10 --filename=<(acpi -V) ;;
   1) getacpi & "$@" > /dev/null ;; # yad dialog with battery info
   5) xbacklight -inc 10 ;; # scroll up, increase brightness
   4) xbacklight -dec 10 ;; # scroll down, decrease brightness

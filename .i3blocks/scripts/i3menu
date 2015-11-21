@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# menu icon
+#echo "<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >三</span>"
+echo "<span font='9.5'></span>"
+
+# mouse buttons
+case $BLOCK_BUTTON in
+    1) j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:' -yoffset -197 -xoffset 513" "$@" > /dev/null ;;
+    2) rofi-logout ;; 
+    3) chromium --show-app-list "$@" > /dev/null  
+esac 

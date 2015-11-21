@@ -1,11 +1,14 @@
 #!/bin/sh
-#DATE=$(date '+ %a  %H:%M')
-DATE=$(date '+ %H:%M')
-echo $DATE
+DATE1=$(date '+ %H')
+DATE2=$(date '+ %M')
+echo -n "<span font='8.5' font_weight='normal' foreground='#B4B7B4'> </span>"
+echo -n $DATE1 
+echo -n "<span foreground='#969896'>:</span>"
+echo $DATE2
 
 case $BLOCK_BUTTON in
     1) gsimplecal  & "$@" > /dev/null ;;
 #    1) yad --no-buttons --geometry=+$X+20 --class "yad_cal" --calendar ;;
-    2) chromium  --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki  & "$@" > /dev/null ;;
-    3) chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn  & "$@" > /dev/null ;; 
+    2) i3-msg exec chromium  --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki  & "$@" > /dev/null ;;
+    3) i3-msg exec chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn  & "$@" > /dev/null ;; 
 esac 
