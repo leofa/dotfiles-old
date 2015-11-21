@@ -12,14 +12,15 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 floating_modifier $mod
 
 # i3 swag \O_o/
-exec sh -c 'xdotool key Super_L+Shift+i sleep 1; xdotool key Super_L+Shift+Return' #start with i3 named workspace + terminal in scratchpad
-bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
-#bindsym $mod+Shift+i workspace 0<span font='10' weight='heavy'>ⅲ</span>
+exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with i3 named workspace + terminal in scratchpad
+#bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
+bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
 bindsym $mod+backslash exec i3-sensible-terminal 
-bindsym $mod+slash exec chromium --show-app-list
+bindsym $mod+slash exec rofi-ddg #rofi duckduckgo search
+bindsym $mod+Shift+slash exec chromium --show-app-list
 bindsym $mod+t exec subl3 
 bindsym $mod+c exec chromium
 bindsym $mod+i exec iceweasel
@@ -30,12 +31,12 @@ bindsym $mod+m exec geary
 bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
-bindsym $mod+d exec j4-dmenu-desktop --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
-bindsym $mod+Shift+d exec rofi -run-command "gksu {cmd}" -show run -p 'gksu' #w00t 
+bindsym $mod+d exec j4-dmenu-desktop --display-binary --term="termite -e --hold" --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
+bindsym $mod+Shift+a exec rofi -run-command "gksu {cmd}" -show run -p 'gksu' #w00t 
 bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
-bindsym $mod+Shift+XF86Reload exec termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo WiFi-menu -o'"
+bindsym $mod+Shift+XF86Reload exec termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
 bindsym $mod+XF86Reload exec netmenu 
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 bindsym $mod+p exec passmenu --notify 
@@ -50,19 +51,19 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
-for_window [instance="qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
+for_window [instance="feh|qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
 for_window [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|ald.mindbrain.io"] floating disable #jb live|google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
-for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad
+for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad, scratchpad show
 for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position 1050 450, focus,  move scratchpad, scratchpad show #google music player
 for_window [class="(?i)Gpicview"]  move position center
-for_window [class="getacpi"] move position mouse
-for_window [instance="insync"] move position mouse
-for_window [class="(?i)pavucontrol"] move position mouse
+for_window [class="yadinfo"] move position pointer
+for_window [instance="insync"] move position pointer
+for_window [class="(?i)pavucontrol"] move position pointer
 for_window [instance="file_progress"] sticky enable
-for_window [class="(?i)gsimplecal"] move position mouse
-for_window [instance="WiFi-menu"]  resize set 455 445; move position mouse
+for_window [class="(?i)gsimplecal"] move position pointer
+for_window [instance="WiFi-menu"]  resize set 455 445; move position pointer
 for_window [class="gcolor2|Deluge|timesup|QtPass"] sticky enable
 
 #layout
@@ -116,17 +117,30 @@ set $WS8 8 
 set $WS9 9  
 set $WS0 10  
 
+# nice (korean?) numbers
+#set $WS1  1<span font='10' font_weight='ultrabold' >〡</span>
+#set $WS2  2<span font='10' font_weight='ultrabold' >〢</span>
+#set $WS3  3<span font='10' font_weight='ultrabold' >〣</span>
+#set $WS4  4<span font='10' font_weight='ultrabold' >〤</span>
+#set $WS5  5<span font='10' font_weight='ultrabold' >〥</span>
+#set $WS6  6<span font='10' font_weight='ultrabold' >〦</span>
+#set $WS7  7<span font='10' font_weight='ultrabold' >〧</span>
+#set $WS8  8<span font='10' font_weight='ultrabold' >〨</span>
+#set $WS9  9<span font='10' font_weight='ultrabold' >〩</span>
+#set $WS0 10<span font='10' font_weight='ultrabold' >〇</span>
+
+
 # multimonitor support
-workspace "$WS1" output eDP1
-workspace "$WS2" output HDMI1
+workspace "$WS1" output HDMI1
+workspace "$WS2" output eDP1
 workspace "$WS3" output eDP1
 workspace "$WS4" output eDP1
 workspace "$WS5" output eDP1
 workspace "$WS6" output HDMI1
 workspace "$WS7" output HDMI1
 workspace "$WS8" output HDMI1
-workspace "$WS9" output eDP1
-workspace "$WS0" output eDP1
+workspace "$WS9" output HDMI1
+workspace "$WS0" output HDMI1
 
 # workspace_layout tabbed
 force_display_urgency_hint 500 ms

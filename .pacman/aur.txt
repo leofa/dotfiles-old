@@ -1,7 +1,5 @@
-abiword-gtk2
 archlinux-artwork
 caja-dropbox
-cava
 chromium-pepper-flash-dev
 chromium-widevine
 compton
@@ -14,6 +12,7 @@ firejail
 flasciibird
 flattr-icon-theme-git
 freshplayerplugin
+gimp-webp
 gksu-polkit-git
 gmusicbrowser
 hal-flash
@@ -66,6 +65,7 @@ steam-fonts
 sublime-text-dev
 termite-ranger-fix-git
 thermald
+toilet
 ttf-font-awesome
 ttf-ms-fonts
 turses

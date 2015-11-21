@@ -108,18 +108,18 @@ rofi.yoffset:                        0
 rofi.xoffset:                        0
 ! Always show number of lines
 rofi.fixed-num-lines:                false
-! Terminal to use
+! Terminal to #use
 rofi.terminal:                       termite
 ! Ssh client to use
 rofi.ssh-client:                     ssh
 ! Ssh command to execute
-rofi.ssh-command:                    termite  --execute='{ssh-client} {host}'
+rofi.ssh-command:                    {terminal} -e --hold {ssh-client} {host} -parse-known-hosts
 ! Run command to execute
 rofi.run-command:                    {cmd}
 ! Command to get extra run targets
-rofi.run-list-command:               
+!rofi.run-list-command:               
 ! Run command to execute that runs in shell
-rofi.run-shell-command:              termite --execute={cmd} --hold
+rofi.run-shell-command:              {terminal} {cmd}
 ! Disable history in run/ssh
 rofi.disable-history:                false
 ! Use levenshtein sorting

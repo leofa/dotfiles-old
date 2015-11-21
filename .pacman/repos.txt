@@ -26,6 +26,7 @@ bzr
 caja
 caja-actions
 caja-extensions-common
+calc
 ccache
 ccze
 chromium
@@ -33,7 +34,6 @@ clipit
 cmake
 cmus
 colordiff
-conky
 coreutils
 cowsay
 crda
@@ -158,6 +158,7 @@ mdadm
 mediainfo
 memtest86+
 mlocate
+moc
 mpv
 mtools
 nano

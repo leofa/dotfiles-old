@@ -2,8 +2,8 @@
 #uses YAD to display GTK+ warning with image and plays a sound with mpv
 
 if
-    yad --class timesup --width 200 --title Warning --image=/home/faruk/.config/timer/timesup.png --button='gtk-close:1' --no-escape & > /dev/null
-    mpv /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
+    yad --class timesup --width 200 --title Warning --image=/home/faruk/.config/timer/timesup.png --button='gtk-close:1' --no-escape & "$@"> /dev/null
+    mpv /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga & "$@"> /dev/null
     exit 0
   then
     exit 0

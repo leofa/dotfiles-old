@@ -78,7 +78,7 @@ lxpolkit &
 dunst &
 redshift &
 clipit -dn &
-menutray -r -u -i &
+#menutray -r -u -i &
 unclutter -b --timeout 30 &
 batnotify &
 nodpms & 
@@ -88,7 +88,7 @@ xautolock -detectsleep -time 15 -locker "systemctl suspend" &
 #------------------------------------------------
 # start WM/DE
 #------------------------------------------------
-
+tint2 &
 #i3-with-shmlog
 #i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 i3

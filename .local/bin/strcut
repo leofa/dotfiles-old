@@ -3,8 +3,8 @@
 while(1):
     s = str(input())
     if (len(s) > 40):
-         s = s[:30] + '\O_o/' + s[-10:] #fancy cut :P
-       # s = s[:30] + '..' + s[-10:] #cut right from center
+        s = s[:30] + '^' + s[-10:] #minimal cut
+        s = s[:30] + '..' + s[-10:] #cut right from center
        # s = s[:30] + '..' + s[-1:] #cut normal      
     print(s)
 

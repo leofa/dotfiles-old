@@ -52,21 +52,27 @@ get_prediction
 
 if ${RAINING}
 then
-    echo "It is raining"
+    #echo "It is raining"
+    echo "Het regent ⛆🌨☔ nu."
     if [ ${STOP} -gt 0 ]
     then
-        echo "It will stop in ${STOP} minutes."
+        #echo "It will stop in ${STOP} minutes."
+        echo "Na ${STOP} minuten klaart het weer op."
     else
-        echo "It won't stop for the next 2 hours."
+        #echo "It won't stop for the next 2 hours."
+        echo "Het blijft nog wel 2 uur regenen."
     fi
 fi
 if ! ${RAINING}
 then
-    echo "It is not raining"
+    #echo "It is not raining"
+     echo "Er is geen regen ⛆🌨☔ nu."
     if [ ${START} -gt 0 ]
     then
-        echo "It will start in ${START} minutes."
+        #echo "It will start in ${START} minutes."
+        echo "Na ${START} minuten regen verwacht."
     else
-        echo "It won't start for the next 2 hours."
+        #echo "It won't start for the next 2 hours."
+        echo "Het blijft nog wel 2 uur droog."
     fi
 fi

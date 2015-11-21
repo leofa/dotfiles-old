@@ -5,6 +5,18 @@ declare -A item
 declare -A cmd
 
 # logout items
+#ex="i3-msg exit"
+#cmd['e']=$ex
+#item['e']=$ex
+
+#lk="loginctl kill-user $USER"
+#cmd['k']=$lk
+#item['k']=$lk
+
+#li="ilockit"
+#cmd['l']=$li
+#item['l']=$li
+
 ss="systemctl suspend"
 cmd['s']=$ss
 item['s']=$ss
@@ -18,8 +30,8 @@ cmd['r']=$sr
 item['r']=$sr
 
 sp="systemctl poweroff"
-cmd['x']=$sp
-item['x']=$sp
+cmd['p']=$sp
+item['p']=$sp
 
 # generate menu
 function print_menu()
