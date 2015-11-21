@@ -14,16 +14,16 @@ yad
 etc.
 
 # latest screenshots
-clean
+clean desktop
 ![ScreenShot](.scrot/clean.png)
 dirty
 ![ScreenShot](.scrot/dirty.png) 
-menutray
-![ScreenShot](.scrot/menutray.png)
-vim + colortheme
-![ScreenShot](.scrot/vim+colortheme.png) 
+vim+tmux+ranger
+![ScreenShot](.scrot/vim+tmux+ranger.png)
+new wallpaper by me :P 
+![ScreenShot](.wallpaper/i3-by-leofa.png)
 
-latest wallpaper by <a href="http://deadmetaler.deviantart.com/art/ArchOS-559048877">DeadMetaler</a>, colors mostly based on <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a> by Chris Kempson
+colors based on <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a> theme by Chris Kempson
 
 # WIP
 keep on learning, ever changing..
