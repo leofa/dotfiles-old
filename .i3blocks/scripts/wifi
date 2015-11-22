@@ -14,7 +14,7 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 # if the machine has no battery or wireless connection, the corresponding block should display error.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#B4B7B4'></span><span foreground='#A3685A'> X </span>"
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#B4B7B4'></span><span foreground='#A3685A'> X</span>"
 
 #------------------------------------------------------------------------
 

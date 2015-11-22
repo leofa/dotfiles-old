@@ -83,6 +83,7 @@ alias news='newsbeuter'
 alias dots='cd ~/dotfiles'
 alias scanwifi='sudo iw wlp1s0 interface add mon0 type monitor; sudo horst -i mon0 creset'
 alias ct='colortheme'
+alias twt='turses'
 
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && gvim "$file"; }
