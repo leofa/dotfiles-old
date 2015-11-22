@@ -141,7 +141,7 @@ rofi.combi-modi:                     window,run
 ! Do a more fuzzy matching
 rofi.fuzzy:                          true
 ! Use glob matching
-rofi.glob:                           true
+rofi.glob:                           false
 ! Tokenize input string
 rofi.tokenize:                       true
 ! Monitor id to show on
