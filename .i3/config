@@ -117,7 +117,7 @@ set $WS8 8 
 set $WS9 9  
 set $WS0 10  
 
-# nice (korean?) numbers
+# https://en.wikipedia.org/wiki/Suzhou_numerals
 #set $WS1  1<span font='10' font_weight='ultrabold' >〡</span>
 #set $WS2  2<span font='10' font_weight='ultrabold' >〢</span>
 #set $WS3  3<span font='10' font_weight='ultrabold' >〣</span>
