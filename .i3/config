@@ -74,8 +74,8 @@ bindsym $mod+Shift+s sticky toggle
 #fullscreen vids to small sticky in corner aka picture in picture mode 
 bindsym $mod+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 933 518 
 
-#window title format mess around with pango
-for_window [class="(?i)"] title_format "<span font='9' weight='light' foreground='#C7C7C7'>[</span>%title<span font='9' weight='light' foreground='#C7C7C7'>]</span>"
+#window title format
+for_window [class="(?i)"] title_format "<span font='10' weight='normal' foreground='#E0E0E0'>〉</span>%title "
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1

@@ -5,8 +5,9 @@
 cmtk=$(curl http://www.reddit.com/user/_LeoFa/about.json -s | jshon -e data -e comment_karma)
 lnkk=$(curl http://www.reddit.com/user/_LeoFa/about.json -s | jshon -e data -e link_karma)
 
-#who doesn't love diamonds? pango this s*
-echo "<span foreground='#586E75' >[</span><span foreground='#B4B7B4'> </span><span foreground='#8ABEB7'>  </span><span foreground='#B4B7B4'>$cmtk</span><span foreground='#B294BB'>  </span><span foreground='#B4B7B4'>$lnkk</span><span foreground='#586E75' >]</span>"
+#------------------------------------------------------------------------
+#who doesn't love diamonds? pango this s*   new reddit alien:  (font awesome 4.5) 
+echo "<span foreground='#586E75' >[</span><span foreground='#B4B7B4' font='10'> </span><span foreground='#8ABEB7'>  </span><span foreground='#B4B7B4'>$cmtk</span><span foreground='#B294BB'>  </span><span foreground='#B4B7B4'>$lnkk</span><span foreground='#586E75' >]</span>"
 
 #------------------------------------------------------------------------
 

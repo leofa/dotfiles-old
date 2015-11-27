@@ -30,21 +30,10 @@ fi
 
 #-----------------------------------------------------------------------
 
-# mouse buttons + yad gtk network info dialog 
+# mouse buttons  
 
 case $BLOCK_BUTTON in
-    2) xdotool key Super_L+XF86Reload ;; # switch profiles with netmenu (shortcuts defined in i3cnf)
-   3) xdotool key Super_L+Shift+XF86Reload ;; # connect with wifi-menu
-   # yad gtk network info dialog 
-   1) yad --no-buttons --width=210 --height=220 --text-info --class "yadinfo" --margins=10 --filename=<(echo -n "
- $SSID
-------------------------------------
-device name = $(ip route | cut -d " " -f 3 | grep [a-z]) 
-ip = $IPADDR
-gateway = $(ip route | cut -d " " -f 3 | grep [.])
-route = $(ip route | cut -d " " -f 1 | grep [0-9]) 
-resolv = $(cat /etc/resolv.conf | cut -d " " -f 2 | grep [0-9])
-wanip = $WANIP
-")
+    1) xdotool key Super_L+XF86Reload ;; # switch profiles with netmenu (shortcuts defined in i3cnf)
+   2) xdotool key Super_L+Shift+XF86Reload ;; # connect with wifi-menu
 esac
 

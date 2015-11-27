@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#wifi signal quality
 #------------------------------------------------------------------------
 
 # if no interface is found, use the first device with a global scope
@@ -20,13 +20,13 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 #wifi bars
   if [[ $QUALITY -ge 80 ]]; then
-      echo "<span  font='11' foreground='#969896' underline='single'>****</span>"
+      echo "<span  font='11' foreground='#A9A981' underline='single' underline_color='#586E75'>****</span>"
   elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span  font='11' foreground='#969896' underline='single'>***</span>" 
+      echo "<span  font='11' foreground='#A9A981' underline='single' underline_color='#586E75'>***</span>" 
   elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span  font='11' foreground='#969896' underline='single'>**</span>" #orange   
+      echo "<span  font='11' foreground='#A9A981' underline='single' underline_color='#586E75'>**</span>" #orange   
   elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span  font='11' foreground='#C2AD84' underline='single'>*</span>" #red
+      echo "<span  font='11' foreground='#A9A981' underline='single' underline_color='#586E75'>*</span>" #red
 fi
 
 #-----------------------------------------------------------------------

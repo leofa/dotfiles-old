@@ -26,7 +26,6 @@ j4-dmenu-desktop
 libchardet
 libdbh2
 libdbusmenu-gtk2
-libevdevc
 libgee06
 libgestures
 libtubo0
@@ -77,7 +76,7 @@ vim-tmuxline-git
 vitetris
 vte-notification-common
 xcursor-openzone
-xf86-input-cmt
+xf86-input-cmt-git
 xf86-input-cmt-setup
 xkeyboard-config-chromebook
 xss-lock

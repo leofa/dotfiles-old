@@ -6,8 +6,8 @@ echo "<span font='9.5'></span>"
 
 # mouse buttons
 case $BLOCK_BUTTON in
-    #1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -yoffset -197 -xoffset 513" ;; #in the corner
-    1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -lines 20 -width 100 -padding 250 -bw 0 -font 'Hack Bold 12'" ;; #maximized
+    1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -yoffset -197 -xoffset 513" ;; #in the corner
+    #1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -lines 20 -width 100 -padding 250 -bw 0 -font 'Hack Bold 11'" ;; #maximized
     2) rofi-logout ;; 
-    3) chromium --show-app-list "$@" > /dev/null  
+    3) chromium --show-app-list
 esac 

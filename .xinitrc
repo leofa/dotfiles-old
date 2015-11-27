@@ -88,7 +88,6 @@ xautolock -detectsleep -time 15 -locker "systemctl suspend" &
 #------------------------------------------------
 # start WM/DE
 #------------------------------------------------
-tint2 &
 #i3-with-shmlog
 #i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 i3
