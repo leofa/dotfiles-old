@@ -12,6 +12,6 @@ echo "<span foreground='#B4B7B4'> </span><span foreground='#C5C8C6'>$load1</s
 #echo "<span foreground='#B4B7B4'> </span><span foreground='#E0E0E0'>$load1₁ </span><span foreground='#C5C8C6'>$load2₅ </span><span foreground='#B4B7B4'>$load3₁₀</span>"
 
 case $BLOCK_BUTTON in
-  3) termite --exec htop --name 'htop_term' --hold ;;
-  1) termite --exec glances --name 'glances_term' --hold ;;
+  3) termite --exec htop --name 'htop_term' --hold "$@" &>/dev/null ;;
+  1) termite --exec glances --name 'glances_term' --hold "$@" &>/dev/null ;;
 esac

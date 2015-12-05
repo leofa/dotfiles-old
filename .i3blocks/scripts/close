@@ -9,7 +9,7 @@ if [ -n "$WIN" ];
    fi
 
 case $BLOCK_BUTTON in
-  3) sh -c xkill "$@" > /dev/null;;
+  3) sh -c xkill "$@" &>/dev/null ;;
   1) i3-msg kill ;;
   4) i3-msg focus right ;;
   5) i3-msg focus left ;;	 

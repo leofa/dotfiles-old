@@ -12,6 +12,6 @@ echo "<span foreground='#586E75' >[</span><span foreground='#B4B7B4' font='10'>ï
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) i3-msg exec chromium https://www.reddit.com & "$@" > /dev/null ;;
-  3) i3-msg exec chromium https://www.reddit.com/r/unixporn & "$@" > /dev/null ;; 
+  1) chromium https://www.reddit.com "$@" &>/dev/null ;;
+  3) chromium https://www.reddit.com/r/unixporn "$@" &>/dev/null ;; 
 esac

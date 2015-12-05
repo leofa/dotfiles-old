@@ -1,20 +1,4 @@
 #!/bin/bash
-# Copyright (C) 2012 Stefan Breunig <stefan+measure-net-speed@mathphys.fsk.uni-heidelberg.de>
-# Copyright (C) 2014 kaueraal
-# Copyright (C) 2015 Thiago Perrotta <perrotta dot thiago at poli dot ufrj dot br>
-
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Use the provided interface, otherwise the device used for the default route.
 if [[ -n $BLOCK_INSTANCE ]]; then
@@ -23,12 +7,9 @@ else
   INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
 fi
 
-# Issue #36 compliant.
+# # if the connection is down, the corresponding block should not be displayed.
 if ! [ -e "/sys/class/net/${INTERFACE}/operstate" ] || ! [ "`cat /sys/class/net/${INTERFACE}/operstate`" = "up" ]
 then
-    echo "$INTERFACE down"
-    echo "$INTERFACE down"
-    echo "#AB4642"
     exit 0
 fi
 
@@ -70,21 +51,19 @@ tx_rate=$(( $tx_diff / $time_diff ))
 # 1024^2 = 1048576, then display MiB/s instead
 
 # incoming
-echo -n " "
 rx_kib=$(( $rx_rate >> 10 ))
 if [[ "$rx_rate" -gt 1048576 ]]; then
-  printf '%sM' "`echo "scale=1; $rx_kib / 1024" | bc`"
+    rx_mbs=$( printf '%s' "`echo "scale=1; $rx_kib / 1024" | bc`")
+  echo -n "<span foreground='#586E75' >[</span>${rx_mbs}<span font='8' foreground='#969896'>M</span><span font='10' foreground='#81A2BE'>  </span>"
 else
-  echo -n "${rx_kib}K"
+  echo -n "<span foreground='#586E75' >[</span>${rx_kib}<span font='8' foreground='#969896'>K</span><span font='10' foreground='#81A2BE'>  </span>"
 fi
 
-echo -n " "
-
 # outgoing
-echo -n " "
 tx_kib=$(( $tx_rate >> 10 ))
 if [[ "$tx_rate" -gt 1048576 ]]; then
-  printf '%sM' "`echo "scale=1; $tx_kib / 1024" | bc`"
+    tx_mbs=$(printf '%s' "`echo "scale=1; $tx_kib / 1024" | bc`")
+  echo -n "<span font='10' foreground='#B294BB'> </span>${tx_mbs}<span font='8' foreground='#969896'>M</span><span foreground='#586E75' >]</span>"
 else
-  echo -n "${tx_kib}K"
+  echo -n "<span font='10' foreground='#B294BB'> </span>${tx_kib}<span font='8' foreground='#969896'>K</span><span foreground='#586E75' >]</span>"
 fi

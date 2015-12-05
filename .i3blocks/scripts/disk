@@ -13,21 +13,15 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-# modified by leofa to show used disk percentage
+# modified by leofa
 
 DIR="${BLOCK_INSTANCE:-$HOME}"
 ALERT_LOW="${100:-20}" # color will turn red above this value (default: 80%)
 
-df -h -P -l "$DIR" | awk -v alert_low=$ALERT_LOW '
+usage=$(df -h -P -l "$DIR" | awk -v alert_low=$ALERT_LOW '
 /\/.*/ {
-	# full text
-	print $5 
-
-	# short text
-	print $5 
-
-	use=$5 
-
+	print $5
+	use=$5
 	# no need to continue parsing
 	exit 0
 }
@@ -37,12 +31,14 @@ END {
 	if (100 - use < alert_low) {
 		# color
 		print "#CC6666"
-	}
-}
+	}}')
 
-'
+echo "<span foreground='#87AFAF' > </span><span foreground='#B4B7B4'>$usage</span>"
+
 case $BLOCK_BUTTON in
-  1) caja  & "$@" > /dev/null ;;
-  2) yad_df & "$@" > /dev/null ;;
-  3) mate-search-tool  & "$@" > /dev/null ;;
+  1) caja  "$@" &>/dev/null ;;
+  2) termite --name disks -e "sh -c 'echo NCurses Disk Usage; sudo ncdu -x /'" "$@" &>/dev/null ;;
+  3) #termite --name disks -e "sh -c 'df -h'" --hold "$@" &>/dev/null  
+     #termite --name disks -e "sh -c 'ranger'" "$@" &>/dev/null 
+     mate-search-tool "$@" &>/dev/null
 esac

@@ -56,7 +56,7 @@ END {
 		label = ""
 	
     # full text & "$@" > /dev/null;
-	print label " " percentage
+    print label " " percentage
 
 	# short text
 	print label " " percentage
@@ -70,9 +70,9 @@ END {
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  3) dpmstoggle & "$@" > /dev/null ;; # left click, control DPMS 
-  2) togglered & "$@" > /dev/null ;;  # right click, redshift on/off
-  1) getacpi & "$@" > /dev/null ;; # yad dialog with battery info
+  3) dpmstoggle ;; # left click, control DPMS 
+  2) togglered ;;  # right click, redshift on/off
+  1) getacpi "$@" &>/dev/null ;; # yad dialog with battery info
   5) xbacklight -inc 10 ;; # scroll up, increase brightness
   4) xbacklight -dec 10 ;; # scroll down, decrease brightness
 esac

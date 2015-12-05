@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#------------------------------------------------------------------------
+
+# use provided interface, otherwise use default route.
+if [[ -n $BLOCK_INSTANCE ]]; then
+  IF=$BLOCK_INSTANCE
+else
+  IF=$(ip route | awk '/^default/ { print $5 ; exit }')
+fi
+#------------------------------------------------------------------------
+
+# only show for instance specified in i3blocks.conf
+[[ ! -d /sys/class/net/${IF} ]] && exit
+
+#------------------------------------------------------------------------
+
+IP=$(ip route get 1 | awk '{print $NF;exit}')
+WANIP=$(curl -s http://whatismijnip.nl |cut -d " " -f 5)
+
+#------------------------------------------------------------------------
+
+if [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]]; then
+  echo "<span foreground='#B4B7B4'></span><span foreground='#A3685A'> X</span>" # full text
+  echo "<span foreground='#B4B7B4'></span><span foreground='#A3685A'> X</span>" FAF
+   else  
+      #echo "<span foreground='#87AFAF'></span><span foreground='#B4B7B4'> $IP</span>" 
+      echo "<span foreground='#87AFAF'></span><span foreground='#B4B7B4'> ok</span>" 
+  fi
+
+#------------------------------------------------------------------------
+
+# mouse buttons + yad gtk network info dialog 
+
+case $BLOCK_BUTTON in
+    2) xdotool key Super_L+XF86Reload ;; # switch profiles with netmenu (shortcuts defined in i3cnf)
+   3) xdotool key Super_L+Shift+XF86Reload ;; # connect with wifi-menu
+   # yad gtk network info dialog (TODO need to get info better) 
+   1) yad --no-buttons --width=210 --height=220 --text-info --class "yadinfo" --margins=10 --filename=<(echo -n "
+ LAN
+------------------------------------
+device name = $(ip route | cut -d " " -f 3 | grep enp) 
+ip = $IP
+gateway = $(ip route | cut -d " " -f 3 | grep [.])
+route = $(ip route | cut -d " " -f 1 | grep [0-9]) 
+resolv = $(cat /etc/resolv.conf | cut -d " " -f 2 | grep [0-9])
+wanip = $WANIP
+") "$@" &>/dev/null
+esac
+
