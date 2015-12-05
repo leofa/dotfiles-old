@@ -12,9 +12,9 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 floating_modifier $mod
 
 # i3 swag \O_o/
-exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with i3 named workspace + terminal in scratchpad
-#bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
-bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
+exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with i3 named workspace
+bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
+#bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
@@ -51,7 +51,7 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
-for_window [instance="feh|qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
+for_window [instance="radio|disks|feh|qtpass|vitetris|xfontsel|xfd|gpicsview|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
 for_window [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|ald.mindbrain.io"] floating disable #jb live|google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
@@ -65,6 +65,7 @@ for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position pointer
 for_window [instance="WiFi-menu"]  resize set 455 445; move position pointer
 for_window [class="gcolor2|Deluge|timesup|QtPass"] sticky enable
+for_window [instance="radio"]  resize set 355 445; move position pointer,  move scratchpad, scratchpad show 
 
 #layout
 for_window [workspace="$WS2|$WS4"] layout tabbed
@@ -75,7 +76,7 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 933 518 
 
 #window title format
-for_window [class="(?i)"] title_format "<span font='10' weight='normal' foreground='#E0E0E0'>〉</span>%title "
+for_window [class="(?i)"] title_format "<span font='10' weight='normal' foreground='#E0E0E0'>〉</span>%title"
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
@@ -226,16 +227,16 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+j move left 25px
+bindsym $mod+Shift+k move down 25px
+bindsym $mod+Shift+l move up 25px
+bindsym $mod+Shift+semicolon move right 25px
 
 # alternatively, you can use the cursor keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left 25px
+bindsym $mod+Shift+Down move down 25px
+bindsym $mod+Shift+Up move up 25px
+bindsym $mod+Shift+Right move right 25px
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -347,3 +348,4 @@ client.focused #586e75 #586e75 #f9f9f9 #268bd2
 client.focused_inactive #455057 #455057 #c7c7c7 #002b36
 client.unfocused #2d2d2d #2d2d2d #c7c7c7 #002b36
 client.urgent #dc322f #dc322f #f9f9f9 #dc322f
+

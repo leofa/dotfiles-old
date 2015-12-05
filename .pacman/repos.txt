@@ -202,6 +202,7 @@ python-pylast
 python-pyqt4
 python-pysmbc
 python-pyudev
+python-service-identity
 python-setproctitle
 python2-pip
 qemu
@@ -240,7 +241,6 @@ tk
 tmux
 ttf-droid
 ttf-hack-ibx
-ttf-noto-fonts-emoji-ib
 ttf-source-code-pro-ibx
 tumbler
 ufw
@@ -280,6 +280,7 @@ xorg-xgamma
 xorg-xinit
 xorg-xinput
 xorg-xkill
+xorg-xlsfonts
 xorg-xsetroot
 xorg-xvinfo
 xorg-xwininfo

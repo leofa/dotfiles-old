@@ -1,3 +1,4 @@
+alex4
 archlinux-artwork
 caja-dropbox
 chromium-pepper-flash-dev
@@ -15,6 +16,7 @@ freshplayerplugin
 gimp-webp
 gksu-polkit-git
 gmusicbrowser
+gnome-mpv-git
 hal-flash
 i3-gaps-next-git
 i3blocks
@@ -58,7 +60,6 @@ python-xlib
 python2-oauth2
 python2-tweepy-git
 qtpass
-rainbowstream
 rtv
 steam-fonts
 sublime-text-dev

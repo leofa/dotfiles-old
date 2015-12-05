@@ -17,11 +17,12 @@ bold=`tput bold`
 ser="$cyan"
 name="$bold$norm"
 echo '
-        
-                  | _)       
-     _| _` |   _` |  |   _ \ 
-   _| \__,_| \__,_| _| \___/ 
-'                          
+                  | _)
+     _| _` |   _` |  |   _ \
+   _| \__,_| \__,_| _| \___/
+'
+echo -n '      ♫  ♬  ♪  ♩  ♭  ♪
+' 
             
 stations=(	
 'Pinguin Radio'="http://pr320.pinguinradio.nl:80/"
@@ -41,8 +42,8 @@ stations=(
 '- World'="http://icecast.omroep.nl/radio6-world-bb-mp3"
 '- Jazz'="http://icecast.omroep.nl/radio6-jazz-bb-mp3"
 #'- Grooves'="http://icecast.omroep.nl/radio6-grooves-bb-mp3"
-'- Blues'="http://icecast.omroep.nl/radio6-blues-bb-mp3"
-'Jupiter Broadcasting Radio'="http://jbradio.out.airtime.pro:8000/jbradio_a"
+#'- Blues'="http://icecast.omroep.nl/radio6-blues-bb-mp3"
+#'Jupiter Broadcasting Radio'="http://jbradio.out.airtime.pro:8000/jbradio_a"
 #'Digitally Imported: Chillout'="http://listen.di.fm/public3/chillout.pls"
 #'- Chillout Dreams'="http://listen.di.fm/public3/chilloutdreams.pls"
 #'- Soulful House'="http://listen.di.fm/public3/soulfulhouse.pls"
@@ -64,7 +65,7 @@ stations=(
 #'- Poptron'="http://somafm.com/poptron.pls"
 #'- Sonic Universe'="http://somafm.com/sonicuniverse.pls"
 #'- Def Con'="http://somafm.com/defcon.pls"
-'- Folk Forward'="http://somafm.com/folkfwd.pls"
+#'- Folk Forward'="http://somafm.com/folkfwd.pls"
 #'- BAGel Radio'="http://somafm.com/bagel.pls"
 #'- Fluid'="http://somafm.com/fluid.pls"
 #'- Illinois Street Lounge'="http://somafm.com/illstreet.pls"
@@ -73,7 +74,7 @@ stations=(
 #'- Cliqhop idm'="http://somafm.com/cliqhop.pls"          
 #'- Digitalis'="http://somafm.com/digitalis.pls"
 '- Dub Step Beyond'="http://somafm.com/dubstep.pls"
-'- Seven Inch Soul'="http://somafm.com/7soul.pls"
+#'- Seven Inch Soul'="http://somafm.com/7soul.pls"
 #'- Thistle Radio'="http://somafm.com/thistle.pls"
 #'- Doomed'="http://somafm.com/doomed.pls"
 #'- Mission Control'="http://somafm.com/missioncontrol.pls"
@@ -97,7 +98,7 @@ stations=(
   read -p "${yellow}Station:${norm} " sta
   echo
 
-  #capture="--stream-capture --stream-dump ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
+  #capture="-capture -dumpfile ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
 
  # tfile=`mktemp`
   mpv --no-cache --quiet --msg-color --no-ytdl `echo ${stations[$sta]} | cut -d '=' -f2`
