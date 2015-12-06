@@ -14,18 +14,18 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 # if the machine has no battery or wireless connection, the corresponding block should display error.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#B4B7B4'></span><span foreground='#A3685A'> X</span>"
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#C5C8C6'></span><span foreground='#A3685A'> X</span>"
 
 #------------------------------------------------------------------------
 
   if [[ $QUALITY -ge 80 ]]; then
-      echo "<span foreground='#B4B7B4'></span><span foreground='#87AFAF'> $SSID</span>"
+      echo "<span foreground='#C5C8C6'></span><span foreground='#87AFAF'> $SSID</span>"
   elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span foreground='#B4B7B4'></span><span foreground='#87AFAF'> $SSID</span>" 
+      echo "<span foreground='#C5C8C6'></span><span foreground='#87AFAF'> $SSID</span>" 
   elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span foreground='#B4B7B4'></span><span foreground='#87AFAF'> $SSID</span>" #orange   
+      echo "<span foreground='#C5C8C6'></span><span foreground='#87AFAF'> $SSID</span>" #orange   
   elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span foreground='#B4B7B4'></span><span foreground='#87AFAF'> $SSID</span>" #red
+      echo "<span foreground='#C5C8C6'></span><span foreground='#87AFAF'> $SSID</span>" #red
 fi
 
 #-----------------------------------------------------------------------

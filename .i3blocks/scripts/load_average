@@ -6,7 +6,7 @@ load2="$(cut -d ' ' -f2 /proc/loadavg)"
 load3="$(cut -d ' ' -f3 /proc/loadavg)"
 
 # short text
-echo "<span foreground='#B4B7B4'> </span><span foreground='#C5C8C6'>$load1</span><span foreground='#B4B7B4'>₁</span>"
+echo "<span foreground='#B4B7B4'> </span><span foreground='#C5C8C6'>$load1</span><span foreground='#b294bb'>₁</span>"
 
 # long text
 #echo "<span foreground='#B4B7B4'> </span><span foreground='#E0E0E0'>$load1₁ </span><span foreground='#C5C8C6'>$load2₅ </span><span foreground='#B4B7B4'>$load3₁₀</span>"
