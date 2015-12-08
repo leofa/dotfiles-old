@@ -2,8 +2,9 @@
 WIN=$(xdotool getactivewindow) 
 if [ -n "$WIN" ]; 
    then 
-       echo "<span font='8' weight='normal' foreground='#969896'>🗖</span>"
-    else 
+       #echo "<span font='8' weight='normal' foreground='#969896'>🗖</span>"
+       echo "<span font='10.5' foreground='#6C9770'>⊕</span>"
+   else 
        exit 0
     fi
 

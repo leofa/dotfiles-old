@@ -2,11 +2,12 @@
 
 # menu icon
 #echo "<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >三</span>"
-echo "<span font='9.5'></span>"
+echo "<span font='9.5' foreground='#C5C8C6' ></span>"
+#echo "<span font='9.5' font_weight='ultraheavy' foreground='#C5C8C6' >☰</span>"
 
 # mouse buttons
 case $BLOCK_BUTTON in
-    1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -yoffset -197 -xoffset 513" "$@" &>/dev/null ;; #in the corner
+    1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -yoffset -187 -xoffset 503" "$@" &>/dev/null ;; #in the corner
     #1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -lines 20 -width 100 -padding 250 -bw 0 -font 'Hack Bold 11'" "$@" &>/dev/null ;; #maximized
     2) rofi-logout "$@" &>/dev/null ;; 
     3) chromium --show-app-list "$@" &>/dev/null

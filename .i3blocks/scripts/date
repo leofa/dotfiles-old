@@ -4,7 +4,8 @@ dt0=$(date '+%a')
 dt1=$(date '+%H')
 dt2=$(date '+%M')
 
-echo "<span font='8.5' foreground='#B294BB'> </span><span font='Hack Bold 8' >$dt0</span><span font='8' foreground='#969896'>.</span>$dt1<span font='8' foreground='#969896'>:</span>$dt2"
+#echo "<span font='8.5' foreground='#B294BB'> </span><span font='Hack Bold 8' >$dt0</span><span font='8' foreground='#969896'>.</span>$dt1<span font='8' foreground='#969896'>:</span>$dt2"
+echo "<span foreground='#B294BB'> </span>$dt1<span foreground='#969896'>:</span>$dt2"
 
 case $BLOCK_BUTTON in
     1) gsimplecal "$@" &>/dev/null ;;
