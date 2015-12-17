@@ -17,6 +17,9 @@ export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 # promptline
 source ~/.shell_prompt.sh
 
+# export PATH locally
+export PATH=$PATH:~/.local/bin
+
 #skype fix
 #export PULSE_LATENCY_MSEC=60
 
