@@ -1,0 +1,134 @@
+postinstall notes (acer c720p chromebook)
+=========================================
+
+run install script
+==================
+
+bash ./dotfiles/setup/setup.sh
+
+
+enable autologin
+=========
+
+sudo systemctl edit getty@tty1.service
+-add 
+ [Service]
+ Type=simple
+ ExecStart=
+ ExecStart=-/sbin/agetty --autologin faruk --noclear %I 38400 linux
+
+
+setup systemd-timesyncd
+=======================
+
+sudo timedatectl set-ntp true
+sudo systemctl enable systemd-timesyncd
+
+
+remove the "watch" cursor
+=========================
+
+cd /usr/share/icons/OpenZone_Black_Slim/cursors
+sudo rm watch left_ptr_watch
+sudo ln -s left_ptr watch
+sudo ln -s left_ptr left_ptr_watch
+sudo vim /usr/share/icons/default/index.theme
+-mod
+ Inherets=Openzone Black Slim
+
+
+working i3blocks gmail blocklet
+===============================
+
+generate password at https://security.google.com/settings/security/apppasswords
+mkdir .private; vim .private/accounts 
+-add
+MAIL_USER=email
+MAIL_PASS=password
+-
+set proper permissions 
+
+
+optimize for ssd
+================
+
+# more frequent fstrim
+sudo systemctl edit fstrim.timer
+-
+[Timer]
+OnCalendar=
+OnCalendar=3days
+-
+systemctl enable fstrim.timer
+
+# scheduler hdd/ssd mixed environment
+/etc/udev/rules.d/60-schedulers.rules
+-
+  ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", 
+  ATTR{queue/scheduler}="deadline"
+-
+# swappiness
+/etc/sysctl.d/99-sysctl.conf
+-
+  vm.swappiness=10
+-
+
+
+silent boot
+===========
+
+# kernel messages
+/etc/sysctl.d/20-quiet-printk.conf
+-
+kernel.printk = 3 3 3 3
+-
+
+# fsck
+remove fsck from /etc/mkinitcpio.conf 
+HOOKS=(...)
+cd /etc/systemd/system 
+cp /usr/lib/systemd/system/systemd-fsck-root.service /etc/systemd/system/systemd-fsck-root.service
+cp /usr/lib/systemd/system/systemd-fsck@.service /etc/systemd/system/systemd-fsck@.service
+vim systemd-fsck-root.service
+vim systemd-fsck@.service
+-
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/lib/systemd/systemd-fsck
+StandardOutput=null
+StandardError=journal+console
+TimeoutSec=0
+-
+
+
+configure systemd files
+=======================
+
+/etc/systemd/logind.conf
+KillUserProcesses=yes
+HandlePowerKey=ignore
+HandleLidSwitchDocked=ignore
+
+/etc/systemd/system.conf
+LogColor=yes
+ShutdownWatchdogSec=0min
+
+/etc/systemd/journald.conf
+Compress=yes
+SystemMaxUse=512M
+
+/etc/systemd/coredump.conf
+Compress=yes
+JournalSizeMax=520M
+MaxUse=1G
+
+
+TODO 
+====
+
+setup dnsmasq
+setup nfs
+install steam
+install minecraft 
+kill zombies ...
