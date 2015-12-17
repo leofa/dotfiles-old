@@ -12,7 +12,9 @@ KERNEL="$(uname -sr)"
 UPTIME="$(uptime -p | sed s:"up "::)"
 PACKAGES="$(pacman -Q | wc -l)"
 # shell is already defined
-WM="$(grep -v "^#" "${HOME}/.xinitrc" | tail -n 1 | cut -d " " -f2)"
+if [ -z "$WM" ]; then
+	WM="$(grep -v "^#" "${HOME}/.xinitrc" | tail -n 1 | cut -d " " -f2)"
+fi
 
 ## DEFINE COLORS
 
@@ -30,7 +32,7 @@ rc="$(tput sgr0)"	# reset
 
 # you can change these
 lc="${bc}${c2}"		# labels
-nc="${bc}${c6}"		# user and hostname
+nc="${bc}${c4}"		# user and hostname
 tc="${bc}${c7}"		# text
 fc="${bc}${c6}"		# first color
 sc="${c6}"		# second color
@@ -41,10 +43,10 @@ cat <<EOF
 
 ${fc}        /\\${rc}        ${nc}${USER}${rc}${tc}@${rc}${nc}${HOST}${rc}
 ${fc}       /^^\\${rc}       ${lc}OS:${rc}       ${tc}${OS}${rc}
-${fc}      /\   \\${rc}      ${lc}Kernel:${rc}   ${tc}${KERNEL}${rc}
-${fc}     /${rc}  ${sc}__  \\${rc}     ${lc}Uptime:${rc}   ${tc}${UPTIME}${rc}
-${sc}    /  (  )  \\${rc}    ${lc}Packages:${rc} ${tc}${PACKAGES}${rc}
-${sc}   / __|  |__\\\\${rc}   ${lc}Shell:${rc}    ${tc}${SHELL}${rc}
+${fc}      /\   \\${rc}      ${lc}KERNEL:${rc}   ${tc}${KERNEL}${rc}
+${fc}     /${rc}  ${sc}__  \\${rc}     ${lc}UPTIME:${rc}   ${tc}${UPTIME}${rc}
+${sc}    /  (  )  \\${rc}    ${lc}PACKAGES:${rc} ${tc}${PACKAGES}${rc}
+${sc}   / __|  |__\\\\${rc}   ${lc}SHELL:${rc}    ${tc}${SHELL}${rc}
 ${sc}  ///        \\\\\\${rc}  ${lc}WM:${rc}       ${tc}${WM}${rc}
 
 EOF
