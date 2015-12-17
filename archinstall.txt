@@ -1,0 +1,126 @@
+archlinux install notes (acer c720p chromebook)
+===============================================
+
+connect to internet 
+===================
+
+wifi-menu
+
+Identify disks
+==============
+
+lsblk -f
+
+setup + mount partitions
+========================
+
+fdisk/cgdisk
+-
+  bios_boot type ef02 (1M)
+  boot ext3 (300M min - more for iso boot)
+  root ext4/btrfs (10G-16G)
+  home xfs (rest)
+-
+mkfs.ext3 /dev/sda2
+mkfs.ext4 /dev/sda3
+mkfs.xfs /dev/sda4
+
+mount -t ext4 /dev/sda3 /mnt
+mkdir /mnt/boot; mount -t ext3 /dev/sda2 /mnt/boot
+mkdir /mnt/home; mount -t xfs /dev/sda4 /mnt/home
+
+
+install packages with pacstrap
+==============================
+
+pacstrap -i /mnt base base-devel vim git
+
+= configure fstab
+genfstab -Up /mnt >> /mnt/etc/fstab
+
+= configure chroot:
+arch-chroot /mnt /bin/bash 
+
+= hostname:
+echo myhostname > /etc/hostname
+nano /etc/hosts
+-
+  #<ip-address> <hostname.domain.org> <hostname>
+  127.0.0.1 localhost.localdomain localhost myhostname
+  ::1   localhost.localdomain localhost myhostname 
+-
+
+setup timezone
+==============
+
+ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+hwclock --systohc --utc
+
+= setup networking
+pacman -S iw wpa_supplicant dialog
+-
+ lan:
+ systemctl enable dhcpcd.service
+-
+
+locale
+======
+
+vim /etc/locale.gen
+locale-gen
+echo LANG=nl_NL.UTF-8 > /etc/locale.conf
+export LANG=nl_NL.UTF-8
+
+initramfs
+=========
+
+vim /etc/mkinitcpio.conf
+-
+  MODULES="intel_agp i915"
+  COMPRESSION="cat"
+-
+mkinitcpio -P
+
+password + user
+===============
+
+passwd
+useradd -m -g users -G wheel -s /bin/bash leofa
+passwd leofa
+
+
+priviliges
+==========
+
+export EDITOR=vim; visudo
+-
+  %wheel ALL=(ALL) ALL
+  leofa ALL=(ALL) NOPASSWD: /usr/bin/wifi-menu
+-
+
+
+bootloader
+==========
+
+pacman -S syslinux gptfdisk intel-ucode
+syslinux-install_update -i -a -m
+vim /boot/syslinux/syslinux.cfg
+- 
+    APPEND root=/dev/sda3 rw quiet vga=current noresume noswap noinitrd systemd.show_status=0 loglevel=3 i915.modeset=1 rd.udev.log-priority=3 modprobe.blacklist=ehci_pci tpm_tis.interrupts=0 elevator=noop nmi_watchdog=0
+    INITRD ../intel-ucode.img,../initramfs-linux.img
+-
+
+
+archwiki for offline help
+========
+
+pacman -S arch-wiki-lite
+
+
+finish
+======
+
+exit
+umount -R /mnt
+reboot
+
