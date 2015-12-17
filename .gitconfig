@@ -1,0 +1,36 @@
+[user]
+	email = a.f.unver@gmail.com
+	name = leofa
+
+[push]
+	default = simple
+
+[gui]
+	recentrepo = /home/faruk/dotfiles
+	fontui = -family \"Noto Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Droid Sans Mono\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+
+[credential]
+    helper = cache --timeout=3600
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[merge]
+    tool = vimdiff
+
+[mergetool]
+    keepBackup = false  
+
+[alias]
+    a = add --all
+    c = commit
+    st = status
+    co = checkout
+    up = pull --rebase=preserve
+    g = grep --break --heading --line-number
+    fa = fetch --all
+    p = push
+    pf = push -f
