@@ -5,7 +5,6 @@ chromium-pepper-flash-dev
 chromium-widevine
 compton
 cower
-dotfiles
 downgrade
 dropbox-cli
 dropbox-experimental
@@ -17,6 +16,7 @@ gimp-webp
 gksu-polkit-git
 gmusicbrowser
 gnome-mpv-git
+gtk-theme-numix-ocean
 hal-flash
 i3-gaps-next-git
 i3blocks
@@ -40,9 +40,9 @@ modprobed-db
 nbwmon
 netmenu
 numix-circle-icon-theme-git
-numix-frost-themes
 pacaur
 package-query
+pacserve
 pass-patched-passmenu-notify-git
 perl-gtk2-notify
 perl-linux-desktopfiles

@@ -2,6 +2,7 @@ acpi
 alsa-utils
 android-tools
 android-udev
+arch-install-scripts
 arch-wiki-docs
 arch-wiki-lite
 archey3
@@ -62,6 +63,7 @@ f2fs-tools
 fakeroot
 feh
 ffmpegthumbnailer
+figlet
 file
 filesystem
 findutils
