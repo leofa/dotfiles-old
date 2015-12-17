@@ -7,7 +7,7 @@ inxi -P
 echo "
 - feelin' hot? -" 
 sensors| ccze -A
-echo "Welcome back, $USER  ______________ \O_o/
+echo "Welcome back, $USER  ______________ ┐(o_O)┌
 "
 fortune -s science wisdom
 echo " ______________
