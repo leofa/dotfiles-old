@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+set -e
+
+dir=`pwd`
+if [ ! -e "${dir}/${0}" ]; then
+  echo "Script not called from within repository directory. Aborting."
+  exit 2
+fi
+dir="${dir}/.."
+
+echo "Configure makepkg..."
+sudo vim /etc/makepkg.conf
+
+echo "Setup Gnupg..."
+mkdir -p ~/.gnupg
+cp /usr/share/gnupg/gpg-conf.skel ~/.gnupg/gpg.conf
+cp /usr/share/gnupg/dirmngr-conf.skel ~/.gnupg/dirmngr.conf
+echo "
+# add fix for automated signature checking
+# https://wiki.archlinux.org/index.php/Makepkg#Signature_checking
+
+keyserver hkp://keys.gnupg.net
+keyserver-options auto-key-retrieve" >> ~/.gnupg/gpg.conf
+sudo cp -a ~/.gnupg /root/.gnupg
+sudo chown root:root /root/.gnupg
+
+echo "Installing cower..."
+gpg --recv-keys 1EB2638FF56C0C53
+cd /tmp
+git clone https://aur.archlinux.org/cower.git
+cd cower
+makepkg -si --noconfirm --needed
+cd -
+rm -rf /tmp/cower
+
+echo "Installing pacaur..."
+cd /tmp
+git clone https://aur.archlinux.org/pacaur.git
+cd pacaur
+makepkg -si --noconfirm --needed
+cd -
+rm -rf /tmp/pacaur
+
+echo "Configure pacaur..."
+sudo vim /etc/xdg/pacaur/config
+
+echo "Installing pacman repo keys + optimize..."
+sudo pacman-key --init 
+sudo pacman-key --populate archlinux
+sudo pacman-key --recv-keys 313F5ABD 962DDE58
+sudo pacman-key --lsign-key 313F5ABD 962DDE58
+sudo pacman-optimize
+
+echo "Installing pacman.conf..."
+sudo cp ${dir}/.pacman/pacman.conf /etc/pacman.conf
+
+echo "Check pacman.conf..." 
+sudo vim /etc/pacman.conf
+
+echo "Sync package-database and update..."
+pacaur -Syyu
+
+echo "restoring backup repo packages.."
+pacaur --noedit --noconfirm --needed -S $(< ~/dotfiles/.pacman/repos.txt)
+
+echo "restoring backup aur packages.."
+pacaur --noedit --noconfirm --needed -S $(< ~/dotfiles/.pacman/aur.txt)
+

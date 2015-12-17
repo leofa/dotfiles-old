@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+set -e
+#https://wiki.archlinux.org/index.php/I3
+#http://i3wm.org/docs/userguide.html
+#https://www.reddit.com/r/i3wm
+#http://www.infinality.net/
+
+echo "Installing xorg; install only what you need!..."
+sleep 2
+pacaur --needed --noedit -S \
+  xorg-server \
+  xorg-drivers \
+  xorg-apps \
+  xorg-xinit \
+
+echo "Installing fonts..."
+sleep 2
+pacaur --noconfirm --needed --noedit -S \
+   infinality-bundle \
+   infinality-bundle-multilib \
+   ibfonts-meta-base \
+   ttf-ms-fonts \
+   ttf-font-awesome \
+   ttf-hack-ibx \
+   ttf-source-code-pro-ibx \
+   powerline-fonts-git \     
+sudo fc-presets set
+
+echo "Installing dependencies..."
+sleep 2
+pacaur --noconfirm --needed --noedit -S \
+  xcb-util-keysyms \
+  xcb-util-wm \
+  xcb-util-cursor-git \
+  yajl \
+  startup-notification \
+  i3lock-git \
+  i3blocks \
+  perl-anyevent-i3 \
+  perl-json-xs \
+  vte3-ng \ 
+
+echo "Installing i3 window manager and tools..."
+sleep 2
+pacaur --noconfirm --needed --noedit -S \
+  i3-gaps-next-git \
+  j4-dmenu-desktop \
+  rofi \
+  yad \
+  gsimplecal \
+  scrot \
+  feh \
+  xdotool \
+  pavucontrol \
+  imagemagick \
+  dunst \
+  compton-git \
+  tumbler \
+  gpicview \
+  gtk-theme-numix-ocean \
+  numix-icon-theme-git \
+  numix-circle-icon-theme-git \
+  flattr-icon-theme-git \
+  tk \
+  aspell-en \
+  libmtp \
+  gvfs-mtp \
+  gvim \
+  vim-airline \
+  vim-promptline-git \
+  vim-startify-git \
+  vim-tmuxline-git \
+  tmux \
+  vim-spell-nl \
+  vim-systemd \
+  xtitle-git \
+  openssh \
+  arandr \
+  xclip \
+  unclutter-xfixes-git \
+  youtube-dl \
+  termite-ranger-fix-git \
+  lxsession \
+  clipit \
+  xdotool \
+  caja \
+  caja-actions \
+  ranger \
+  mediainfo \
+  w3m \
+  poppler \
+  atril \
+  atool \
+  engrampa \
+  lxappearance \
+  galculator \
+  dconf-editor \
+  chromium \
+  chromium-widevine \
+  chromium-pepper-flash \
+  cmus \
+  mpv \
+  gnome-settings-daemon \
+  alsa-utils \
+  xsel \
+  youtube-dl \
+  xcursor-openzone \
+
+
+#TODO remove or add stuff...
