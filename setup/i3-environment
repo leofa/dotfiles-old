@@ -54,6 +54,7 @@ pacaur --noconfirm --needed --noedit -S \
   feh \
   xdotool \
   pavucontrol \
+  playerctl \
   imagemagick \
   dunst \
   compton-git \
