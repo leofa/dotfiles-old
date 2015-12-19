@@ -1,11 +1,17 @@
 postinstall notes (acer c720p chromebook)
 =========================================
 
+clone repo
+==========
+cd 
+clone https://www.github.com/leofa/dotfiles
+
 run install script
 ==================
 
-bash ./dotfiles/setup/setup.sh
-
+cd ~/dotfiles/setup
+bash setup.sh
+reboot
 
 enable autologin
 =========

@@ -15,7 +15,7 @@ pacaur --needed --noedit -S \
 
 echo "Installing fonts..."
 sleep 2
-pacaur --noconfirm --needed --noedit -S \
+pacaur --needed --noedit -S \
    infinality-bundle \
    infinality-bundle-multilib \
    ibfonts-meta-base \
@@ -61,8 +61,6 @@ pacaur --noconfirm --needed --noedit -S \
   tumbler \
   gpicview \
   gtk-theme-numix-ocean \
-  numix-icon-theme-git \
-  numix-circle-icon-theme-git \
   flattr-icon-theme-git \
   tk \
   aspell-en \
@@ -107,6 +105,7 @@ pacaur --noconfirm --needed --noedit -S \
   alsa-utils \
   xsel \
   youtube-dl \
+  numix-circle-icon-theme-git \
   xcursor-openzone \
 
 

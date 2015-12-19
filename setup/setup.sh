@@ -50,7 +50,8 @@ ask "Install Xorg, Chromium, i3WM and a small set of GUI apps?" Y && bash ./i3-e
 
 ask "Install Acer c720p chromebook fixes?" Y && bash ./c720p-config
 
-ask "Install Numix-Slate theme + Flattr icon mod by leofa?" Y && mkdir -p ~/.local/share/icons/Flattr-mod; tar -xvC ~/.local/share/icons/Flattr-mod/ -zxvf ~/dotfiles/resources/flattr-icon-mod.tar.gz; sudo tar -xvC /usr/share/themes -zxvf ~/dotfiles/resources/numix-slate-gtk-mod.tar.gz 
+ask "Install Numix-Slate theme + Flattr icon mod by leofa?" Y && mkdir -p ~/.local/share/icons/Flattr-mod; tar -xC ~/.local/share/icons/Flattr-mod/ -zxf ~/dotfiles/resources/flattr-icon-mod.tar.gz; sudo tar -xC /usr/share/themes -zxf ~/dotfiles/resources/numix-slate-gtk-mod.tar.gz
+sudo chown -R root:root /usr/share/themes/Numix-Slate
 
 # symlink dotfiles
 
