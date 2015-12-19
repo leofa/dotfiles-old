@@ -13,6 +13,9 @@ compton
 yad
 etc.
 
+# setup
+see setup notes: <a href="https://github.com/leofa/dotfiles/blob/master/archinstall.txt">archinstall.txt</a> & <a href="https://github.com/leofa/dotfiles/blob/master/postinstall.txt">postinstall.txt </a>.
+
 # latest screenshots
 clean desktop
 ![ScreenShot](.scrot/clean.png)
@@ -21,9 +24,10 @@ dirty
 vim+tmux+ranger
 ![ScreenShot](.scrot/vim+tmux+ranger.png)
 new wallpaper by me :P 
-![ScreenShot](.wallpaper/i3-by-leofa.png)
+![ScreenShot](resources/i3-by-leofa.png)
 
 colors based on <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a> theme by Chris Kempson
 
 # WIP
 keep on learning, ever changing..
+ 
