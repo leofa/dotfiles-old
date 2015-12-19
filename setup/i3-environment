@@ -107,6 +107,6 @@ pacaur --noconfirm --needed --noedit -S \
   youtube-dl \
   numix-circle-icon-theme-git \
   xcursor-openzone \
-
+  jshon \
 
 #TODO remove or add stuff...

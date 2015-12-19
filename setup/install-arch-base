@@ -91,4 +91,4 @@ pacaur --needed --noconfirm --noedit -S \
   tmux \
   thermald \
   update-hosts-git \  
-
+  lm_sensors \
