@@ -62,8 +62,8 @@ pacaur -Syyu
 
 echo "restoring backup repo packages.."
 cd ~/dotfiles/.pacman
-pacaur --noedit --noconfirm --needed -S $(< repos.txt)
+pacaur --noedit --needed -S $(< repos.txt)
 
 echo "restoring backup aur packages.."
-pacaur --noedit --noconfirm --needed -S $(< aur.txt)
+pacaur --noedit --needed -S $(< aur.txt)
 cd -
