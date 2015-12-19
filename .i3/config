@@ -13,8 +13,8 @@ floating_modifier $mod
 
 # i3 swag  ┐('～`)┌ 
 exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with i3 named workspace
-bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
-#bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
+#bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
+bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
 #bindsym $mod+Shift+i workspace 0<span font='9' font_weight='bold' >┐('～`)┌</span>
 
 # keycombo's

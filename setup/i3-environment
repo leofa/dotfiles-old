@@ -19,6 +19,9 @@ pacaur --needed --noedit -S \
    infinality-bundle \
    infinality-bundle-multilib \
    ibfonts-meta-base \
+   ttf-noto-fonts-nonlatin-ib \
+   ttf-noto-fonts-cjk-ib \
+   ttf-noto-fonts-emoji-ib \
    ttf-ms-fonts \
    ttf-font-awesome \
    ttf-hack-ibx \
