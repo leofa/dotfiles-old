@@ -69,7 +69,7 @@ start-pulseaudio-x11 &
 #blueman-applet &
 #xdg-user-dirs-gtk-update
 #wallch &
-feh --bg-fill ~/.wallpaper/i3-by-leofa.png &
+feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
 xbacklight -set 65 &
