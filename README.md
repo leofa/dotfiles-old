@@ -14,7 +14,7 @@ yad
 etc.
 
 # setup
-see setup notes: <a href="https://github.com/leofa/dotfiles/blob/master/archinstall.txt">archinstall.txt</a> & <a href="https://github.com/leofa/dotfiles/blob/master/postinstall.txt">postinstall.txt </a>.
+see setup notes: <a href="https://github.com/leofa/dotfiles/blob/master/archinstall.txt">archinstall.txt</a> & <a href="https://github.com/leofa/dotfiles/blob/master/postinstall.txt">postinstall.txt</a>. scripts are @ <a href="https://github.com/leofa/dotfiles/tree/master/setup">setup folder</a> please read before running. 
 
 # latest screenshots
 clean desktop
