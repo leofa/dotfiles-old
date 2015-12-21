@@ -15,7 +15,7 @@ freshplayerplugin
 gimp-webp
 gksu-polkit-git
 gmusicbrowser
-gnome-mpv-git
+gnome-mpv
 gtk-theme-numix-ocean
 hal-flash
 i3-gaps-next-git
@@ -37,6 +37,7 @@ low_battery_suspend
 menutray
 minecraft
 modprobed-db
+mpv-light
 nbwmon
 netmenu
 numix-circle-icon-theme-git

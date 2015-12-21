@@ -73,6 +73,7 @@ freerdp
 frogatto
 galculator-gtk2
 gawk
+gcc-libs-multilib
 gcc-multilib
 gcolor2
 geary
@@ -161,7 +162,6 @@ mediainfo
 memtest86+
 mlocate
 moc
-mpv
 mtools
 nano
 ncdu
@@ -289,4 +289,5 @@ xorg-xwininfo
 xournal
 xsel
 youtube-dl
+zenity
 zip
