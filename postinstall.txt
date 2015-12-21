@@ -63,7 +63,7 @@ sudo systemctl edit fstrim.timer
 -
 [Timer]
 OnCalendar=
-OnCalendar=3days
+OnCalendar=3d
 -
 systemctl enable fstrim.timer
 
