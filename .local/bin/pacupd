@@ -4,6 +4,6 @@
 
 export pacman_program="pacaur"
 export pacdiff_program="sudo pacdiff"
-pacmatic -Su
+sudo pacmatic -Su
 #pacmatic -Syu disable this run sync database from systemd.timer
 #read -p "Press enter to continue..."
