@@ -1,17 +1,21 @@
 [Desktop Entry]
 Type=Action
+Name=New window
 Name[nl_NL]=Nieuw venster
 Name[nl]=Nieuw venster
+Icon=folder-new
 Icon[nl_NL]=folder-new
 Icon[nl]=folder-new
 TargetContext=false
 TargetToolbar=true
+ToolbarLabel=New window
 ToolbarLabel[nl_NL]=Nieuw venster
 ToolbarLabel[nl]=Nieuw venster
 Profiles=profile-zero;
 
 [X-Action-Profile profile-zero]
+Name=Default profile
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
-Exec=caja  --browser %u
+Exec=sh -c 'xdotool key Ctrl+n'
 Path=%f

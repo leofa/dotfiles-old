@@ -1,17 +1,21 @@
 [Desktop Entry]
 Type=Action
+Name=Extra pane
 Name[nl_NL]=Extra paneel
 Name[nl]=Extra paneel
+Icon=view-split-left-right
 Icon[nl_NL]=view-split-left-right
 Icon[nl]=view-split-left-right
 TargetContext=false
 TargetToolbar=true
+ToolbarLabel=Extra pane
 ToolbarLabel[nl_NL]=Extra paneel
 ToolbarLabel[nl]=Extra paneel
 Profiles=profile-zero;
 
 [X-Action-Profile profile-zero]
+Name=Default profile
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
-Exec=sh -c 'xdotool key ISO_Level3_Shift+XF86Reload'
+Exec=sh -c 'xdotool key F3'
 Folders=*;

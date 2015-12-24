@@ -1,18 +1,23 @@
 [Desktop Entry]
 Type=Action
+Name=Open in terminal
 Name[nl_NL]=Open in terminal
 Name[nl]=Open in terminal
-Tooltip[nl_NL]=Open huidige folder in terminal
+Tooltip=Open current directory in terminal
 Tooltip[nl]=Open huidige folder in terminal
-Icon[nl_NL]=/usr/share/icons/Flattr/actions/24/system-run.svg
-Icon[nl]=/usr/share/icons/Flattr/actions/24/system-run.svg
+Tooltip[nl_NL]=Open huidige folder in terminal
+Icon=gtk-execute
+Icon[nl_NL]=gtk-execute
+Icon[nl]=gtk-execute
 TargetLocation=true
 TargetToolbar=true
+ToolbarLabel=Open in terminal
 ToolbarLabel[nl_NL]=Open in terminal
 ToolbarLabel[nl]=Open in terminal
 Profiles=profile-zero;
 
 [X-Action-Profile profile-zero]
+Name=Default profile
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
 Exec=termite %u

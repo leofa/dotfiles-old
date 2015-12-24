@@ -1,0 +1,24 @@
+[Desktop Entry]
+Type=Action
+Name=Caja-actions
+Name[nl_NL]=Caja-actions
+Name[nl]=Caja-actions
+Tooltip=Caja-actions
+Tooltip[nl_NL]=Caja-actions
+Tooltip[nl]=Caja-actions
+Icon=gtk-preferences
+Icon[nl_NL]=gtk-preferences
+Icon[nl]=gtk-preferences
+TargetContext=false
+TargetToolbar=true
+ToolbarLabel=Caja-actions
+ToolbarLabel[nl_NL]=Caja-actions
+ToolbarLabel[nl]=Caja-actions
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name=Default profile
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Exec=caja-actions-config-tool 
+MimeTypes=inode/directory;

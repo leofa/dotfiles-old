@@ -1,16 +1,20 @@
 [Desktop Entry]
 Type=Action
+Name=Show hidden files
 Name[nl_NL]=Verborgen bestanden tonen
 Name[nl]=Verborgen bestanden tonen
+Icon=layer-visible-on
 Icon[nl_NL]=layer-visible-on
 Icon[nl]=layer-visible-on
 TargetContext=false
 TargetToolbar=true
+ToolbarLabel=Show hidden files
 ToolbarLabel[nl_NL]=Verborgen bestanden tonen
 ToolbarLabel[nl]=Verborgen bestanden tonen
 Profiles=profile-zero;
 
 [X-Action-Profile profile-zero]
+Name=Default profile
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
-Exec=sh -c "xdotool key Ctrl+h"
+Exec=sh -c 'xdotool key Ctrl+h'

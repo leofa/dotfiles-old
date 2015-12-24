@@ -1,18 +1,23 @@
 [Desktop Entry]
 Type=Action
+Name=Open as root...
 Name[nl_NL]=Als beheerder openen...
 Name[nl]=Als beheerder openen...
+Tooltip=Open folder as root
 Tooltip[nl_NL]=Open huidige folder als beheerder
 Tooltip[nl]=Open huidige folder als beheerder
+Icon=document-encrypt
 Icon[nl_NL]=document-encrypt
 Icon[nl]=document-encrypt
 TargetLocation=true
 TargetToolbar=true
+ToolbarLabel=Open as root...
 ToolbarLabel[nl_NL]=Als beheerder openen...
 ToolbarLabel[nl]=Als beheerder openen...
 Profiles=profile-zero;
 
 [X-Action-Profile profile-zero]
+Name=Default profile
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
 Exec=gksu caja %U
