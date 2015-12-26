@@ -43,7 +43,7 @@ export PATH=$PATH:~/go/bin
 export BROWSER=/usr/bin/chromium
 
 #steam native runtime
-export STEAM_RUNTIME=1
+export STEAM_RUNTIME=0
 
 #ranger
 export RANGER_LOAD_DEFAULT_RC=FALSE
