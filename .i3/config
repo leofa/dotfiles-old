@@ -14,8 +14,8 @@ floating_modifier $mod
 # i3 swag  ┐('～`)┌ 
 exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with i3 named workspace
 #bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
-bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
-#bindsym $mod+Shift+i workspace 0<span font='9' font_weight='bold' >┐('～`)┌</span>
+#bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
+bindsym $mod+Shift+i workspace 0<span font='9' font_weight='bold' >┐('～`)┌</span>
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
@@ -32,13 +32,12 @@ bindsym $mod+m exec geary
 bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
-bindsym $mod+d exec j4-dmenu-desktop --display-binary --term="termite -e --hold" --dmenu="/usr/bin/rofi -dmenu -p 'apps:'"
+bindsym $mod+d exec j4-dmenu-desktop --display-binary --term="termite -e --hold" --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:'"
 bindsym $mod+Shift+a exec rofi -run-command "gksu {cmd}" -show run -p 'gksu' #w00t 
 bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
-bindsym $mod+Shift+XF86Reload exec termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
-bindsym $mod+XF86Reload exec netmenu 
+bindsym $mod+XF86Reload exec termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 bindsym $mod+p exec passmenu --notify 
 bindsym $mod+Shift+p exec qtpass #exec passmenu --typeit
