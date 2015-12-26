@@ -33,7 +33,6 @@ fi
 # mouse buttons  
 
 case $BLOCK_BUTTON in
-    1) netmenu-xy ;; # switch profiles with netmenu
-    3) termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" "$@" &>/dev/null # connect with wifi-menu
+    1) termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" "$@" &>/dev/null # connect with wifi-menu
 esac
 

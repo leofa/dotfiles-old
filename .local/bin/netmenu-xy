@@ -1,9 +1,0 @@
-#!/bin/bash
-
-netctldlist | tee .wifi-info 2>&1 > /dev/null
-
-CONNECT=$(rofi -yoffset -320 -xoffset 503 -dmenu -p 'netctl:' $@ < .wifi-info)
-
-if [ -n "$CONNECT" ]; then
-    echo $CONNECT | netctldcli
-fi
