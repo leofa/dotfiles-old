@@ -58,7 +58,6 @@ e2fsprogs
 elinks
 engrampa
 ethtool
-exfat-utils
 f2fs-tools
 fakeroot
 feh
@@ -83,12 +82,12 @@ glances
 glibc
 gnome-chess
 gnome-desktop
-gnome-disk-utility
 gnome-keyring
 gnome-settings-daemon
 gnome-themes-standard
 gnuchess
 gpart
+gparted
 gpicview
 gptfdisk
 grep
@@ -139,6 +138,7 @@ liboauth
 libraw
 libtool
 libva-intel-driver
+libva-vdpau-driver
 libvdpau-va-gl
 libvirt
 libvncserver
@@ -156,7 +156,6 @@ m4
 make
 man-db
 man-pages
-mate-utils
 mdadm
 mediainfo
 memtest86+
@@ -168,7 +167,6 @@ ncdu
 netctl
 newsbeuter
 nfs-utils
-nilfs-utils
 nspluginwrapper
 ntfs-3g
 ntp

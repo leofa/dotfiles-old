@@ -1,5 +1,4 @@
 alex4
-archlinux-artwork
 caja-dropbox
 chromium-pepper-flash-dev
 chromium-widevine
@@ -15,7 +14,6 @@ freshplayerplugin
 gimp-webp
 gksu-polkit-git
 gmusicbrowser
-gnome-mpv
 gtk-theme-numix-ocean
 hal-flash
 i3-gaps-next-git
@@ -25,13 +23,9 @@ i3lock-git
 iceweasel-bin
 insync
 j4-dmenu-desktop
-libchardet
 libdbh2
-libdbusmenu-gtk2
 libgee06
 libgestures
-libtubo0
-libudev.so.0
 lostfiles
 low_battery_suspend
 menutray
@@ -39,7 +33,6 @@ minecraft
 modprobed-db
 mpv-light
 nbwmon
-netmenu
 numix-circle-icon-theme-git
 pacaur
 package-query
