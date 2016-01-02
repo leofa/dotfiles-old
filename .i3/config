@@ -13,9 +13,9 @@ floating_modifier $mod
 
 # i3 swag  ┐('～`)┌ 
 exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with i3 named workspace
-#bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
+bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
 #bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
-bindsym $mod+Shift+i workspace 0<span font='9' font_weight='bold' >┐('～`)┌</span>
+#bindsym $mod+Shift+i workspace 0<span font='9' font_weight='bold' >┐('～`)┌</span>
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
@@ -37,7 +37,7 @@ bindsym $mod+Shift+a exec rofi -run-command "gksu {cmd}" -show run -p 'gksu' #w0
 bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
-bindsym $mod+XF86Reload exec termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
+bindsym $mod+XF86Reload exec sudo wpa_gui #termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 bindsym $mod+p exec passmenu --notify 
 bindsym $mod+Shift+p exec qtpass #exec passmenu --typeit
@@ -63,7 +63,7 @@ for_window [instance="insync"] move position pointer
 for_window [class="(?i)pavucontrol"] move position pointer
 for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position pointer
-for_window [instance="WiFi-menu"]  resize set 455 445; move position pointer
+for_window [instance="WiFi-menu"]  resize set 455 445; move
 for_window [class="gcolor2|Deluge|timesup|QtPass"] sticky enable
 for_window [instance="radio"]  resize set 355 445; move position pointer,  move scratchpad, scratchpad show 
 

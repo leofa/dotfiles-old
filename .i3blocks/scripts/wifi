@@ -33,6 +33,7 @@ fi
 # mouse buttons  
 
 case $BLOCK_BUTTON in
-    1) termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" "$@" &>/dev/null # connect with wifi-menu
+    1) sudo wpa_gui
+    #1) termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" "$@" &>/dev/null # connect with wifi-menu
 esac
 
