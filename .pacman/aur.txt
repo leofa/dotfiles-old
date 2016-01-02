@@ -27,7 +27,6 @@ libdbh2
 libgee06
 libgestures
 lostfiles
-low_battery_suspend
 menutray
 minecraft
 modprobed-db
@@ -36,7 +35,6 @@ nbwmon
 numix-circle-icon-theme-git
 pacaur
 package-query
-pacserve
 pass-patched-passmenu-notify-git
 perl-gtk2-notify
 perl-linux-desktopfiles
@@ -70,6 +68,7 @@ vim-startify-git
 vim-tmuxline-git
 vitetris
 vte-notification-common
+xboxdrv
 xcursor-openzone
 xf86-input-cmt-git
 xf86-input-cmt-setup

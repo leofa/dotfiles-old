@@ -22,6 +22,7 @@ blueman
 bluez
 bluez-plugins
 bluez-utils
+btrfs-progs
 bzip2
 bzr
 caja
@@ -125,7 +126,6 @@ irssi
 iw
 jre8-openjdk-infinality
 jshon
-kodi
 less
 lib32-cairo-infinality-ultimate
 lib32-fontconfig-infinality-ultimate
@@ -143,7 +143,6 @@ libvdpau-va-gl
 libvirt
 libvncserver
 licenses
-linux
 linux-mainline
 linux-zen
 lm_sensors
@@ -164,7 +163,6 @@ moc
 mtools
 nano
 ncdu
-netctl
 newsbeuter
 nfs-utils
 nspluginwrapper
@@ -172,6 +170,7 @@ ntfs-3g
 ntp
 nxproxy
 obexfs
+openresolv
 openssh
 otf-cantarell-ib
 p7zip
@@ -262,11 +261,13 @@ which
 wmctrl
 wpa_actiond
 wpa_supplicant
+wpa_supplicant_gui
 x11-ssh-askpass
 xautolock
 xclip
 xdg-user-dirs-gtk
 xdotool
+xf86-input-joystick
 xf86-input-keyboard
 xf86-input-mouse
 xf86-video-intel
