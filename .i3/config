@@ -24,11 +24,11 @@ bindsym $mod+slash exec rofi-ddg #rofi duckduckgo search
 bindsym $mod+Shift+slash exec chromium --show-app-list
 bindsym $mod+t exec subl3 
 bindsym $mod+c exec chromium
-bindsym $mod+i exec iceweasel
+bindsym $mod+i exec chromium --incognito
 bindsym $mod+b exec caja
 bindsym $mod+Shift+b exec rofi -width 45 -modi "fb:rofi-fb" -show fb #rofi filebrowser 
-bindsym $mod+m exec geary
-#bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
+#bindsym $mod+m exec geary
+bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
 bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
