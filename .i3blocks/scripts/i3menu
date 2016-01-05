@@ -7,8 +7,8 @@ echo "<span font='9.5' foreground='#C5C8C6' ></span>"
 
 # mouse buttons
 case $BLOCK_BUTTON in
-    1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -yoffset -187 -xoffset 503" "$@" &>/dev/null ;; #in the corner
-    #1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -lines 20 -width 100 -padding 250 -bw 0 -font 'Hack Bold 11'" "$@" &>/dev/null ;; #maximized
-    2) rofi-logout "$@" &>/dev/null ;; 
-    3) chromium --show-app-list "$@" &>/dev/null
+    1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -yoffset -187 -xoffset 503" "$@" &>/dev/null ;; #left click rofi in the corner (adjust to resolution)
+    #1) j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -lines 20 -width 100 -padding 250 -bw 0 -font 'Hack Bold 11'" "$@" &>/dev/null ;; #left click rofi maximized
+    2) rofi-logout "$@" &>/dev/null ;; #middle click,logout menu
+    3) chromium --show-app-list "$@" &>/dev/null #right click, chromium app launcher 
 esac 

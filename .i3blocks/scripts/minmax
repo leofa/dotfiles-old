@@ -9,8 +9,8 @@ if [ -n "$WIN" ];
     fi
 
 case $BLOCK_BUTTON in
-  1) i3-msg floating toggle ;;
-  3) i3-msg layout toggle split ;;
-  4) i3-msg focus right ;;
-  5) i3-msg focus left ;;	 
+  1) i3-msg floating toggle ;; #left click 
+  3) i3-msg layout toggle split ;; #right click
+  4) i3-msg focus right ;; #scroll up, focus window right 
+  5) i3-msg focus left ;; #scroll down, focus window left
 esac

@@ -9,9 +9,9 @@ if [ -n "$WIN" ];
    fi
 
 case $BLOCK_BUTTON in
-    1) i3-msg layout tabbed ;;
-    2) i3-msg layout stacked ;;
-    3) i3-msg layout toggle split ;;
-    4) rofi -show window ;;
-    5) rofi-getwindow ;;	  
+    1) i3-msg layout tabbed ;; #left click tabbed layout 
+    2) i3-msg layout stacked ;; #middle click stacked 
+    3) i3-msg layout toggle split ;; #right click 
+    4) rofi -show window ;; #scroll down jump to window
+    5) rofi-getwindow ;; #scroll up move window to current 	  
 esac

@@ -62,9 +62,8 @@ format() {
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) pavucontrol "$@" &>/dev/null ;;
-  2) termite --name "radio" -e "sh -c 'radio'" "$@" &>/dev/null ;;
-      #radiotray "$@" &>/dev/null ;;
+  1) pavucontrol "$@" &>/dev/null ;; # left click, sosund settings 
+  2) termite --name "radio" -e "sh -c 'radio'" "$@" &>/dev/null ;; # middle click, launch radio script
   3) amixer -q -D $MIXER sset $SCONTROL $(capability) toggle ;;  # right click, mute/unmute
   5) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}+ unmute ;; # scroll up, increase
   4) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}- unmute ;; # scroll down, decrease

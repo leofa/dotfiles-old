@@ -10,8 +10,8 @@ if [ -n "$WIN" ];
    fi
 
 case $BLOCK_BUTTON in
-  3) sh -c xkill "$@" &>/dev/null ;;
-  1) i3-msg kill ;;
-  4) i3-msg focus right ;;
-  5) i3-msg focus left ;;	 
+  3) sh -c xkill "$@" &>/dev/null ;; #right click kill app
+  1) i3-msg kill ;; #left click close app
+  4) i3-msg focus right ;; #scroll up, focus window right 
+  5) i3-msg focus left ;; #scroll down, focus window left
 esac

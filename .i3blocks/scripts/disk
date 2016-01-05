@@ -36,9 +36,8 @@ END {
 echo "<span foreground='#87AFAF' > </span><span foreground='#B4B7B4'>$usage</span>"
 
 case $BLOCK_BUTTON in
-  1) caja  "$@" &>/dev/null ;;
-  2) termite --name disks -e "sh -c 'echo NCurses Disk Usage; sudo ncdu -x /'" "$@" &>/dev/null ;;
-  3) #termite --name disks -e "sh -c 'df -h'" --hold "$@" &>/dev/null  
-     #termite --name disks -e "sh -c 'ranger'" "$@" &>/dev/null 
-     mate-search-tool "$@" &>/dev/null
+  1) caja  "$@" &>/dev/null ;; left click, open filemanager 
+  2) termite --name disks -e "sh -c 'echo NCurses Disk Usage; sudo ncdu -x /'" "$@" &>/dev/null ;; middle click, disk cleaning with ncdu
+  3) termite --name disks -e "sh -c 'ranger'" "$@" &>/dev/null #right click, open ranger 
+     #mate-search-tool "$@" &>/dev/null #right click, file search
 esac

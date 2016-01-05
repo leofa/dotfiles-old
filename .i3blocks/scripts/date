@@ -8,8 +8,8 @@ dt2=$(date '+%M')
 echo "<span foreground='#B294BB'> </span>$dt1<span foreground='#969896'>:</span>$dt2"
 
 case $BLOCK_BUTTON in
-    1) gsimplecal "$@" &>/dev/null ;;
-#    1) exec yad --no-buttons --geometry=+$X+20 --class "yad_cal" --calendar "$@" &>/dev/null ;;
-    2) chromium  --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki "$@" &>/dev/null ;;
-    3) chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn "$@" &>/dev/null ;; 
+    1) gsimplecal "$@" &>/dev/null ;; #left click calendar
+   #1) exec yad --no-buttons --geometry=+$X+20 --class "yad_cal" --calendar "$@" &>/dev/null ;;
+    2) chromium  --profile-directory=Default --app-id=hmjkmjkepdijhoojdojkdfohbdgmmhki "$@" &>/dev/null ;; #left click, google keep
+    3) chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn "$@" &>/dev/null ;; #right click,google calendar
 esac 
