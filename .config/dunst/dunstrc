@@ -28,7 +28,7 @@
     icon_folders = /usr/share/icons/Flattr/16x16/status/:/usr/share/icons/Flattr/16x16/devices/
     
 [frame]
-    width = 2
+    width = 4
     color = "#455057"
 
 [shortcuts]
