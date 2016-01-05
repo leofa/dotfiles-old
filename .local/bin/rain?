@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# script for dutch rain predictions from http://www.buienradar.nl 
 
 LATITUDE=52.21
 LONGITUDE=5.59

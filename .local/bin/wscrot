@@ -1,3 +1,4 @@
 #!/bin/bash
+#TODO change scrot location
 
 scrot '%d-%m-%Y-%T_$wx$h_scrot.png' -d 2 -q 100 -ube 'mv $f ~/Afbeeldingen/Schermafdruk/; gpicview ~/Afbeeldingen/Schermafdruk/%d-%m-%Y-%T_$wx$h_scrot.png'

@@ -1,4 +1,5 @@
 #!/bin/bash
+#TODO change scrot location
 
 image=~/Afbeeldingen/Schermafdruk/%d-%m-%Y-%T_$wx$h_scrot.png
 

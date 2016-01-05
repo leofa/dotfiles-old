@@ -16,12 +16,12 @@ then
 	xset s off -dpms
     pkill xautolock
 	touch "$lockfile"
-    notify-send -u critical "DPMS" "Slaapstand scherm is onderbroken."
+    notify-send -u critical "DPMS" "Display stays awake!" 
 else
 	xset s on +dpms
     xautolock -time 30 -locker "ilockit" -detectsleep &    
 	rm "$lockfile"
-    notify-send "DPMS" "Slaapstand scherm is aan."
+    notify-send "DPMS" "Display power savings on."
 fi
 
 exit 0

@@ -5,8 +5,8 @@
 
 # define directories here
 dir1="/home/faruk/Afbeeldingen/Wallpaper/"
-dir2="/home/faruk/Afbeeldingen/Linux/"
-dir3="/home/faruk/Afbeeldingen/Popart/"
+#dir2="/home/faruk/Afbeeldingen/Linux/"
+#dir3="/home/faruk/Afbeeldingen/Popart/"
 
 # then start your shufflin'
     while true;do

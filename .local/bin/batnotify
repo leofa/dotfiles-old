@@ -11,8 +11,8 @@ do
            battery_level=`acpi -b | sed 's/.*[dg], //g;s/\%,.*//g'`
            [ $battery_level -le $critical_level ] && \
             notify-send -u critical -i "$icon" -t 15000 \
-            "Batterij is bijna leeg!" "Nog maar $battery_level% over."   
-           #"Battery almost empty!" "Only $battery_level% left."
+          #"Batterij is bijna leeg!" "Nog maar $battery_level% over."   
+           "Battery almost empty!" "Only $battery_level% left."
         fi
 sleep $interval
 done

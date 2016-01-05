@@ -6,6 +6,7 @@
 ## By Vivien DIDELOT aka v0n
 ## Last modification: 10 mar 11
 ## Translated by leofa to dutch
+## link to original https://github.com/vivien/dotfiles/blob/master/bin/todo
 
 set -e
 
