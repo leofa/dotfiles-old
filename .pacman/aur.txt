@@ -20,7 +20,6 @@ i3-gaps-next-git
 i3blocks
 i3ipc-python-git
 i3lock-git
-iceweasel-bin
 insync
 j4-dmenu-desktop
 libdbh2
@@ -35,6 +34,7 @@ nbwmon
 numix-circle-icon-theme-git
 pacaur
 package-query
+palemoon-bin
 pass-patched-passmenu-notify-git
 perl-gtk2-notify
 perl-linux-desktopfiles

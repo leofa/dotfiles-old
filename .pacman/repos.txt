@@ -22,7 +22,6 @@ blueman
 bluez
 bluez-plugins
 bluez-utils
-btrfs-progs
 bzip2
 bzr
 caja
@@ -76,7 +75,6 @@ gawk
 gcc-libs-multilib
 gcc-multilib
 gcolor2
-geary
 gettext
 gimp
 glances
