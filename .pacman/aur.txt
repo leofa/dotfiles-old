@@ -13,7 +13,9 @@ flattr-icon-theme-git
 freshplayerplugin
 gimp-webp
 gksu-polkit-git
+glxinfo
 gmusicbrowser
+gpicview-gimp
 gtk-theme-numix-ocean
 hal-flash
 i3-gaps-next-git
@@ -28,6 +30,7 @@ libgestures
 lostfiles
 menutray
 minecraft
+mkinitcpio-welcomemessage
 modprobed-db
 mpv-light
 nbwmon

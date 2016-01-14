@@ -55,6 +55,7 @@ dosfstools
 dropbear
 dunst
 e2fsprogs
+ebtables
 elinks
 engrampa
 ethtool
@@ -75,6 +76,7 @@ gawk
 gcc-libs-multilib
 gcc-multilib
 gcolor2
+geary
 gettext
 gimp
 glances
@@ -87,7 +89,6 @@ gnome-themes-standard
 gnuchess
 gpart
 gparted
-gpicview
 gptfdisk
 grep
 groff
@@ -109,7 +110,6 @@ hdparm
 horst
 htop
 hunspell-nl
-i3status
 ibfonts-meta-base
 ifplugd
 inetutils
@@ -230,6 +230,7 @@ sysfsutils
 syslinux
 sysstat
 system-config-printer
+systemd-swap
 systemd-sysvcompat
 t1-urw-fonts-ib
 tar
@@ -256,6 +257,7 @@ vte3-ng
 w3m
 wget
 which
+wireless_tools
 wmctrl
 wpa_actiond
 wpa_supplicant
