@@ -23,6 +23,7 @@ i3blocks
 i3ipc-python-git
 i3lock-git
 insync
+ix
 j4-dmenu-desktop
 libdbh2
 libgee06

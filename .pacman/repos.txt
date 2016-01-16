@@ -244,6 +244,7 @@ tumbler
 ufw
 ufw-extras
 unace
+unhide
 unrar
 unzip
 usbutils
