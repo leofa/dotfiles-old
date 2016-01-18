@@ -11,6 +11,7 @@ firejail
 flasciibird
 flattr-icon-theme-git
 freshplayerplugin
+gimp-git
 gimp-webp
 gksu-polkit-git
 glxinfo

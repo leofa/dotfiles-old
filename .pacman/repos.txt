@@ -78,7 +78,6 @@ gcc-multilib
 gcolor2
 geary
 gettext
-gimp
 glances
 glibc
 gnome-chess
