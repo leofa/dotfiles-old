@@ -1,4 +1,5 @@
 #! /bin/bash
+echo 'Pacman backup...' 
 pacaur -Qqem > ~/dotfiles/.pacman/aur.txt
 pacman -Qqen > ~/dotfiles/.pacman/repos.txt
 cp /etc/pacman.conf ~/dotfiles/.pacman/pacman.conf
@@ -6,3 +7,4 @@ cd ~/dotfiles
 git add .pacman*
 git commit -m 'package updates' > /dev/null
 cd .
+echo 'done' 

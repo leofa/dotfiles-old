@@ -5,13 +5,13 @@
 
 # define directories here
 dir1="/home/faruk/Afbeeldingen/Wallpaper/"
-#dir2="/home/faruk/Afbeeldingen/Linux/"
-#dir3="/home/faruk/Afbeeldingen/Popart/"
+dir2="/home/faruk/Afbeeldingen/Linux/"
+dir3="/home/faruk/Afbeeldingen/Popart/"
 
 # then start your shufflin'
     while true;do
 	find $dir1 $dir2 $dir3 -type f \( -name '*.jpg' -o -name '*.png' \) -print0 |
 	shuf -n1 -z | xargs -0 feh --bg-fill
 	# increase if needed
-    sleep 10m
+    sleep 5m
   done

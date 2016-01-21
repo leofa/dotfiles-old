@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# simple paste to ix.io
-# useage ixio filename
-
-cat $1 | curl -F 'f:1=<-' ix.io
