@@ -123,6 +123,7 @@ irssi
 iw
 jre8-openjdk-infinality
 jshon
+kodi
 less
 lib32-cairo-infinality-ultimate
 lib32-fontconfig-infinality-ultimate

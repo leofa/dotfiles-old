@@ -14,7 +14,6 @@ freshplayerplugin
 gimp-git
 gimp-webp
 gksu-polkit-git
-glxinfo
 gmusicbrowser
 gpicview-gimp
 gtk-theme-numix-ocean
