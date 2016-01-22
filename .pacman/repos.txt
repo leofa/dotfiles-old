@@ -226,6 +226,8 @@ sshfs
 steam
 steam-libs
 sudo
+syncthing
+syncthing-inotify
 sysfsutils
 syslinux
 sysstat
