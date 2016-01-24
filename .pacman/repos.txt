@@ -180,6 +180,7 @@ pavucontrol
 pciutils
 pcmciautils
 perl
+perl-anyevent-i3
 perl-file-mimeinfo
 perl-gtk2-webkit
 perl-json-xs
