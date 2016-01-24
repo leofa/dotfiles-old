@@ -36,16 +36,10 @@ fi
 # x session settings
 #------------------------------------------------
 
-#fonts
-xset +fp /usr/share/fonts/local
-xset +fp ~/.local/share/fonts
-xset fp rehash
 #x cursor
 xsetroot -cursor_name left_ptr &
 #no bell
 xset b off
-#display power
-xset 360 120
 #fix repeat of arrow keys
 xset r 111
 xset r 113
@@ -81,7 +75,7 @@ clipit -dn &
 #menutray -r -u -i &
 unclutter -b --timeout 30 &
 batnotify &
-nodpms & 
+#nodpms & 
 #xss-lock --ignore-sleep -n dim-screen -- ilockit &
 xautolock -detectsleep -time 15 -locker "systemctl suspend" &
 

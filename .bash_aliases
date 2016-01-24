@@ -94,14 +94,15 @@ alias fixpulse='rm -rf /tmp/pulse* ~/.pulse* ~/.config/pulse; pulseaudio --kill;
 alias aeq='alsamixer -D equal'
 alias mix='alsamixer -c 0'
 
-#SSH
-alias lap='ssh faruk@192.168.1.114'
-alias osmc='ssh osmc@192.168.1.113'
-alias pi2='ssh faruk@192.168.1.112'
-alias pi1='ssh faruk@192.168.1.111'
-alias box='ssh faruk@192.168.1.110'
-alias srv='ssh faruk@192.168.1.10'
-alias wrt='ssh -o ServerAliveInterval=100 leofa@192.168.1.1'
+#SSH 
+#define shortcuts in ~/.ssh/config
+alias osmc='ssh osmc'
+alias pi2='ssh pi2'
+alias pi1='ssh pi1'
+alias box='ssh box'
+alias srv='ssh srv'
+alias wrt='ssh wrt'
+alias home='ssh home'
 
 alias keys='xmodmap -pke'
 alias freemem='sudo /sbin/sysctl -w vm.drop_caches=3'
