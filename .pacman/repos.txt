@@ -285,6 +285,7 @@ xorg-xinit
 xorg-xinput
 xorg-xkill
 xorg-xlsfonts
+xorg-xmodmap
 xorg-xsetroot
 xorg-xvinfo
 xorg-xwininfo
