@@ -29,6 +29,7 @@ libdbh2
 libgee06
 libgestures
 lostfiles
+low_battery_suspend
 menutray
 minecraft
 mkinitcpio-welcomemessage
