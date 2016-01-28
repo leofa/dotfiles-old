@@ -58,6 +58,7 @@ python2-oauth2
 python2-tweepy-git
 qtpass
 rtv
+s
 steam-fonts
 sublime-text-dev
 termite-ranger-fix-git
