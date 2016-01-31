@@ -51,6 +51,7 @@ diffutils
 dmenu
 dmidecode
 dnsmasq
+docker
 dosfstools
 dropbear
 dunst
