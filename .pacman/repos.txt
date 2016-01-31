@@ -149,6 +149,7 @@ logrotate
 lsb-release
 lvm2
 lxappearance
+lxc
 lxsession
 m4
 make

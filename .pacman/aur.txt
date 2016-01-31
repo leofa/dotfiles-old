@@ -22,7 +22,6 @@ i3-gaps-next-git
 i3blocks
 i3ipc-python-git
 i3lock-git
-inox-bin
 insync
 ix
 j4-dmenu-desktop
@@ -59,6 +58,7 @@ python2-oauth2
 python2-tweepy-git
 qtpass
 rtv
+runc
 s
 steam-fonts
 sublime-text-dev
