@@ -38,7 +38,7 @@ mpv-light
 nbwmon
 numix-circle-icon-theme-git
 pacaur
-package-query-git
+package-query
 palemoon-bin
 pass-patched-passmenu-notify-git
 perl-gtk2-notify
