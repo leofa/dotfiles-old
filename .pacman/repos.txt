@@ -41,7 +41,6 @@ crda
 cryptsetup
 ctags
 cups-pk-helper
-dcfldd
 dconf-editor
 deluge
 device-mapper
@@ -57,7 +56,6 @@ dropbear
 dunst
 e2fsprogs
 ebtables
-elinks
 engrampa
 ethtool
 f2fs-tools
@@ -81,12 +79,10 @@ geary
 gettext
 glances
 glibc
-gnome-chess
 gnome-desktop
 gnome-keyring
 gnome-settings-daemon
 gnome-themes-standard
-gnuchess
 gpart
 gparted
 gptfdisk
@@ -124,7 +120,6 @@ irssi
 iw
 jre8-openjdk-infinality
 jshon
-kodi
 less
 lib32-cairo-infinality-ultimate
 lib32-fontconfig-infinality-ultimate
@@ -132,6 +127,7 @@ lib32-freetype2-infinality-ultimate
 lib32-libva
 lib32-libva-intel-driver
 libchamplain
+libgsf
 libnewt
 liboauth
 libraw
@@ -155,9 +151,11 @@ m4
 make
 man-db
 man-pages
+mc
 mdadm
 mediainfo
 memtest86+
+mesa-demos
 mlocate
 moc
 mtools
@@ -196,6 +194,7 @@ pulseaudio-bluetooth
 pulseaudio-equalizer
 pulseaudio-gconf
 pulseaudio-zeroconf
+python-crypto
 python-pip
 python-pylast
 python-pyqt4
@@ -225,8 +224,6 @@ sl
 smartmontools
 speedtest-cli
 sshfs
-steam
-steam-libs
 sudo
 syncthing
 syncthing-inotify
@@ -244,11 +241,9 @@ tmux
 ttf-droid
 ttf-hack-ibx
 ttf-source-code-pro-ibx
-tumbler
 ufw
 ufw-extras
 unace
-unhide
 unrar
 unzip
 usbutils
@@ -272,7 +267,6 @@ xautolock
 xclip
 xdg-user-dirs-gtk
 xdotool
-xf86-input-joystick
 xf86-input-keyboard
 xf86-input-mouse
 xf86-video-intel
@@ -283,6 +277,7 @@ xorg-xev
 xorg-xfd
 xorg-xfontsel
 xorg-xgamma
+xorg-xhost
 xorg-xinit
 xorg-xinput
 xorg-xkill
