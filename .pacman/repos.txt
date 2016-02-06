@@ -80,6 +80,7 @@ gettext
 glances
 glibc
 gnome-desktop
+gnome-disk-utility
 gnome-keyring
 gnome-settings-daemon
 gnome-themes-standard
