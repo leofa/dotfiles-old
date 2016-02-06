@@ -256,6 +256,7 @@ vim-systemd
 virt-manager
 vte3-ng
 w3m
+weechat
 wget
 which
 wireless_tools
