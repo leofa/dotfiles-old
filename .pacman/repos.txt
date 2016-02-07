@@ -117,7 +117,6 @@ iotop
 iproute2
 iputils
 irqbalance
-irssi
 iw
 jre8-openjdk-infinality
 jshon
