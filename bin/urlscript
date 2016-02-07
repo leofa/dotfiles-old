@@ -46,7 +46,7 @@ case $url in
         $0$q $(curl -s "$url" | sed -n 's/^.*<link rel="image_src"\s\+href="\([^"]\+\)".*$/\1/p')
         ;;
     mailto:*)
-        ${PRE}urxvt -e mutt -- "${url}"
+        ${PRE}termite -e mutt -- "${url}"
         ;;
     *)
         ${DEFAULT} "$url"
