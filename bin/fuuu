@@ -1,4 +1,5 @@
 #!/bin/bash
+
 function animate {
   echo -ne "     $1\033[0K\r"
   sleep 1
