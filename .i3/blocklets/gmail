@@ -19,6 +19,7 @@ echo "<span foreground='#b294bb'></span> <span foreground='#B4B7B4'>$COUNT</s
 
 case $BLOCK_BUTTON in
   #2) geary "$@" &>/dev/null ;; #mail shortcut 
-  1) chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl "$@" &>/dev/null ;;
+  1) chromium --app=https://mail.google.com
+  "$@" &>/dev/null ;;
   #3) geary mailto: "$@" &>/dev/null
 esac

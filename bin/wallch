@@ -4,9 +4,9 @@
 # sleep 5m
 
 # define directories here
-dir1="/home/faruk/Afbeeldingen/Wallpaper/"
-dir2="/home/faruk/Afbeeldingen/Linux/"
-dir3="/home/faruk/Afbeeldingen/Popart/"
+dir1="/home/$USER/pics/wallpaper/"
+dir2="/home/$USER/pics/linux/"
+dir3="/home/$USER/pics/popart/"
 
 # then start your shufflin'
     while true;do

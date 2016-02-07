@@ -2,7 +2,7 @@
 #pacman updates
 #------------------------------------------------------------------------
 
-PACMAN=$(pacman -Qu | wc -l)
+PACMAN=$(checkupdates | wc -l)
 
 #------------------------------------------------------------------------
 
@@ -11,6 +11,6 @@ echo "<span foreground='#C7C795'></span><span foreground='#B4B7B4'> $PACMAN</
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) chromium --app=http://ald.mindbrain.io/ "$@" &>/dev/null ;; # left click, read arch linux news feeds 
+  1) chromium --app=http://ald.mindbrain.io "$@" &>/dev/null ;; # left click, read arch linux news feeds 
   3) termite --exec "pacaur -Su" --name "pacaur" --hold "$@" &>/dev/null ;; # right click, update system
 esac
