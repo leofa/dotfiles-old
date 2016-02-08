@@ -59,7 +59,8 @@ color3 = #ae7b00
 color11 = #f0c674
 
 # Blue + Bright Blue
-color4 = #1d2594
+#color4 = #1d2594 
+color4 = #3E6096
 color12 = #81a2be
 
 # Magenta (Purple) + Bright Magenta
