@@ -12,10 +12,10 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 floating_modifier $mod
 
 # i3 swag  ┐('～`)┌ 
-exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with i3 named workspace
 bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
 #bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
 #bindsym $mod+Shift+i workspace 0<span font='9' font_weight='bold' >┐('～`)┌</span>
+exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with a named workspace
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
@@ -28,8 +28,9 @@ bindsym $mod+i exec chromium --incognito
 bindsym $mod+b exec caja
 bindsym $mod+Shift+b exec rofi -width 45 -modi "fb:rofi-fb" -show fb #rofi filebrowser 
 #bindsym $mod+m exec geary
-bindsym $mod+m exec chromium --profile-directory=Default --app-id=pkclgpgponpjmpfokoepglboejdobkpl #google inbox 
-bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --profile-directory=Default --app-id=fahmaaghhglfmonjliepjlchgpgfmobi #google music player
+#bindsym $mod+m exec chromium --app=https://inbox.google.com
+bindsym $mod+m exec chromium --app=https://mail.google.com
+bindsym $mod+Shift+XF86AudioLowerVolume exec chromium --app=https://play.google.com/music
 bindsym $mod+g exec gvim -geom=120x42+200+23
 bindsym $mod+Shift+XF86AudioMute exec pavucontrol
 bindsym $mod+d exec j4-dmenu-desktop --display-binary --term="termite -e --hold" --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:'"
@@ -40,7 +41,7 @@ bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 bindsym $mod+XF86Reload exec sudo wpa_gui #termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
 bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 bindsym $mod+p exec passmenu --notify 
-bindsym $mod+Shift+p exec qtpass #exec passmenu --typeit
+bindsym $mod+Shift+p exec qtpass 
 
 #focus windows
 no_focus [window_role="pop-up"]
@@ -49,10 +50,10 @@ for_window [class="(?i)"] focus
 
 #float windows
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
-for_window [window_type="dialog|menu"] floating enable
+#for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
 for_window [instance="radio|disks|feh|qtpass|vitetris|xfontsel|xfd|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
-for_window [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|ald.mindbrain.io"] floating disable #jb live|google books|docs|inbox|netflix
+for_window [instance="play.google.com/music|mail.google.com|inbox.google.com|crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|ald.mindbrain.io"] floating disable #jb live|google books|docs|inbox|netflix
 
 #scratchpad, move windows + sticky
 for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad, scratchpad show
@@ -65,10 +66,11 @@ for_window [instance="file_progress"] sticky enable
 for_window [class="(?i)gsimplecal"] move position pointer
 for_window [instance="WiFi-menu"]  resize set 455 445; move
 for_window [class="gcolor2|Deluge|timesup|QtPass"] sticky enable
-for_window [instance="radio"]  resize set 355 445; move position pointer,  move scratchpad, scratchpad show 
+for_window [title="Instellingen - Chromium"] resize set 745 765; move position pointer
+for_window [instance="radio"]  resize set 355 445; move position pointer; sticky enable 
 
 #layout
-for_window [workspace="$WS2|$WS4"] layout tabbed
+#for_window [workspace="$WS2|$WS4"] layout tabbed
 
 #window actions
 bindsym $mod+Shift+s sticky toggle
@@ -76,15 +78,15 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 933 518 
 
 #window title format
-for_window [class="(?i)"] title_format "<span font='10' weight='normal' foreground='#E0E0E0'>〉</span>%title"
+for_window [class="(?i)"] title_format "<span font='10' weight='heavy' foreground='#B6CDDA'>   </span>%title"
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
 assign [instance="caja"] $WS3
-assign [instance="geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
+assign [instance="mail.google.com|geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
 assign [instance="subl3|sublime_text|geany"] $WS5
-assign [instance="crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
+assign [instance="play.google.com__music|crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
 assign [instance="remmina|htop|virt-manager|log_term|pacaur|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
@@ -155,6 +157,8 @@ bindsym $mod+u [urgent=latest] focus
 
 # bar modus
 bindsym $mod+Shift+h bar mode toggle
+bindsym $mod+Shift+minus bar mode dock
+bindsym $mod+minus bar mode invisible
 
 # cycle through active workspaces
 bindsym $mod+period workspace next
@@ -319,14 +323,14 @@ mode "  " {
 }
 
 bar {
-     #mode hide
+     #mode invisible
      status_command i3blocks
      position top
      height 21    
      workspace_buttons yes
      strip_workspace_numbers yes
      separator_symbol "〉"
-     bindsym button5 nop
+     bindsym --release button5 exec pkill sleep; sleep 2 
      bindsym button4 nop
      tray_output eDP1
      tray_padding 3     

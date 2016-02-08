@@ -7,18 +7,19 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
+if [ -f ~/.docker.func ]; then
+  . ~/.docker.func
+fi
+
 #prompt
 #if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
 #if [ -f /usr/bin/alsi ]; then alsi -l; fi
-#if [ -f ~/.local/bin/todo ]; then todo; fi
+#if [ -f ~/bin/todo ]; then todo; fi
 
 export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 
 # promptline
 source ~/.shell_prompt.sh
-
-# export PATH locally
-export PATH=$PATH:~/.local/bin
 
 #skype fix
 #export PULSE_LATENCY_MSEC=60
@@ -137,7 +138,7 @@ else
     fi
   fi
   if [[ -d "$HOME/bin" ]] ; then
-      PATH="$HOME/bin:$PATH"
+      export PATH="$HOME/bin:$PATH"
   fi
   ## EDITOR #{{{
     if which vim &>/dev/null; then
@@ -154,7 +155,7 @@ else
     export HISTSIZE=10000           # bash history will save N commands
     export HISTFILESIZE=${HISTSIZE} # bash will remember N commands
     export HISTCONTROL=ignoreboth   # ingore duplicates and spaces
-    export HISTIGNORE='&:ls:ll:la:cd:exit:clear:history'
+    export HISTIGNORE='&:ls:ll:la:cd:exit:x:clear:c:history:h'
   #}}}
 
   ## COLORED MANUAL PAGES #{{{
@@ -454,3 +455,4 @@ else
   #}}}
 #}}}echo 
 eval $(dircolors ~/.dircolors)
+

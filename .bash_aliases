@@ -51,7 +51,7 @@ alias r='reset'
 alias x='exit'
 
 alias disks='df -h; btrfs filesystem df /'
-alias dd='dcfldd'
+alias dd='dd status=progress'
 alias gksu='gksu-polkit'
 alias err='dmesg -l err; systemctl --failed'
 alias warn='dmesg -l warn'
@@ -93,6 +93,8 @@ alias fixpulse='rm -rf /tmp/pulse* ~/.pulse* ~/.config/pulse; pulseaudio --kill;
 
 alias aeq='alsamixer -D equal'
 alias mix='alsamixer -c 0'
+
+alias d='docker'
 
 #SSH 
 #define shortcuts in ~/.ssh/config
