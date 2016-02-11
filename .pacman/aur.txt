@@ -4,6 +4,7 @@ compton-git
 cower
 downgrade
 flattr-icon-theme-git
+gksu-polkit-git
 i3-gaps-next-git
 i3blocks
 i3lock-git
@@ -14,6 +15,7 @@ numix-circle-icon-theme-git
 pacaur
 playerctl
 powerline-fonts-git
+sublime-text-dev
 termite-ranger-fix-git
 thermald
 ttf-font-awesome
