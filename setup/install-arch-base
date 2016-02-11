@@ -79,7 +79,6 @@ pacaur --needed --noconfirm --noedit -S \
   acpi \
   yaourt \
   pacmatic \
-  archey3 \
   ccache \
   ccze \
   downgrade \
@@ -90,5 +89,8 @@ pacaur --needed --noconfirm --noedit -S \
   speedtest-cli \
   tmux \
   thermald \
-  update-hosts-git \  
-  lm_sensors \
+  update-hosts-git 
+
+#fails with pacaur not sure why
+sudo pacman --noconfirm -S \
+  lm_sensors

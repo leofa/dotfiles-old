@@ -121,11 +121,6 @@ iw
 jre8-openjdk-infinality
 jshon
 less
-lib32-cairo-infinality-ultimate
-lib32-fontconfig-infinality-ultimate
-lib32-freetype2-infinality-ultimate
-lib32-libva
-lib32-libva-intel-driver
 libchamplain
 libgsf
 libnewt

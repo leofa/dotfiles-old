@@ -17,7 +17,6 @@ echo "Installing fonts..."
 sleep 2
 pacaur --needed --noedit -S \
    infinality-bundle \
-   infinality-bundle-multilib \
    ibfonts-meta-base \
    ttf-noto-fonts-nonlatin-ib \
    ttf-noto-fonts-cjk-ib \
@@ -61,9 +60,7 @@ pacaur --noconfirm --needed --noedit -S \
   imagemagick \
   dunst \
   compton-git \
-  tumbler \
   gpicview \
-  gtk-theme-numix-ocean \
   flattr-icon-theme-git \
   tk \
   aspell-en \
@@ -79,7 +76,6 @@ pacaur --noconfirm --needed --noedit -S \
   vim-systemd \
   xtitle-git \
   openssh \
-  arandr \
   xclip \
   unclutter-xfixes-git \
   youtube-dl \

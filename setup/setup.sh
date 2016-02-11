@@ -66,11 +66,11 @@ ask "Install symlinks for .gitconfig?" Y && ln -sfn ${dir}/.gitconfig ${HOME}/.g
 
 ask "Install symlink for .gtkrc-2.0?" Y && ln -sfn ${dir}/.gtkrc-2.0 ${HOME}/.gtkrc-2.0
 
-ask "Install symlink for .i3/?" Y && ln -sfn ${dir}/.i3 ${HOME}/.i3
+ask "Install symlink for .i3?" Y && ln -sfn ${dir}/.i3 ${HOME}/.i3
 
 ask "Install symlinks for i3blocks?" Y && ln -sfn ${dir}/.i3blocks.conf ${HOME}/.i3blocks.conf; ln -sfn ${dir}/.i3blocks ${HOME}/.i3blocks
 
-ask "Install symlink for ~/bin/?" Y && mkdir -p ${HOME}/bin; ln -sfn ${dir}/bin ${HOME}/bin
+ask "Install symlink for ~/bin?" Y && ln -sfn ${dir}/bin ${HOME}/bin
 
 ask "Install symlinks for tmux?" Y && ln -sfn ${dir}/.tmux.conf ${HOME}/.tmux.conf; ln -sfn ${dir}/.tmux_prompt.sh ${HOME}/.tmux_prompt.sh
 
