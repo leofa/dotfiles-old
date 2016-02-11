@@ -33,13 +33,6 @@ export SYSTEMD_LESS=FRXMK journalctl
 # use gtk for java apps
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-# ruby PATH
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-
-# go PATH
-export GOPATH=~/go
-export PATH=$PATH:~/go/bin
-
 #browser
 export BROWSER=/usr/bin/chromium
 
