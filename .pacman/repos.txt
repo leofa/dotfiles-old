@@ -72,8 +72,8 @@ freerdp
 frogatto
 galculator-gtk2
 gawk
-gcc-libs-multilib
-gcc-multilib
+gcc-libs
+gcc
 gcolor2
 geary
 gettext
