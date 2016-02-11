@@ -104,7 +104,7 @@ pacaur --noconfirm --needed --noedit -S \
   alsa-utils \
   xsel \
   youtube-dl \
-  numix-frost-themes \
+  gtk-engine-murrine \
   numix-circle-icon-theme-git \
   xcursor-openzone \
   jshon \
