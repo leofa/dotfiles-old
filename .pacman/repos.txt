@@ -158,7 +158,6 @@ nano
 ncdu
 newsbeuter
 nfs-utils
-nspluginwrapper
 ntfs-3g
 ntp
 nxproxy
