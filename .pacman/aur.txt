@@ -3,6 +3,7 @@ chromium-widevine
 compton-git
 cower
 downgrade
+early-issue-git
 flattr-icon-theme-git
 gksu-polkit-git
 i3-gaps-next-git
