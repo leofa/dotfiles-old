@@ -95,11 +95,7 @@ priviliges
 export EDITOR=vim; visudo
 -
   %wheel ALL=(ALL) ALL
-  leofa ALL=(ALL) NOPASSWD: /usr/bin/wifi-menu
-  leofa ALL= NOPASSWD: /usr/bin/pacmatic
-  leofa ALL= NOPASSWD: /usr/bin/reboot
-  leofa ALL= NOPASSWD: /usr/bin/poweroff
-  leofa ALL= NOPASSWD: /usr/bin/halt
+  leofa ALL=(ALL) NOPASSWD: /usr/bin/wifi-menu, /usr/bin/pacmatic, /usr/bin/reboot, /usr/bin/poweroff, /usr/bin/halt
 -
 
 

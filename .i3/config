@@ -83,7 +83,7 @@ for_window [class="(?i)"] title_format "<span font='10' weight='heavy' foregroun
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
-assign [instance="caja"] $WS3
+assign [instance="property_browser|caja"] $WS3
 assign [instance="mail.google.com|geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
 assign [instance="subl3|sublime_text|geany"] $WS5
 assign [instance="play.google.com__music|crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
