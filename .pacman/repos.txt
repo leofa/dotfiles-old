@@ -34,6 +34,7 @@ ccze
 clipit
 cmus
 colordiff
+compton
 coreutils
 cowsay
 crda
@@ -65,6 +66,7 @@ figlet
 file
 filesystem
 findutils
+flattr-icon-theme
 flex
 fontconfig-infinality-ultimate
 fortune-mod
@@ -111,6 +113,7 @@ hdparm
 horst
 htop
 hunspell-nl
+i3lock
 ibfonts-meta-base
 ibfonts-meta-extended-lt
 ifplugd
@@ -174,6 +177,7 @@ obexfs
 openresolv
 openssh
 otf-cantarell-ib
+otf-source-code-pro-pwl-ibx
 p7zip
 pacman
 pacmatic

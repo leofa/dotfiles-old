@@ -1,15 +1,12 @@
 chromium-pepper-flash
 chromium-widevine
-compton-git
 cower
 downgrade
 early-issue-git
-flattr-icon-theme-git
 gksu-polkit-git
 gpicview-gimp
-i3-gaps-next-git
+i3-gaps-git
 i3blocks
-i3lock-git
 j4-dmenu-desktop
 lostfiles
 minecraft
@@ -17,7 +14,6 @@ nbwmon
 numix-circle-icon-theme-git
 pacaur
 playerctl
-powerline-fonts-git
 sublime-text-dev
 termite-ranger-fix-git
 thermald
