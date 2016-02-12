@@ -78,6 +78,8 @@ gcc-libs
 gcolor2
 geary
 gettext
+gimp
+gimp-help-nl
 git
 glances
 glibc
@@ -110,6 +112,7 @@ horst
 htop
 hunspell-nl
 ibfonts-meta-base
+ibfonts-meta-extended-lt
 ifplugd
 inetutils
 inkscape
@@ -161,12 +164,14 @@ mpv
 mtools
 nano
 ncdu
+netctl
 newsbeuter
 nfs-utils
 ntfs-3g
 ntp
 nxproxy
 obexfs
+openresolv
 openssh
 otf-cantarell-ib
 p7zip
@@ -237,12 +242,14 @@ tar
 texinfo
 tk
 tmux
-ttf-droid
+ttf-archivo-black-ibx
 ttf-hack-ibx
+ttf-libre-baskerville-ibx
 ttf-noto-fonts-cjk-ib
 ttf-noto-fonts-emoji-ib
 ttf-noto-fonts-nonlatin-ib
 ttf-source-code-pro-ibx
+ttf-weblysleek-ui-ibx
 ufw
 ufw-extras
 unace

@@ -6,6 +6,7 @@ downgrade
 early-issue-git
 flattr-icon-theme-git
 gksu-polkit-git
+gpicview-gimp
 i3-gaps-next-git
 i3blocks
 i3lock-git
@@ -21,7 +22,6 @@ sublime-text-dev
 termite-ranger-fix-git
 thermald
 ttf-font-awesome
-ttf-ms-fonts
 unclutter-xfixes-git
 update-hosts-git
 vim-promptline-git
