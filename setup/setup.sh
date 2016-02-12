@@ -68,7 +68,7 @@ ask "Install symlink for .gtkrc-2.0?" Y && ln -sfn ${dir}/.gtkrc-2.0 ${HOME}/.gt
 
 ask "Install symlink for .i3?" Y && ln -sfn ${dir}/.i3 ${HOME}/.i3
 
-ask "Install symlinks for i3blocks?" Y && ln -sfn ${dir}/.i3blocks.conf ${HOME}/.i3blocks.conf; ln -sfn ${dir}/.i3blocks ${HOME}/.i3blocks
+ask "Install symlinks for i3blocks?" Y && ln -sfn ${dir}/.i3blocks.conf ${HOME}/.i3blocks.conf
 
 ask "Install symlink for ~/bin?" Y && ln -sfn ${dir}/bin ${HOME}/bin
 

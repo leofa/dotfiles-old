@@ -40,8 +40,8 @@ alias refl='sudo reflector \
     --country 'Netherlands' \
     -l 200 \
     -p http \
-    --sort rate \
-    --number 3 \
+    --sort age \
+    --fastest 3 \
     --save /etc/pacman.d/mirrorlist ;\
     cat /etc/pacman.d/mirrorlist'
 

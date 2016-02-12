@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Action
-Name=Sidepanel
+Name=View sidetree
 Name[nl_NL]=Zijpaneel
 Name[nl]=Zijpaneel
 Icon=view-sidetree
@@ -8,7 +8,7 @@ Icon[nl_NL]=view-sidetree
 Icon[nl]=view-sidetree
 TargetContext=false
 TargetToolbar=true
-Toolbarlabel=Sidepanel
+ToolbarLabel=View sidetree
 ToolbarLabel[nl_NL]=Zijpaneel
 ToolbarLabel[nl]=Zijpaneel
 Profiles=profile-zero;
@@ -17,5 +17,6 @@ Profiles=profile-zero;
 Name=Default profile
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
-Exec=sh -c 'xdotool key F9'
+#Exec=sh -c 'xdotool key F9'
+Exec=sh -c 'xdotool key ISO_Level3_Shift+XF86AudioLowerVolume'
 Folders=*;
