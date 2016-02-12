@@ -177,7 +177,6 @@ obexfs
 openresolv
 openssh
 otf-cantarell-ib
-otf-source-code-pro-pwl-ibx
 p7zip
 pacman
 pacmatic

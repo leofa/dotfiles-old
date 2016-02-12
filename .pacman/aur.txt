@@ -14,6 +14,7 @@ nbwmon
 numix-circle-icon-theme-git
 pacaur
 playerctl
+powerline-fonts-git
 sublime-text-dev
 termite-ranger-fix-git
 thermald
