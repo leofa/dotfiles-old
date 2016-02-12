@@ -161,7 +161,6 @@ mpv
 mtools
 nano
 ncdu
-netctl
 newsbeuter
 nfs-utils
 ntfs-3g
@@ -265,7 +264,6 @@ wireless_tools
 wmctrl
 wpa_actiond
 wpa_supplicant
-wpa_supplicant_gui
 x11-ssh-askpass
 xautolock
 xcb-util-keysyms
