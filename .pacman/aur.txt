@@ -4,7 +4,6 @@ cower
 downgrade
 early-issue-git
 gksu-polkit-git
-gpicview-gimp
 i3-gaps-git
 i3blocks
 j4-dmenu-desktop
@@ -15,6 +14,7 @@ numix-circle-icon-theme-git
 pacaur
 playerctl
 powerline-fonts-git
+s
 sublime-text-dev
 termite-ranger-fix-git
 thermald
