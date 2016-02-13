@@ -96,6 +96,10 @@ alias mix='alsamixer -c 0'
 
 alias d='docker'
 
+alias g="s -p duckduckgo"
+alias wi="s -p wikipedia"
+alias yt="s -p youtube"
+
 #SSH 
 #define shortcuts in ~/.ssh/config
 alias osmc='ssh osmc'
