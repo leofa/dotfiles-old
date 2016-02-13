@@ -8,6 +8,7 @@ i3-gaps-git
 i3blocks
 j4-dmenu-desktop
 lostfiles
+menutray
 minecraft
 nbwmon
 numix-circle-icon-theme-git
@@ -19,6 +20,7 @@ sublime-text-dev
 termite-ranger-fix-git
 thermald
 ttf-font-awesome
+turses-git
 unclutter-xfixes-git
 update-hosts-git
 vim-promptline-git
