@@ -1,5 +1,6 @@
 chromium-pepper-flash
 chromium-widevine
+clipmenu
 cower
 downgrade
 early-issue-git
