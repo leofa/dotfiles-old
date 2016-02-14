@@ -48,7 +48,6 @@ dosfstools
 dunst
 e2fsprogs
 ebtables
-elinks
 engrampa
 ethtool
 f2fs-tools
@@ -138,6 +137,7 @@ lvm2
 lxappearance
 lxc
 lxsession
+lynx
 m4
 make
 man-db
@@ -219,6 +219,7 @@ systemd-swap
 systemd-sysvcompat
 t1-urw-fonts-ib
 tar
+termite
 texinfo
 tk
 tmux

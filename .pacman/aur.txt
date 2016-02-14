@@ -17,7 +17,6 @@ playerctl
 powerline-fonts-git
 s
 sublime-text-dev
-termite-ranger-fix-git
 thermald
 ttf-font-awesome
 turses-git
