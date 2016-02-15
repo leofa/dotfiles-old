@@ -12,6 +12,7 @@ autoconf
 automake
 bash
 bash-completion
+bc
 binutils
 bison
 blueman
@@ -133,6 +134,8 @@ linux-mainline
 linux-zen
 lm_sensors
 logrotate
+lua-sec
+luarocks
 lvm2
 lxappearance
 lxc
