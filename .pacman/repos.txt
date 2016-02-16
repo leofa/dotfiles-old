@@ -258,7 +258,6 @@ xautolock
 xcb-util-keysyms
 xcb-util-wm
 xclip
-xcompmgr
 xdg-user-dirs-gtk
 xdotool
 xf86-input-keyboard
