@@ -27,7 +27,6 @@ update-hosts-git
 vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
-xcb-util-cursor-git
 xcursor-openzone
 xf86-input-cmt-git
 xkeyboard-config-chromebook

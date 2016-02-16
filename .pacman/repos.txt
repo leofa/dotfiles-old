@@ -250,6 +250,7 @@ w3m
 wget
 which
 wireless_tools
+wmctrl
 wpa_actiond
 wpa_supplicant
 x11-ssh-askpass
@@ -257,6 +258,7 @@ xautolock
 xcb-util-keysyms
 xcb-util-wm
 xclip
+xcompmgr
 xdg-user-dirs-gtk
 xdotool
 xf86-input-keyboard
