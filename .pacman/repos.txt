@@ -82,6 +82,7 @@ gnome-settings-daemon
 gnome-themes-standard
 gpart
 gptfdisk
+gradm
 grep
 groff
 gsimplecal
@@ -129,8 +130,6 @@ libvdpau-va-gl
 libvirt
 libvncserver
 licenses
-linux
-linux-mainline
 linux-zen
 lm_sensors
 logrotate
@@ -170,6 +169,7 @@ pacmatic
 parallel
 patch
 pavucontrol
+paxd
 pciutils
 pcmciautils
 perl
