@@ -88,6 +88,9 @@ groff
 gsimplecal
 gst-libav
 gstreamer0.10-bad-plugins
+gstreamer0.10-base-plugins
+gstreamer0.10-ffmpeg
+gstreamer0.10-good-plugins
 gstreamer0.10-ugly-plugins
 gtk-engine-murrine
 gucharmap
@@ -102,6 +105,7 @@ hdparm
 horst
 htop
 hunspell-nl
+hyphen
 i3lock
 ibfonts-meta-base
 ibfonts-meta-extended-lt
@@ -223,7 +227,6 @@ systemd-swap
 systemd-sysvcompat
 t1-urw-fonts-ib
 tar
-termite
 texinfo
 tk
 tmux

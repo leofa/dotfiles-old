@@ -15,11 +15,13 @@ minecraft
 nbwmon
 numix-circle-icon-theme-git
 pacaur
+palemoon-bin
 playerctl
 powerline-fonts-git
 qtpass
 s
 sublime-text-dev
+termite-ranger-fix-git
 thermald
 ttf-font-awesome
 turses-git
