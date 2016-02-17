@@ -167,6 +167,7 @@ p7zip
 pacman
 pacmatic
 parallel
+pass
 patch
 pavucontrol
 paxd

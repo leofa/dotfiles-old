@@ -17,6 +17,7 @@ numix-circle-icon-theme-git
 pacaur
 playerctl
 powerline-fonts-git
+qtpass
 s
 sublime-text-dev
 thermald
