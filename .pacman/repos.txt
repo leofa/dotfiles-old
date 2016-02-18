@@ -282,6 +282,7 @@ xorg-xprop
 xorg-xrandr
 xorg-xrdb
 xorg-xset
+xorg-xsetroot
 xorg-xwininfo
 xournal
 xsel
