@@ -7,6 +7,7 @@ early-issue-git
 gksu-polkit-git
 i3-gaps-git
 i3blocks
+i3ipc-python-git
 j4-dmenu-desktop
 lostfiles
 menutray
@@ -32,6 +33,7 @@ vim-tmuxline-git
 xcursor-openzone
 xf86-input-cmt-git
 xkeyboard-config-chromebook
+xss-lock
 xtitle-git
 yad
 yaourt
