@@ -39,6 +39,7 @@ crda
 cryptsetup
 ctags
 dconf-editor
+deluge
 device-mapper
 dhcpcd
 dialog
@@ -133,6 +134,8 @@ libvdpau-va-gl
 libvirt
 libvncserver
 licenses
+linux
+linux-mainline
 linux-zen
 lm_sensors
 logrotate
@@ -208,6 +211,7 @@ reiserfsprogs
 rng-tools
 rofi
 rsync
+rtorrent
 s-nail
 sane
 scrot

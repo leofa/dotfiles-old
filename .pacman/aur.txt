@@ -1,6 +1,5 @@
 chromium-pepper-flash
 chromium-widevine
-clipmenu
 clipster-git
 cower
 downgrade
@@ -14,6 +13,7 @@ i3ipc-python-git
 ix
 j4-dmenu-desktop
 lostfiles
+menutray
 minecraft
 nbwmon
 numix-circle-icon-theme-git
