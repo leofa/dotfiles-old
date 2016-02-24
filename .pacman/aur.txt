@@ -23,7 +23,6 @@ playerctl
 powerline-fonts-git
 qtpass
 s
-sublime-text-dev
 termite-ranger-fix-git
 thermald
 ttf-font-awesome
