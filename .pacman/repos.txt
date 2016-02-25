@@ -60,6 +60,7 @@ figlet
 file
 filesystem
 findutils
+fish
 flattr-icon-theme
 flex
 fontconfig-infinality-ultimate

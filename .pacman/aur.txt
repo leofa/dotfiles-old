@@ -22,6 +22,7 @@ palemoon-bin
 playerctl
 powerline-fonts-git
 qtpass
+rtv
 s
 termite-ranger-fix-git
 thermald
