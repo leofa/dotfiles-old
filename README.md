@@ -16,8 +16,6 @@ clean desktop
 ![ScreenShot](.scrot/clean.png)
 dirty
 ![ScreenShot](.scrot/dirty.png) 
-vim+tmux+ranger
-![ScreenShot](.scrot/vim+tmux+ranger.png)
 
 # my resources
 ```
