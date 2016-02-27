@@ -253,7 +253,6 @@ vim-airline
 vim-spell-nl
 vim-systemd
 virt-manager
-vlc
 vte3-ng
 w3m
 wget
