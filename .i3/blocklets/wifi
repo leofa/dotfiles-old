@@ -33,7 +33,7 @@ fi
 # mouse buttons  
 
 case $BLOCK_BUTTON in
-    #1) sudo wpa_gui #left click, connect with wpa_supplicant 
-    1) termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" "$@" &>/dev/null # connect with wifi-menu
+    1) termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'" ;; # connect with wifi-menu
+    3) sh -c "netctl list | cut -b 3- | rofi -dmenu -p 'netctl:' -yoffset '-320' -xoffset '502' | ifne xargs sudo -A netctl switch-to" #switch netctl profile (depends on ifine from moreutils)
 esac
 

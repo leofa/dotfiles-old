@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 INSTANCE="${1:-BAT0}"
-ALERT_LOW="${2:-11}" # color will turn red under this value (default: 10%)
+ALERT_LOW="${2:-16}" # color will turn red under this value (default: 10%)
 UPOWER="/usr/bin/upower"
 
 if [ ! -x "$UPOWER" ]; then
@@ -70,9 +70,9 @@ END {
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  3) dpmstoggle ;; # left click, control DPMS 
-  2) togglered ;;  # right click, redshift on/off
-  1) getacpi "$@" &>/dev/null ;; # yad dialog with battery info
+  3) toggle-dpms ;; # left click, control DPMS 
+  2) toggle-red ;;  # right click, redshift on/off
+  1) getacpi ;; # yad dialog with battery info
   5) xbacklight -inc 10 ;; # scroll up, increase brightness
   4) xbacklight -dec 10 ;; # scroll down, decrease brightness
 esac

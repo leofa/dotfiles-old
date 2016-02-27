@@ -4,12 +4,12 @@ dt0=$(date '+%a')
 dt1=$(date '+%H')
 dt2=$(date '+%M')
 
-#echo "<span font='8.5' foreground='#B294BB'> </span><span font='Hack Bold 8' >$dt0</span><span font='8' foreground='#969896'>.</span>$dt1<span font='8' foreground='#969896'>:</span>$dt2"
-echo "<span foreground='#B294BB'> </span>$dt1<span foreground='#969896'>:</span>$dt2"
+echo "<span font_weight='heavy' foreground='#B294BB'>$dt0</span> $dt1<span foreground='#969896'>:</span>$dt2"
+#echo "<span foreground='#B294BB'> </span>$dt1<span foreground='#969896'>:</span>$dt2"
 
 case $BLOCK_BUTTON in
-    1) gsimplecal "$@" &>/dev/null ;; #left click calendar
+    1) i3-msg exec gsimplecal ;; #left click calendar
    #1) exec yad --no-buttons --geometry=+$X+20 --class "yad_cal" --calendar "$@" &>/dev/null ;;
-    2) chromium --app=https://keep.google.com "$@" &>/dev/null ;; #left click, google keep
-    3) chromium --app=https://calendar.google.com "$@" &>/dev/null ;; #right click,google calendar
+    2) i3-msg exec "chromium --app=https://keep.google.com" ;; #left click, google keep
+    3) i3-msg exec "chromium --app=https://calendar.google.com" ;; #right click,google calendar
 esac 

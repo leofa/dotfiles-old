@@ -3,10 +3,9 @@
 used=`free -h | sed -n '2p' | awk -F' ' '{print $3}'`
 total=`free -h | sed -n '2p' | awk -F' ' '{print $2}'`
 
-echo "$used"
+echo "<span font='8' font_weight='ultralight' foreground='#B294BB' > </span>$used"
 #echo "$used/$total"
 
 case $BLOCK_BUTTON in
-  1) termite --exec "sh -c 'journalctl -f | ccze -A'" --name 'log_term' "$@" &>/dev/null ;;
-  3) termite --exec "sh -c 'journalctl -b -0 | ccze -A; journalctl -f | ccze -A'" --name 'log_term' "$@" &>/dev/null ;;
+    1) termite --exec "sh -c 'journalctl -f | ccze -A' --name 'log_term'" ;;
 esac

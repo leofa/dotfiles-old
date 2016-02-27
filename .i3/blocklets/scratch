@@ -9,7 +9,7 @@ if [ -n "$WIN" ];
    fi
 
 case $BLOCK_BUTTON in
-  1) i3-msg move scratchpad ;; #left click
+  1) i3-msg move scratchpad && notify-send -u normal "i3:" "window added to scratchpad" ;; #left click
   2) i3-msg 'floating enable; resize set 422 240; sticky enable; move position 933 518' ;; #middle click, sticky window in corner 
   3) i3-msg scratchpad show ;; #right click show scratchpad
   4) i3-msg focus right ;; #scroll up, focus window right 
