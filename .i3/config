@@ -20,13 +20,13 @@ exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with a named workspace
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
 bindsym $mod+backslash exec i3-sensible-terminal 
-bindsym $mod+slash exec rofi-ddg #rofi duckduckgo search
-bindsym $mod+Shift+slash exec chromium --show-app-list
-bindsym $mod+t exec subl3 
+bindsym $mod+slash exec rofi-find #locate +xdg-open files with rofi 
+bindsym $mod+Shift+slash exec rofi-ddg #rofi duckduckgo search
+bindsym $mod+t exec gvim
 bindsym $mod+c exec chromium
 bindsym $mod+i exec chromium --incognito
 bindsym $mod+b exec caja
-bindsym $mod+Shift+b exec rofi -width 45 -modi "fb:rofi-fb" -show fb #rofi filebrowser 
+bindsym $mod+Shift+b exec rofi -width 55 -modi "fb:rofi-fb" -show fb #rofi filebrowser 
 #bindsym $mod+m exec geary
 #bindsym $mod+m exec chromium --app=https://inbox.google.com
 bindsym $mod+m exec chromium --app=https://mail.google.com
@@ -40,9 +40,8 @@ bindsym $mod+a exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 bindsym $mod+XF86Reload exec termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
-bindsym $mod+Shift+m exec --no-startup-id pkill perl; exec sh -c 'menutray -r -i -u'
 bindsym $mod+p exec passmenu --notify 
-bindsym $mod+Shift+p exec qtpass 
+bindsym $mod+Shift+p exec qtpass
 
 #focus windows
 no_focus [window_role="pop-up"]
@@ -51,27 +50,23 @@ for_window [class="(?i)"] focus
 
 #float windows
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
-#for_window [window_type="dialog|menu"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
-for_window [instance="radio|disks|feh|qtpass|vitetris|xfontsel|xfd|gufw.py|Toplevel|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|mirage|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu|mate-dictionary|system-config-printer.py|dconf-editor|stalonetray"] floating enable
-for_window [instance="play.google.com/music|mail.google.com|inbox.google.com|crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_aohghmighlieiainnegkcijnfilokake|crx_aohghmighlieiainnegkcijnfilokake|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|ald.mindbrain.io|play.google.com__music"] floating disable #jb live|google books|docs|inbox|netflix
+for_window [instance="chromium_app_list|crx_fahmaaghhglfmonjliepjlchgpgfmobi|radio|feh|qtpass|vitetris|xfontsel|xfd|gufw.py|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|mirage|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu"] floating enable
+for_window [class="chromium"] floating disable 
 
 #scratchpad, move windows + sticky
 for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad, scratchpad show
-for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position 1050 450, focus,  move scratchpad, scratchpad show #google music player
+for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position pointer, move scratchpad, scratchpad show #google music player
 for_window [class="(?i)Gpicview|mirage"]  move position center
-for_window [class="yadinfo"] move position pointer
-for_window [instance="insync"] move position pointer
-for_window [class="(?i)pavucontrol"] move position pointer
+for_window [class="(?i)gsimplecal|yadinfo|(?i)pavucontrol|(?i)insync"] move position pointer
 for_window [instance="file_progress"] sticky enable
-for_window [class="(?i)gsimplecal"] move position pointer
-for_window [instance="WiFi-menu"]  resize set 455 445; move
-for_window [class="gcolor2|Deluge|timesup|QtPass"] sticky enable
-for_window [title="Instellingen - Chromium"] resize set 745 765; move position pointer
+for_window [instance="WiFi-menu"]  resize set 455 445; move position pointer
+for_window [class="gcolor2|Deluge|timesup|QtPass|GtkFileChooserDialog"] sticky enable
 for_window [instance="radio"]  resize set 355 445; move position pointer; sticky enable 
 
 #layout
-#for_window [workspace="$WS2|$WS4"] layout tabbed
+for_window [workspace="$WS4"] layout tabbed
+for_window [workspace="<span font='10' weight='light' underline='low'>3</span>"] floating enable
 
 #window actions
 bindsym $mod+Shift+s sticky toggle
@@ -84,8 +79,8 @@ for_window [class="(?i)"] title_format "<span font='10' weight='heavy' foregroun
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
-assign [instance="file_properties|property_browser|caja"] $WS3
-assign [instance="mail.google.com|geary|libreoffice*|abiword|atril|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
+assign [instance="bookmarks|file_properties|property_browser|caja"] $WS3
+assign [instance="calendar.google.com|keep.google.com|mail.google.com|geary|libreoffice*|abiword|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
 assign [instance="subl3|sublime_text|geany"] $WS5
 assign [instance="cmus_termite|play.google.com__music|crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
@@ -186,36 +181,24 @@ bindsym Print exec dscrot
 bindsym $mod+Print exec wscrot
 
 # windows borders
+smart_borders on
 new_window pixel 4
 new_float pixel 4
 
+# change border
+bindsym $mod+Shift+t border toggle
+
 # scratchpad
-bindsym $MOD+SHIFT+plus move scratchpad
+bindsym $mod+Shift+plus move scratchpad
 bindsym $mod+plus scratchpad show
 
 # kill focused window
 bindsym $mod+q kill
-#bindsym $mod+q exec xdotool getactivewindow windowraise windowunmap
 bindsym --release $mod+x exec xkill
 
 # mouse actions 
 bindsym --whole-window $mod2+button2 kill
 bindsym --whole-window $mod2+button3 floating toggle
-
-# change border
-bindsym $mod+Shift+t border toggle
-
-# other
-focus_follows_mouse no
-popup_during_fullscreen smart
-force_display_urgency_hint 500 ms
-workspace_auto_back_and_forth no
-
-# i3gaps
-smart_gaps on
-smart_borders on
-gaps outer 0
-gaps inner 1
 
 # change focus
 bindsym $mod+j focus left
@@ -299,14 +282,17 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec rofi-exit # rofi exit dialog
+bindsym $mod+Shift+e exec rofi-exit
 
 # lockscreen
 set $Locker ilockit
-
-bindsym XF86PowerOff exec rofi-logout # rofi logout dialog
-bindsym $mod+XF86PowerOff exec systemctl suspend
 bindsym $mod+Escape exec $Locker
+
+# logout dialog
+bindsym XF86PowerOff exec rofi-logout
+
+# quick suspend
+bindsym $mod+XF86PowerOff exec systemctl suspend
 
 # resize window
 bindsym $mod+r mode "  "
@@ -323,31 +309,47 @@ mode "  " {
      bindsym Escape mode "default"
 }
 
+# other stuff
+focus_follows_mouse no
+popup_during_fullscreen smart
+force_display_urgency_hint 500 ms
+workspace_auto_back_and_forth no
+
+# define gaps
+smart_gaps on
+gaps outer 0
+gaps inner 1
+
+# statusbar
 bar {
-     #mode invisible
+     mode dock
      status_command i3blocks
      position top
      height 21    
      workspace_buttons yes
      strip_workspace_numbers yes
-     bindsym --release button5 exec pkill sleep; sleep 2 
-     bindsym button4 nop
+     bindsym button2 exec rofi -show ssh  
+     bindsym button4 exec rofi -show window 
+     bindsym button5 exec rofi-getwindow
      tray_output eDP1
      tray_padding 3     
-colors {
-     separator #586e75 
-     background #2d2d2d
-     statusline #c7c7c7
-     focused_workspace  #586e75 #586e75 #ffffff
-     active_workspace #2d2d2d #2d2d2d #ffffff
-     inactive_workspace #455057 #455057 #c7c7c7
-     urgent_workspace #ae4544 #ae4544 #ffffff
+
+# theme   
+colors {    
+     # <bar>
+     separator          #586e75 
+     background         #282a2e
+     statusline         #c7c7c7
+     
+     # <workclass>      <border> <bg> <text>
+     focused_workspace  #586e75 #4e6269 #ffffff
+     active_workspace   #282a2e #282a2e #ffffff
+     inactive_workspace #455057 #3b444a #c7c7c7
+     urgent_workspace   #ae4544 #943b3a #ffffff
   }
 }
-
-# colors
-client.focused #586e75 #586e75 #f9f9f9 #268bd2
+# <clientclass>          <border> <bg> <text> <indicator>
+client.focused          #586e75 #586e75 #f9f9f9 #268bd2
 client.focused_inactive #455057 #455057 #c7c7c7 #002b36
-client.unfocused #2d2d2d #2d2d2d #c7c7c7 #002b36
-client.urgent #dc322f #dc322f #f9f9f9 #dc322f
-
+client.unfocused        #282a2e #282a2e #c7c7c7 #002b36
+client.urgent           #ae4544 #ae4544 #f9f9f9 #ae4544

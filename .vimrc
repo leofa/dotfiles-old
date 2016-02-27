@@ -125,7 +125,7 @@ set number
 syntax enable 
 
 try
-    colorscheme tomorrow-night
+    colorscheme fusion
 catch
 endtry
 

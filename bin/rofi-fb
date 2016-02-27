@@ -5,7 +5,7 @@ EDITOR=xdg-open
 
 CUR_DIR=$PWD
 
-PREV_LOC_FILE=~/.rofi_fb_prevloc
+PREV_LOC_FILE=~/.cache/rfb_prevloc
 
 # Read last location, otherwise we default to PWD.
 if [ -f "${PREV_LOC_FILE}" ]

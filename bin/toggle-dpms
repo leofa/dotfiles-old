@@ -1,0 +1,19 @@
+#!/bin/bash
+# toggle dpms and X screen blanking
+
+lockfile="/tmp/dpms.lock"
+
+if [[ ! -e "$lockfile" ]]
+then
+	xset s off -dpms
+    pkill xautolock
+	touch "$lockfile"
+    notify-send -u critical "  :: dpms disabled ::" 
+else
+	xset s on +dpms
+    xautolock -time 30 -locker "ilockit" -detectsleep &    
+	rm "$lockfile"
+    notify-send -u normal   "  :: dpms enabled  ::"
+fi
+
+exit 0

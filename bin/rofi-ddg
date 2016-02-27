@@ -1,12 +1,12 @@
 #!/bin/bash
 
 DMENU='rofi -dmenu -i -p ddgo:'
-HIST=`cat ~/.ddghist | $DMENU $*`
+HIST=`cat ~/.cache/ddghist | $DMENU $*`
 
-if grep -q "$HIST" "$HOME/.ddghist" ; then
+if grep -q "$HIST" "$HOME/.cache/ddghist" ; then
     echo already exists in history
 else
-    echo $HIST >> ~/.ddghist
+    echo $HIST >> ~/.cache/ddghist
 fi
 
 $BROWSER https://duckduckgo.com/?q="$HIST"

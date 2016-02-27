@@ -1,0 +1,18 @@
+#!/bin/bash
+# toggle redshift, send notification
+
+lockfile="/tmp/redshift.lock"
+
+if [[ ! -e "$lockfile" ]]
+then 
+    notify-send -u critical "  :: redshift disabled ::"
+    xbacklight -set 100
+    pkill -USR1 redshift
+    touch "$lockfile"
+else
+    notify-send "  :: redshift enabled  ::"
+    xbacklight -set 75
+    pkill -USR1 redshift
+    rm "$lockfile"
+fi
+

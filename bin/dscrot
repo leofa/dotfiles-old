@@ -1,6 +1,9 @@
 #!/bin/bash
-#TODO change scrot location
+
+# take scrot of desktop, notify + open
 
 image=~/pics/scrot/%d-%m-%Y-%T_$wx$h_scrot.png
 
-scrot '%d-%m-%Y-%T_$wx$h_scrot.png' -d 2 -q 100 -e 'mv $f ~/pics/scrot/; gpicview ~/pics/scrot/%d-%m-%Y-%T_$wx$h_scrot.png'
+scrot '%d-%m-%Y-%T_$wx$h_scrot.png' -d 2 -q 100 -e 'mv $f ~/pics/scrot \
+notify-send "  :: screenshot taken ::" \
+xdg-open ~/pics/scrot/%d-%m-%Y-%T_$wx$h_scrot.png'

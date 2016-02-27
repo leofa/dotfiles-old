@@ -40,11 +40,6 @@ fi
 xsetroot -cursor_name left_ptr &
 #no bell
 xset b off
-#fix repeat of arrow keys
-xset r 111
-xset r 113
-xset r 114
-xset r 116
 #typematic delay/ rate
 xset r rate 200 20
 
@@ -63,20 +58,22 @@ start-pulseaudio-x11 &
 #blueman-applet &
 #xdg-user-dirs-gtk-update
 wallch &
+#xsetroot -solid '#0f1517'
 #feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
-xbacklight -set 65 &
+xbacklight -set 75 &
 compton -b --config ~/.config/compton.conf &
 lxpolkit &
 dunst &
 redshift &
+#clipmenud &
 clipit -dn &
 #menutray -r -u -i &
 unclutter -b --timeout 30 &
 batnotify &
 #nodpms & 
-#xss-lock --ignore-sleep -n dim-screen -- ilockit &
+xss-lock --ignore-sleep -n dim-screen -- ilockit &
 xautolock -detectsleep -time 15 -locker "systemctl suspend" &
 
 #------------------------------------------------

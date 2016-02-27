@@ -1,33 +1,38 @@
 # leofa's dotfiles
-my personal config files for a minimal desktop on my acer c720p chromebook running Arch Linux with the i3 window manager.
+```
+my personal config files for a minimal desktop on my acer c720p chromebook running Arch Linux with the i3 window manager. 
 
-# some nice programs
-i3gaps-next-git
-i3blocks
-termite
-vim
-rofi-git
-j4-dmenu-desktop-git
-menutray
-compton
-yad
-etc.
+# setup system 
+```
+My installation notes: <a href="https://github.com/leofa/dotfiles/blob/master/archinstall.txt">archinstall.txt</a> & <a href="https://github.com/leofa/dotfiles/blob/master/postinstall.txt">postinstall.txt</a>. 
 
-# setup
-see setup notes: <a href="https://github.com/leofa/dotfiles/blob/master/archinstall.txt">archinstall.txt</a> & <a href="https://github.com/leofa/dotfiles/blob/master/postinstall.txt">postinstall.txt</a>. scripts are @ <a href="https://github.com/leofa/dotfiles/tree/master/setup">setup folder</a> please read before running. 
+# install dotfiles
+```
+You're advised to simply copy paste any config file you need to your $HOME directory. 
+If you're brave use my install-scripts located <a href="https://github.com/leofa/dotfiles/tree/master/setup">here</a> but please read and edit before running. 
 
-# latest screenshots
+# looks a bit like this
 clean desktop
 ![ScreenShot](.scrot/clean.png)
 dirty
 ![ScreenShot](.scrot/dirty.png) 
 vim+tmux+ranger
 ![ScreenShot](.scrot/vim+tmux+ranger.png)
-new wallpaper by me :P 
-![ScreenShot](resources/i3-by-leofa.png)
 
-colors based on <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Night</a> theme by Chris Kempson
+# my resources
+```
+you can find wallpapers, themes, icons etc. <a href="https://github.com/leofa/dotfiles/tree/master/resources">here</a>. 
 
-# WIP
-keep on learning, ever changing..
- 
+
+# list of programs used
+```
+i3gaps-next
+i3blocks
+termite
+vim
+rofi
+j4-dmenu-desktop
+compton
+> pacman backup <a href="https://github.com/leofa/dotfiles/tree/master/.pacman">here</a> 
+
+

@@ -94,11 +94,16 @@ alias fixpulse='rm -rf /tmp/pulse* ~/.pulse* ~/.config/pulse; pulseaudio --kill;
 alias aeq='alsamixer -D equal'
 alias mix='alsamixer -c 0'
 
-alias d='docker'
+alias dc='docker'
+alias dcfc='vi ~/.docker.func'
 
+# search
 alias g="s -p duckduckgo"
 alias wi="s -p wikipedia"
 alias yt="s -p youtube"
+
+# fetch
+alias fetch="fetch --crop_mode fit --info_color 15 --subtitle_color 13 --title_color 15 --underline_color 14 --at_color 14 --colon_color 14 --underline_char '\\\\' --block_width 2 --block_range 0 15 --xoffset 25  --yoffset 25 --gap 7 --px 200 --clean"
 
 #SSH 
 #define shortcuts in ~/.ssh/config
@@ -109,6 +114,7 @@ alias box='ssh box'
 alias srv='ssh srv'
 alias wrt='ssh wrt'
 alias home='ssh home'
+alias retro='ssh retropie'
 
 alias keys='xmodmap -pke'
 alias freemem='sudo /sbin/sysctl -w vm.drop_caches=3'
@@ -124,6 +130,7 @@ alias news='newsbeuter'
 alias scanwifi='sudo iw wlp1s0 interface add mon0 type monitor; sudo horst -i mon0 creset'
 alias ct='colortheme'
 alias twt='turses'
+alias weather='curl -4 wttr.in/epe,netherlands'
 
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && gvim "$file"; }
