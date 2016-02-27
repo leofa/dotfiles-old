@@ -87,7 +87,6 @@ gptfdisk
 grep
 groff
 gsimplecal
-gst-libav
 gstreamer0.10-bad-plugins
 gstreamer0.10-base-plugins
 gstreamer0.10-ffmpeg
