@@ -24,64 +24,46 @@ browser = /usr/bin/chromium
 
 # set size hints for the window
 size_hints = true
-
-# emit escape sequences for other keys modified by Control
-#modify_other_keys = false
+padding = 10
+border_width = 10
 
 [colors]
-foreground = #c5c8c6
-foreground_bold = #ffffff
-#foreground_dim = #888888
-#background = #1d1f21
-cursor = #912226
+# fusion by w0ng (based on tommorrow-night)
+# special
+foreground      = #c5c8c6
+foreground_bold = #c5c8c6
+cursor          = #a54242
+background      = #1d1f21
 
-# 15% background transparency (requires a compositor)
-# background = rgba(10, 10, 10, 0.90)
+# black
+color0  = #282a2e
+color8  = #373b41
 
-# if unset, will reverse foreground and background
-#highlight = #d6d6d6
+# red
+color1  = #a54242
+color9  = #cc6666
 
-# colors from color0 to color254 can be set
-# Black + Grey
-color0 = #1d1f21
-color8 = #969896
-
-# Red + Bright Red
-color1 = #912226
-color9 = #cc6666
-
-# Green + Bright Green
-color2 = #778900
+# green
+color2  = #8c9440
 color10 = #b5bd68
 
-# Yellow (Orange) + Bright Yellow (Yellow)
-color3 = #ae7b00
+# yellow
+color3  = #de935f
 color11 = #f0c674
 
-# Blue + Bright Blue
-#color4 = #1d2594 
-color4 = #3E6096
+# blue
+color4  = #5f819d
 color12 = #81a2be
 
-# Magenta (Purple) + Bright Magenta
-color5 = #682a9b
+# magenta
+color5  = #85678f
 color13 = #b294bb
 
-# Cyan (Aqua) + Bright Cyan
-color6 = #2b6651
+# cyan
+color6  = #5e8d87
 color14 = #8abeb7
 
-# Light Grey (Selection) + White (Current Line)
-color7 = #929593
-color15 = #ecebec
+# white
+color7  = #707880
+color15 = #c5c8c6
 
-[hints]
-#font = Hack 10
-#foreground = #dcdccc
-#background = #3f3f3f
-padding = 10
-#border = #3f3f3f
-border_width = 10
-#roundness = 2.0
-
-# vim: ft=dosini cms=#%s

@@ -5,55 +5,95 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hinstyle:   full
 
-!TomorrowNight
-#define t_background        #1d1f21
-#define t_current_line      #282a2e
-#define t_selection      	#373b41
-#define t_foreground      	#c5c8c6
-#define t_comment	     	#969896
-#define t_red		     	#cc6666
-#define t_orange	     	#de935f
-#define t_yellow        	#f0c674
-#define t_green	        	#b5bd68
-#define t_aqua	        	#8abeb7
-#define t_blue	        	#81a2be
-#define t_purple        	#b294bb
+URxvt.perl-ext-common:  default,matcher,clipboard
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
-*.foreground:   t_foreground
-*.background:   t_background
-*.cursorColor:  #aeafad
+urxvt*cursorBlink:  true
+URxvt.internalBorder:   3
+URxvt*externalBorder: 6
+URxvt*borderColor: [90]#292929
+URxvt*saveLines: 12000
+URxvt*geometry:87x20
+URxvt.letterSpace: -0.5
+URxvt.lineSpace: -1
 
-! Black / Grey
-*.color0:       #000000
-*.color8:       #666666
+! colors
+! Background color
+URxvt*background: [90]#292929
 
-! Red / Bright Red
-*.color1:       t_red
-*.color9:       #FF3334
+! Font color
+URxvt*foreground: #c5c8c6
 
-! Green + Bright Green
-*.color2:       t_green
-*.color10:      #9ec400
+! For real transparency (composite):
+urxvt*depth: 32
+urxvt*background: [90]#292929
 
-! Yellow (Orange) + Bright Yellow (Yellow)
-*.color3:       t_orange
-*.color11:      t_yellow
+! For fake transparency
+! URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+! URxvt*.shading: 20
 
-! Blue + Bright Blue
-*.color4:       t_blue
-*.color12:      t_blue
+! scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: plain
+URxvt.scrollBar: false
 
-! Magenta (Purple) + Br:ight Magenta
-*.color5:       t_purple
-*.color13:      #b777e0
+! do not scroll with output
+URxvt*scrollTtyOutput: false
 
-! Cyan (Aqua) + Bright Cyan
-*.color6:       t_aqua
-*.color14:      #54ced6
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
 
-! Light Grey (Selection) + White (Current Line)
-*.color7:       t_selection
-*.color15:      t_current_line
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+!font
+URxvt.font: xft:Hack:size=10,xft:FontAwesome Regular:size=9
+
+!click urls
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
+!URxvt.colorUL: #888BA5
+
+!fusion by w0ng
+
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
+
+! red
+*.color1:       #a54242
+*.color9:       #cc6666
+
+! green
+*.color2:       #8c9440
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #de935f
+*.color11:      #f0c674
+
+! blue
+*.color4:       #5f819d
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #85678f
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #5e8d87
+*.color14:      #8abeb7
+
+! white
+*.color7:       #707880
+*.color15:      #c5c8c6
 
 !rofi settings
 ! Enabled modi
@@ -109,7 +149,7 @@ rofi.xoffset:                        0
 ! Always show number of lines
 rofi.fixed-num-lines:                false
 ! Terminal to #use
-rofi.terminal:                       rofi-sensible-terminal
+rofi.terminal:                       i3-sensible-terminal
 ! Ssh client to use
 rofi.ssh-client:                     ssh
 ! Ssh command to execute
@@ -268,3 +308,4 @@ rofi.key-window:                     Super_L+Tab
 rofi.key-run:                        Super_L+a
 ! Keybinding
 rofi.key-ssh:                        
+
