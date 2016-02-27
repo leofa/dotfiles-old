@@ -158,6 +158,7 @@ memtest86+
 mesa-demos
 mirage
 mlocate
+moreutils
 mpv
 mtools
 namcap
