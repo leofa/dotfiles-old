@@ -1,4 +1,5 @@
-chromium-pepper-flash
+chromium-continuous-bin
+chromium-pepper-flash-dev
 chromium-widevine
 cower
 downgrade
@@ -6,6 +7,7 @@ early-issue-git
 fetch-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
+google-chrome
 i3-gaps-git
 i3blocks
 i3ipc-python-git
