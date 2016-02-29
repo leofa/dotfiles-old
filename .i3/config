@@ -51,7 +51,7 @@ for_window [class="(?i)"] focus
 #float windows
 for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
-for_window [instance="chromium_app_list|crx_fahmaaghhglfmonjliepjlchgpgfmobi|radio|feh|qtpass|vitetris|xfontsel|xfd|gufw.py|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|mirage|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu"] floating enable
+for_window [instance="pop-up|chromium_app_list|crx_fahmaaghhglfmonjliepjlchgpgfmobi|radio|feh|qtpass|vitetris|xfontsel|xfd|gufw.py|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|mirage|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu"] floating enable
 for_window [class="chromium"] floating disable 
 
 #scratchpad, move windows + sticky
