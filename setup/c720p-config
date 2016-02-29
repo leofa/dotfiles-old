@@ -13,7 +13,6 @@ dir="${dir}/.."
 echo "Installing chromebook drivers..."
 pacaur --needed --noedit --noconfirm -S \
   xf86-input-cmt-git \
-  xkeyboard-config-chromebook \
 
 echo "Add user to input group..."
 sudo usermod -a -G input $USER
@@ -39,6 +38,10 @@ echo 'Section "InputClass"
 EndSection' > /tmp/peppy.conf
 sudo cp /tmp/peppy.conf /etc/X11/xorg.conf.d/60-touchpad-my-cmt-peppy.conf
 rm /tmp/peppy.conf    
+ 
+echo "Set X11 keymap us chromebook"
+sudo localectl set-x11-keymap us chromebook altgr-intl eurosign:5
+ln -sfn ${dir}/.Xmodmap ${HOME}/.Xmodmap
 
 echo "Fixing  suspend issues..."
 # touchpad wakeup

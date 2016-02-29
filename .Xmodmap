@@ -1,0 +1,2 @@
+! set Chromebook Expose key as Print/ AltGr + Expose = F5
+keycode 71 = Print F5 Print F5 F5 F5 XF86Switch_VT_4
