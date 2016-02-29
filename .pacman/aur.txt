@@ -4,7 +4,6 @@ chromium-widevine
 cower
 downgrade
 early-issue-git
-fetch-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
 google-chrome
@@ -17,6 +16,7 @@ lostfiles
 menutray
 minecraft
 nbwmon
+neofetch-git
 numix-circle-icon-theme-git
 pacaur
 palemoon-bin
@@ -36,7 +36,6 @@ vim-startify-git
 vim-tmuxline-git
 xcursor-openzone
 xf86-input-cmt-git
-xkeyboard-config-chromebook
 xss-lock
 xtitle-git
 yad

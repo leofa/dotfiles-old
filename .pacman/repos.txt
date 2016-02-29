@@ -272,6 +272,7 @@ xf86-input-keyboard
 xf86-input-mouse
 xf86-video-intel
 xfsprogs
+xkeyboard-config
 xorg-server
 xorg-xauth
 xorg-xbacklight
