@@ -131,7 +131,7 @@ else
     fi
   fi
   if [[ -d "$HOME/bin" ]] ; then
-      export PATH="$HOME/bin:$PATH"
+      export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
   fi
   ## EDITOR #{{{
     if which vim &>/dev/null; then
