@@ -29,6 +29,7 @@ caja-extensions-common
 calc
 ccache
 ccze
+chromium
 clipit
 cmus
 colordiff
