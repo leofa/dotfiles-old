@@ -145,7 +145,6 @@ lvm2
 lxappearance
 lxc
 lxsession
-lynx
 m4
 make
 man-db
@@ -161,7 +160,6 @@ moreutils
 mpv
 mtools
 namcap
-nano
 ncdu
 netctl
 nfs-utils
