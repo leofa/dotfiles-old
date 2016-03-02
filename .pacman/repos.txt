@@ -245,6 +245,7 @@ ufw
 unace
 unrar
 unzip
+urxvt-perls
 usbutils
 util-linux
 vi

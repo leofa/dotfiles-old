@@ -24,6 +24,7 @@ playerctl
 powerline-fonts-git
 qtpass
 rtv
+rxvt-unicode-patched
 s
 termite-ranger-fix-git
 thermald
