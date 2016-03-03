@@ -1,10 +1,13 @@
-#i3 config file (by LeoFa)
+#i3 config file (by leofa)
 #
 #please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# meta key
-set $mod Mod4
-set $mod2 Control
+# meta keys
+set $mod  Mod4
+set $mod1 Mod1
+set $mod2 shift
+set $mod3 control
+
 # fonts
 font pango: Source Code Pro Semibold, FontAwesome Regular 9
 
@@ -12,23 +15,23 @@ font pango: Source Code Pro Semibold, FontAwesome Regular 9
 floating_modifier $mod
 
 # i3 swag  ┐('～`)┌ 
-bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
+bindsym $mod+Shift+i workspace 0<span font='Hack 10' font_weight='bold' foreground='#f9f9f9'>i3wm</span>
+exec xdotool key Super_L+Shift+i #start i3 with a logo
+
+#bindsym $mod+Shift+i workspace 0<span font='10' weight='light' underline='low'>3</span>
 #bindsym $mod+Shift+i workspace 0<span font='10' weight='normal'>i</span><span font='9' font_weight='bold' >〣</span>
 #bindsym $mod+Shift+i workspace 0<span font='9' font_weight='bold' >┐('～`)┌</span>
-exec sh -c 'xdotool key Super_L+Shift+i sleep 1' #start with a named workspace
 
 # keycombo's
 bindsym $mod+Return exec termite --name 'ws1_termite' #terminal on workspace 1
-bindsym $mod+backslash exec i3-sensible-terminal 
-bindsym $mod+slash exec rofi-find #locate +xdg-open files with rofi 
-bindsym $mod+Shift+slash exec rofi-ddg #rofi duckduckgo search
-bindsym $mod+t exec gvim
+bindsym $mod+backslash exec i3-sensible-terminal
+bindsym $mod1+space exec rofi-find #locate +xdg-open files with rofi
+bindsym $mod+slash exec rofi-s #rofi search with s
 bindsym $mod+c exec chromium
+bindsym $mod+n exec chromium --new-window
 bindsym $mod+i exec chromium --incognito
 bindsym $mod+b exec caja
 bindsym $mod+Shift+b exec rofi -width 55 -modi "fb:rofi-fb" -show fb #rofi filebrowser 
-#bindsym $mod+m exec geary
-#bindsym $mod+m exec chromium --app=https://inbox.google.com
 bindsym $mod+m exec chromium --app=https://mail.google.com
 bindsym $mod+Shift+XF86AudioRaiseVolume exec chromium --app=https://play.google.com/music
 bindsym $mod+Shift+XF86AudioLowerVolume exec termite --name "cmus_termite" -e cmus 
@@ -37,6 +40,7 @@ bindsym $mod+Shift+XF86AudioMute exec pavucontrol
 bindsym $mod+d exec j4-dmenu-desktop --display-binary --term="termite -e --hold" --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:'"
 bindsym $mod+Shift+a exec rofi -run-command "gksu {cmd}" -show run -p 'gksu' #w00t 
 bindsym $mod+a exec rofi -show run
+bindsym $mod1+XF86Forward exec rofi -show run
 bindsym $mod+Tab exec rofi -show window 
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 bindsym $mod+XF86Reload exec termite --name "WiFi-menu" -e "sh -c 'echo 'WiFi-menu:' && sudo wifi-menu -o'"
@@ -49,10 +53,9 @@ focus_on_window_activation focus
 for_window [class="(?i)"] focus
 
 #float windows
-for_window [window_role="task_dialog|app|bubble|pop-up|page-info|Preferences"] floating enable
+for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|Taakbeheer -*"] floating enable
-for_window [instance="pop-up|chromium_app_list|crx_fahmaaghhglfmonjliepjlchgpgfmobi|radio|feh|qtpass|vitetris|xfontsel|xfd|gufw.py|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|mirage|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu"] floating enable
-for_window [class="chromium"] floating disable 
+for_window [instance="crx_hmjkmjkepdijhoojdojkdfohbdgmmhki|chromium_app_list|radio|feh|qtpass|vitetris|xfontsel|xfd|gufw.py|gvim|arandr|blueman-manager|blueman-services|lxappearance|catfish|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eomp|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|guvcview|mirage|gpicview|simplescreenrecorder|radiotray|mate-search-tool|qtfm|yad|gsimplecal|deluge|WiFi-menu"] floating enable
 
 #scratchpad, move windows + sticky
 for_window [instance="scratch_termite"]  move scratchpad, move position 690 405, move scratchpad, scratchpad show
@@ -61,20 +64,19 @@ for_window [class="(?i)Gpicview|mirage"]  move position center
 for_window [class="(?i)gsimplecal|yadinfo|(?i)pavucontrol|(?i)insync"] move position pointer
 for_window [instance="file_progress"] sticky enable
 for_window [instance="WiFi-menu"]  resize set 455 445; move position pointer
-for_window [class="gcolor2|Deluge|timesup|QtPass|GtkFileChooserDialog"] sticky enable
+for_window [class="gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable
 for_window [instance="radio"]  resize set 355 445; move position pointer; sticky enable 
 
 #layout
 for_window [workspace="$WS4"] layout tabbed
-for_window [workspace="<span font='10' weight='light' underline='low'>3</span>"] floating enable
 
 #window actions
 bindsym $mod+Shift+s sticky toggle
 #fullscreen vids to small sticky in corner aka picture in picture mode 
-bindsym $mod+y fullscreen disable; floating enable; resize set 422 240; sticky enable; move position 933 518 
+bindsym $mod+y fullscreen disable, floating enable, resize set 422 240, sticky enable, move position 933 518 
 
 #window title format
-for_window [class="(?i)"] title_format "<span font='10' weight='heavy' foreground='#B6CDDA'>   </span>%title"
+for_window [class="(?i)"] title_format "<span font='10' weight='heavy' foreground='#282a2e'>   </span><span weight='ultraheavy' >%title</span>"
 
 # move windows to workspaces
 assign [instance="urxvt|ws1_termite"] $WS1
@@ -89,22 +91,6 @@ assign [instance="remmina|htop|virt-manager|log_term|pacaur|glances_term|htop_te
 assign [class="(?)Steam"] 7  
 
 # workspace names / variables 
-#set $WS1 1  
-#set $WS1 1  
-#set $WS1 1  
-#set $WS2 2  @www 
-#set $WS3 3  data 
-#set $WS4 4  gtd
-#set $WS4 4  gtd 
-#set $WS5 5  code 
-#set $WS5 5  text
-#set $WS6 6  play 
-#set $WS7 7  pics 
-#set $WS8 8  game 
-#set $WS9 9  adm 
-#set $WS0 10  news 
-
-#only icons
 set $WS1 1  
 set $WS2 2  
 set $WS3 3  
@@ -115,19 +101,6 @@ set $WS7 7 
 set $WS8 8  
 set $WS9 9  
 set $WS0 10  
-
-# https://en.wikipedia.org/wiki/Suzhou_numerals
-#set $WS1  1<span font='10' font_weight='ultrabold' >〡</span>
-#set $WS2  2<span font='10' font_weight='ultrabold' >〢</span>
-#set $WS3  3<span font='10' font_weight='ultrabold' >〣</span>
-#set $WS4  4<span font='10' font_weight='ultrabold' >〤</span>
-#set $WS5  5<span font='10' font_weight='ultrabold' >〥</span>
-#set $WS6  6<span font='10' font_weight='ultrabold' >〦</span>
-#set $WS7  7<span font='10' font_weight='ultrabold' >〧</span>
-#set $WS8  8<span font='10' font_weight='ultrabold' >〨</span>
-#set $WS9  9<span font='10' font_weight='ultrabold' >〩</span>
-#set $WS0 10<span font='10' font_weight='ultrabold' >〇</span>
-
 
 # multimonitor support
 workspace "$WS1" output HDMI1
@@ -322,34 +295,35 @@ gaps inner 1
 
 # statusbar
 bar {
-     mode dock
      status_command i3blocks
      position top
      height 21    
+     separator_symbol "|"
      workspace_buttons yes
      strip_workspace_numbers yes
      bindsym button2 exec rofi -show ssh  
-     bindsym button4 exec rofi -show window 
-     bindsym button5 exec rofi-getwindow
+     bindsym button4 nop 
+     bindsym button5 nop
      tray_output eDP1
      tray_padding 3     
 
-# theme   
+# slate theme   
 colors {    
      # <bar>
      separator          #586e75 
      background         #282a2e
-     statusline         #c7c7c7
+     statusline         #c5c8c6
      
      # <workclass>      <border> <bg> <text>
      focused_workspace  #586e75 #4e6269 #ffffff
-     active_workspace   #282a2e #282a2e #ffffff
      inactive_workspace #455057 #3b444a #c7c7c7
-     urgent_workspace   #ae4544 #943b3a #ffffff
+     active_workspace   #282a2e #373F45 #ffffff
+     urgent_workspace   #282a2e #943b3a #ffffff
+     binding_mode       #943b3a #943b3a #ffffff
   }
 }
 # <clientclass>          <border> <bg> <text> <indicator>
-client.focused          #586e75 #586e75 #f9f9f9 #268bd2
-client.focused_inactive #455057 #455057 #c7c7c7 #002b36
-client.unfocused        #282a2e #282a2e #c7c7c7 #002b36
-client.urgent           #ae4544 #ae4544 #f9f9f9 #ae4544
+client.focused          #282a2e #4e6269 #f9f9f9 #3d9fb8
+client.focused_inactive #282a2e #3b444a #c7c7c7 #205360
+client.unfocused        #282a2e #373F45 #c7c7c7 #354347
+client.urgent           #282a2e #ae4544 #f9f9f9 #ae4544
