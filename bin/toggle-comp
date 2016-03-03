@@ -4,13 +4,13 @@ lockfile=${lockfile:-/tmp/compton.lock}
 
 if [ -e $lockfile ]; then
     compton -b --config ~/.config/compton.conf &
-    sleep 0.1 # fixes artifacts 
+    sleep 1 # fixes artifacts 
     notify-send "  :: compton enabled  ::"
     rm $lockfile
 else
     echo $ "dummytext" >> $lockfile    
     ps -ef | grep "compton -b" | grep -v grep | awk '{print $2}' | xargs kill
-    sleep 0.1
+    sleep 1
     notify-send "  :: compton disabled ::"
 fi
 

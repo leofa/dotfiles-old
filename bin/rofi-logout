@@ -1,74 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # logout dialog
 
-declare -A item
-declare -A cmd
-
-# logout items
-#ex="i3-msg exit"
-#cmd['e']=$ex
-#item['e']=$ex
-
-#lk="loginctl kill-user $USER"
-#cmd['k']=$lk
-#item['k']=$lk
-
-#li="ilockit"
-#cmd['l']=$li
-#item['l']=$li
-
-ss="systemctl suspend"
-cmd['s']=$ss
-item['s']=$ss
-
-#sh="systemctl hibernate"
-#cmd['h']=$sh
-#item['h']=$sh
-
-sr="systemctl reboot"
-cmd['r']=$sr
-item['r']=$sr
-
-sp="systemctl poweroff"
-cmd['p']=$sp
-item['p']=$sp
-
-# generate menu
-function print_menu()
-{
-    for key in ${!item[@]}
-    do
-        echo "$key    ${item[$key]}"
-    done
-}
-
-# show rofi
-function start()
-{
-    print_menu | rofi -dmenu -auto-select -p "logout:" 
-}
-
-# run it
-value="$(start)"
-
-# split input.
-# grab upto first space.
-choice=${value%%\ *}
-# graph remainder, minus space.
-input=${value:$((${#choice}+1))}
-
-# cancelled? bail out
-if test -z ${choice}
-then
-    exit
-fi
-
-# check if choice exists
-if test ${cmd[$choice]+isset}
-then
-    # execute the choice
-    eval echo "executing: ${cmd[$choice]}"
-    eval ${cmd[$choice]}
-else
-    echo "unknown command: ${choice}" | rofi -dmenu -p "error"
-fi
+cmd=$(echo -e "poweroff\nreboot\nsuspend" | rofi -width 350 -dmenu -p system:)
+case $cmd in
+    poweroff)
+        systemctl poweroff
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    suspend)
+        systemctl suspend
+        ;;
+esac

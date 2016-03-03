@@ -1,8 +1,8 @@
 #!/bin/bash
 
-DMENU='rofi -width 55 -dmenu -i'
+DMENU='rofi -width 800 -padding 25 -dmenu -i'
 
-input="$(xsel -o > /dev/null | $DMENU -p 'finder:')"
+input="$(xsel -o > /dev/null | $DMENU -p 'find:')"
 if [ "$input" != '' ]
 then
 	result="$(echo "$input" | locate -e -r "$input" | $DMENU -p 'search result:' )"
