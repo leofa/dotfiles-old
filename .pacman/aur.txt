@@ -6,7 +6,6 @@ downgrade
 early-issue-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
-google-chrome
 i3-gaps-git
 i3blocks
 i3ipc-python-git
