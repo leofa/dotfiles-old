@@ -164,6 +164,7 @@ namcap
 ncdu
 netctl
 nfs-utils
+npm
 ntfs-3g
 ntp
 nxproxy
