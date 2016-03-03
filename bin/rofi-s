@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# Web search with rofi and s 
+# https://github.com/zquestz/s
+# by leofa 
+
+menu='rofi -width 350 -dmenu -i -p'
+
+# providers
+p1='duckduckgo'
+p2='google'
+p3='youtube'
+p4='facebook'
+p5='reddit'
+p6='twitter'
+p7='wikipedia'
+p8='archwiki'
+p9='github'
+p0='dockerhub'
+
+# s 
+s=$(echo -e "$p1\n$p2\n$p3\n$p4\n$p5\n$p6\n$p7\n$p8\n$p9\n$p0" | $menu search:)
+
+case $s in
+    $p1)
+        ddg=`echo | $menu $p1:`; s -p $p1 "$ddg" ;;
+    $p2)
+        g=`echo | $menu $p2:`; s -p $p2 "$g" ;;
+    $p3)
+        yt=`echo | $menu $p3:`; s -p $p3 "$yt" ;;    
+    $p4)
+        fb=`echo | $menu $p4:`; s -p $p4 "$fb" ;;
+    $p5)
+        red=`echo | $menu $p5:`; s -p $p5 "$red" ;;
+    $p6)
+        twt=`echo | $menu $p6:`; s -p $p6 "$twt" ;;
+    $p7)
+        w=`echo | $menu $p7:`; s -p $p7 "$w" ;;    
+    $p8)
+        ka=`echo | $menu $p8:`; s -p $p8 "$ka" ;;
+    $p9)
+        gh=`echo | $menu $p9:`; s -p $p9 "$gh" ;;
+    $p0)
+        dh=`echo | $menu $p0:`; s -p $p0 "$dh" ;;
+esac
