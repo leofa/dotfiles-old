@@ -1,11 +1,12 @@
 #!/bin/sh
 
 # menu icon
-echo "<span font='9.5' foreground='#C5C8C6' ></span>"
+echo "<span font='10' font_weight='ultralight' foreground='#C5C8C6' ></span>"
+# ☰  
 
 # mouse buttons
 case $BLOCK_BUTTON in
-    1) i3-msg exec 'j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -yoffset -187 -xoffset 503"' ;; #left click rofi in the corner (adjust to resolution)
+    1) i3-msg exec 'j4-dmenu-desktop --display-binary --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:' -width 25 -padding 19 -lines 36 -yoffset 10 -xoffset 513"' ;; #left click rofi in the corner (adjust to resolution)
     2) i3-msg exec rofi-logout ;; #middle click,logout menu
     3) i3-msg exec 'chromium --show-app-list' #right click, chromium app launcher 
 esac 
