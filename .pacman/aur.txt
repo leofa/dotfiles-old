@@ -6,7 +6,7 @@ downgrade
 early-issue-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
-i3-gaps-git
+i3-gaps-next-git
 i3blocks
 i3ipc-python-git
 ix
