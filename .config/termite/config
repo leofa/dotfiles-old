@@ -2,7 +2,7 @@
 scroll_on_output = false
 scroll_on_keystroke = true
 audible_bell = false
-mouse_autohide = false
+mouse_autohide = true
 allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
@@ -10,11 +10,11 @@ clickable_url = true
 font = Hack 10
 scrollback_lines = 12000
 search_wrap = true
-#icon_name = terminal
+icon_name = terminal
 geometry = 80x20
 
 # "system", "on" or "off"
-cursor_blink = system
+cursor_blink = sytem
 
 # "block", "underline" or "ibeam"
 cursor_shape = block
