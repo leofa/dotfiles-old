@@ -40,7 +40,6 @@ crda
 cryptsetup
 ctags
 dconf-editor
-deluge
 device-mapper
 dhcpcd
 dialog
@@ -212,7 +211,6 @@ reiserfsprogs
 rng-tools
 rofi
 rsync
-rtorrent
 s-nail
 sane
 scrot
@@ -234,6 +232,8 @@ tar
 texinfo
 tk
 tmux
+transmission-cli
+transmission-remote-cli
 ttf-archivo-black-ibx
 ttf-hack-ibx
 ttf-libre-baskerville-ibx

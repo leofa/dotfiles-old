@@ -1,5 +1,4 @@
 chromium-continuous-bin
-chromium-pepper-flash-dev
 chromium-widevine
 cower
 downgrade
@@ -15,6 +14,7 @@ lostfiles
 menutray
 minecraft
 nbwmon
+ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
 pacaur
