@@ -1,4 +1,5 @@
 chromium-continuous-bin
+chromium-pepper-flash-standalone
 chromium-widevine
 cower
 downgrade
