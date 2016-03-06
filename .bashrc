@@ -1,46 +1,7 @@
-# aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+#!/usr/bin/env bash
+# vim: fdm=marker:noai:ts=4:sw=4
 
-if [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
-fi
-
-if [ -f ~/.docker.func ]; then
-  . ~/.docker.func
-fi
-
-#prompt
-#if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
-#if [ -f /usr/bin/alsi ]; then alsi -l; fi
-#if [ -f ~/bin/todo ]; then todo; fi
-
-export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
-
-# promptline
-source ~/.shell_prompt.sh
-
-#skype fix
-#export PULSE_LATENCY_MSEC=60
-
-# git/ssh terminal password prompt
-unset SSH_ASKPASS
-
-# wrap output of journal 
-export SYSTEMD_LESS=FRXMK journalctl
-
-# use gtk for java apps
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-
-#browser
-export BROWSER=/usr/bin/chromium
-
-#steam native runtime
-export STEAM_RUNTIME=0
-
-#ranger
-export RANGER_LOAD_DEFAULT_RC=FALSE
+## MAIN CONFIG
 
 ## OVERALL CONDITIONALS {{{
 _islinux=false
@@ -54,9 +15,9 @@ _isxrunning=false
 
 _isroot=false
 [[ $UID -eq 0 ]] && _isroot=true
-# }}}
+#}}}
 
-## LINUX tty colors
+## LINUX tty colors {{{
 if [ "$TERM" = "linux" ]; then
     _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
     for i in $(sed -n "$_SEDCMD" $HOME/.Xresources | \
@@ -65,44 +26,26 @@ if [ "$TERM" = "linux" ]; then
     done
     clear
 fi
+#}}}
 
 ## PS1 CONFIG {{{
+
+  # Vim-promptline 
+  # https://github.com/edkolev/promptline.vim
+  source ~/.shell_prompt.sh
+
   [[ -f $HOME/.dircolors ]] && eval $(dircolors -b $HOME/.dircolors)
   if $_isxrunning; then
+      
+      [[ -f $HOME/.dircolors_256 ]] && eval $(dircolors -b $HOME/.dircolors_256)
 
-    [[ -f $HOME/.dircolors_256 ]] && eval $(dircolors -b $HOME/.dircolors_256)
+    export TERM='xterm-termite'
 
-    export TERM='xterm-256color'
-
-     B='\[\e[1;34m\]'
-    LB='\[\e[34m\]'
-    GY='\[\e[1;30m\]'
-     G='\[\e[30m\]'
-     P='\[\e[36m\]'
-    PP='\[\e[37m\]'
-     R='\[\e[35m\]'
-     Y='\[\e[0m\]'
-     W='\[\e[0m\]'
-
-    get_prompt_symbol() {
-      [[ $UID == 0 ]] && echo "#" || echo "\$"
-    }
-
-    if [[ $PS1 && -f /usr/share/git/git-prompt.sh ]]; then
-      source /usr/share/git/completion/git-completion.bash
-      source /usr/share/git/git-prompt.sh
-
-      export GIT_PS1_SHOWDIRTYSTATE=1
-      export GIT_PS1_SHOWSTASHSTATE=1
-      export GIT_PS1_SHOWUNTRACKEDFILES=0
-
-          export PS1="$GY[$Y\u$GY@$P\h$GY:$B\W\$(__git_ps1 \"$GY|$LB%s\")$GY]$W\$(get_prompt_symbol) "
-else
-      export PS1="$GY[$Y\u$GY@$P\h$GY:$B\W$GY]$W\$(get_prompt_symbol) "
+     if [[ $TERM == xterm-termite ]]; then
+      . /etc/profile.d/vte.sh
+         __vte_prompt_command
     fi
-  else
-    export TERM='xterm-256color'
-  fi
+
 #}}}
 
 ## BASH OPTIONS {{{
@@ -113,7 +56,13 @@ else
   shopt -s extglob                 # Extended pattern
   shopt -s no_empty_cmd_completion # No empty completion
   
-  ## COMPLETION #{{{
+  ## ALIASES {{{
+    if [ -f ~/.bash_aliases ]; then
+      . ~/.bash_aliases
+    fi
+  #}}} 
+
+  ## COMPLETION {{{
     complete -cf sudo
     if [[ -f /etc/bash_completion ]]; then
       . /etc/bash_completion
@@ -121,7 +70,7 @@ else
   #}}}
 #}}}
 
-## EXPORTS {{{
+## EXPORTS {{{  
   export PATH=/usr/local/bin:$PATH
   #Ruby support
   if which ruby &>/dev/null; then
@@ -133,7 +82,24 @@ else
   if [[ -d "$HOME/bin" ]] ; then
       export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
   fi
-  ## EDITOR #{{{
+
+# Wrap output of journalctl 
+  export SYSTEMD_LESS=FRXMK journalctl
+    
+# Use gtk for java apps
+  export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# Webbrowser
+  export BROWSER=/usr/bin/chromium
+
+# Steam native runtime
+  export STEAM_RUNTIME=0
+
+# Ranger
+  export RANGER_LOAD_DEFAULT_RC=FALSE
+#}}}
+
+## EDITOR {{{
     if which vim &>/dev/null; then
       export EDITOR="vim"
     elif which emacs &>/dev/null; then
@@ -165,11 +131,10 @@ else
       export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
     fi
   #}}}
-#}}}
 
 ## FUNCTIONS
 
-#PRIVILEGED ACCESS
+  # PRIVILEGED ACCESS {{{
     if ! $_isroot; then
       alias sudo='sudo '
       alias scat='sudo cat'
@@ -179,7 +144,7 @@ else
       alias reboot='sudo reboot'
       alias halt='sudo halt'
     fi
-  #
+    #}}}
 
   # TOP 10 COMMANDS {{{
     # copyright 2007 - 2010 Christopher Bratusek
@@ -381,7 +346,6 @@ else
   #}}}
 
     ## SWAP 2 FILENAMES AROUND, IF THEY EXIST {{{
-      #(from Uzi's bashrc).
       swap() {
         local TMPFILE=tmp.$$
 
@@ -418,7 +382,6 @@ else
       }
     #}}}
 
-  #}}}
 
   # ENTER AND LIST DIRECTORY{{{
     function cd() { builtin cd -- "$@" && { [ "$PS1" = "" ] || ls -hrt --color; }; }
@@ -446,6 +409,9 @@ else
       }
     fi
   #}}}
-#}}}echo 
-eval $(dircolors ~/.dircolors)
 
+# DOCKER SUPPORT {{{
+if [ -f ~/.docker.func ]; then
+  . ~/.docker.func
+fi
+#}}}
