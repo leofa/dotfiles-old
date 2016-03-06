@@ -60,7 +60,7 @@ start-pulseaudio-x11 &
 wallch &
 #xsetroot -solid '#0f1517'
 #feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
-#chromium --no-startup-window &
+chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
 xbacklight -set 75 &
 compton -b --config ~/.config/compton.conf &

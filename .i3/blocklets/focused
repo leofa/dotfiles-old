@@ -1,9 +1,15 @@
-#!/bin/sh
+#!/bin/bash
+#
+# focused window title
+
 WIN=$(xdotool getactivewindow) 
+# https://github.com/baskerville/xtitle
+XT=$(xtitle -ef "%s " | trunc) # use python to truncate wich is nicer
 
 if [ -n "$WIN" ]; 
    then 
-       xtitle -f "%s " | strcut 
+       # add pango formatting
+       echo "<span font='Source Code Pro 9' font_weight='bold' >$XT</span>"
    else 
        exit 0
    fi

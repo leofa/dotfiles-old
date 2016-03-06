@@ -1,10 +1,10 @@
 #!/bin/bash
 
-DMENU='rofi -width 800 -padding 25 -dmenu -i'
+DMENU='rofi -dmenu -i'
 
 input="$(xsel -o > /dev/null | $DMENU -p 'find:')"
 if [ "$input" != '' ]
 then
-	result="$(echo "$input" | locate -e -r "$input" | $DMENU -p 'search result:' )"
+	result="$(echo "$input" | locate -e -r "$input" | $DMENU -width 800 -p 'search result:' )"
 	xdg-open "$result"
 fi

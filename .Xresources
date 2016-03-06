@@ -13,7 +13,7 @@ URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 urxvt*cursorBlink:  true
 URxvt.internalBorder:   3
 URxvt*externalBorder: 6
-URxvt*borderColor: [90]#292929
+URxvt*borderColor: [90]#1d1f21
 URxvt*saveLines: 12000
 URxvt*geometry:87x20
 URxvt.letterSpace: -0.5
@@ -21,14 +21,14 @@ URxvt.lineSpace: -1
 
 ! colors
 ! Background color
-URxvt*background: [90]#292929
+URxvt*background: [90]#1d1f21
 
 ! Font color
 URxvt*foreground: #c5c8c6
 
 ! For real transparency (composite):
 urxvt*depth: 32
-urxvt*background: [90]#292929
+urxvt*background: [90]#1d1f21
 
 ! For fake transparency
 ! URxvt*.transparent: true
@@ -54,7 +54,7 @@ URxvt.font: xft:Hack:size=10,xft:FontAwesome Regular:size=9
 !click urls
 URxvt.url-launcher: /usr/bin/chromium
 URxvt.matcher.button: 1
-!URxvt.colorUL: #888BA5
+!URxvt.colorUL: #81a2be
 
 !fusion by w0ng
 
@@ -101,7 +101,7 @@ rofi.modi:                           window,run,ssh
 ! Window opacity
 rofi.opacity:                        90
 ! Window width
-rofi.width:                          25
+rofi.width:                          350
 ! Number of lines
 rofi.lines:                          15
 ! Number of columns
@@ -141,7 +141,7 @@ rofi.bw:                             3
 ! Location on screen
 rofi.location:                       0
 ! Padding
-rofi.padding:                        10
+rofi.padding:                        15
 ! Y-offset relative to location
 rofi.yoffset:                        0
 ! X-offset relative to location
@@ -193,7 +193,7 @@ rofi.filter:
 ! Separator style (none, dash, solid)
 rofi.separator-style:                dash
 ! Hide scroll-bar
-rofi.hide-scrollbar:                 true
+rofi.hide-scrollbar:                 false
 ! Show markup
 rofi.markup-rows:                    false
 ! Fullscreen

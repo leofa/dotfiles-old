@@ -11,7 +11,7 @@
 set -e
 
 SCRIPT=$(basename $0)
-TODOLIST="$HOME/a.f.unver@gmail.com/taken"
+TODOLIST="$HOME/sync/todo"
 ERROR=65
 
 if [ ! -e "$TODOLIST" ] ; then

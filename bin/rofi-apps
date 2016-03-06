@@ -1,0 +1,3 @@
+#!/bin/bash
+# rofi app launcher
+j4-dmenu-desktop --display-binary --term="termite -e --hold" --dmenu="/usr/bin/rofi -dmenu -i -p 'apps:'"

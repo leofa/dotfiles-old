@@ -67,3 +67,12 @@ if [[ "$tx_rate" -gt 1048576 ]]; then
 else
   echo -n "<span font='10' foreground='#B294BB'> </span>${tx_kib}<span font='8' foreground='#969896'>K</span><span foreground='#586E75' >]</span>"
 fi
+
+
+# mouse buttons  
+case $BLOCK_BUTTON in
+    1) tm-cli ;; # transmission-remote-cli
+    2) netinfo ;; # netwerkinfo
+    3) rofi-netctl # switch netctl profile 
+esac
+

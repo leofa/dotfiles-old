@@ -1,0 +1,21 @@
+#!/bin/bash
+# yad gtk network info dialog 
+
+IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^\/]+).* scope global/ && print \$1 and exit")
+# get external ip from duch website
+WANIP=$(curl -s http://whatismijnip.nl |cut -d " " -f 5)
+SSID=$(iwgetid wlp1s0 -r)
+QUALITY=$(grep wlp1s0 /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+
+yad --title "netinfo" --no-buttons --width=210 --height=232 --text-info --class "yadinfo" --margins=10 --filename=<(echo -n "
+ $SSID
+------------------------------------
+device name = $(ip route | cut -d " " -f 3 | grep wlp) 
+ip = $IPADDR
+gateway = $(ip route | cut -d " " -f 3 | grep [.])
+route = $(ip route | cut -d " " -f 1 | grep [0-9]) 
+resolv = $(cat /etc/resolv.conf | cut -d " " -f 2 | grep [0-9])
+wanip = $WANIP
+quality = $QUALITY
+") 
+

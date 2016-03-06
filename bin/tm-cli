@@ -1,0 +1,13 @@
+#!/bin/bash
+# trc - transmission-remote-cli
+
+cd $HOME/downl ;\
+transmission-daemon --watch-dir "$HOME/downl" \
+                    --download-dir "$HOME/downl/torrents" \
+                    --encryption-required \
+                    --no-global-seedratio \
+                    --incomplete-dir "$HOME/downl/incoming" ;\
+termite --title "transmission" \
+          --name "transmission" \
+          -e "transmission-remote-cli" ;\
+killall transmission-daemon

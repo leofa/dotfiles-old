@@ -1,0 +1,1 @@
+ rofi -run-command "gksu {cmd}" -show run -p 'gksu'

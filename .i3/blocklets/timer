@@ -15,11 +15,9 @@
 # time. If you start on 00:00 you will be in stopwatch mode (S), otherwise you
 # will be in countdown timer mode (C).
 
-# added a easy way to use symbol icons below by #leofa
-S=⏱
-C=⏲
-#C=
-#S=
+# modified by leofa
+C=
+S=
 
 TIME_FRACTION=${1:-300}
 TIME_FORMAT=${2:-%H:%M:%S}

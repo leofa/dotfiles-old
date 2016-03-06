@@ -1,15 +1,18 @@
 #!/bin/bash
 # exit session
 
-cmd=$(echo -e "exit i3wm\nkill $USER\nkill X" | rofi -width 350 -dmenu -p exit:)
+cmd=$(echo -e "exit i3\nkill user\nkill X\nlock" | rofi -width 350 -dmenu -p exit:)
 case $cmd in
-    exit i3wm)
+    'exit i3')
         i3-msg exit
         ;;
-    kill $USER)
+    'kill user')
         loginctl kill-user $USER
         ;;
-    kill X)
-        killall X
+    'kill X')
+        killall Xorg
+        ;;
+    'lock')
+        ilockit
         ;;
 esac
