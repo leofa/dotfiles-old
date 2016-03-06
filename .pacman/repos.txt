@@ -221,6 +221,7 @@ smartmontools
 speedtest-cli
 sshfs
 startup-notification
+subdl
 sudo
 sysfsutils
 syslinux
