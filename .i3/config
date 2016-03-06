@@ -16,7 +16,7 @@ bar {
      status_command i3blocks
      position top
      height 21    
-     separator_symbol "|"
+     #separator_symbol "|"
      workspace_buttons yes
      strip_workspace_numbers yes
      bindsym button2 exec rofi -show ssh  
@@ -47,9 +47,9 @@ client.unfocused        #282a2e #373F45 #c7c7c7 #354347
 client.urgent           #282a2e #ae4544 #f9f9f9 #ae4544
 
 # i3 swag  ┐('～`)┌ 
-set $WL0 0<span font='Hack 10' font_weight='bold' foreground='#f9f9f9'>i3wm</span>
+#set $WL0 0<span font='Hack 10' font_weight='bold' foreground='#f9f9f9'>i3wm</span>
 #set $WL0 0<span font='10' weight='light' underline='low'>3</span>
-#set $WL0 0<span font='9' font_weight='bold' >┐('～`)┌</span>
+set $WL0 0<span font='9' font_weight='bold' >┐('～`)┌</span>
 
 # workspace names / variables 
 set $WS1 1  
@@ -176,8 +176,8 @@ bindsym --release $mod+x exec xkill
 
 # mouse support 
 focus_follows_mouse no
-bindsym --whole-window $mod2+button2 kill
-bindsym --whole-window $mod2+button3 floating toggle
+bindsym --whole-window $mod1+button2 kill
+bindsym --whole-window $mod1+button3 floating toggle
 
 # change focus
 bindsym $mod+j focus left
