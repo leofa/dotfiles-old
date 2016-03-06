@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PING=$(ping -c 1 $BLOCK_INSTANCE | grep -m 1 -o "[0-9]*[\.]*[0-9]* ms"| cut -d " " -f 1) 
+echo "<span font='10' foreground='#81a2be' > </span>$PING<span font='Hack 8' rise='1350' weight='bold' foreground='#b294bb'>/ms</span>"
