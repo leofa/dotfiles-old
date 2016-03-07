@@ -4,7 +4,6 @@ chromium-widevine
 cower
 downgrade
 early-issue-git
-feedreader-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
 i3-gaps-next-git
