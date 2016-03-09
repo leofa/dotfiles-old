@@ -2,6 +2,7 @@ acpi
 alsa-utils
 android-tools
 android-udev
+arandr
 arch-install-scripts
 arch-wiki-docs
 arch-wiki-lite
@@ -204,6 +205,7 @@ python-service-identity
 python-setproctitle
 python2-pip
 qemu
+quodlibet
 ranger
 redshift
 reflector
@@ -214,6 +216,7 @@ rsync
 s-nail
 sane
 scrot
+seahorse
 sed
 shadow
 sl
@@ -247,7 +250,6 @@ ufw
 unace
 unrar
 unzip
-urxvt-perls
 usbutils
 util-linux
 vi
@@ -264,7 +266,6 @@ wmctrl
 wpa_actiond
 wpa_supplicant
 x11-ssh-askpass
-xautolock
 xcb-util-keysyms
 xcb-util-wm
 xclip
@@ -291,8 +292,10 @@ xorg-xrandr
 xorg-xrdb
 xorg-xset
 xorg-xsetroot
+xorg-xvinfo
 xorg-xwininfo
 xournal
+xpad
 xsel
 youtube-dl
 zip
