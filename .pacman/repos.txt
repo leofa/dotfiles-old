@@ -4,8 +4,6 @@ android-tools
 android-udev
 arandr
 arch-install-scripts
-arch-wiki-docs
-arch-wiki-lite
 asciiquarium
 aspell-nl
 atril
@@ -81,6 +79,7 @@ glances
 glibc
 gnome-disk-utility
 gnome-keyring
+gnome-session
 gnome-settings-daemon
 gnome-themes-standard
 gpart

@@ -1,3 +1,4 @@
+arch-wiki-man
 atom-editor-bin
 chromium-pepper-flash-standalone
 chromium-widevine
