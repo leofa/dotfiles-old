@@ -149,7 +149,6 @@ m4
 make
 man-db
 man-pages
-mc
 mdadm
 mediainfo
 memtest86+
