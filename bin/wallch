@@ -4,13 +4,21 @@
 # sleep 5m
 
 # define directories here
-dir1="/home/$USER/pics/wallpaper/"
+dir1="/home/$USER/pics/wall/"
 dir2="/home/$USER/pics/linux/"
 dir3="/home/$USER/pics/popart/"
 
+currentwall () {
+    # get current wallpaper
+    wall=$(awk '/feh/ {printf $3}' "$HOME/.fehbg")
+    wall=${wall#\'*}
+    wall=${wall%*\'}
+    wall=${wall##*/}
+}
+
 # then start your shufflin'
     while true;do
-	find $dir1 $dir2 $dir3 -type f \( -name '*.jpg' -o -name '*.png' \) -print0 |
+	find $dir1 $dir2 $dir3 ! -name "$wall" -type f \( -name '*.jpg' -o -name '*.png' \) -print0 |
 	shuf -n1 -z | xargs -0 feh --bg-fill
 	# increase if needed
     sleep 5m
