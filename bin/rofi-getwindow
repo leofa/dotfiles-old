@@ -21,7 +21,7 @@ function gen_entries()
     done
 }
 
-selections=$( gen_entries | rofi -dmenu -p "getwin: " -format i )
+selections=$( gen_entries | rofi -width 45 -dmenu -p "getwin: " -format i )
 [ "$selections" = "" ] && exit
 
 while read -r selection; do

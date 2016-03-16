@@ -1,2 +1,1 @@
- rofi -width 55 -modi "fb:fb" -show fb 
-
+ rofi -width 55 -modi "open:fb" -show open

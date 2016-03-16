@@ -1,8 +1,8 @@
 #!/bin/bash
 # exit session
 
-cmd=$(echo -e "exit i3\nkill user\nkill X\nlock" | rofi -width 350 -dmenu -p exit:)
-case $cmd in
+CMD=$(echo -e "exit i3\nkill user\nkill X\nlock" | rofi -width 350 -dmenu -p exit:)
+case $CMD in
     'exit i3')
         i3-msg exit
         ;;
@@ -10,7 +10,10 @@ case $cmd in
         loginctl kill-user $USER
         ;;
     'kill X')
-        killall Xorg
+        WM_PID=$(xprop -id $(xprop -root _NET_SUPPORTING_WM_CHECK \
+            | awk -F'#' '{ print $2 }') _NET_WM_PID \
+            | awk -F' = ' '{ print $2 }')
+        kill -15 $WM_PID
         ;;
     'lock')
         ilockit

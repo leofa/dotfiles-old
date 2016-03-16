@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#
+# Browse and open files witk xdg-open
+# Usage: rofi -width 55 -modi "open:fb" -show open
 
 EDITOR=xdg-open
 
