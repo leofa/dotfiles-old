@@ -4,12 +4,12 @@
 
 WIN=$(xdotool getactivewindow) 
 # https://github.com/baskerville/xtitle
-XT=$(xtitle -ef "%s " | trunc) # use python to truncate wich is nicer
+XT=$(xtitle -ef "%s "| trunc | tr '&' +) # use python to truncate
 
 if [ -n "$WIN" ]; 
    then 
        # add pango formatting
-       echo "<span font='Source Code Pro 9' font_weight='bold' >$XT</span>"
+       echo "<span font='Source Code Pro Bold 9'>$XT</span>"
    else 
        exit 0
    fi
@@ -18,6 +18,6 @@ case $BLOCK_BUTTON in
     1) i3-msg layout tabbed ;; #left click tabbed layout 
     2) i3-msg layout stacked ;; #middle click stacked 
     3) i3-msg layout toggle split ;; #right click 
-    4) rofi -show window ;; #scroll down jump to window
+    4) rofi -width 45 -show window ;; #scroll down jump to window
     5) rofi-getwindow ;; #scroll up move window to current 	  
 esac

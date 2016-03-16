@@ -2,9 +2,9 @@
 
 PROG="${BLOCK_INSTANCE}"
 
-INTERVAL=0.17
-MAX_LENGTH=25
-ADD_STR=" > "
+INTERVAL=0.10
+MAX_LENGTH=30
+ADD_STR=" # "
 ADD_LENGTH=${#ADD_STR}
 
 if [[ "${PROG}" != "" ]]; then
@@ -27,9 +27,10 @@ else
     PROG="cmus-remote"
     INFO_CMUS=$(cmus-remote -Q 2>/dev/null)
     if [[ $? -eq 0 ]]; then
-      INFO_TITLE=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*title//p' | head -n 1)
-      INFO_ALBUM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*album//p' | head -n 1)
-      INFO_ARTIST=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*artist//p' | head -n 1)
+      INFO_TITLE=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*title//p' | head -n 1 | tr '&' +)
+      INFO_ALBUM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*album//p' | head -n 1 | tr '&' +)
+      INFO_ARTIST=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*artist//p' | head -n 1 | tr '&' +)
+      INFO_STREAM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*stream//p' | head -n 1 | tr '&' +)     
     else
       sleep 1
       exit
@@ -38,7 +39,9 @@ else
 
   if [[ "${INFO_ARTIST}" ]] && [[ "${INFO_TITLE}" ]]; then
     OUT_TEXT=$(echo "${INFO_ARTIST} - ${INFO_TITLE}" | xargs)
-  elif [[ "${INFO_TITLE}" ]]; then
+   elif [[ "${INFO_STREAM}" ]]; then
+    OUT_TEXT=$(echo "${INFO_STREAM} # ${INFO_TITLE}" | xargs)
+   elif [[ "${INFO_TITLE}" ]]; then
     OUT_TEXT=$(echo "${INFO_TITLE}" | xargs)
   fi
 fi
@@ -75,7 +78,7 @@ if [[ "${OUT_TEXT}" ]]; then
   SCROLL_POS=$((SCROLL_POS +1))
 
   echo "${SCROLL_POS}" > "${TMP_FILE}"
-  sleep 0.17
+  sleep 0.10
 else
   sleep 1
 fi
