@@ -1,6 +1,6 @@
 #!/bin/bash
-#shuffle cows :P
-#add options "scows wisdom science"
-#use "watch -t -n 10 scows wisdom sience" for a nice slide show
+#
+# shuffle cows :P
+# takes options like this "scows wisdom science"
 
-fortune -sa $1 | fmt -60 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) -n
+termite --name "scows" --title="cowsay: fortune of today" -e "watch -tn 12 -c 'fortune -sa $1 | fmt -60 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2))'" --hold
