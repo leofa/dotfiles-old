@@ -60,7 +60,7 @@ start-pulseaudio-x11 &
 wallch &
 #xsetroot -solid '#0f1517'
 #feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
-chromium --no-startup-window &
+#chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
 xbacklight -set 75 &
 compton -b --config ~/.config/compton.conf &
@@ -72,13 +72,11 @@ clipit -dn &
 #menutray -r -u -i &
 unclutter -b --timeout 30 &
 batnotify &
-#nodpms & 
-xss-lock --ignore-sleep -n dim-screen -- ilockit &
-xautolock -detectsleep -time 15 -locker "systemctl suspend" &
+lightsOn 120 &
 
 #------------------------------------------------
 # start WM/DE
-#------------------------------------------------
-#i3-with-shmlog
-#i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
-i3
+
+exec i3 
+#exec i3-with-shmlog
+#exec i3 -V >> ~/.i3log-$(date +'%F-%k-%M-%S') 2>&1 
