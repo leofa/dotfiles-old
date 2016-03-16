@@ -1,63 +1,12 @@
-!-- Xft settings -- !
+! ## Font settings
 Xft.dpi:        96
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hinstyle:   full
 
-URxvt.perl-ext-common:  default,matcher,clipboard
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
-urxvt*cursorBlink:  true
-URxvt.internalBorder:   3
-URxvt*externalBorder: 6
-URxvt*borderColor: [90]#1d1f21
-URxvt*saveLines: 12000
-URxvt*geometry:87x20
-URxvt.letterSpace: -0.5
-URxvt.lineSpace: -1
-
-! colors
-! Background color
-URxvt*background: [90]#1d1f21
-
-! Font color
-URxvt*foreground: #c5c8c6
-
-! For real transparency (composite):
-urxvt*depth: 32
-urxvt*background: [90]#1d1f21
-
-! For fake transparency
-! URxvt*.transparent: true
-! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-! URxvt*.shading: 20
-
-! scrollbar style - rxvt (default), plain (most compact), next, or xterm
-URxvt.scrollstyle: plain
-URxvt.scrollBar: false
-
-! do not scroll with output
-URxvt*scrollTtyOutput: false
-
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
-
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
-
-!font
-URxvt.font: xft:Hack:size=10,xft:FontAwesome Regular:size=9
-
-!click urls
-URxvt.url-launcher: /usr/bin/chromium
-URxvt.matcher.button: 1
-!URxvt.colorUL: #81a2be
-
-!fusion by w0ng
-
+! ## Colorscheme fusion by w0ng:
 ! special
 *.foreground:   #c5c8c6
 *.background:   #1d1f21
@@ -95,217 +44,73 @@ URxvt.matcher.button: 1
 *.color7:       #707880
 *.color15:      #c5c8c6
 
-!rofi settings
-! Enabled modi
-rofi.modi:                           window,run,ssh
-! Window opacity
-rofi.opacity:                        90
-! Window width
-rofi.width:                          350
-! Number of lines
-rofi.lines:                          15
-! Number of columns
-rofi.columns:                        1
-! Font to use
-rofi.font:                           Hack Bold 10
-! Foreground color
-rofi.fg:                             #c7c7c7
-! Background color
-rofi.bg:                             #2d2d2d
-! Foreground color for active row
-rofi.fg-active:                      #b5bd68
-! Foreground color for urgent row
-rofi.fg-urgent:                      #cc6666
-! Foreground color for highlighted active row
-rofi.hlfg-active:                    #101112
-! Foreground color for highlighted urgent row
-rofi.hlfg-urgent:                    #101112
-! Background color for active row
-rofi.bg-active:                      #363636
-! Background color for urgent row
-rofi.bg-urgent:                      #363636
-! Background color for highlighted active row
-rofi.hlbg-active:                    #b5bd68
-! Background color for highlighted urgent row
-rofi.hlbg-urgent:                    #cc6666
-! Background color for alternating row
-rofi.bgalt:                          #333333
-! Foreground color for highlighted row
-rofi.hlfg:                           #101112
-! Background color for highlighted row
-rofi.hlbg:                           #80a5a6
-! Border color
-rofi.bc:                             #455057
-! Border width
-rofi.bw:                             3
-! Location on screen
-rofi.location:                       0
-! Padding
-rofi.padding:                        15
-! Y-offset relative to location
-rofi.yoffset:                        0
-! X-offset relative to location
-rofi.xoffset:                        0
-! Always show number of lines
-rofi.fixed-num-lines:                false
-! Terminal to #use
-rofi.terminal:                       i3-sensible-terminal
-! Ssh client to use
-rofi.ssh-client:                     ssh
-! Ssh command to execute
-rofi.ssh-command:                    {terminal} --exec="{ssh-client} {host}" --hold
-! --hold Run command to execute
-rofi.run-command:                    {cmd}
-! Command to get extra run targets
-!rofi.run-list-command:               
-! Run command to execute that runs in shell
-rofi.run-shell-command:              {terminal} --exec="{cmd}" --hold
-! Disable history in run/ssh
-rofi.disable-history:                false
-! Use levenshtein sorting
-rofi.levenshtein-sort:               true
-! Set case-sensitivity
-rofi.case-sensitive:                 false
-! Enable sidebar-mode
-rofi.sidebar-mode:                   false
-! Set lazy filter limit
-rofi.lazy-filter-limit:              5000
-! Row height (in chars)
-rofi.eh:                             1
-! Enable auto select mode
-rofi.auto-select:                    false
-! Parse hosts file for ssh mode
-rofi.parse-hosts:                    false
-! Set the modi to combine in combi mode
-rofi.combi-modi:                     window,run
-! Do a more fuzzy matching
-rofi.fuzzy:                          true
-! Use glob matching
-rofi.glob:                           false
-! Tokenize input string
-rofi.tokenize:                       true
-! Monitor id to show on
-rofi.m:                              -1
-! Margin between rows
-rofi.line-margin:                    2
-! Pre-set filter
-rofi.filter:                         
-! Separator style (none, dash, solid)
-rofi.separator-style:                dash
-! Hide scroll-bar
-rofi.hide-scrollbar:                 false
-! Show markup
-rofi.markup-rows:                    false
-! Fullscreen
-rofi.fullscreen:                     false
-! Fake transparency
-rofi.fake-transparency:              false
-! Pidfile location
-rofi.pid:                            /run/user/1000/rofi.pid
-! Keybinding
-rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
-! Keybinding
-rofi.kb-secondary-paste:             Control+v,Insert
-! Keybinding
-rofi.kb-clear-line:                  Control+u
-! Keybinding
-rofi.kb-move-front:                  Control+a
-! Keybinding
-rofi.kb-move-end:                    Control+e
-! Keybinding
-rofi.kb-move-word-back:              Alt+b
-! Keybinding
-rofi.kb-move-word-forward:           Alt+f
-! Keybinding
-rofi.kb-move-char-back:              Left,Control+b
-! Keybinding
-rofi.kb-move-char-forward:           Right,Control+f
-! Keybinding
-rofi.kb-remove-word-back:            Control+Alt+h
-! Keybinding
-rofi.kb-remove-word-forward:         Control+Alt+d
-! Keybinding
-rofi.kb-remove-char-forward:         Delete,Control+d
-! Keybinding
-rofi.kb-remove-char-back:            BackSpace,Control+h
-! Keybinding
-rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
-! Keybinding
-rofi.kb-accept-custom:               Control+Return
-! Keybinding
-rofi.kb-accept-entry-continue:       Shift+Return
-! Keybinding
-rofi.kb-mode-next:                   Shift+Right,Control+Tab
-! Keybinding
-rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
-! Keybinding
-rofi.kb-toggle-case-sensitivity:     grave,dead_grave
-! Keybinding
-rofi.kb-delete-entry:                Control+BackSpace
-! Keybinding
-rofi.kb-row-left:                    Control+Page_Up
-! Keybinding
-rofi.kb-row-right:                   Control+Page_Down
-! Keybinding
-rofi.kb-row-up:                      Up,Control+p,Shift+Tab
-! Keybinding
-rofi.kb-row-down:                    Down,Control+n
-! Keybinding
-rofi.kb-row-tab:                     Tab
-! Keybinding
-rofi.kb-page-prev:                   Page_Up
-! Keybinding
-rofi.kb-page-next:                   Page_Down
-! Keybinding
-rofi.kb-row-first:                   Home,KP_Home
-! Keybinding
-rofi.kb-row-last:                    End,KP_End
-! Keybinding
-rofi.kb-row-select:                  Control+space
-! Keybinding
-rofi.kb-cancel:                      Escape
-! Keybinding
-rofi.kb-custom-1:                    Alt+1
-! Keybinding
-rofi.kb-custom-2:                    Alt+2
-! Keybinding
-rofi.kb-custom-3:                    Alt+3
-! Keybinding
-rofi.kb-custom-4:                    Alt+4
-! Keybinding
-rofi.kb-custom-5:                    Alt+5
-! Keybinding
-rofi.kb-custom-6:                    Alt+6
-! Keybinding
-rofi.kb-custom-7:                    Alt+7
-! Keybinding
-rofi.kb-custom-8:                    Alt+8
-! Keybinding
-rofi.kb-custom-9:                    Alt+9
-! Keybinding
-rofi.kb-custom-10:                   Alt+0
-! Keybinding
-rofi.kb-custom-11:                   Alt+Shift+1
-! Keybinding
-rofi.kb-custom-12:                   Alt+Shift+2
-! Keybinding
-rofi.kb-custom-13:                   Alt+Shift+3
-! Keybinding
-rofi.kb-custom-14:                   Alt+Shift+4
-! Keybinding
-rofi.kb-custom-15:                   Alt+Shift+5
-! Keybinding
-rofi.kb-custom-16:                   Alt+Shift+6
-! Keybinding
-rofi.kb-custom-18:                   Alt+Shift+8
-! Keybinding
-rofi.kb-custom-17:                   Alt+Shift+7
-! Keybinding
-rofi.kb-custom-19:                   Alt+Shift+9
-! Keybinding
-rofi.key-window:                     Super_L+Tab
-! Keybinding
-rofi.key-run:                        Super_L+a
-! Keybinding
-rofi.key-ssh:                        
 
+! ## Rofi settings
+rofi.font:             Hack Bold 10
+rofi.terminal:         i3-sensible-terminal
+rofi.separator-style:  solid
+rofi.hide-scrollbar:   false
+rofi.bw:               3
+rofi.padding:          15
+rofi.eh:               1
+rofi.line-margin:      2
+rofi.opacity:          90
+rofi.width:            350
+rofi.lines:            15
+
+! Rofi colors
+!foregound
+rofi.fg:           #c7c7c7
+rofi.fg-active:    #b5bd68
+rofi.fg-urgent:    #cc6666
+
+rofi.hlfg:         #101112
+rofi.hlfg-active:  #101112
+rofi.hlfg-urgent:  #101112
+
+!background
+rofi.bg:           #2d2d2d
+rofi.bgalt:        #333333
+rofi.bg-active:    #363636
+rofi.bg-urgent:    #363636
+
+rofi.hlbg-active:  #b5bd68
+rofi.hlbg-urgent:  #cc6666
+rofi.hlbg:         #80a5a6
+
+!border
+rofi.bc:           #455057
+
+!custom keybinding
+rofi.kb-delete-entry:           Delete
+
+! ## Rxvt-Unicode settings
+URxvt.font:               xft:Hack:size=10,xft:FontAwesome Regular:size=9
+URxvt.url-launcher:       /usr/bin/chromium
+URxvt.matcher.button:     1
+
+URxvt.perl-ext-common:    default,matcher,clipboard
+URxvt.keysym.M-c:         perl:clipboard:copy
+URxvt.keysym.M-v:         perl:clipboard:paste
+URxvt.keysym.M-C-v:       perl:clipboard:paste_escaped
+
+urxvt*cursorBlink:        true
+URxvt.internalBorder:     3
+URxvt*externalBorder:     6
+URxvt*saveLines:          12000
+URxvt*geometry:           87x20
+URxvt.letterSpace:        -0.5
+URxvt.lineSpace:          -1
+urxvt*depth:              32
+
+URxvt.scrollstyle:        plain
+URxvt.scrollBar:          false
+URxvt*scrollTtyOutput:    false
+URxvt*scrollWithBuffer:   true
+URxvt*scrollTtyKeypress:  true
+
+! colors
+URxvt*background:         [90]#1d1f21
+URxvt*foreground:         #c5c8c6
+urxvt*background:         [90]#1d1f21
+URxvt*borderColor:        [90]#1d1f21
