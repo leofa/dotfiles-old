@@ -14,7 +14,7 @@ COUNT=`echo "$COUNT" | grep -oPm1 "(?<=<fullcount>)[^<]+" `
 
 if [ "$COUNT" -gt 0 ] 
    then
-       echo "<span foreground='#b294bb'></span><span foreground='#B4B7B4'> $COUNT</span>"
+       echo "<span foreground='#b294bb'></span> $COUNT"
   else
        exit 0
    fi
@@ -22,5 +22,5 @@ if [ "$COUNT" -gt 0 ]
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) nohup chromium --app=https://mail.google.com & ;;
+  1) i3-msg exec 'chromium --app=https://mail.google.com'
 esac

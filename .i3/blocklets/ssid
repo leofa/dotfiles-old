@@ -12,21 +12,11 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 #------------------------------------------------------------------------
 
-# if the machine has no battery or wireless connection, the corresponding block should display error.
+# if the machine has no battery or wireless connection, the corresponding block should not show.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#a3685a'> </span>@"
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit 0
 
-#------------------------------------------------------------------------
-
-  if [[ $QUALITY -ge 80 ]]; then
-      echo "<span foreground='#87afaf'> </span>@"
-  elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span foreground='#87afaf'> </span>@" 
-  elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span foreground='#b0925a'> </span>@" #orange   
-  elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span foreground='#a3685a'> </span>@" #red
-fi
+echo "<span foreground='#87aab5' >$SSID</span>"
 
 #-----------------------------------------------------------------------
 

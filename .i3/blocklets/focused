@@ -4,7 +4,7 @@
 
 WIN=$(xdotool getactivewindow) 
 # https://github.com/baskerville/xtitle
-XT=$(xtitle -ef "%s "| trunc | tr '&' +) # use python to truncate
+XT=$(xtitle -ef "%s "| trunc | tr '&' +) # use python to truncate and fix for crash on '&' character
 
 if [ -n "$WIN" ]; 
    then 

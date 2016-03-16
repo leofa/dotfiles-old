@@ -1,6 +1,5 @@
 #!/bin/bash
-#wifi signal quality
-#------------------------------------------------------------------------
+# wifi signal quality
 
 # if no interface is found, use the first device with a global scope
 INTERFACE="${BLOCK_INSTANCE:-wlan0}"
@@ -10,32 +9,25 @@ WANIP=$(curl -s http://whatismijnip.nl |cut -d " " -f 5)
 SSID=$(iwgetid $INTERFACE -r)
 QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
-#------------------------------------------------------------------------
-
 # if the machine has no battery or wireless connection, the corresponding block should not be displayed.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
     [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && exit
 
-#------------------------------------------------------------------------
-
-#wifi bars
+# wifi signal bars
   if [[ $QUALITY -ge 80 ]]; then
-      echo "<span  font='11' foreground='#C7C795' underline='single' underline_color='#586E75'>****</span>"
+      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>****</span>"
   elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span  font='11' foreground='#C7C795' underline='single' underline_color='#586E75'>***</span>" 
+      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>***</span>" 
   elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span  font='11' foreground='#C7C795' underline='single' underline_color='#586E75'>**</span>" #orange   
+      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>**</span>" #orange   
   elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span  font='11' foreground='#C7C795' underline='single' underline_color='#586E75'>*</span>" #red
+      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>*</span>" #red
 fi
 
-#-----------------------------------------------------------------------
-
 # mouse buttons + yad gtk network info dialog 
-
 case $BLOCK_BUTTON in
-    3) xdotool key Super_L+XF86Reload ;; # connect with wifi-menu
+    3) i3-msg exec termite --title "wifi-menu" --name "wifi-menu" -e "sudo wifi-menu -o" ;; # connect with wifi-menu
    # yad gtk network info dialog 
-   1) netinfo
+    1) netinfo
 esac
 

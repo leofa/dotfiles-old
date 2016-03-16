@@ -4,12 +4,10 @@ dt0=$(date '+%a')
 dt1=$(date '+%H')
 dt2=$(date '+%M')
 
-#echo "<span font='Hack 8' font_weight='semibold' foreground='#B294BB'>$dt0</span> $dt1<span foreground='#969896'>:</span>$dt2"
 echo "<span foreground='#B294BB'> </span>$dt1<span foreground='#969896'>:</span>$dt2"
 
 case $BLOCK_BUTTON in
     1) i3-msg exec gsimplecal ;; #left click calendar
-   #1) exec yad --no-buttons --geometry=+$X+20 --class "yad_cal" --calendar "$@" &>/dev/null ;;
     2) i3-msg exec "chromium --app=https://keep.google.com" ;; #left click, google keep
     3) i3-msg exec "chromium --app=https://calendar.google.com" ;; #right click,google calendar
 esac 

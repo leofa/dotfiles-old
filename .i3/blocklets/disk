@@ -33,9 +33,10 @@ END {
 		print "#CC6666"
 	}}')
 
-echo "<span foreground='#87AFAF' > </span><span foreground='#B4B7B4'>$usage</span>"
+echo "<span foreground='#87AFAF' > </span>$usage"
 
 case $BLOCK_BUTTON in
- 1) i3-msg exec caja  ;; #left click, open filemanager 
- 3) i3-msg exec rofi-find  #right click, locate +xdg-open files with rofi 
+ 1) i3-msg exec rofi-find ;; #left click, locate +xdg-open files with rofi
+ 2) i3-msg exec caja ;; #right click, open filemanager 
+ 3) i3-msg exec 'caja --browser' #middle click, open filemanager
 esac

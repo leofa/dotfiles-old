@@ -2,9 +2,18 @@
 
 PROG="${BLOCK_INSTANCE}"
 
+# mouse buttons  
+
+case $BLOCK_BUTTON in
+    1) exec cmus-remote -u && playerctl play-pause ;; #left click play/pause
+    3) exec cmus-remote -s && playerctl stop ;; #right click stop
+    4) exec cmus-remote -p && playerctl previous ;; #scroll down previous
+    5) exec cmus-remote -n && playerctl next #scroll up next
+esac
+
 INTERVAL=0.10
 MAX_LENGTH=30
-ADD_STR=" # "
+ADD_STR=" #"
 ADD_LENGTH=${#ADD_STR}
 
 if [[ "${PROG}" != "" ]]; then
@@ -27,10 +36,10 @@ else
     PROG="cmus-remote"
     INFO_CMUS=$(cmus-remote -Q 2>/dev/null)
     if [[ $? -eq 0 ]]; then
-      INFO_TITLE=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*title//p' | head -n 1 | tr '&' +)
-      INFO_ALBUM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*album//p' | head -n 1 | tr '&' +)
-      INFO_ARTIST=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*artist//p' | head -n 1 | tr '&' +)
-      INFO_STREAM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*stream//p' | head -n 1 | tr '&' +)     
+      INFO_TITLE=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*title//p' | head -n 1)
+      INFO_ALBUM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*album//p' | head -n 1)
+      INFO_ARTIST=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*artist//p' | head -n 1)
+      INFO_STREAM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*stream//p' | head -n 1)     
     else
       sleep 1
       exit
@@ -38,11 +47,12 @@ else
   fi
 
   if [[ "${INFO_ARTIST}" ]] && [[ "${INFO_TITLE}" ]]; then
-    OUT_TEXT=$(echo "${INFO_ARTIST} - ${INFO_TITLE}" | xargs)
-   elif [[ "${INFO_STREAM}" ]]; then
-    OUT_TEXT=$(echo "${INFO_STREAM} # ${INFO_TITLE}" | xargs)
-   elif [[ "${INFO_TITLE}" ]]; then
-    OUT_TEXT=$(echo "${INFO_TITLE}" | xargs)
+      OUT_TEXT=$(echo "${INFO_ARTIST} - ${INFO_TITLE}")
+  elif [[ "${INFO_TITLE}" ]]; then
+      OUT_TEXT=$(echo "${INFO_TITLE}")
+    if [[ "${INFO_STREAM}" ]]; then
+      OUT_TEXT=$(echo "${INFO_STREAM} @${INFO_TITLE}")
+  fi
   fi
 fi
 
@@ -71,8 +81,8 @@ if [[ "${OUT_TEXT}" ]]; then
   TEXT_LINE="${OUT_TEXT}${ADD_STR}${OUT_TEXT}${ADD_STR}${OUT_TEXT}"
   TEXT_LINE=${TEXT_LINE:$SCROLL_POS:$MAX_LENGTH}
 
-  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro Semibold'>${TEXT_LINE}</span>"
-  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro Semibold'>${TEXT_LINE}</span>"
+  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro Semibold'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
+  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro Semibold'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
   echo ""
 
   SCROLL_POS=$((SCROLL_POS +1))
@@ -82,3 +92,4 @@ if [[ "${OUT_TEXT}" ]]; then
 else
   sleep 1
 fi
+

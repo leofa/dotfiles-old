@@ -6,9 +6,9 @@ PACMAN=$(checkupdates | wc -l)
 
 #------------------------------------------------------------------------
 
-if [ "$PACMAN" -gt 0 ]
+if [ "$PACMAN" -gt 10 ]
    then
-       echo "<span foreground='#81A2BE'> </span><span foreground='#B4B7B4'>$PACMAN</span>"
+       echo "<span foreground='#81A2BE'> </span>$PACMAN"
    #     
    else 
        exit 0
@@ -18,5 +18,4 @@ if [ "$PACMAN" -gt 0 ]
 
 case $BLOCK_BUTTON in
   1) chromium --app=http://ald.mindbrain.io ;; # left click, read arch linux news feeds 
-  3) termite --exec "pacaur -Syu" --name "pacaur" --hold ;; # right click, update system
 esac
