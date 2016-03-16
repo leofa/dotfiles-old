@@ -1,3 +1,9 @@
 #!/bin/bash
 
-yad --no-buttons --width=450 --height=25 --text-info --title "acpi" --class "yadinfo" --margins=10 --filename=<(acpi -iba)
+# Battery info using acpi, and yad
+BAT=$(acpi -ib)
+
+yad --title "acpi" --no-buttons --width=480 --height=125 --text-info --class "yadinfo" --margins=10 --filename=<(echo -n "
+  Battery
+------------------------------------
+$BAT") 
