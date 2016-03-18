@@ -19,12 +19,12 @@ p9='github'
 p0='dockerhub'
 
 # s 
-s=$(echo -e "$p1\n$p2\n$p3\n$p4\n$p5\n$p6\n$p7\n$p8\n$p9\n$p0" | $menu search:)
+s=$(echo -e "$p1\n$p2\n$p3\n$p4\n$p5\n$p6\n$p7\n$p8\n$p9\n$p0"| $menu search: )
 
 case $s in
-    $p1)
+    $p1) 
         ddg=`echo | $menu $p1:`; s -p $p1 "$ddg" ;;
-    $p2)
+    $p2) 
         g=`echo | $menu $p2:`; s -p $p2 "$g" ;;
     $p3)
         yt=`echo | $menu $p3:`; s -p $p3 "$yt" ;;    
@@ -42,4 +42,7 @@ case $s in
         gh=`echo | $menu $p9:`; s -p $p9 "$gh" ;;
     $p0)
         dh=`echo | $menu $p0:`; s -p $p0 "$dh" ;;
-esac
+    *)
+        s -p $p1 $s # set default search here
+ esac
+
