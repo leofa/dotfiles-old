@@ -204,6 +204,7 @@ python-setproctitle
 python2-pip
 qemu
 quodlibet
+qutebrowser
 ranger
 redshift
 reflector
