@@ -15,13 +15,13 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 # wifi signal bars
   if [[ $QUALITY -ge 80 ]]; then
-      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>****</span>"
+      echo "<span  font='11' foreground='#abb59f' underline='single' underline_color='#586e75'>****</span>"
   elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>***</span>" 
+      echo "<span  font='11' foreground='#abb59f' underline='single' underline_color='#586e75'>***</span>" 
   elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>**</span>" #orange   
+      echo "<span  font='11' foreground='#abb59f' underline='single' underline_color='#586e75'>**</span>" #orange   
   elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span  font='11' foreground='#c4c4ad' underline='single' underline_color='#586e75'>*</span>" #red
+      echo "<span  font='11' foreground='#abb59f' underline='single' underline_color='#586e75'>*</span>" #red
 fi
 
 # mouse buttons + yad gtk network info dialog 

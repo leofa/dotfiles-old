@@ -54,25 +54,25 @@ tx_rate=$(( $tx_diff / $time_diff ))
 rx_kib=$(( $rx_rate >> 10 ))
 if [[ "$rx_rate" -gt 1048576 ]]; then
     rx_mbs=$( printf '%s' "`echo "scale=1; $rx_kib / 1024" | bc`")
-  echo -n "<span foreground='#586E75' >[</span>${rx_mbs}<span font='8' foreground='#969896'>M</span><span font='10' foreground='#81A2BE'>  </span>"
+  echo -n "${rx_mbs}<span font='8' foreground='#969896'>M</span><span font='10' foreground='#81A2BE'>  </span>"
 else
-  echo -n "<span foreground='#586E75' >[</span>${rx_kib}<span font='8' foreground='#969896'>K</span><span font='10' foreground='#81A2BE'>  </span>"
+  echo -n "${rx_kib}<span font='8' foreground='#969896'>K</span><span font='10' foreground='#81A2BE'>  </span>"
 fi
 
 # outgoing
 tx_kib=$(( $tx_rate >> 10 ))
 if [[ "$tx_rate" -gt 1048576 ]]; then
     tx_mbs=$(printf '%s' "`echo "scale=1; $tx_kib / 1024" | bc`")
-  echo -n "<span font='10' foreground='#B294BB'> </span>${tx_mbs}<span font='8' foreground='#969896'>M</span><span foreground='#586E75' >]</span>"
+  echo -n "<span font='10' foreground='#B294BB'> </span>${tx_mbs}<span font='8' foreground='#969896'>M</span><span foreground='#586e75'>]</span>"
 else
-  echo -n "<span font='10' foreground='#B294BB'> </span>${tx_kib}<span font='8' foreground='#969896'>K</span><span foreground='#586E75' >]</span>"
+  echo -n "<span font='10' foreground='#B294BB'> </span>${tx_kib}<span font='8' foreground='#969896'>K</span>"
 fi
 
 
 # mouse buttons  
 case $BLOCK_BUTTON in
     1) tm-cli ;; # transmission-remote-cli
-    2) netinfo ;; # netwerkinfo
+    2) netinfo ;; # network info
     3) rofi-netctl # switch netctl profile 
 esac
 
