@@ -96,7 +96,7 @@ for_window [class="(?i)"] title_format "<span weight='ultraheavy' foreground='#2
 
 smart_gaps on
 gaps outer 0
-gaps inner 4
+gaps inner 0
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -206,6 +206,7 @@ bindsym $mod+y fullscreen disable, floating enable, resize set 422 240, sticky e
 # Move windows to workspaces {{{
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
+assign [class="(?i)uzbl-core|(?i)qutebrowser"] $WS2
 assign [instance="bookmarks|file_properties|property_browser|caja"] $WS3
 assign [instance="calendar.google.com|keep.google.com|mail.google.com|geary|libreoffice*|abiword|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
 assign [instance="subl3|sublime_text|geany"] $WS5
@@ -213,7 +214,7 @@ assign [instance="cmus_termite|play.google.com__music|crx_dcklljkfaobhfnaedpcomh
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
 assign [instance="remmina|htop|virt-manager|log_term|pacaur|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
-assign [class="(?)Steam"] 7  
+assign [class="(?i)Steam"] 7  
 assign [instance="scows"] $WL0
 
 # }}}
@@ -447,7 +448,7 @@ bindsym $mod1+space exec rofi-find
 bindsym $mod+slash exec rofi-s
 bindsym $mod+Shift+slash exec chromium --show-app-list
 bindsym $mod+c exec chromium
-bindsym $mod+n exec chromium --new-window
+bindsym $mod+n exec qutebrowser
 bindsym $mod+i exec chromium --incognito
 bindsym $mod+b exec caja
 bindsym $mod+Shift+b exec rofi-fb
