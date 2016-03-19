@@ -127,6 +127,7 @@ libgsf
 libnewt
 liboauth
 libraw
+libreoffice-fresh-nl
 libtool
 libva-intel-driver
 libva-vdpau-driver
@@ -204,7 +205,6 @@ python-setproctitle
 python2-pip
 qemu
 quodlibet
-qutebrowser
 ranger
 redshift
 reflector

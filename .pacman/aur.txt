@@ -1,5 +1,4 @@
 arch-wiki-man
-atom-editor-bin
 chromium-pepper-flash-standalone
 chromium-widevine
 cower
@@ -8,7 +7,7 @@ early-issue-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
-i3-gaps-git
+i3-gaps-next-git
 i3blocks
 i3ipc-python-git
 ix
@@ -25,6 +24,7 @@ palemoon-bin
 playerctl
 powerline-fonts-git
 qtpass
+qutebrowser-git
 rtv
 s
 termite-ranger-fix-git
