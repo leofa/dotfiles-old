@@ -2,5 +2,5 @@
 #
 # switch netctl profile (depends on ifine from moreutils)
 
-netctl list | cut -b 3- | rofi -dmenu -p 'netctl:' -width 22 -yoffset '-316' -xoffset '365' | ifne xargs sudo -A netctl switch-to
+netctl list | cut -b 3- | rofi -dmenu -p 'netctl:' -width 22 -yoffset '-316' -xoffset '365' -lines 3 | ifne xargs sudo -A netctl switch-to
 

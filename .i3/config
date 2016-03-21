@@ -62,9 +62,9 @@ client.urgent            #282a2e  #ae4544  #f9f9f9  #ae4544
 # Workspaces {{{
 
 # i3 swag  ┐('～`)┌ 
-#set $WL0 0<span font='Hack 10' font_weight='bold' foreground='#f9f9f9'>i3wm</span>
+set $WL0 0<span font='Hack 10' font_weight='bold' foreground='#f9f9f9'>i3wm</span>
 #set $WL0 0<span font='10' weight='light' underline='low'>3</span>
-set $WL0 0<span font='9' font_weight='bold' >┐('～`)┌</span>
+#set $WL0 0<span font='9' font_weight='bold' >┐('～`)┌</span>
 
 # names / variables 
 set $WS1 1  
@@ -98,43 +98,6 @@ smart_gaps on
 gaps outer 0
 gaps inner 0
 
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
 # }}}
 
 # Borders {{{
@@ -157,8 +120,8 @@ for_window [class="(?i)"] focus
 # Floating windows {{{
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
-for_window [instance="scows|crx_fahmaaghhglfmonjliepjlchgpgfmobi|crx_hmjkmjkepdijhoojdojkdfohbdgmmhki|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="feh|(?i)qtpass|xfontsel|xfd|arandr|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge"] floating enable
+for_window [instance="gvim|scows|crx_(?)|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
+for_window [class="(?i)caja|feh|(?i)qtpass|xfontsel|xfd|arandr|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge"] floating enable
 
 # modifier + mouse move floating window
 floating_modifier $mod 
@@ -204,12 +167,13 @@ bindsym $mod+y fullscreen disable, floating enable, resize set 422 240, sticky e
 # }}}
 
 # Move windows to workspaces {{{
+
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
 assign [class="(?i)uzbl-core|(?i)qutebrowser"] $WS2
 assign [instance="bookmarks|file_properties|property_browser|caja"] $WS3
-assign [instance="calendar.google.com|keep.google.com|mail.google.com|geary|libreoffice*|abiword|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|evince|xournal"] $WS4
-assign [instance="subl3|sublime_text|geany"] $WS5
+assign [instance="calendar.google.com|keep.google.com|mail.google.com|libreoffice*|abiword|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|mutt|geary|xournal"] $WS4
+assign [instance="atom|subl3|sublime_text|geany"] $WS5
 assign [instance="cmus_termite|play.google.com__music|crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
@@ -422,6 +386,50 @@ mode "  " {
 # }}}
 
 # Keyboard bindings {{{
+
+# terminal
+bindsym $mod+backslash exec i3-sensible-terminal
+bindsym $mod+Return exec termite --name 'ws1_termite'
+
+# search files/ websearch
+bindsym $mod1+space exec rofi-find
+bindsym $mod+slash exec rofi-s
+
+# webbrowser
+bindsym $mod+Shift+slash exec rofi-ssb
+bindsym $mod+c exec chromium
+bindsym $mod+n exec qutebrowser
+bindsym $mod+Shift+n exec qutebrowser ~/docs/bookmarks_18-03-16.html
+bindsym $mod+i exec chromium --incognito
+
+# filemanager
+bindsym $mod+b exec caja ~/downl / ~/ 
+bindsym $mod+Shift+b exec rofi-fb
+
+# mail
+bindsym $mod+m exec termite --title "Mutt E-Mail Client" --name "mutt" -e "mutt"
+bindsym $mod+Shift+m exec $BROWSER https://mail.google.com
+
+# text-editor
+bindsym $mod+g exec gvim -geom=120x42+200+23
+
+# launcher
+bindsym $mod+d exec rofi-apps
+bindsym $mod+Shift+a exec rofi-gksu
+bindsym $mod+a exec rofi -show run
+
+# manage windows
+bindsym $mod+Tab exec rofi -width 45 -show window
+bindsym $mod1+Tab exec rofi-getwindow
+bindsym $mod+Shift+Return exec termite --name "scratch_termite"
+
+# quick connect
+bindsym $mod+XF86Reload exec termite --title "wifi-menu" --name "wifi-menu" -e "sudo wifi-menu -o"
+
+# password manager
+bindsym $mod+p exec rofi-passmenu --notify 
+bindsym $mod+Shift+p exec qtpass
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -441,37 +449,10 @@ bindsym XF86PowerOff exec rofi-logout
 # quick suspend
 bindsym $mod+XF86PowerOff exec systemctl suspend
 
-# start applications
-bindsym $mod+Return exec termite --name 'ws1_termite'
-bindsym $mod+backslash exec --no-startup-id termite
-bindsym $mod1+space exec rofi-find
-bindsym $mod+slash exec rofi-s
-bindsym $mod+Shift+slash exec chromium --show-app-list
-bindsym $mod+c exec chromium
-bindsym $mod+n exec qutebrowser
-bindsym $mod+i exec chromium --incognito
-bindsym $mod+b exec caja
-bindsym $mod+Shift+b exec rofi-fb
-bindsym $mod+m exec chromium --app=https://mail.google.com
-bindsym $mod+g exec gvim -geom=120x42+200+23
-bindsym $mod+d exec rofi-apps
-bindsym $mod+Shift+a exec rofi-gksu
-bindsym $mod+a exec rofi -show run
-bindsym $mod+Tab exec rofi -width 45 -show window
-bindsym $mod1+Tab exec rofi-getwindow
-bindsym $mod+Shift+Return exec termite --name "scratch_termite"
-bindsym $mod+XF86Reload exec termite --title "wifi-menu" --name "wifi-menu" -e "sudo wifi-menu -o"
-bindsym $mod+p exec rofi-passmenu --notify 
-bindsym $mod+Shift+p exec qtpass
-
 # }}}
 
 # Autostart applications {{{
 
-#exec --no-startup-id $BROWSER 
-#exec i3-msg 'workspace $WS1; exec i3-sensible-terminal'
-exec xdotool key Super_L+grave  
-#exec sleep 4 && xdotool key Super_L+Shift_L+Return 
-#exec sleep 4 && scows wisdom science linux 
+exec i3-msg "exec termite --name 'ws1_termite'; exec $BROWSER" 
 
 # }}}

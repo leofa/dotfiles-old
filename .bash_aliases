@@ -195,7 +195,7 @@ alias bin='cd ~/bin'
 # Quick Fix {{{
 
 alias fixchrome='rm ~/.config/chromium/SingletonLock'
-alias fixpulse='rm -rf /tmp/pulse* ~/.pulse* ~/.config/pulse; pulseaudio --kill; loginctl kill-user $USER'
+alias fixpulse='rm -rf /tmp/pulse* ~/.pulse* ~/.config/pulse; pulseaudio --kill'
 
 # }}}
 

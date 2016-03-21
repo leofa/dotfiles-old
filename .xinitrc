@@ -47,13 +47,13 @@ xset r rate 200 20
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 #for qt icons
-export DESKTOP_SESSION=gnome
+#export DESKTOP_SESSION=gnome
 
 #------------------------------------------------
 # autostart programs + scripts
 #------------------------------------------------
 
-start-pulseaudio-x11 &
+#start-pulseaudio-x11 &
 #system-config-printer-applet &
 #blueman-applet &
 #xdg-user-dirs-gtk-update
@@ -62,7 +62,7 @@ wallch &
 #feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
-xbacklight -set 75 &
+#xbacklight -set 75 &
 compton -b --config ~/.config/compton.conf &
 lxpolkit &
 dunst &
@@ -78,5 +78,6 @@ lightsOn 120 &
 # start WM/DE
 
 exec i3 
-#exec i3-with-shmlog
-#exec i3 -V >> ~/.i3log-$(date +'%F-%k-%M-%S') 2>&1 
+
+#i3-shmlog exec i3-with-shmlog 
+#i3log exec i3 -V >> ~/.i3log-$(date +'%F-%k-%M-%S') 2>&1  

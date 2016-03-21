@@ -22,5 +22,5 @@ if [ "$COUNT" -gt 0 ]
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) i3-msg exec 'chromium --app=https://mail.google.com'
+  1) i3-msg exec "$BROWSER https://mail.google.com" > /dev/null
 esac

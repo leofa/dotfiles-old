@@ -4,6 +4,7 @@
 # https://github.com/zquestz/s
 # by leofa 
 
+# options rofi
 menu='rofi -width 350 -dmenu -i -p'
 
 # providers
@@ -18,9 +19,15 @@ p8='archwiki'
 p9='github'
 p0='dockerhub'
 
-# s 
+# create search menu 
 s=$(echo -e "$p1\n$p2\n$p3\n$p4\n$p5\n$p6\n$p7\n$p8\n$p9\n$p0"| $menu search: )
 
+# exit with no input
+if [[ $? -eq 1 ]]; then
+    exit 1
+fi
+
+# select rofi search provider 
 case $s in
     $p1) 
         ddg=`echo | $menu $p1:`; s -p $p1 "$ddg" ;;
@@ -42,7 +49,8 @@ case $s in
         gh=`echo | $menu $p9:`; s -p $p9 "$gh" ;;
     $p0)
         dh=`echo | $menu $p0:`; s -p $p0 "$dh" ;;
-    *)
-        s -p $p1 $s # set default search here
+    *) 
+        $BROWSER "$s" ;; # open default search or url directly in browser
+ 
  esac
 

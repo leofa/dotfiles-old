@@ -2,7 +2,7 @@
 
 # if no interface is found, use the first device with a global scope
 INTERFACE="${BLOCK_INSTANCE:-wlan0}"
-IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^\/]+).* scope global/ && print \$1 and exit")
+IPADDR=$(ip route get 1 | awk '{print $NF;exit}')
 # get external ip from duch website
 WANIP=$(curl -s http://whatismijnip.nl |cut -d " " -f 5)
 SSID=$(iwgetid $INTERFACE -r)
@@ -11,17 +11,17 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 # if the machine has no battery or wireless connection, the corresponding block should display error.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo " <span foreground='#a3685a'>X </span>"
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#969896'>/</span><span font='10' rise='-1500' foreground='#B294BB'>  </span><span foreground='#969896'>/</span><span foreground='#282A2E'>/</span>"
 
 
   if [[ $QUALITY -ge 80 ]]; then
-      echo "<span foreground='#87afaf'></span><span foreground='#969896'>/</span>"
+      echo "<span foreground='#87afaf'></span><span foreground='#282A2E'>/</span>"
   elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span foreground='#87afaf'></span><span foreground='#969896'>/</span>" 
+      echo "<span foreground='#87afaf'></span><span foreground='#282A2E'>/</span>" 
   elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span foreground='#b0925a'></span><span foreground='#969896'>/</span>" #orange   
+      echo "<span foreground='#b0925a'></span><span foreground='#282A2E'>/</span>" #orange   
   elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span foreground='#a3685a'></span><span foreground='#969896'>/</span>" #red
+      echo "<span foreground='#a3685a'></span><span foreground='#282A2E'>/</span>" #red
 fi
 
 # mouse buttons  

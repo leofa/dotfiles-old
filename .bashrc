@@ -37,7 +37,7 @@ fi
 export PATH="/usr/local/bin:$HOME/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 
 # Default browser
-export BROWSER="chromium"
+export BROWSER="qutebrowser"
 
 # Default terminal emulator
 export TERMINAL="termite"
@@ -533,6 +533,9 @@ if which systemctl &>/dev/null; then
     }
     unmask() {
         sudo systemctl unmask $1.service
+    }
+    reload() {
+        sudo systemctl daemon-reload
     }
 fi
     

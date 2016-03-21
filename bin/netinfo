@@ -1,7 +1,7 @@
 #!/bin/bash
 # yad gtk network info dialog 
 
-IPADDR=$(ip addr show $IF | perl -n -e "/$AF ([^\/]+).* scope global/ && print \$1 and exit")
+IPADDR=$(ip route get 1 | awk '{print $NF;exit}')
 # get external ip from duch website
 WANIP=$(curl -s http://whatismijnip.nl |cut -d " " -f 5)
 SSID=$(iwgetid wlp1s0 -r)

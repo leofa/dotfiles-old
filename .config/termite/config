@@ -20,7 +20,7 @@ cursor_blink = sytem
 cursor_shape = block
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
-browser = /usr/bin/chromium
+# browser =  
 
 # set size hints for the window
 size_hints = true
