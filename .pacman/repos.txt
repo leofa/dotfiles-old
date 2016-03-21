@@ -60,6 +60,7 @@ file
 filesystem
 findutils
 fish
+flashplugin
 flattr-icon-theme
 flex
 fontconfig-infinality-ultimate
@@ -127,7 +128,6 @@ libgsf
 libnewt
 liboauth
 libraw
-libreoffice-fresh-nl
 libtool
 libva-intel-driver
 libva-vdpau-driver
@@ -140,8 +140,8 @@ linux-mainline
 linux-zen
 lm_sensors
 logrotate
-lua-sec
-luarocks
+lua51
+luarocks5.2
 lvm2
 lxappearance
 lxc
