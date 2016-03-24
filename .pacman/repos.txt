@@ -60,7 +60,6 @@ file
 filesystem
 findutils
 fish
-flashplugin
 flattr-icon-theme
 flex
 fontconfig-infinality-ultimate
@@ -103,6 +102,7 @@ gvim
 gzip
 haveged
 hdparm
+herbstluftwm
 horst
 htop
 hunspell-nl
@@ -204,7 +204,6 @@ python-service-identity
 python-setproctitle
 python2-pip
 qemu
-quodlibet
 ranger
 redshift
 reflector

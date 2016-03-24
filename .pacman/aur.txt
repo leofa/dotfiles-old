@@ -21,7 +21,6 @@ ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
 pacaur
-palemoon-bin
 playerctl
 powerline-fonts-git
 qtpass
@@ -40,6 +39,5 @@ vim-tmuxline-git
 wscat
 xcursor-openzone
 xf86-input-cmt-git
-xtitle-git
 yad
 yaourt
