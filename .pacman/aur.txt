@@ -19,7 +19,7 @@ nbwmon
 ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
-pacaur
+pacaur-git
 playerctl
 powerline-fonts-git
 qtpass
