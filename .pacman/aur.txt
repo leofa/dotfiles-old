@@ -1,5 +1,5 @@
 arch-wiki-man
-chromium-pepper-flash-standalone
+chromium-pepper-flash-dev
 chromium-widevine
 cower
 downgrade
@@ -7,7 +7,6 @@ early-issue-git
 firejail
 gksu-polkit-git
 gnome-xcf-thumbnailer
-gtk-theme-arc-git
 i3-gaps-next-git
 i3blocks
 i3ipc-python-git
