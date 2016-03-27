@@ -8,7 +8,7 @@ firejail
 gksu-polkit-git
 gnome-xcf-thumbnailer
 i3-gaps-next-git
-i3blocks
+i3blocks-git
 i3ipc-python-git
 ix
 j4-dmenu-desktop
@@ -19,7 +19,7 @@ nbwmon
 ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
-pacaur-git
+pacaur
 playerctl
 powerline-fonts-git
 qtpass
