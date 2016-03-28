@@ -1,15 +1,15 @@
 #!/bin/bash
 # exit session
 
-CMD=$(echo -e "exit i3\nkill user\nkill X\nlock" | rofi -width 350 -dmenu -p exit:)
+CMD=$(echo -e "exit i3\nkill user $USER\nkill Xorg\nlock" | rofi -width 350 -dmenu -p exit:)
 case $CMD in
     'exit i3')
         i3-msg exit
         ;;
-    'kill user')
+    'kill user $USER')
         loginctl kill-user $USER
         ;;
-    'kill X')
+    'kill Xorg')
         WM_PID=$(xprop -id $(xprop -root _NET_SUPPORTING_WM_CHECK \
             | awk -F'#' '{ print $2 }') _NET_WM_PID \
             | awk -F' = ' '{ print $2 }')

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# ssb "Site Specific Browser" aka Chromium-app launcher implemented with rofi
+# ssb (site specific browser) using chromium apps and desktop shortcuts
 
 # set arguments
 menu="rofi -width 350 -dmenu -i -p chromium-apps:"

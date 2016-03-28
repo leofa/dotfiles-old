@@ -16,5 +16,5 @@ if [ "$AUR" -gt 0 ]
 #------------------------------------------------------------------------
 
 case $BLOCK_BUTTON in
-  1) chromium --app=http://ald.mindbrain.io ;; # left click, read arch linux news feeds 
+  1) $BROWSER http://ald.mindbrain.io ;; # left click, read arch linux news feeds 
 esac

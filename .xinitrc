@@ -47,7 +47,7 @@ xset r rate 200 20
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 #for qt icons
-#export DESKTOP_SESSION=gnome
+export DESKTOP_SESSION=gnome
 
 #------------------------------------------------
 # autostart programs + scripts
@@ -58,7 +58,7 @@ export SSH_AUTH_SOCK
 #blueman-applet &
 #xdg-user-dirs-gtk-update
 wallch &
-#xsetroot -solid '#0f1517'
+#xsetroot -solid '#385154'
 #feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
@@ -73,6 +73,7 @@ clipit -dn &
 unclutter -b --timeout 30 &
 batnotify &
 lightsOn 120 &
+rofi -key-run SuperL+a -quiet &
 
 #------------------------------------------------
 # start WM/DE

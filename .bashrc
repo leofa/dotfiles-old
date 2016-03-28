@@ -59,7 +59,7 @@ export GDK_USE_XFT=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # QT5 style
-QT_STYLE_OVERRIDE=GTK+
+export QT_STYLE_OVERRIDE=GTK+
 
 # Ruby support
 if which ruby &>/dev/null; then

@@ -189,6 +189,7 @@ alias i3blk='vim ~/.i3blocks.conf'
 alias blocks='cd ~/.i3/blocklets'
 alias dots='cd ~/dotfiles; git status'
 alias bin='cd ~/bin'
+alias lbin='cd ~/.local/bin'
 
 # }}}
 

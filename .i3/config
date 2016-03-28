@@ -62,8 +62,8 @@ client.urgent            #282a2e  #ae4544  #f9f9f9  #ae4544
 # Workspaces {{{
 
 # i3 swag  ┐('～`)┌ 
-set $WL0 0<span font='Hack 10' font_weight='bold' foreground='#f9f9f9'>i3wm</span>
-#set $WL0 0<span font='10' weight='light' underline='low'>3</span>
+#set $WL0 0<span font='Hack 10' font_weight='bold'>i3wm</span>
+set $WL0 0<span font='10' weight='light' underline='low'>3</span>
 #set $WL0 0<span font='9' font_weight='bold' >┐('～`)┌</span>
 
 # names / variables 
@@ -118,13 +118,19 @@ for_window [class="(?i)"] focus
 # }}}
 
 # Floating windows {{{
+
+# window rules
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
-for_window [instance="gvim|scows|crx_(?)|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="(?i)caja|feh|(?i)qtpass|xfontsel|xfd|arandr|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge"] floating enable
+for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
+for_window [class="dconf-editor|mpv|(?i)caja|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge"] floating enable
 
-# modifier + mouse move floating window
+# modifier
 floating_modifier $mod 
+
+# window sizes 
+floating_minimum_size 96 x 25
+floating_maximum_size 1366 x 768
 
 # }}}
 
@@ -155,8 +161,8 @@ for_window [instance="file_progress"]  sticky enable
 # Window control {{{
 
 for_window [instance="scratch_termite"] move scratchpad, move position 680 395, move scratchpad, scratchpad show
-for_window [instance="scows"] move scratchpad, resize set 750 445, move scratchpad, scratchpad show
-for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"]  sticky enable, move position pointer # google music player
+for_window [instance="scows"] floating enable, resize set 780 520, move position center
+for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"] sticky enable, floating enable, move position pointer # Play Music Player 
 for_window [instance="transmission"] floating enable, resize set 824 496, move position pointer, move down 21 px 
 
 # }}}
@@ -168,28 +174,41 @@ bindsym $mod+y fullscreen disable, floating enable, resize set 422 240, sticky e
 
 # Move windows to workspaces {{{
 
+assign [instance="scows"] $WL0
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
-assign [class="(?i)uzbl-core|(?i)qutebrowser"] $WS2
+assign [class="(?i)qutebrowser"] $WS2
 assign [instance="bookmarks|file_properties|property_browser|caja"] $WS3
-assign [instance="calendar.google.com|keep.google.com|mail.google.com|libreoffice*|abiword|gucharmap|crx_pkclgpgponpjmpfokoepglboejdobkpl|crx_aohghmighlieiainnegkcijnfilokake|play.google.com__books|mutt|geary|xournal"] $WS4
+assign [instance="libreoffice*|abiword|gucharmap|mutt|geary|xournal"] $WS4
 assign [instance="atom|subl3|sublime_text|geany"] $WS5
-assign [instance="cmus_termite|play.google.com__music|crx_dcklljkfaobhfnaedpcomheadfemjkji|crx_hjaaapkoiljkjpgpfgckfielajkdjhik|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
+assign [instance="cmus_termite|lollypop|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
-assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
-assign [instance="remmina|htop|virt-manager|log_term|pacaur|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
 assign [class="(?i)Steam"] 7  
-assign [instance="scows"] $WL0
+assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
+assign [instance="remmina|htop|virt-manager|log_term|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
 
-# }}}
-
-# Floating window sizes {{{
-floating_minimum_size 96 x 25
-floating_maximum_size -1 x -1
+# chromium-apps
+assign [instance="crx_apdfllckaahabafndbhieahigkjlhalf"] "$WS4" # Drive
+assign [instance="crx_pkclgpgponpjmpfokoepglboejdobkpl"] "$WS4" # Inbox
+assign [instance="crx_pjkljhegncpnkpknbcohdijeoejaedia"] "$WS4" # Gmail
+assign [instance="crx_mmimngoggfoobjdlefbcabngfnmieonb"] "$WS4" # Play Books
+assign [instance="crx_lneaknkopdijkpnocmklfnjbeapigfbh"] "$WS4" # Maps
+assign [instance="crx_hmjkmjkepdijhoojdojkdfohbdgmmhki"] "$WS4" # Keep
+assign [instance="crx_ejjicmeblgpmajnghnpcppodonldlgfn"] "$WS4" # Agenda
+assign [instance="crx_aohghmighlieiainnegkcijnfilokake"] "$WS4" # Documents
+assign [instance="crx_ohpkjjfnffomjmcjinebceemmnfeadhk"] "$WS6" # Play Music
+assign [instance="crx_bjnooceohmkfhceebgbalehiggmeeeem"] "$WS6" # Emby
+assign [instance="crx_fpniocchabmgenibceglhnfeimmdhdfm"] "$WS6" # Plex
+assign [instance="crx_cogncpmnihfpagflekafgfhbjahhjgee"] "$WS6" # Soundcloud 
+assign [instance="crx_phcdhpbhckghdfliofkjhinomlcgkhnn"] "$WS6" # YouTube TV 
+assign [instance="crx_hjaaapkoiljkjpgpfgckfielajkdjhik"] "$WS6" # Netflix 
+assign [instance="crx_blckliiiahkijfikcfmbncibcefakemp"] "$WS7" # Foto's
+assign [instance="crx_*"] "$WS2" # everything else
 
 # }}}
 
 # Focus urgent {{{
+
 bindsym $mod+u [urgent=latest] focus
 force_display_urgency_hint 500 ms
 
@@ -403,7 +422,7 @@ bindsym $mod+Shift+n exec qutebrowser ~/docs/bookmarks_18-03-16.html
 bindsym $mod+i exec chromium --incognito
 
 # filemanager
-bindsym $mod+b exec caja ~/downl / ~/ 
+bindsym $mod+b exec caja ~/downl / ~/ ~/dotfiles ~/.config #caja spatial mode
 bindsym $mod+Shift+b exec rofi-fb
 
 # mail
@@ -423,8 +442,8 @@ bindsym $mod+Tab exec rofi -width 45 -show window
 bindsym $mod1+Tab exec rofi-getwindow
 bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 
-# quick connect
-bindsym $mod+XF86Reload exec termite --title "wifi-menu" --name "wifi-menu" -e "sudo wifi-menu -o"
+# rofi connection manager 
+bindsym $mod+XF86Reload exec rofi-connm
 
 # password manager
 bindsym $mod+p exec rofi-passmenu --notify 
@@ -453,6 +472,8 @@ bindsym $mod+XF86PowerOff exec systemctl suspend
 
 # Autostart applications {{{
 
-exec i3-msg "exec termite --name 'ws1_termite'; exec $BROWSER" 
+#exec termite --name 'ws1_termite'
+#exec $BROWSER
+exec termite --name "scows" --title="Fortune Cookie (^-^)/" -e "scows wisdom linux cookie linuxcookie" 
 
 # }}}
