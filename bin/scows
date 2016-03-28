@@ -3,4 +3,10 @@
 # shuffle cows :P
 # takes options like this "scows wisdom science"
 
-termite --name "scows" --title="cowsay: fortune of today" -e "watch -tn 12 -c 'fortune -sa $1 | fmt -60 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2))'" --hold
+PERIOD=30
+while true; do 
+        clear 
+        fortune -as $1 | fmt -60 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) 
+sleep $PERIOD
+done
+
