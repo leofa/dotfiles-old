@@ -63,8 +63,18 @@ END {
 
 	# color
 	gsub(/%$/,"",percentage)
-	if (+ percentage < + alert_low)
-		print "#cc6666"
+    if (+ percentage < + alert_low)
+        print "#cc6666"
+    else if (percentage > 99)
+		print "#abb59f"
+    else if (state == "charging")
+        print "#87afaf"
+    else if (percentage > 75)
+        print "#87afaf"
+    else if (percentage < 26)
+        print "#c89982"
+    else
+        print "#b4b7b4"
 }
 '
 #------------------------------------------------------------------------
