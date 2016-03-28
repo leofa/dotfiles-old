@@ -1,23 +1,32 @@
 #!/bin/bash
 #
-# focused window title
+# get active window with xprop and cut
+# using tr to translate some bad characters "&<>" and using python to have more control on where to cut/truncate
 
-WIN=$(xdotool getactivewindow) 
-# https://github.com/baskerville/xtitle
-XT=$(xtitle -ef "%s " | tr '&' + | tr '<' [ | tr '>' ]) # use tr to fix crash on some characters
+WIN="$(xprop -id $(xprop -root _NET_ACTIVE_WINDOW | cut -d ' ' -f 5) WM_NAME | cut -d '"' -f 2 | tr '&' + | tr '<' [ | tr '>' ] | python <(cat << END
+while(1):
+    s = str(input())
+    if (len(s) > 40):
+        s = s[:30] + '^' + s[-10:] # minimal cut
+        s = s[:30] + '..' + s[-10:] # cut right from center
+       # s = s[:30] + '..' + s[-1:] # cut normal      
+    print(s)
+END
+))"
 
 if [ -n "$WIN" ]; 
-   then 
-       # add pango formatting
-       echo "<span font='Source Code Pro Bold 9'>$XT</span>"
-   else 
-       exit 0
-   fi
+then
+    # add pango formatting
+    echo "<span font='Source Code Pro Bold 9'>$WIN</span>"
+else 
+    exit 0
+fi
 
+# add some mouse actions
 case $BLOCK_BUTTON in
-    1) i3-msg layout tabbed ;; #left click tabbed layout 
-    2) i3-msg layout stacked ;; #middle click stacked 
-    3) i3-msg layout toggle split ;; #right click 
-    4) rofi -width 45 -show window ;; #scroll down jump to window
-    5) rofi-getwindow ;; #scroll up move window to current 	  
+    1) i3-msg layout tabbed ;; # left click tabbed layout 
+    2) i3-msg layout stacked ;; # middle click stacked 
+    3) i3-msg layout toggle split ;; # right click 
+    4) rofi -width 45 -show window ;; # scroll down jump to window
+    5) rofi-getwindow ;; # scroll up move window to current 	  
 esac
