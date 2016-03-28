@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# connection manager with rofi  
+
+# options rofi
+menu='rofi -width 350 -dmenu -i -p'
+
+# set interfaces
+wifi='wlp1s0'
+ethernet='enp0s20u1'
+
+info='get network information'
+on='start + enable netcl-auto'
+con='select wifi network (wifi-menu)'
+swi='switch netctl profiles'
+res='restart wifi connection'
+off='disconnect (flight mode)'
+lan='enable dhcpd on lan'
+bon='enable bluetooth'
+boff='disable bluetooth'
+
+# create search menu 
+conn=$(echo -e "$info\n$on\n$con\n$swi\n$res\n$off\n$lan\n$bon\n$boff"| $menu connection-manager: )
+
+# exit with no input
+if [[ $? -eq 1 ]]; then
+    exit 1
+fi
+
+# select rofi search provider 
+case $conn in
+    $info)
+        # yad gtk network info dialog
+        netinfo ;;
+    $on)
+        sudo systemctl enable --now netctl-auto@$wifi.service ;;
+    $con)
+        termite --title "wifi-menu" --name "wifi-menu" -e "sudo wifi-menu -o" ;;
+    $swi)
+        # switch netctl profile (depends on ifine from moreutils)
+        netctl list | cut -b 3- | rofi -dmenu -p 'select profile:' | ifne xargs sudo -A netctl switch-to ;;
+    $res)
+        sudo systemctl restart netctl-auto@$wifi.service ;;
+    $off)
+        sudo systemctl disable --now netctl-auto@$wifi.service ;;
+    $lan)
+        sudo dhcpcd $ethernet; notify-send -u normal "  :: dhcpd on $ethernet  ::"  ;;
+    $bon)
+         sudo systemctl start bluetooth.service ; \
+         sudo systemctl enable bluetooth.service ; \
+         notify-send -u normal "  :: bluetooth enabled  ::" ;;
+    $boff)
+         sudo systemctl stop bluetooth.service ; \
+         sudo systemctl disable bluetooth.service ; \
+         notify-send -u normal "  :: bluetooth disabled  ::" ;;
+ esac
+

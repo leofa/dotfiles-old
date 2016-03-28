@@ -1,6 +1,9 @@
 #!/bin/bash
 
-ping=$(ping -c 1 $BLOCK_INSTANCE | grep -m 1 -o "[0-9]*[\.]*[0-9]* ms"| cut -d " " -f 1) 
+PING=$(ping -c 1 $BLOCK_INSTANCE | grep -m 1 -o "[0-9]*[\.]*[0-9]* ms"| cut -d " " -f1) 
 
-echo "<span font='10' foreground='#81a2be' ></span><span font='2' foreground='#282a2e'>/</span><span font='Hack 8' >$ping</span><span font='2' foreground='#282a2e'>/</span><span weight='heavy' foreground='#B294BB'>ms</span>"
-
+if [[ $PING ]]; then
+      echo "<span font='8' foreground='#B294BB' weight='ultraheavy' >@</span><span font='1' foreground='#282a2e'>/</span>$PING<span font='2' foreground='#282a2e'>/</span><span foreground='#969896'>ms</span>"
+  else
+      echo "<span foreground='#B294BB' weight='ultraheavy' >NO</span><span font='2' foreground='#282a2e'>/</span>ping" 
+  fi

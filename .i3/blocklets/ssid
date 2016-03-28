@@ -24,7 +24,6 @@ echo "<span foreground='#87aab5' >$SSID</span>"
 
 case $BLOCK_BUTTON in
     1) netinfo ;; # netwerkinfo
-    2) termite --title "wifi-menu" --name "wifi-menu" -e "sudo wifi-menu -o" ;; # connect with wifi-menu
-    3) sh -c "netctl list | cut -b 3- | rofi -dmenu -p 'netctl:' -width 22 -yoffset '-300' -xoffset '365' | ifne xargs sudo -A netctl switch-to" #switch netctl profile (depends on ifine from moreutils)
+    3) rofi-connm ;; # rofi connection manager
 esac
 
