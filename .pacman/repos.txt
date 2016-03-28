@@ -222,6 +222,7 @@ smartmontools
 speedtest-cli
 sshfs
 startup-notification
+stress
 subdl
 sudo
 sysfsutils
