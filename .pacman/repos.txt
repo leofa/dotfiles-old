@@ -4,6 +4,7 @@ android-tools
 android-udev
 arandr
 arch-install-scripts
+asciidoc
 asciiquarium
 aspell-nl
 atril
@@ -14,8 +15,9 @@ bash-completion
 bc
 binutils
 bison
-blueberry
+blueman
 bluez
+bluez-firmware
 bluez-plugins
 bluez-utils
 btrfs-progs
@@ -44,6 +46,8 @@ dhcpcd
 dialog
 diffutils
 dnsmasq
+docbook-xml
+docbook-xsl
 docker
 dosfstools
 dunst
@@ -71,6 +75,7 @@ gawk
 gcc
 gcc-libs
 gcolor2
+geoclue
 gettext
 gimp
 gimp-help-nl
