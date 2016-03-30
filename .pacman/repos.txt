@@ -2,7 +2,6 @@ acpi
 alsa-utils
 android-tools
 android-udev
-arandr
 arch-install-scripts
 asciidoc
 asciiquarium
@@ -299,7 +298,6 @@ xorg-xsetroot
 xorg-xvinfo
 xorg-xwininfo
 xournal
-xpad
 xsel
 youtube-dl
 zip
