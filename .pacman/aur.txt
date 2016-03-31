@@ -5,6 +5,7 @@ cower
 downgrade
 early-issue-git
 firejail
+geoclue
 gksu-polkit-git
 gnome-xcf-thumbnailer
 i3-gaps-next-git
@@ -24,6 +25,7 @@ playerctl
 powerline-fonts-git
 qtpass
 qutebrowser-git
+redshift-minimal
 rtv
 s
 termite-ranger-fix-git
