@@ -46,12 +46,14 @@ case $conn in
     $lan)
         sudo dhcpcd $ethernet; notify-send -u normal "  :: dhcpd on $ethernet  ::"  ;;
     $bon)
-         sudo systemctl start bluetooth.service ; \
-         sudo systemctl enable bluetooth.service ; \
-         notify-send -u normal "  :: bluetooth enabled  ::" ;;
+         sudo systemctl start bluetooth.service; \
+         sudo systemctl enable bluetooth.service; \
+         notify-send -u normal "  :: bluetooth enabled  ::"; \
+         blueman-applet ;;
     $boff)
-         sudo systemctl stop bluetooth.service ; \
-         sudo systemctl disable bluetooth.service ; \
+         sudo systemctl stop bluetooth.service; \
+         sudo systemctl disable bluetooth.service; \
+         pkill blueman-applet; \
          notify-send -u normal "  :: bluetooth disabled  ::" ;;
  esac
 

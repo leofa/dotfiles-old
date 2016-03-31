@@ -6,7 +6,7 @@ PACMAN=$(checkupdates | wc -l)
 
 #------------------------------------------------------------------------
 
-if [ "$PACMAN" -gt 10 ]
+if [ "$PACMAN" -gt 9 ]
    then
        echo "<span foreground='#81A2BE'> </span>$PACMAN"
    #     

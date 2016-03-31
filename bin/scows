@@ -3,7 +3,7 @@
 # shuffle cows :P
 # takes options like this "scows wisdom science"
 
-PERIOD=30
+PERIOD=20
 while true; do 
         clear 
         fortune -as $1 | fmt -60 -s | $(shuf -n 1 -e cowsay cowthink) -$(shuf -n 1 -e b d g p s t w y) -f $(shuf -n 1 -e $(cowsay -l | tail -n +2)) 

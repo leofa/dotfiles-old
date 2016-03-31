@@ -63,22 +63,19 @@ END {
 
 	# color
 	gsub(/%$/,"",percentage)
-    if (+ percentage < + alert_low)
-        print "#cc6666"
-    else if (percentage > 99)
-		print "#abb59f"
+    if (percentage == "100")
+		print "#c5c8c6"
     else if (state == "charging")
-        print "#87afaf"
-    else if (percentage > 75)
-        print "#87afaf"
+		print "#c5c8c6"
+    else if (+ percentage < + alert_low)
+        print "#cc6666"
     else if (percentage < 26)
-        print "#c89982"
+        print "#af9f87"
     else
-        print "#b4b7b4"
+        print "#7ea3a3"
 }
 '
-#------------------------------------------------------------------------
-
+# mouse buttons
 case $BLOCK_BUTTON in
   3) toggle-dpms ;; # left click, control DPMS 
   2) toggle-red ;;  # right click, redshift on/off

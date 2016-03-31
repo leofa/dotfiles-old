@@ -123,7 +123,7 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="dconf-editor|mpv|(?i)caja|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge"] floating enable
+for_window [class="dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge"] floating enable
 
 # modifier
 floating_modifier $mod 
@@ -224,7 +224,7 @@ bindsym $mod+minus bar mode invisible
 # Cycle through active workspaces {{{
 bindsym $mod+period workspace next
 bindsym $mod+comma workspace prev
-workspace_auto_back_and_forth no
+workspace_auto_back_and_forth yes
 
 # }}}
 
@@ -422,7 +422,7 @@ bindsym $mod+Shift+n exec qutebrowser ~/docs/bookmarks_18-03-16.html
 bindsym $mod+i exec chromium --incognito
 
 # filemanager
-bindsym $mod+b exec caja ~/downl / ~/ ~/dotfiles ~/.config #caja spatial mode
+bindsym $mod+b exec caja ~/
 bindsym $mod+Shift+b exec rofi-fb
 
 # mail
@@ -472,8 +472,9 @@ bindsym $mod+XF86PowerOff exec systemctl suspend
 
 # Autostart applications {{{
 
-#exec termite --name 'ws1_termite'
-#exec $BROWSER
-exec termite --name "scows" --title="Fortune Cookie (^-^)/" -e "scows wisdom linux cookie linuxcookie" 
+exec $BROWSER
+exec termite --name 'ws1_termite'
+exec termite --name 'ws1_termite'
+exec sleep 3; exec termite --name 'scows' --title='Fortune Cookie (^-^)/' -e 'scows wisdom linux cookie linuxcookie'
 
 # }}}

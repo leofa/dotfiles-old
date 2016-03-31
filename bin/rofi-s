@@ -11,13 +11,13 @@ menu='rofi -width 350 -dmenu -i -p'
 p1='duckduckgo'
 p2='google'
 p3='youtube'
-p4='facebook'
+p4='wikipedia'
 p5='reddit'
-p6='twitter'
-p7='wikipedia'
-p8='archwiki'
+p6='archpkg'
+p7='archwiki'
+p8='aur'
 p9='github'
-p0='dockerhub'
+p0='stackoverflow'
 
 # create search menu 
 s=$(echo -e "$p1\n$p2\n$p3\n$p4\n$p5\n$p6\n$p7\n$p8\n$p9\n$p0"| $menu search: )
