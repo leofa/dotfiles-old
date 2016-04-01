@@ -5,7 +5,6 @@ cower
 downgrade
 early-issue-git
 firejail
-geoclue
 gksu-polkit-git
 gnome-xcf-thumbnailer
 i3-gaps-next-git
@@ -21,6 +20,7 @@ ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
 pacaur
+pdfjs
 playerctl
 powerline-fonts-git
 qtpass
