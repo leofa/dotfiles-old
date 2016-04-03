@@ -14,7 +14,6 @@ bash-completion
 bc
 binutils
 bison
-blueman
 bluez
 bluez-firmware
 bluez-plugins
@@ -227,7 +226,6 @@ speedtest-cli
 sshfs
 startup-notification
 stress
-subdl
 sudo
 sysfsutils
 syslinux
@@ -276,6 +274,7 @@ xdg-user-dirs-gtk
 xdotool
 xf86-input-keyboard
 xf86-input-mouse
+xf86-video-intel
 xfsprogs
 xkeyboard-config
 xorg-server

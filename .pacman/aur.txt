@@ -17,12 +17,15 @@ menutray
 minecraft
 nbwmon
 ncurses5-compat-libs
-neofetch-git
+neofetch
 numix-circle-icon-theme-git
 pacaur
 pdfjs
 playerctl
 powerline-fonts-git
+python-babelfish
+python-enzyme
+python-guessit
 qtpass
 qutebrowser-git
 redshift-minimal
