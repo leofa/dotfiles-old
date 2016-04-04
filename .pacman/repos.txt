@@ -199,6 +199,7 @@ pulseaudio-gconf
 pulseaudio-zeroconf
 python
 python-crypto
+python-cssutils
 python-pip
 python-pylast
 python-pyqt4
@@ -225,7 +226,6 @@ smartmontools
 speedtest-cli
 sshfs
 startup-notification
-stress
 sudo
 sysfsutils
 syslinux
@@ -245,6 +245,7 @@ ttf-libre-baskerville-ibx
 ttf-noto-fonts-cjk-ib
 ttf-noto-fonts-emoji-ib
 ttf-noto-fonts-nonlatin-ib
+ttf-office-code-pro-ibx
 ttf-source-code-pro-ibx
 ttf-weblysleek-ui-ibx
 ufw
