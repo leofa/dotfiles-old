@@ -82,8 +82,6 @@ glibc
 gnome-chess
 gnome-disk-utility
 gnome-keyring
-gnome-session
-gnome-settings-daemon
 gnome-themes-standard
 gnuchess
 gpart
@@ -193,6 +191,7 @@ pkg-config
 powertop
 procps-ng
 psmisc
+pulseaudio-alsa
 pulseaudio-bluetooth
 pulseaudio-equalizer
 pulseaudio-gconf
@@ -223,6 +222,7 @@ sed
 shadow
 sl
 smartmontools
+source-highlight
 speedtest-cli
 sshfs
 startup-notification
@@ -234,6 +234,8 @@ systemd-swap
 systemd-sysvcompat
 t1-urw-fonts-ib
 tar
+termite
+termite-terminfo
 texinfo
 tk
 tmux
@@ -252,6 +254,7 @@ ufw
 unace
 unrar
 unzip
+upower
 usbutils
 util-linux
 vi

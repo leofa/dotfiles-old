@@ -29,9 +29,8 @@ python-guessit
 qtpass
 qutebrowser-git
 redshift-minimal
-rtv
+rtv-git
 s
-termite-ranger-fix-git
 thermald
 ttf-font-awesome
 turses-git
