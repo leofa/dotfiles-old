@@ -200,6 +200,7 @@ pulseaudio-zeroconf
 python
 python-crypto
 python-cssutils
+python-html2text
 python-pip
 python-pylast
 python-pyqt4
