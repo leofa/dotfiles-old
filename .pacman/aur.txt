@@ -1,5 +1,5 @@
 arch-wiki-man
-chromium-pepper-flash-dev
+chromium-pepper-flash
 chromium-widevine
 cower
 downgrade

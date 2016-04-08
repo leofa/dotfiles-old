@@ -164,6 +164,7 @@ mtools
 namcap
 ncdu
 netctl
+newsbeuter
 nfs-utils
 npm
 ntfs-3g
