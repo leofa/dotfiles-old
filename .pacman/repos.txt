@@ -121,6 +121,7 @@ iotop
 iproute2
 iputils
 iw
+jdk8-openjdk-infinality
 jfsutils
 jre8-openjdk-infinality
 jshon
