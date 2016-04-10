@@ -7,6 +7,7 @@ early-issue-git
 firejail
 gksu-polkit-git
 gnome-xcf-thumbnailer
+gtk-theme-arc-git
 i3-gaps-next-git
 i3blocks-git
 i3ipc-python-git
@@ -19,6 +20,7 @@ nbwmon
 ncurses5-compat-libs
 neofetch
 numix-circle-icon-theme-git
+numix-frost-themes
 openpht
 pacaur
 pdfjs
@@ -31,6 +33,7 @@ qtpass
 qutebrowser-git
 redshift-minimal
 rtv-git
+rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel
 s
 thermald
 ttf-font-awesome
