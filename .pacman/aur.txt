@@ -25,7 +25,6 @@ openpht
 pacaur
 pdfjs
 playerctl
-powerline-fonts-git
 python-babelfish
 python-enzyme
 python-guessit
