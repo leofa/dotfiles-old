@@ -41,6 +41,8 @@ ttf-font-awesome
 turses-git
 unclutter-xfixes-git
 update-hosts-git
+vim-airline-git
+vim-airline-themes-git
 vim-promptline-git
 vim-startify-git
 vim-tmuxline-git

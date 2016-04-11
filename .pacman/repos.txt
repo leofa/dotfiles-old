@@ -260,7 +260,6 @@ urxvt-perls
 usbutils
 util-linux
 vi
-vim-airline
 vim-spell-nl
 vim-systemd
 w3m
