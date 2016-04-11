@@ -148,6 +148,7 @@ lvm2
 lxappearance
 lxc
 lxsession
+lxterminal
 m4
 make
 man-db
@@ -236,6 +237,7 @@ sysstat
 systemd-swap
 systemd-sysvcompat
 t1-urw-fonts-ib
+tamsyn-font-ibx
 tar
 termite
 texinfo
