@@ -2,6 +2,7 @@ arch-wiki-man
 chromium-pepper-flash
 chromium-widevine
 cower
+docker-git
 downgrade
 early-issue-git
 firejail
