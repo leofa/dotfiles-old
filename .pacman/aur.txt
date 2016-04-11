@@ -30,6 +30,7 @@ python-babelfish
 python-enzyme
 python-guessit
 qtpass
+qupzilla-git
 qutebrowser-git
 redshift-minimal
 rtv-git
