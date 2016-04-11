@@ -81,6 +81,7 @@ glibc
 gnome-chess
 gnome-disk-utility
 gnome-keyring
+gnome-terminal
 gnome-themes-standard
 gnuchess
 gpart
