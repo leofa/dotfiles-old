@@ -135,7 +135,6 @@ libtool
 libva-intel-driver
 libva-vdpau-driver
 libvdpau-va-gl
-libvirt
 libvncserver
 licenses
 linux
@@ -174,7 +173,6 @@ nxproxy
 openresolv
 openssh
 otf-cantarell-ib
-otf-source-code-pro-pwl-ibx
 p7zip
 pacman
 pacmatic
@@ -191,6 +189,7 @@ perl-gtk2-webkit
 perl-json-xs
 perl-term-readkey
 pkg-config
+powerline-fonts
 powertop
 procps-ng
 psmisc
@@ -239,7 +238,6 @@ systemd-sysvcompat
 t1-urw-fonts-ib
 tar
 termite
-termite-terminfo
 texinfo
 tk
 tmux
@@ -266,8 +264,6 @@ vi
 vim-airline
 vim-spell-nl
 vim-systemd
-virt-manager
-vte3-ng
 w3m
 wget
 which
