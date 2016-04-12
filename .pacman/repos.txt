@@ -105,7 +105,6 @@ gvim
 gzip
 haveged
 hdparm
-herbstluftwm
 horst
 htop
 hunspell-nl
@@ -149,7 +148,6 @@ lvm2
 lxappearance
 lxc
 lxsession
-lxterminal
 m4
 make
 man-db

@@ -21,6 +21,7 @@ ncurses5-compat-libs
 neofetch
 numix-circle-icon-theme-git
 numix-frost-themes
+numix-themes-git
 openpht
 pacaur
 pdfjs
