@@ -289,6 +289,7 @@ xorg-xauth
 xorg-xbacklight
 xorg-xdpyinfo
 xorg-xev
+xorg-xfontsel
 xorg-xgamma
 xorg-xhost
 xorg-xinit
