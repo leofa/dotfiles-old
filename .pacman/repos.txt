@@ -46,6 +46,7 @@ diffutils
 dnsmasq
 docbook-xml
 docbook-xsl
+docker
 dosfstools
 dunst
 e2fsprogs

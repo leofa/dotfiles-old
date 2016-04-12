@@ -2,7 +2,6 @@ arch-wiki-man
 chromium-pepper-flash
 chromium-widevine
 cower
-docker-git
 downgrade
 early-issue-git
 firejail
@@ -30,7 +29,6 @@ python-babelfish
 python-enzyme
 python-guessit
 qtpass
-qupzilla-git
 qutebrowser-git
 redshift-minimal
 rtv-git
