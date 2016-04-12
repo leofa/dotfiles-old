@@ -34,6 +34,7 @@ qupzilla-git
 qutebrowser-git
 redshift-minimal
 rtv-git
+runc
 rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel
 s
 thermald
