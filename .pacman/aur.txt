@@ -35,6 +35,7 @@ rtv-git
 runc
 rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel
 s
+termite-ranger-fix-git
 thermald
 ttf-font-awesome
 turses-git
