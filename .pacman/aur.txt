@@ -7,6 +7,7 @@ early-issue-git
 firejail
 gksu-polkit-git
 gnome-xcf-thumbnailer
+gtk-theme-adapta-git
 gtk-theme-arc-git
 i3-gaps-next-git
 i3blocks-git
