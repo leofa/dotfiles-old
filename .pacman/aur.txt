@@ -5,6 +5,7 @@ cower
 downgrade
 early-issue-git
 firejail
+gimp-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-adapta-git
