@@ -84,6 +84,7 @@ gnome-keyring
 gnome-themes-standard
 gnuchess
 gpart
+gparted
 gptfdisk
 grep
 groff
