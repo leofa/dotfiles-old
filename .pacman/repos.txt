@@ -267,6 +267,7 @@ wget
 which
 wireless_tools
 wmctrl
+wol
 wpa_actiond
 wpa_supplicant
 x11-ssh-askpass
