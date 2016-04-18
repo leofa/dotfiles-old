@@ -10,7 +10,6 @@ atril
 autoconf
 automake
 bash
-bash-completion
 bc
 binutils
 bison
