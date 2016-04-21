@@ -236,7 +236,6 @@ sysstat
 systemd-swap
 systemd-sysvcompat
 t1-urw-fonts-ib
-tamsyn-font-ibx
 tar
 texinfo
 tk
