@@ -8,7 +8,6 @@ firejail
 gimp-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
-gtk-theme-adapta-git
 gtk-theme-arc-git
 i3-gaps-next-git
 i3blocks-git
@@ -23,6 +22,7 @@ neofetch
 numix-circle-icon-theme-git
 numix-frost-themes
 numix-themes-git
+oomox-git
 openpht
 pacaur
 pdfjs
@@ -34,6 +34,9 @@ qtpass
 qutebrowser-git
 redshift-minimal
 rtv-git
+ruby-maruku
+ruby-sass
+ruby-yard
 runc
 rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel
 s
