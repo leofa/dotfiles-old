@@ -26,6 +26,7 @@ oomox-git
 openpht
 pacaur
 pdfjs
+pkgcacheclean
 playerctl
 python-babelfish
 python-enzyme
