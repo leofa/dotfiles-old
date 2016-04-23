@@ -41,7 +41,6 @@ runc
 rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel
 s
 tamsyn-font-ibx
-termite-ranger-fix-git
 thermald
 ttf-font-awesome
 turses-git

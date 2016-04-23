@@ -173,6 +173,7 @@ nxproxy
 openresolv
 openssh
 otf-cantarell-ib
+otf-source-code-pro-pwl-ibx
 p7zip
 pacman
 pacmatic
@@ -237,6 +238,7 @@ systemd-swap
 systemd-sysvcompat
 t1-urw-fonts-ib
 tar
+termite
 texinfo
 tk
 tmux
