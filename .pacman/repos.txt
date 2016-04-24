@@ -67,7 +67,6 @@ flattr-icon-theme
 flex
 fontconfig-infinality-ultimate
 fortune-mod
-freerdp
 freetype2-infinality-ultimate
 galculator-gtk2
 gawk
@@ -121,6 +120,7 @@ iputils
 iw
 jdk8-openjdk-infinality
 jfsutils
+jhead
 jre8-openjdk-infinality
 jshon
 less
@@ -277,7 +277,6 @@ xdg-user-dirs-gtk
 xdotool
 xf86-input-keyboard
 xf86-input-mouse
-xf86-video-intel
 xfsprogs
 xkeyboard-config
 xorg-server

@@ -13,7 +13,6 @@ i3-gaps-next-git
 i3blocks-git
 i3ipc-python-git
 ix
-j4-dmenu-desktop
 lostfiles
 lxpolkit-git
 minecraft
