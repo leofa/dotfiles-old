@@ -261,7 +261,6 @@ util-linux
 vi
 vim-spell-nl
 vim-systemd
-vlc
 w3m
 wget
 which
