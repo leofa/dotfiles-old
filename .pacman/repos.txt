@@ -29,6 +29,7 @@ calc
 ccache
 ccze
 chromium
+clipit
 cmus
 colordiff
 compton
@@ -97,6 +98,7 @@ gstreamer0.10-ugly-plugins
 gtk-engine-murrine
 gucharmap
 guvcview
+gvfs-smb
 gvim
 gzip
 haveged
@@ -143,7 +145,6 @@ luarocks5.2
 lvm2
 lxappearance
 lxc
-lxsession
 m4
 make
 man-db

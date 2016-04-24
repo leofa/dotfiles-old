@@ -15,6 +15,7 @@ i3ipc-python-git
 ix
 j4-dmenu-desktop
 lostfiles
+lxpolkit-git
 minecraft
 nbwmon
 ncurses5-compat-libs
