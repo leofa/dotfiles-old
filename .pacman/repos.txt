@@ -187,7 +187,6 @@ perl-gtk2-webkit
 perl-json-xs
 perl-term-readkey
 pkg-config
-powerline-fonts
 powertop
 procps-ng
 psmisc

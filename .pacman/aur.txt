@@ -23,7 +23,6 @@ numix-circle-icon-theme-git
 numix-frost-themes
 numix-themes-git
 oomox-git
-openpht
 pacaur
 pdfjs
 pkgcacheclean
@@ -39,7 +38,7 @@ ruby-maruku
 ruby-sass
 ruby-yard
 runc
-rxvt-unicode-fontspacing-noinc-vteclear-secondarywheel
+rxvt-unicode-256xresources
 s
 tamsyn-font-ibx
 thermald
