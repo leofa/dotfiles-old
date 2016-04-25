@@ -4,7 +4,6 @@ chromium-widevine
 cower
 downgrade
 early-issue-git
-firejail
 gimp-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
@@ -40,7 +39,6 @@ ruby-yard
 runc
 rxvt-unicode-256xresources
 s
-tamsyn-font-ibx
 thermald
 ttf-font-awesome
 turses-git
@@ -51,7 +49,6 @@ vim-airline-themes-git
 vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
-wscat
 xcursor-openzone
 xf86-input-cmt-git
 yad

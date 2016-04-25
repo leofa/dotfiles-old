@@ -62,7 +62,6 @@ figlet
 file
 filesystem
 findutils
-fish
 flattr-icon-theme
 flex
 fontconfig-infinality-ultimate
@@ -254,7 +253,6 @@ unace
 unrar
 unzip
 upower
-urxvt-perls
 usbutils
 util-linux
 vi
@@ -285,7 +283,6 @@ xorg-xdpyinfo
 xorg-xev
 xorg-xfontsel
 xorg-xgamma
-xorg-xhost
 xorg-xinit
 xorg-xinput
 xorg-xkill
