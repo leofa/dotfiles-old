@@ -37,7 +37,6 @@ rtv-git
 ruby-maruku
 ruby-sass
 ruby-yard
-runc
 rxvt-unicode-256xresources
 s
 thermald

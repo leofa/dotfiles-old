@@ -212,6 +212,7 @@ reiserfsprogs
 rng-tools
 rofi
 rsync
+runc
 s-nail
 sane
 scrot
