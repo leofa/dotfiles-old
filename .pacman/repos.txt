@@ -185,6 +185,7 @@ perl-gtk2-webkit
 perl-json-xs
 perl-term-readkey
 pkg-config
+pkgstats
 powertop
 procps-ng
 psmisc
