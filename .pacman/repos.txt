@@ -206,6 +206,7 @@ python-service-identity
 python-setproctitle
 python2-pip
 qemu
+qt5ct
 ranger
 reflector
 reiserfsprogs
