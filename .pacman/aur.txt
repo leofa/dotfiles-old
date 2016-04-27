@@ -8,6 +8,7 @@ gimp-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
+hda-verb
 i3-gaps-next-git
 i3blocks-git
 i3ipc-python-git
