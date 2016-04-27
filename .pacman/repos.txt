@@ -191,7 +191,6 @@ procps-ng
 psmisc
 pulseaudio-alsa
 pulseaudio-bluetooth
-pulseaudio-equalizer
 pulseaudio-gconf
 pulseaudio-zeroconf
 python
@@ -200,7 +199,6 @@ python-cssutils
 python-html2text
 python-pip
 python-pylast
-python-pyqt4
 python-pysmbc
 python-pyudev
 python-service-identity
