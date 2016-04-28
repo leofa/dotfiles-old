@@ -39,7 +39,6 @@ rtv-git
 ruby-maruku
 ruby-sass
 ruby-yard
-rxvt-unicode-256xresources
 s
 thermald
 ttf-font-awesome
