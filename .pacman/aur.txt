@@ -29,6 +29,7 @@ pdfjs
 pkgcacheclean
 playerctl
 python-babelfish
+python-colorlog
 python-enzyme
 python-guessit
 qtpass

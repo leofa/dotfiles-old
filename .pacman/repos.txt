@@ -17,7 +17,6 @@ bluez
 bluez-firmware
 bluez-plugins
 bluez-utils
-btrfs-progs
 bzip2
 bzr
 cairo-infinality-ultimate
@@ -77,7 +76,6 @@ git
 glances
 glibc
 gnome-chess
-gnome-disk-utility
 gnome-keyring
 gnome-themes-standard
 gnuchess
@@ -87,6 +85,8 @@ gptfdisk
 grep
 groff
 gsimplecal
+gst-libav
+gst-plugins-good
 gstreamer0.10-bad-plugins
 gstreamer0.10-base-plugins
 gstreamer0.10-ffmpeg
@@ -125,6 +125,7 @@ less
 libchamplain
 libgsf
 libnewt
+libnotify
 liboauth
 libraw
 libtool
@@ -204,7 +205,6 @@ python-pyudev
 python-service-identity
 python-setproctitle
 python2-pip
-qemu
 qt5ct
 ranger
 reflector
