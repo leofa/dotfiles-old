@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# leofa's shell aliases
 # vim: fdm=marker:noai:ts=4:sw=4
 
 ## Aliases
@@ -96,7 +96,7 @@ alias Upa='pacaur -Sy && sudo abs'
 alias Id='pacaur -S --asdeps'
 alias Pm='makepkg -fcsi' 
 alias Un='pacaur -Su --noconfirm --noedit'
-alias Ud='pacaur -Su --aur --noconfirm --devel --needed'
+alias Ud='pacaur -Su --aur --noconfirm --noedit --devel --needed'
 alias S='pacaur -Ss'
 alias Sy='pacaur -Syy'
 alias Pi='pacaur -Si'
@@ -110,6 +110,7 @@ alias Cc='yaourt -C; sudo pkgcacheclean -v; pacaur -Scc --noconfirm'
 alias pkgaur='pacman -Qemq'
 alias pacdep='pacman -Qdt'
 alias pacexp='pacman -Qet'
+alias upd='pacaur -Qu'
 alias refr='refl; sudo rm -r /var/lib/pacman/db.lck; sudo pacman-key --init; sudo pacman-key --populate archlinux; sudo pacman-key --refresh-keys; sudo pacman-optimize' # Refresh all the things
 alias refl='sudo reflector --verbose --country 'Netherlands' -l 200 -p http --sort age --fastest 3 --save /etc/pacman.d/mirrorlist; cat /etc/pacman.d/mirrorlist'
 
@@ -149,6 +150,7 @@ alias yt="s -p youtube"
 # Get Info {{{
 
 alias keys='xmodmap -pke'
+alias xev="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 alias batt='acpi -bt'
 alias sysinfo='sudo inxi -Fflprxxxm'
@@ -156,9 +158,9 @@ alias weather='curl -4 wttr.in/epe,netherlands'
 
 # https://github.com/dylanaraps/neofetch
 alias nf="neofetch"
-alias nfs="nf --image 'shuffle'"
-alias nfa="nf --image 'ascii'; echo"
-alias nfn="c; nf --image 'off'; echo"
+alias nfs="nf --image ~/pics/neofetch/"
+alias nfa="nf --image ascii; echo"
+alias nfn="c; nf --image off; echo"
 
 # }}}
 
@@ -209,6 +211,7 @@ alias mix='alsamixer -c 0'
 
 # Multimedia {{{
 
+alias bctl="bluetoothctl"
 alias gl="glxinfo | grep -i opengl && glxgears"
 alias drm="dmesg | grep drm"
 alias mp3='parallel -j4 ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac *.m4a'
@@ -217,6 +220,7 @@ alias mp3='parallel -j4 ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac *.m4a'
 
 # Other Stuff/ Fun {{{
 
+alias nb='newsbeuter'
 alias starwars='telnet towel.blinkenlights.nl'
 alias matrix='echo -e "\e[32m"; while :; do for i in {1..16}; do r="$(($RANDOM % 2))"; if [[ $(($RANDOM % 5)) == 1 ]]; then if [[ $(($RANDOM % 4)) == 1 ]]; then v+="\e[1m $r   "; else v+="\e[2m $r   "; fi; else v+="     "; fi; done; echo -e "$v"; v=""; done'
 

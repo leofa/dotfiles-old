@@ -3,8 +3,7 @@ show_timezones = 0
 mark_today = 1
 show_week_numbers = 1
 close_on_unfocus = 0
-#external_viewer = sunbird -showdate "%Y-%m-%d"
-external_viewer = chromium --profile-directory=Default --app-id=ejjicmeblgpmajnghnpcppodonldlgfn #google calendar
+external_viewer = $BROWSER https://calendar.google.com/calendar 
 clock_format = %a %d %b %H:%M:%S
 force_lang = nl_NL.utf8
 mainwindow_decorated = 1

@@ -47,33 +47,32 @@ xset r rate 200 20
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 #for qt icons
-export DESKTOP_SESSION=gnome
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #------------------------------------------------
 # autostart programs + scripts
 #------------------------------------------------
 
-#start-pulseaudio-x11 &
+#/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately &
+#gsettings-data-convert &
+start-pulseaudio-x11 &
+#xdg-user-dirs-gtk-update &
+/usr/lib/lxpolkit/lxpolkit &
+#feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
+wallch &
+compton -b --config ~/.config/compton.conf &
+#lightsOn 120 &
+redshift &
+#xbacklight -set 75 &
+clipit -dn &
+unclutter -b --timeout 30 &
+dunst &
+batnotify &
+#rofi -key-run SuperL+a -quiet &
 #system-config-printer-applet &
 #blueman-applet &
-#xdg-user-dirs-gtk-update
-wallch &
-#xsetroot -solid '#385154'
-#feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
-#xbacklight -set 75 &
-compton -b --config ~/.config/compton.conf &
-lxpolkit &
-dunst &
-redshift &
-#clipmenud &
-clipit -dn &
-#menutray -r -u -i &
-unclutter -b --timeout 30 &
-batnotify &
-lightsOn 120 &
-rofi -key-run SuperL+a -quiet &
 
 #------------------------------------------------
 # start WM/DE
@@ -82,3 +81,4 @@ exec i3
 
 #i3-shmlog exec i3-with-shmlog 
 #i3log exec i3 -V >> ~/.i3log-$(date +'%F-%k-%M-%S') 2>&1  
+

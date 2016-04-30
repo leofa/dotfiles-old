@@ -14,11 +14,11 @@ set $mod3 control
 
 # Font {{{
 
-font pango: Source Code Pro Semibold, FontAwesome Regular 9
+font pango: Source Code Pro Medium, FontAwesome Regular 9
 
 # }}}
 
-# I3bar {{{
+# I3bar + Colors {{{
 
 bar {
      status_command i3blocks
@@ -46,10 +46,6 @@ colors {
      urgent_workspace    #282a2e  #943b3a  #ffffff
      binding_mode        #943b3a  #943b3a  #ffffff
   }}
-
-# }}}
-
-# Colors {{{
 
 # <clientclass>          <border> <bg>     <text>   <indicator>
 client.focused           #282a2e  #4e6269  #f9f9f9  #3d9fb8
@@ -83,7 +79,6 @@ set $WS0 10 
 # Fixed workspace layout {{{
 
 for_window [workspace="$WS2|$WS4"] layout tabbed
-
 # }}}
 
 # Window title format {{{
@@ -123,14 +118,14 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge"] floating enable
+for_window [class="(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
 
 # modifier
 floating_modifier $mod 
 
 # window sizes 
 floating_minimum_size 96 x 25
-floating_maximum_size 1366 x 768
+floating_maximum_size 1358 x 738
 
 # }}}
 
@@ -160,15 +155,15 @@ for_window [instance="file_progress"]  sticky enable
 
 # Window control {{{
 
-for_window [instance="scratch_termite"] move scratchpad, move position 680 395, move scratchpad, scratchpad show
-for_window [instance="scows"] floating enable, resize set 780 520, move position center
+for_window [instance="scratch_termite"] move scratchpad, move position 686 419, move scratchpad, scratchpad show
+for_window [instance="scows"] floating enable, resize set 685 450, move position center
 for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"] sticky enable, floating enable, move position pointer # Play Music Player 
 for_window [instance="transmission"] floating enable, resize set 824 496, move position pointer, move down 21 px 
 
 # }}}
 
 # Picture in picture mode {{{
-bindsym $mod+y fullscreen disable, floating enable, resize set 422 240, sticky enable, move position 930 515 
+bindsym $mod+y fullscreen disable, floating enable, resize set 422 240, sticky enable, move position 925 510 
 
 # }}}
 
@@ -182,7 +177,7 @@ assign [instance="bookmarks|file_properties|property_browser|caja"] $WS3
 assign [instance="libreoffice*|abiword|gucharmap|mutt|geary|xournal"] $WS4
 assign [instance="atom|subl3|sublime_text|geany"] $WS5
 assign [instance="cmus_termite|lollypop|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
-assign [instance="cheese|guvcview|gimp|inkscape|simple-scan|gthumb"] $WS7
+assign [instance="cheese|guvcviewi|(?i)pinta|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [class="(?i)Steam"] 7  
 assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
 assign [instance="remmina|htop|virt-manager|log_term|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
@@ -253,8 +248,8 @@ bindsym $mod1+Left  exec cmus-remote -p && playerctl previous
 bindsym $mod1+Up    exec cmus-remote -s && playerctl stop
 bindsym $mod1+Down  exec cmus-remote -u && playerctl play-pause
 
-bindsym $mod+XF86AudioLowerVolume       exec termite --title "cmus" --name "cmus_termite" -e cmus 
-bindsym $mod+XF86AudioRaiseVolume       exec termite --title "radio" --name "radio" -e "sh -c 'radio'"
+bindsym $mod+XF86AudioLowerVolume       exec termite --title "C* Music Player" --name "cmus_termite" -e cmus 
+bindsym $mod+XF86AudioRaiseVolume       exec termite --title "Radio" --name "radio" -e "sh -c 'radio'"
 bindsym $mod+Shift+XF86AudioRaiseVolume exec chromium --app=https://play.google.com/music
 
 # }}}
@@ -407,8 +402,8 @@ mode "  " {
 # Keyboard bindings {{{
 
 # terminal
-bindsym $mod+backslash exec i3-sensible-terminal
 bindsym $mod+Return exec termite --name 'ws1_termite'
+bindsym $mod+backslash exec i3-sensible-terminal
 
 # search files/ websearch
 bindsym $mod1+space exec rofi-find
@@ -426,7 +421,8 @@ bindsym $mod+b exec caja ~/
 bindsym $mod+Shift+b exec rofi-fb
 
 # mail
-bindsym $mod+m exec termite --title "Mutt E-Mail Client" --name "mutt" -e "mutt"
+bindsym $mod+m exec soc #script to start rtv turses & mutt 
+#termite --title "Mutt E-Mail Client" --name "mutt" -e "mutt"
 bindsym $mod+Shift+m exec $BROWSER https://mail.google.com
 
 # text-editor
@@ -444,6 +440,7 @@ bindsym $mod+Shift+Return exec termite --name "scratch_termite"
 
 # rofi connection manager 
 bindsym $mod+XF86Reload exec rofi-connm
+bindsym $mod+Shift+XF86Reload exec notify-send '  :: restarting wifi.. ::' && sudo systemctl restart netctl-auto@wlp1s0.service 
 
 # password manager
 bindsym $mod+p exec rofi-passmenu --notify 
@@ -472,9 +469,6 @@ bindsym $mod+XF86PowerOff exec systemctl suspend
 
 # Autostart applications {{{
 
-exec $BROWSER
-exec termite --name 'ws1_termite'
-exec termite --name 'ws1_termite'
-exec sleep 3; exec termite --name 'scows' --title='Fortune Cookie (^-^)/' -e 'scows wisdom linux cookie linuxcookie'
+exec sleep 2 && termite --name "scows" --title="Fortune Cookie (^-^)/" -e "scows wisdom linux cookie linuxcookie"
 
 # }}}

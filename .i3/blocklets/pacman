@@ -1,21 +1,17 @@
 #!/bin/bash
-# Pacman updates
-#------------------------------------------------------------------------
+# 
+# show available pacman updates
 
 PACMAN=$(checkupdates | wc -l)
 
-#------------------------------------------------------------------------
-
-if [ "$PACMAN" -gt 9 ]
-   then
-       echo "<span foreground='#81A2BE'> </span>$PACMAN"
-   #     
-   else 
-       exit 0
-   fi
-
-#------------------------------------------------------------------------
+if [ "$PACMAN" -gt 0 ]; then
+    echo "<span foreground='#81A2BE'> </span>$PACMAN"
+    #     
+else
+    exit 0
+fi
 
 case $BLOCK_BUTTON in
-  1) i3-msg exec "$BROWSER http://ald.mindbrain.io" > /dev/null # left click, read arch linux news feeds 
+    # left click, read arch linux news feeds
+    1) i3-msg exec "$BROWSER http://ald.mindbrain.io" > /dev/null
 esac
