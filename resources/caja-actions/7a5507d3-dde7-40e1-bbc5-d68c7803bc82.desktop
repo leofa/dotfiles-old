@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Action
+Name=Mount Archive
+Name[nl_NL]=Archief aankoppelen..
+Name[nl]=Archief aankoppelen..
+Icon=media-removable
+Icon[nl_NL]=media-removable
+Icon[nl]=media-removable
+ToolbarLabel[nl_NL]=Archief aankoppelen..
+ToolbarLabel[nl]=Archief aankoppelen..
+ToolbarLabel=Archief aankoppelen..
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[nl_NL]=Default profile
+Name[nl]=Default profile
+Name=Default profile
+Exec=/usr/lib/gvfs/gvfsd-archive file=%u
+MimeTypes=application/x-tar;application/x-cpio;application/x-compressed-tar;application/x-cd-image;application/x-bzip-compressed-tar;application/zip;

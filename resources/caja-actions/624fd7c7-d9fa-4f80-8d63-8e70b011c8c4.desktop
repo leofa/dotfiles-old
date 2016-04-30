@@ -1,17 +1,21 @@
 [Desktop Entry]
 Type=Action
 Name[nl_NL]=Extra paneel
+Name=Dual panel
 Name[nl]=Extra paneel
 Icon[nl_NL]=view-split-left-right
 Icon[nl]=view-split-left-right
+Icon=view-split-left-right
 TargetContext=false
 TargetToolbar=true
 ToolbarLabel[nl_NL]=Extra paneel
 ToolbarLabel[nl]=Extra paneel
+ToolbarLabel=Extra paneel
 Profiles=profile-zero;
 
 [X-Action-Profile profile-zero]
 Name[nl_NL]=Default profile
 Name[nl]=Default profile
+Name=Default profile
 Exec=sh -c 'xdotool key F3'
 Folders=*;
