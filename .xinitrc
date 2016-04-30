@@ -58,16 +58,16 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 start-pulseaudio-x11 &
 #xdg-user-dirs-gtk-update &
 /usr/lib/lxpolkit/lxpolkit &
-#feh --bg-fill ~/dotfiles/resources/i3-by-leofa.png &
-wallch &
+feh --bg-fill ~/dotfiles/resources/blue-ridge-mountain.jpg &
+#wallch &
 compton -b --config ~/.config/compton.conf &
 #lightsOn 120 &
 redshift &
 #xbacklight -set 75 &
-clipit -dn &
-unclutter -b --timeout 30 &
-dunst &
-batnotify &
+(sleep 3s && clipit -dn) &
+(sleep 10s && unclutter -b --timeout 30) &
+(sleep 2s && dunst) &
+(sleep 10s && batnotify) &
 #rofi -key-run SuperL+a -quiet &
 #system-config-printer-applet &
 #blueman-applet &
