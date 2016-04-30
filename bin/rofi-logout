@@ -1,15 +1,12 @@
 #!/bin/bash
 # logout dialog
 
-cmd=$(echo -e "poweroff\nreboot\nsuspend" | rofi -width 350 -dmenu -p system:)
+cmd=$(echo -e "suspend\nreboot\npoweroff" | rofi -width 350 -dmenu -p system:)
 case $cmd in
-    poweroff)
-        systemctl poweroff
-        ;;
-    reboot)
-        systemctl reboot
-        ;;
     suspend)
-        systemctl suspend
-        ;;
+        systemctl suspend ;;
+    reboot)
+        systemctl reboot ;;
+    poweroff)
+        systemctl poweroff ;;
 esac

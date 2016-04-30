@@ -18,9 +18,10 @@ off='disconnect (flight mode)'
 lan='enable dhcpd on lan'
 bon='enable bluetooth'
 boff='disable bluetooth'
+bctl='connect bluetooth devices'
 
 # create search menu 
-conn=$(echo -e "$info\n$on\n$con\n$swi\n$res\n$off\n$lan\n$bon\n$boff"| $menu connection-manager: )
+conn=$(echo -e "$info\n$on\n$con\n$swi\n$res\n$off\n$lan\n$bon\n$boff\n$bctl"| $menu connection-manager: )
 
 # exit with no input
 if [[ $? -eq 1 ]]; then
@@ -33,27 +34,42 @@ case $conn in
         # yad gtk network info dialog
         netinfo ;;
     $on)
-        sudo systemctl enable --now netctl-auto@$wifi.service ;;
+        notify-send '  :: enable + start wifi.. ::' \
+            ; sudo systemctl start netctl-auto@$wifi.service \
+            ; sudo systemctl enable netctl-auto@$wifi.service ;;
     $con)
-        termite --title "wifi-menu" --name "wifi-menu" -e "sudo wifi-menu -o" ;;
+        termite \
+            --title "wifi-menu" \
+            --name "wifi-menu" \
+            -e "sudo wifi-menu -o" ;;
     $swi)
         # switch netctl profile (depends on ifine from moreutils)
-        netctl list | cut -b 3- | rofi -dmenu -p 'select profile:' | ifne xargs sudo -A netctl switch-to ;;
+        netctl list \
+            | cut -b 3- \
+            | rofi -dmenu -p 'select profile:' \
+            | ifne xargs sudo -A netctl switch-to ;;
     $res)
-        sudo systemctl restart netctl-auto@$wifi.service ;;
+        notify-send '  :: restarting wifi.. ::' \
+            ; sudo systemctl restart netctl-auto@$wifi.service ;;
     $off)
-        sudo systemctl disable --now netctl-auto@$wifi.service ;;
+        notify-send '  :: disabling wifi.. ::' \
+            ; sudo systemctl stop netctl-auto@$wifi.service \
+            ; sudo systemctl disable netctl-auto@$wifi.service ;;
     $lan)
-        sudo dhcpcd $ethernet; notify-send -u normal "  :: dhcpd on $ethernet  ::"  ;;
+        notify-send -u normal "  :: connecting lan @$ethernet..  ::" \
+            ; sudo dhcpcd $ethernet ;;
     $bon)
-         sudo systemctl start bluetooth.service; \
-         sudo systemctl enable bluetooth.service; \
-         notify-send -u normal "  :: bluetooth enabled  ::"; \
-         blueman-applet ;;
+        sudo systemctl start bluetooth.service \
+            ; sudo systemctl enable bluetooth.service \
+            ; notify-send -u normal "  :: bluetooth enabled  ::" ;;
     $boff)
-         sudo systemctl stop bluetooth.service; \
-         sudo systemctl disable bluetooth.service; \
-         pkill blueman-applet; \
-         notify-send -u normal "  :: bluetooth disabled  ::" ;;
+        sudo systemctl stop bluetooth.service \
+            ; sudo systemctl disable bluetooth.service \
+            ; notify-send -u normal "  :: bluetooth disabled  ::" ;;
+    $bctl)
+        termite \
+            --title "bluetoothctl" \
+            --name "bctl" \
+            -e "bluetoothctl" ;;
  esac
 

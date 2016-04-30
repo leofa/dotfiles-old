@@ -1,5 +1,5 @@
 #!/bin/bash
-# trc - transmission-remote-cli
+# transmission-remote-cli
 
 cd $HOME/downl ;\
 transmission-daemon --watch-dir "$HOME/downl" \
