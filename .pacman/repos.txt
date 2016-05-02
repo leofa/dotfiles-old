@@ -148,6 +148,7 @@ m4
 make
 man-db
 man-pages
+mate-desktop
 mdadm
 mediainfo
 memtest86+
@@ -187,6 +188,7 @@ perl-json-xs
 perl-term-readkey
 pkg-config
 pkgstats
+polkit-gnome
 powertop
 procps-ng
 psmisc
@@ -298,4 +300,5 @@ xorg-xwininfo
 xournal
 xsel
 youtube-dl
+zenity
 zip

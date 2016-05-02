@@ -52,5 +52,4 @@ vim-startify-git
 vim-tmuxline-git
 xcursor-openzone
 xf86-input-cmt-git
-yad
 yaourt
