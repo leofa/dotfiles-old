@@ -21,9 +21,6 @@ nbwmon
 ncurses5-compat-libs
 neofetch
 numix-circle-icon-theme-git
-numix-frost-themes
-numix-themes-git
-oomox-git
 pacaur
 pdfjs
 pkgcacheclean
