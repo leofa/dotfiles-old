@@ -31,8 +31,8 @@ fi
 # select rofi search provider 
 case $conn in
     $info)
-        # yad gtk network info dialog
-        netinfo ;;
+        # network info monitor 
+        termite --title netinfo --class info --geometry=25x10 -e 'watch -t netinfo' ;;
     $on)
         notify-send '  :: enable + start wifi.. ::' \
             ; sudo systemctl start netctl-auto@$wifi.service \

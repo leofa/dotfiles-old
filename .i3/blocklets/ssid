@@ -23,7 +23,7 @@ echo "<span foreground='#87aab5' >$SSID</span>"
 # mouse buttons  
 
 case $BLOCK_BUTTON in
-    1) netinfo ;; # netwerkinfo
+    1) termite --title netinfo --class info --geometry=25x10 -e 'watch -t netinfo' ;; # network info script
     3) rofi-connm ;; # rofi connection manager
 esac
 

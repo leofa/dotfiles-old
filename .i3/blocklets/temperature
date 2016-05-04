@@ -33,3 +33,7 @@ echo ""
 if [[ "${IS_URGENT}" -eq 1 ]]; then
   exit 33
 fi
+
+case $BLOCK_BUTTON in
+    1) i3-msg exec sense ;; #lm_sensors
+esac

@@ -27,6 +27,6 @@ fi
 # mouse buttons  
 case $BLOCK_BUTTON in
     3) rofi-connm ;; # rofi connection manager
-    1) netinfo ;; # yad gtk network info dialog
+    1) termite --title netinfo --class info --geometry=25x10 -e 'watch -t netinfo' ;; # network info script 
 esac
 

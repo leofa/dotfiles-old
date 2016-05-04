@@ -1,9 +1,6 @@
 #!/bin/bash
+#
+# Battery info using acpi, and termite
 
-# Battery info using acpi, and yad
-BAT=$(acpi -ib)
+termite --title "acpi" --class "info" --geometry=48x2 -e "watch -t acpi -tba"
 
-yad --title "acpi" --no-buttons --width=480 --height=125 --text-info --class "yadinfo" --margins=10 --filename=<(echo -n "
-  Battery
-------------------------------------
-$BAT") 

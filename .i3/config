@@ -59,8 +59,8 @@ client.urgent            #282a2e  #ae4544  #f9f9f9  #ae4544
 
 # i3 swag  ┐('～`)┌ 
 #set $WL0 0<span font='Hack 10' font_weight='bold'>i3wm</span>
-set $WL0 0<span font='10' weight='light' underline='low'>3</span>
-#set $WL0 0<span font='9' font_weight='bold' >┐('～`)┌</span>
+#set $WL0 0<span font='10' weight='light' underline='low'>3</span>
+set $WL0 0<span font='9' font_weight='bold' >┐('～`)┌</span>
 
 # names / variables 
 set $WS1 1  
@@ -118,7 +118,7 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
+for_window [class="(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
 
 # modifier
 floating_modifier $mod 
@@ -132,7 +132,7 @@ floating_maximum_size 1358 x 738
 # Resize and position windows {{{
 
 for_window [class="(?i)Gpicview|mirage"]  move position center
-for_window [class="(?i)gsimplecal|yadinfo|(?i)pavucontrol|(?i)insync"] move position pointer, move down 21 px
+for_window [class="info|(?i)gsimplecal|yadinfo|(?i)pavucontrol|(?i)insync"] move position pointer, move down 21 px
 for_window [instance="radio"]  resize set 355 445; move position pointer, move down 21 px 
 for_window [instance="wifi-menu"]  resize set 425 425; move position pointer, move down 21 px
 
@@ -148,7 +148,7 @@ bindsym $mod+plus scratchpad show
 # Sticky windows {{{
 
 bindsym $mod+Shift+s sticky toggle
-for_window [class="Mate-color-select|gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable
+for_window [class="info|Mate-color-select|gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable
 for_window [instance="file_progress"]  sticky enable
 
 # }}}

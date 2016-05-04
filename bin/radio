@@ -14,16 +14,19 @@ bold=`tput bold`
 #ulbegin=`tput smul`
 #ulend=`tput rmul`
 
-ser="$cyan"
+ser="$blue"
 name="$bold$norm"
+
+tput setaf 3
+
 echo '
                   | _)
      _| _` |   _` |  |   _ \
    _| \__,_| \__,_| _| \___/
 '
-echo -n '      ♫  ♬  ♪  ♩  ♭  ♪
-' 
-            
+echo -n '      ♫  ♬  ♪  ♩  ♭  ♪  
+'
+tput sgr0 
 stations=(	
 'Pinguin Radio'="http://pr320.pinguinradio.nl:80/"
 '- Classics'="http://pc192.pinguinradio.com/listen.pls"
@@ -95,15 +98,15 @@ stations=(
   done
 
   echo
-  read -p "${yellow}Station:${norm} " sta
+  read -p "${cyan}Station:${norm} " sta
   echo
 
-  #capture="-capture -dumpfile ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
+  capture="-capture -dumpfile ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
 
  # tfile=`mktemp`
-  mpv --no-cache --quiet --msg-color --no-ytdl `echo ${stations[$sta]} | cut -d '=' -f2`
+  mpv -vo null --quiet --no-ytdl `echo ${stations[$sta]} | cut -d '=' -f2`
  
-  echo -ne "${yellow}\nPress enter to change station ${norm}"
+  echo -ne "${cyan}\nPress enter to change station ${norm}"
   read -t 5
   [[ $? -gt 128 ]] && { echo && exit 0; }
  # rm $tfile

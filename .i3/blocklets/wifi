@@ -27,5 +27,6 @@ fi
 # mouse buttons  
 case $BLOCK_BUTTON in
     1) rofi-connm ;; # rofi connection manager
+    3) notify-send '  :: restarting wifi.. ::' && sudo systemctl restart netctl-auto@wlp1s0.service # restart wifi
 esac
 
