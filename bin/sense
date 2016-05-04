@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# monitor sensors
+
+termite --title "sensors" --class "info" --geometry=58x7 -e "watch -t sensors"
+
