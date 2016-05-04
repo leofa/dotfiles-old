@@ -238,6 +238,7 @@ tar
 termite
 texinfo
 tk
+tlp
 tmux
 transmission-cli
 transmission-remote-cli
