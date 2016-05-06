@@ -71,6 +71,7 @@ gcc
 gcc-libs
 gcolor2
 gettext
+gimp
 gimp-help-nl
 git
 glances

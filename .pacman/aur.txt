@@ -4,7 +4,6 @@ chromium-widevine
 cower
 downgrade
 early-issue-git
-gimp-git
 gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
@@ -21,6 +20,7 @@ nbwmon
 ncurses5-compat-libs
 neofetch
 numix-circle-icon-theme-git
+nvm
 pacaur
 pdfjs
 pkgcacheclean
