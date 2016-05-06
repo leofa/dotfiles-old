@@ -8,6 +8,7 @@ aspell-nl
 atril
 autoconf
 automake
+babl
 bash
 bash-completion
 bc
