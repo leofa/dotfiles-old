@@ -76,6 +76,7 @@ git
 glances
 glibc
 gnome-chess
+gnome-disk-utility
 gnome-keyring
 gnome-themes-standard
 gnuchess
@@ -159,6 +160,7 @@ moreutils
 mpv
 mtools
 namcap
+nano
 ncdu
 netctl
 newsbeuter
@@ -238,7 +240,6 @@ tar
 termite
 texinfo
 tk
-tlp
 tmux
 transmission-cli
 transmission-remote-cli
