@@ -75,6 +75,7 @@ gettext
 gimp
 gimp-help-nl
 git
+gksu
 glances
 glibc
 gnome-chess
@@ -98,6 +99,7 @@ gstreamer0.10-ugly-plugins
 gtk-engine-murrine
 gucharmap
 guvcview
+gvfs
 gvfs-smb
 gvim
 gzip
@@ -262,6 +264,8 @@ upower
 usbutils
 util-linux
 vi
+vim-airline
+vim-airline-themes
 vim-spell-nl
 vim-systemd
 w3m

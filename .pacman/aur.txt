@@ -4,12 +4,11 @@ chromium-widevine
 cower
 downgrade
 early-issue-git
-gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
 hda-verb
-i3-gaps-next-git
-i3blocks-git
+i3-gaps
+i3blocks
 i3ipc-python-git
 ix
 jmtpfs
@@ -42,8 +41,6 @@ ttf-font-awesome
 turses-git
 unclutter-xfixes-git
 update-hosts-git
-vim-airline-git
-vim-airline-themes-git
 vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
