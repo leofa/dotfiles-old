@@ -18,6 +18,7 @@ bluez
 bluez-firmware
 bluez-plugins
 bluez-utils
+boost
 bzip2
 bzr
 cairo-infinality-ultimate

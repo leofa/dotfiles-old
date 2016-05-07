@@ -19,7 +19,6 @@ nbwmon
 ncurses5-compat-libs
 neofetch
 numix-circle-icon-theme-git
-nvm
 pacaur
 pdfjs
 pkgcacheclean
