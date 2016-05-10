@@ -141,8 +141,11 @@ libvdpau-va-gl
 libvncserver
 licenses
 linux
+linux-headers
 linux-mainline
+linux-mainline-headers
 linux-zen
+linux-zen-headers
 lm_sensors
 logrotate
 lua51
@@ -214,6 +217,7 @@ python-pyudev
 python-service-identity
 python-setproctitle
 python2-pip
+qemu-arch-extra
 qt5ct
 ranger
 reflector
