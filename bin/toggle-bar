@@ -1,0 +1,14 @@
+#!/bin/bash
+# toggle i3bar
+
+lockfile="/tmp/bartoggle.lock"
+
+if [[ ! -e "$lockfile" ]]
+then 
+    i3-msg bar mode invisible
+    touch "$lockfile"
+else
+    i3-msg bar mode dock
+    rm "$lockfile"
+fi
+
