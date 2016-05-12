@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# uptime popup 
+
+up="date; \
+    uptime -p; \
+    uptime | cut -d ',' -f 3-8 | xargs"
+
+termite --title "uptime" --class "info" --geometry=32x2 -e "watch -tn 1 $up"
+
