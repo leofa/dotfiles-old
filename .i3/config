@@ -32,20 +32,20 @@ bar {
      bindsym button5 nop
      tray_output eDP1
      tray_padding 3     
-
-colors {    
-     # <bar>
-     separator           #586e75 
-     background          #282a2e
-     statusline          #c5c8c6
-     
-     # <workclass>       <border> <bg>     <text>
-     focused_workspace   #586e75  #4e6269  #ffffff
-     inactive_workspace  #455057  #3b444a  #c7c7c7
-     active_workspace    #282a2e  #373F45  #ffffff
-     urgent_workspace    #282a2e  #943b3a  #ffffff
-     binding_mode        #943b3a  #943b3a  #ffffff
-  }}
+     colors {    
+         # <bar>
+         separator           #586e75 
+         background          #282a2e
+         statusline          #c5c8c6
+         
+         # <workclass>       <border> <bg>     <text>
+         focused_workspace   #586e75  #4e6269  #ffffff
+         inactive_workspace  #455057  #3b444a  #c7c7c7
+         active_workspace    #282a2e  #373F45  #ffffff
+         urgent_workspace    #282a2e  #943b3a  #ffffff
+         binding_mode        #943b3a  #943b3a  #ffffff
+     }
+}
 
 # <clientclass>          <border> <bg>     <text>   <indicator>
 client.focused           #282a2e  #4e6269  #f9f9f9  #3d9fb8
@@ -78,6 +78,7 @@ set $WS0 10 
 
 # Fixed workspace layout {{{
 
+for_window [workspace="$WS3"] layout stacked
 for_window [workspace="$WS2|$WS4"] layout tabbed
 # }}}
 
@@ -118,14 +119,14 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
+for_window [class="(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
 
 # modifier
 floating_modifier $mod 
 
 # window sizes 
-floating_minimum_size 96 x 25
-floating_maximum_size 1358 x 738
+floating_minimum_size -1 x -1
+floating_maximum_size -1 x -1
 
 # }}}
 
@@ -180,7 +181,7 @@ assign [instance="cmus_termite|lollypop|audacious|quodlibet|banshee|deadbeef|goo
 assign [instance="cheese|guvcview|(?i)pinta|gimp|inkscape|simple-scan|gthumb"] $WS7
 assign [class="(?i)Steam"] 7  
 assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
-assign [instance="remmina|htop|virt-manager|log_term|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
+assign [instance="remmina|htop|(?i)gnome-boxes|virt-manager|log_term|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
 
 # chromium-apps
 assign [instance="crx_apdfllckaahabafndbhieahigkjlhalf"] "$WS4" # Drive
@@ -210,9 +211,8 @@ force_display_urgency_hint 500 ms
 # }}}
 
 # Bar modus {{{
-bindsym $mod+Shift+h bar mode toggle
-bindsym $mod+Shift+minus bar mode dock
-bindsym $mod+minus bar mode invisible
+bindsym $mod+Shift+h exec toggle-bar 
+#script to toggle bar invisible/dock
 
 # }}}
 

@@ -17,7 +17,6 @@ alias more='less'
 alias nano='nano -w'
 alias vi='vim'
 alias dd='dd status=progress'
-alias gksu='gksu-polkit'
 
 # }}}
 
@@ -219,7 +218,7 @@ alias mp3='parallel -j4 ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac *.m4a'
 # }}}
 
 # Other Stuff/ Fun {{{
-
+alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias nb='newsbeuter'
 alias starwars='telnet towel.blinkenlights.nl'
 alias matrix='echo -e "\e[32m"; while :; do for i in {1..16}; do r="$(($RANDOM % 2))"; if [[ $(($RANDOM % 5)) == 1 ]]; then if [[ $(($RANDOM % 4)) == 1 ]]; then v+="\e[1m $r   "; else v+="\e[2m $r   "; fi; else v+="     "; fi; done; echo -e "$v"; v=""; done'

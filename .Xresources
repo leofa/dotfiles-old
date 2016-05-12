@@ -5,7 +5,6 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hinstyle:   full
 
-
 ! ## Colorscheme fusion by w0ng:
 ! special
 *.foreground:   #c5c8c6
