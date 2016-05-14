@@ -39,6 +39,7 @@ crda
 cryptsetup
 ctags
 dconf-editor
+ddrescue
 device-mapper
 dhcpcd
 dialog
