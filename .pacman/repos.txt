@@ -138,7 +138,6 @@ liboauth
 libraw
 libtool
 libva-intel-driver
-libva-vdpau-driver
 libvdpau-va-gl
 libvncserver
 licenses
