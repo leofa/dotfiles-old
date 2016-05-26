@@ -18,6 +18,7 @@ minecraft
 nbwmon
 ncurses5-compat-libs
 neofetch
+neomutt
 numix-circle-icon-theme-git
 pacaur
 pdfjs
