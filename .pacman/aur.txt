@@ -17,7 +17,7 @@ lxpolkit-git
 minecraft
 nbwmon
 ncurses5-compat-libs
-neofetch
+neofetch-git
 neomutt
 numix-circle-icon-theme-git
 pacaur
