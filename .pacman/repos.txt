@@ -240,6 +240,8 @@ speedtest-cli
 sshfs
 startup-notification
 sudo
+syncthing
+syncthing-inotify
 sysfsutils
 syslinux
 sysstat

@@ -4,6 +4,7 @@ chromium-widevine
 cower
 downgrade
 early-issue-git
+firejail
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
 hda-verb
@@ -18,7 +19,6 @@ minecraft
 nbwmon
 ncurses5-compat-libs
 neofetch-git
-neomutt
 numix-circle-icon-theme-git
 pacaur
 pdfjs
