@@ -1,4 +1,5 @@
 arch-wiki-man
+binfmt-support
 chromium-pepper-flash
 chromium-widevine
 cower
@@ -27,6 +28,7 @@ python-babelfish
 python-colorlog
 python-enzyme
 python-guessit
+qemu-user-static
 qtpass
 qutebrowser-git
 redshift-minimal
