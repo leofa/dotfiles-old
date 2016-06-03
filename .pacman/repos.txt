@@ -64,6 +64,7 @@ figlet
 file
 filesystem
 findutils
+firejail
 flattr-icon-theme
 flex
 fontconfig-infinality-ultimate

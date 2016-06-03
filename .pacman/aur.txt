@@ -4,7 +4,6 @@ chromium-widevine
 cower
 downgrade
 early-issue-git
-firejail
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
 hda-verb
