@@ -13,6 +13,7 @@ i3blocks
 i3ipc-python-git
 ix
 jmtpfs
+linux-c720
 lostfiles
 lxpolkit-git
 minecraft
