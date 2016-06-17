@@ -46,5 +46,4 @@ vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
 xcursor-openzone
-xf86-input-cmt-git
 yaourt
