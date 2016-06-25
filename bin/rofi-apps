@@ -1,3 +1,4 @@
 #!/bin/bash
 # rofi app launcher
-i3-dmenu-desktop --dmenu="rofi -dmenu -i -p 'apps:'" 
+i3-dmenu-desktop --dmenu="rofi -dmenu -i -p 'apps:'"
+#rofi -show drun -p 'apps:' 

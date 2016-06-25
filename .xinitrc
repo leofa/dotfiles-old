@@ -46,7 +46,7 @@ xset r rate 200 20
 #gnome-keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
-#for qt icons
+#for uniform qt theme and icons
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #------------------------------------------------
@@ -58,8 +58,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 start-pulseaudio-x11 &
 #xdg-user-dirs-gtk-update &
 /usr/lib/lxpolkit/lxpolkit &
-feh --bg-fill ~/dotfiles/resources/blue-ridge-mountain.jpg &
-#wallch &
+#feh --bg-fill ~/dotfiles/resources/blue-ridge-mountain.jpg &
+wallch &
 compton -b --config ~/.config/compton.conf &
 #lightsOn 120 &
 redshift &
@@ -73,6 +73,7 @@ redshift &
 #blueman-applet &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
+qutebrowser --nowindow &
 
 #------------------------------------------------
 # start WM/DE

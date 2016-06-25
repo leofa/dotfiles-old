@@ -78,8 +78,7 @@ set $WS0 10 
 
 # Fixed workspace layout {{{
 
-for_window [workspace="$WS3"] layout stacked
-for_window [workspace="$WS2|$WS4"] layout tabbed
+for_window [workspace="$WS2|$WS3|$WS4"] layout tabbed
 # }}}
 
 # Window title format {{{
@@ -119,14 +118,15 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
+for_window [class="etcher|(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
 
 # modifier
 floating_modifier $mod 
 
 # window sizes 
 floating_minimum_size -1 x -1
-floating_maximum_size -1 x -1
+floating_maximum_size 1340 x 742
+#floating_maximum_size -1 x -1
 
 # }}}
 
@@ -156,7 +156,7 @@ for_window [instance="file_progress"]  sticky enable
 
 # Window control {{{
 
-for_window [instance="scratch_termite"] move scratchpad, move position 686 419, move scratchpad, scratchpad show
+for_window [instance="scratch_termite"] move scratchpad, move position 686 390, move scratchpad, scratchpad show
 for_window [instance="scows"] floating enable, resize set 685 450, move position center
 for_window [instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"] sticky enable, floating enable, move position pointer # Play Music Player 
 for_window [instance="transmission"] floating enable, resize set 824 496, move position pointer, move down 21 px 
@@ -178,7 +178,7 @@ assign [instance="bookmarks|file_properties|property_browser|caja"] $WS3
 assign [instance="libreoffice*|abiword|gucharmap|mutt|geary|xournal"] $WS4
 assign [instance="atom|subl3|sublime_text|geany"] $WS5
 assign [instance="cmus_termite|lollypop|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
-assign [instance="cheese|guvcview|(?i)pinta|gimp|inkscape|simple-scan|gthumb"] $WS7
+assign [instance="cheese|guvcview|(?i)pinta|gimp|inkscape|krita|simple-scan|gthumb"] $WS7
 assign [class="(?i)Steam"] 7  
 assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
 assign [instance="remmina|htop|(?i)gnome-boxes|virt-manager|log_term|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
@@ -368,8 +368,8 @@ bindsym $mod+Shift+0 move container to workspace $WS0
 # }}}
 
 # Multimonitor support {{{
-workspace "$WL0" output HDMI
-workspace "$WS1" output HDMI1
+workspace "$WL0" output HDMI1
+workspace "$WS1" output eDP1
 workspace "$WS2" output eDP1
 workspace "$WS3" output eDP1
 workspace "$WS4" output eDP1
@@ -469,6 +469,7 @@ bindsym $mod+XF86PowerOff exec systemctl suspend
 
 # Autostart applications {{{
 
-exec sleep 2 && termite --name "scows" --title="Fortune Cookie (^-^)/" -e "scows wisdom linux cookie linuxcookie"
+#exec sleep 2 && termite --name "scows" --title="Fortune Cookie (^-^)/" -e "scows wisdom linux cookie linuxcookie"
+exec i3-msg workspace 1 " " #fix workspace 1 name not applied at login (race condition?)
 
 # }}}

@@ -11,7 +11,7 @@ font= Hack 10
 scrollback_lines = 12000
 search_wrap = true
 icon_name = terminal
-geometry = 80x20
+geometry = 80x22
 
 # "system", "on" or "off"
 cursor_blink = sytem
