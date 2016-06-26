@@ -30,6 +30,7 @@ python-colorlog
 python-enzyme
 python-guessit
 qemu-user-static
+qt5-styleplugins
 qtpass
 qutebrowser-git
 redshift-minimal
