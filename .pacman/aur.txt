@@ -37,7 +37,6 @@ qutebrowser-git
 redshift-minimal
 rtv
 ruby-maruku
-ruby-sass
 ruby-yard
 s
 thermald

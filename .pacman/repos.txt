@@ -50,6 +50,7 @@ docbook-xml
 docbook-xsl
 docker
 dosfstools
+dropbear
 dunst
 e2fsprogs
 ebtables
