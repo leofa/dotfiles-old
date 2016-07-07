@@ -29,6 +29,7 @@ python-babelfish
 python-colorlog
 python-enzyme
 python-guessit
+python3-kitchen
 qemu-user-static
 qt5-styleplugins
 qtpass
