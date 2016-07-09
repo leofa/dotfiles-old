@@ -224,11 +224,18 @@ workspace_auto_back_and_forth yes
 # }}}
 
 # Brightness control {{{
-bindsym --release XF86MonBrightnessUp    exec xbacklight -inc 5
-bindsym --release XF86MonBrightnessDown  exec xbacklight -dec 5
-bindsym $mod+XF86MonBrightnessDown       exec xbacklight -set 0
+# xbacklight doesn't work with modesetting use brightness script
+bindsym --release XF86MonBrightnessUp    exec sudo brightness up
+bindsym --release XF86MonBrightnessDown  exec sudo brightness down
+bindsym $mod+XF86MonBrightnessUp         exec sudo brightness max
+bindsym $mod+XF86MonBrightnessDown       exec sudo brightness min
+
+#bindsym --release XF86MonBrightnessUp    exec xbacklight -inc 5
+#bindsym --release XF86MonBrightnessDown  exec xbacklight -dec 5
+#bindsym $mod+XF86MonBrightnessUp         exec xbacklight -set 100
+#bindsym $mod+XF86MonBrightnessDown       exec xbacklight -set 0
+
 bindsym $mod+Shift+XF86MonBrightnessDown exec toggle-dpms
-bindsym $mod+XF86MonBrightnessUp         exec xbacklight -set 100
 bindsym $mod+Shift+XF86MonBrightnessUp   exec toggle-red
 
 # }}}

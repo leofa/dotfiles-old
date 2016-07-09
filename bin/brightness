@@ -1,0 +1,32 @@
+##  Script to adjust backlight brightness
+#!/bin/bash
+FILE="/sys/class/backlight/intel_backlight/brightness"
+MBFILE="/sys/class/backlight/intel_backlight/max_brightness"
+CUR=`cat $FILE`
+MAX=`cat $MBFILE`
+MIN=10
+STEP=20
+echo $CUR
+case $1 in
+        show)
+                echo $CUR
+                ;;
+        up)
+                if [ $(($CUR + $STEP)) -le $MAX ]; then
+                        echo $(( $CUR + $STEP )) > $FILE
+                fi;;
+        down)
+                if [ $(($CUR - $STEP)) -ge $MIN ]; then
+                        echo $(( $CUR - $STEP )) > $FILE
+                fi;;
+        min)
+                if [ $CUR -gt $MIN ]; then
+                        echo $(( $MIN )) > $FILE
+                fi;;
+        max)
+                if [ $CUR -lt $MAX ]; then
+                        echo $(( $MAX )) > $FILE
+                fi;;
+esac
+CUR=`cat $FILE`
+echo $CUR
