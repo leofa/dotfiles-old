@@ -235,6 +235,7 @@ scrot
 seahorse
 sed
 shadow
+shellcheck
 sl
 smartmontools
 source-highlight
