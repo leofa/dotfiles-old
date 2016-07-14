@@ -39,6 +39,7 @@ rtv
 ruby-maruku
 ruby-yard
 s
+slurm
 thermald
 ttf-font-awesome
 turses-git
