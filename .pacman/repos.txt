@@ -274,7 +274,6 @@ unzip
 upower
 usbutils
 util-linux
-vi
 vim-airline
 vim-airline-themes
 vim-spell-nl
