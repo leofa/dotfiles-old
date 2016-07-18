@@ -37,8 +37,6 @@ qtpass
 qutebrowser-git
 redshift-minimal
 rtv
-ruby-maruku
-ruby-yard
 s
 slurm
 thermald

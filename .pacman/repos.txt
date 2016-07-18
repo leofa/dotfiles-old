@@ -140,6 +140,7 @@ libnotify
 liboauth
 libraw
 libtool
+libunique3
 libva-intel-driver
 libvdpau-va-gl
 libvncserver
@@ -152,8 +153,6 @@ linux-zen
 linux-zen-headers
 lm_sensors
 logrotate
-lua51
-luarocks5.2
 lvm2
 lxappearance
 lxc
@@ -161,7 +160,7 @@ m4
 make
 man-db
 man-pages
-mate-desktop
+mate-common
 mdadm
 mediainfo
 memtest86+
@@ -197,7 +196,6 @@ pcmciautils
 perl
 perl-anyevent-i3
 perl-file-mimeinfo
-perl-gtk2-webkit
 perl-json-xs
 perl-term-readkey
 pkg-config
