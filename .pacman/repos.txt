@@ -66,6 +66,7 @@ file
 filesystem
 findutils
 firejail
+flashrom
 flattr-icon-theme
 flex
 fontconfig-infinality-ultimate
