@@ -38,7 +38,6 @@ qutebrowser-git
 redshift-minimal
 rtv
 s
-slurm
 thermald
 ttf-font-awesome
 turses-git
