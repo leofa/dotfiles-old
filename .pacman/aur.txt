@@ -26,6 +26,7 @@ pacaur
 pdfjs
 pkgcacheclean
 playerctl
+proot
 python-babelfish
 python-colorlog
 python-enzyme
