@@ -67,7 +67,6 @@ filesystem
 findutils
 firejail
 flashrom
-flattr-icon-theme
 flex
 fontconfig-infinality-ultimate
 fortune-mod
@@ -126,6 +125,7 @@ inxi
 iotop
 iproute2
 iputils
+ipython
 iw
 jdk8-openjdk-infinality
 jfsutils

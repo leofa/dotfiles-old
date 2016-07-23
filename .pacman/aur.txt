@@ -15,6 +15,7 @@ ix
 jmtpfs
 libgestures-bin
 lostfiles
+luv-icon-theme-git
 lxpolkit-git
 minecraft
 nbwmon
