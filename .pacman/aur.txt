@@ -15,7 +15,6 @@ ix
 jmtpfs
 libgestures-bin
 lostfiles
-luv-icon-theme-git
 lxpolkit-git
 minecraft
 nbwmon
@@ -23,6 +22,7 @@ ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
 pacaur
+papirus-icon-theme-gtk
 pdfjs
 pkgcacheclean
 playerctl
