@@ -243,6 +243,7 @@ speedtest-cli
 sshfs
 startup-notification
 sudo
+surf
 syncthing
 syncthing-inotify
 sysfsutils
