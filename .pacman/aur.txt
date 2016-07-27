@@ -30,6 +30,7 @@ python-babelfish
 python-colorlog
 python-enzyme
 python-guessit
+python-prawcore-git
 python3-kitchen
 qemu-user-static
 qt5-styleplugins

@@ -45,6 +45,7 @@ device-mapper
 dhcpcd
 dialog
 diffutils
+dmenu
 dnsmasq
 docbook-xml
 docbook-xsl
@@ -221,6 +222,7 @@ python-service-identity
 python-setproctitle
 python2-pip
 qemu-arch-extra
+qt5-webengine
 qt5ct
 ranger
 reflector
