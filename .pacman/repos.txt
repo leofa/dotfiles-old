@@ -220,6 +220,7 @@ python-pysmbc
 python-pyudev
 python-service-identity
 python-setproctitle
+python-update_checker
 python2-pip
 qemu-arch-extra
 qt5-webengine
