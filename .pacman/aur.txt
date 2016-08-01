@@ -50,3 +50,4 @@ vim-tmuxline-git
 xcursor-openzone
 xf86-input-cmt-git
 yaourt
+zathura-epub-git

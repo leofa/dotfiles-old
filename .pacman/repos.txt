@@ -320,5 +320,8 @@ xorg-xwininfo
 xournal
 xsel
 youtube-dl
+zathura
+zathura-cb
+zathura-pdf-mupdf
 zenity
 zip
