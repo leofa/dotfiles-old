@@ -166,7 +166,6 @@ mdadm
 mediainfo
 memtest86+
 mesa-demos
-mirage
 mlocate
 moreutils
 mpv
