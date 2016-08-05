@@ -7,10 +7,12 @@ downgrade
 early-issue-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
+gtksu-git
 hda-verb
 i3-gaps
 i3blocks
 i3ipc-python-git
+imv
 ix
 jmtpfs
 libgestures-bin

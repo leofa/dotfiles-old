@@ -5,7 +5,6 @@ arch-install-scripts
 asciidoc
 asciiquarium
 aspell-nl
-atril
 autoconf
 automake
 babl
@@ -82,7 +81,6 @@ gettext
 gimp
 gimp-help-nl
 git
-gksu
 glances
 glibc
 gnome-chess
@@ -287,7 +285,6 @@ w3m
 wget
 which
 wireless_tools
-wmctrl
 wol
 wpa_actiond
 wpa_supplicant
