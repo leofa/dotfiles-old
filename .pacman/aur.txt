@@ -24,7 +24,6 @@ ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
 pacaur
-papirus-icon-theme-gtk
 pdfjs
 pkgcacheclean
 playerctl
