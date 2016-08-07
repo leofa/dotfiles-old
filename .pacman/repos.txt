@@ -212,6 +212,7 @@ python-crypto
 python-cssutils
 python-html2text
 python-pip
+python-praw
 python-pylast
 python-pysmbc
 python-pyudev
