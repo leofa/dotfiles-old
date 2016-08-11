@@ -93,6 +93,7 @@ gparted
 gptfdisk
 grep
 groff
+grub
 gsimplecal
 gst-libav
 gst-plugins-good
@@ -181,6 +182,7 @@ ntp
 nxproxy
 openresolv
 openssh
+os-prober
 otf-cantarell-ib
 otf-source-code-pro-pwl-ibx
 p7zip
@@ -248,7 +250,6 @@ surf
 syncthing
 syncthing-inotify
 sysfsutils
-syslinux
 sysstat
 systemd-swap
 systemd-sysvcompat
@@ -276,6 +277,7 @@ unzip
 upower
 usbutils
 util-linux
+vi
 vim-airline
 vim-airline-themes
 vim-spell-nl

@@ -4,7 +4,6 @@ chromium-pepper-flash
 chromium-widevine
 cower
 downgrade
-early-issue-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
 gtksu-git
