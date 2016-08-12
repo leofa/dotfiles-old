@@ -246,6 +246,8 @@ speedtest-cli
 sshfs
 startup-notification
 sudo
+supertux
+supertuxkart
 surf
 syncthing
 syncthing-inotify
