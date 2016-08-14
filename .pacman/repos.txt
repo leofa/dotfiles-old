@@ -148,9 +148,7 @@ libvncserver
 licenses
 linux
 linux-headers
-linux-mainline
 linux-mainline-headers
-linux-zen
 linux-zen-headers
 lm_sensors
 logrotate
