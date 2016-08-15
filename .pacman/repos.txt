@@ -45,6 +45,7 @@ dhcpcd
 dialog
 diffutils
 dmenu
+dmidecode
 dnsmasq
 docbook-xml
 docbook-xsl
@@ -296,6 +297,7 @@ xclip
 xdg-user-dirs-gtk
 xdotool
 xf86-input-keyboard
+xf86-input-libinput
 xf86-input-mouse
 xfsprogs
 xkeyboard-config
