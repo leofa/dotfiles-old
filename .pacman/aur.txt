@@ -38,7 +38,9 @@ qtpass
 qutebrowser-git
 redshift-minimal
 rtv
+rxvt-unicode-256xresources
 s
+setroot-git
 thermald
 ttf-font-awesome
 turses-git

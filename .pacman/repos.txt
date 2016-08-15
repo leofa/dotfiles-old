@@ -60,7 +60,6 @@ ethtool
 exfat-utils
 f2fs-tools
 fakeroot
-feh
 ffmpegthumbnailer
 figlet
 file
