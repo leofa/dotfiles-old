@@ -149,8 +149,6 @@ libvncserver
 licenses
 linux
 linux-headers
-linux-mainline-headers
-linux-zen-headers
 lm_sensors
 logrotate
 lvm2
