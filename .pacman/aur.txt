@@ -14,7 +14,6 @@ i3ipc-python-git
 imv
 ix
 jmtpfs
-libgestures-bin
 lostfiles
 lxpolkit-git
 minecraft
