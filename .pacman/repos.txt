@@ -177,6 +177,7 @@ npm
 ntfs-3g
 ntp
 nxproxy
+openbox
 openresolv
 openssh
 os-prober
