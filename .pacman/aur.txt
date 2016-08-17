@@ -15,7 +15,6 @@ imv
 ix
 jmtpfs
 lostfiles
-lxpolkit-git
 minecraft
 nbwmon
 ncurses5-compat-libs
