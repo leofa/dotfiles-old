@@ -267,7 +267,6 @@ ttf-libre-baskerville-ibx
 ttf-noto-fonts-cjk-ib
 ttf-noto-fonts-emoji-ib
 ttf-noto-fonts-nonlatin-ib
-ttf-office-code-pro-ibx
 ttf-source-code-pro-ibx
 ttf-weblysleek-ui-ibx
 ufw
