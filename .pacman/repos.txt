@@ -204,6 +204,7 @@ pkgstats
 polkit-gnome
 powertop
 procps-ng
+protobuf
 psmisc
 pulseaudio-alsa
 pulseaudio-bluetooth

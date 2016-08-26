@@ -15,13 +15,13 @@ imv
 isl29018_driver
 ix
 jmtpfs
-librevault-git
 lostfiles
 minecraft
 nbwmon
 ncurses5-compat-libs
 neofetch-git
 numix-circle-icon-theme-git
+overdue
 pacaur
 pdfjs
 pkgcacheclean
