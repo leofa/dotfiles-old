@@ -208,6 +208,7 @@ protobuf
 psmisc
 pulseaudio-alsa
 pulseaudio-bluetooth
+pulseaudio-equalizer
 pulseaudio-gconf
 pulseaudio-zeroconf
 python
