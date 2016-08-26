@@ -15,6 +15,7 @@ imv
 isl29018_driver
 ix
 jmtpfs
+librevault-git
 lostfiles
 minecraft
 nbwmon
