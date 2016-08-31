@@ -85,8 +85,8 @@ alias flash_rom='cd; rm -f ~/flash_chromebook_rom.sh; curl -L -O https://johnlew
 
 # Pac-Man C o o o {{{
 
-alias U='pacbup; pacupd'  # Pacman backup + upgrade scripts
-alias Us="pacbup; echo 'Pacman sync...'; pacaur -Syy; echo 'done'; pacupd"   # Pacman sync + upgrade
+alias U='pacbup; pacupd; pkill -RTMIN+3 i3blocks'  # Pacman backup + upgrade scripts
+alias Us="pacbup; echo 'Pacman sync...'; pacaur -Syy; echo 'done'; pacupd; pkill -RTMIN+3 i3blocks"   # Pacman sync + upgrade
 alias I='pacaur -S' # install  
 alias Iu='pacaur -U' #install local package
 alias In='pacaur -S --noedit --noconfirm --needed' #install silently
@@ -133,6 +133,8 @@ alias refl='sudo reflector --verbose --country 'Netherlands' -l 200 -p http --so
 alias scanwifi='sudo iw wlp1s0 interface add mon0 type monitor; sudo horst -i mon0 creset'
 alias lan='sudo dhcpcd enp0s20u1'
 alias ping='ping -c 5'
+alias nlyzr='wget http://netalyzr.icsi.berkeley.edu/NetalyzrCLI.jar; java -jar NetalyzrCLI.jar; rm NetalyzrCLI.jar'
+alias cwrt='echo Latest AsusWRT-Merlin firmware for RT-N66U: $(curl -s http://asuswrt.lostrealm.ca/download -o /tmp/target.txt; cat /tmp/target.txt | grep RT-N66U_*|xargs|cut -d "_" -f 2); echo Download: https://www.mediafire.com/folder/bkfq2a6aebq68'
 
 # }}}
 
@@ -222,6 +224,7 @@ alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cres
 alias nb='newsbeuter'
 alias starwars='telnet towel.blinkenlights.nl'
 alias matrix='echo -e "\e[32m"; while :; do for i in {1..16}; do r="$(($RANDOM % 2))"; if [[ $(($RANDOM % 5)) == 1 ]]; then if [[ $(($RANDOM % 4)) == 1 ]]; then v+="\e[1m $r   "; else v+="\e[2m $r   "; fi; else v+="     "; fi; done; echo -e "$v"; v=""; done'
+alias aqua='asciiquarium'
 
 # }}}
 

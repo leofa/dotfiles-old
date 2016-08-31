@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # menu icon
-echo "<span font='10' font_weight='ultralight' foreground='#c5c8c6' ></span>"
-# ☰  
+echo "<span font='8.5' font_stretch='expanded' font_weight='ultralight' foreground='#C5C8C6' > </span>"
+#  ☰  
 
 # mouse buttons
 case $BLOCK_BUTTON in

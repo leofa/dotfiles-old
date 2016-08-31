@@ -2,9 +2,6 @@
 
 # take scrot of window, notify + open
 
-image=~/pics/scrot/%d-%m-%Y-%T_$wx$h_scrot.png
-
-scrot '%d-%m-%Y-%T_$wx$h_scrot.png' -d 2 -q 100 -ube 'mv $f ~/pics/scrot \
-notify-send "  :: screenshot taken ::" \
+scrot '%d-%m-%Y-%T_$wx$h_scrot.png' -d 2 -q 100 -ube 'mv $f ~/pics/scrot 
+notify-send "  :: screenshot taken ::" 
 xdg-open ~/pics/scrot/%d-%m-%Y-%T_$wx$h_scrot.png'
-

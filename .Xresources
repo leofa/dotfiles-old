@@ -54,7 +54,7 @@ rofi.padding:          15
 rofi.eh:               1
 rofi.line-margin:      2
 rofi.opacity:          90
-rofi.width:            350
+rofi.width:            450
 rofi.lines:            15
 rofi.threads:          4
 !custom keybinding
@@ -66,4 +66,8 @@ rofi.color-window:     #2d2d2d, #586e75, #4E6269
 rofi.color-normal:     #2d2d2d, #c7c7c7, #333333, #80a5a6, #101112
 rofi.color-active:     #2d2d2d, #b5bd68, #333333, #b5bd68, #101112
 rofi.color-urgent:     #2d2d2d, #cc6666, #333333, #cc6666, #101112
+
+! URxvt (aur/rxvt-unicode-256xresources)
+URxvt*font: xft:Hack:pixelsize=13,xft:Source Code Pro for Powerline:pixelsize=13
+URxvt*scrollBar: false
 

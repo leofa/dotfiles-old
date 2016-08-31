@@ -57,8 +57,10 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 #gsettings-data-convert &
 start-pulseaudio-x11 &
 #xdg-user-dirs-gtk-update &
-/usr/lib/lxpolkit/lxpolkit &
+#/usr/lib/lxpolkit/lxpolkit &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 #feh --bg-fill ~/dotfiles/resources/blue-ridge-mountain.jpg &
+#setroot -fw ~/dotfiles/resources/blue-ridge-mountain.jpg &
 wallch &
 compton -b --config ~/.config/compton.conf &
 #lightsOn 120 &
@@ -67,18 +69,18 @@ redshift &
 (sleep 3s && clipit -dn) &
 (sleep 10s && unclutter -b --timeout 30) &
 (sleep 2s && dunst) &
-(sleep 10s && batnotify) &
-#rofi -key-run SuperL+a -quiet &
+#(sleep 10s && batnotify) &
+#rofi -key-run Super_L+a -quiet &
 #system-config-printer-applet &
 #blueman-applet &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
-qutebrowser --nowindow &
+#qutebrowser --nowindow &
 
 #------------------------------------------------
 # start WM/DE
 
-exec i3 
+exec i3
 
 #i3-shmlog exec i3-with-shmlog 
 #i3log exec i3 -V >> ~/.i3log-$(date +'%F-%k-%M-%S') 2>&1  

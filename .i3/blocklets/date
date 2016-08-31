@@ -1,13 +1,22 @@
 #!/bin/sh
+#
+# show date (add pango styling)
 
 dt0=$(date '+%a') 
-dt1=$(date '+%H')
-dt2=$(date '+%M')
+dt1=$(date '+%d')
+dt2=$(date '+%m')
+dt3=$(date '+%H')
+dt4=$(date '+%M')
 
-echo "<span foreground='#B294BB'> </span>$dt1<span foreground='#969896'>:</span>$dt2"
+# long
+#echo "$dt1<span foreground='#969896'>-</span>$dt2<span foreground='#B294BB'>  $dt0 </span>$dt3<span foreground='#969896'>:</span>$dt4"
+# medium
+echo "<span foreground='#B294BB'>  </span><span face='Hack' size='smaller' weight='bold' foreground='#B294BB'>$dt0 </span>$dt3<span foreground='#969896'>:</span>$dt4"
+# short
+#echo "<span foreground='#B294BB'> </span>$dt3<span foreground='#969896'>:</span>$dt4"
 
 case $BLOCK_BUTTON in
     1) i3-msg exec gsimplecal ;; #left click calendar
-    2) i3-msg exec "chromium --app=https://keep.google.com" ;; #left click, google keep
-    3) i3-msg exec "chromium --app=https://calendar.google.com" ;; #right click,google calendar
+    2) i3-msg exec "qutebrowser --backend webengine https://keep.google.com" ;; #left click, google keep
+    3) i3-msg exec "qutebrowser --backend webengine https://calendar.google.com" ;; #right click,google calendar
 esac 

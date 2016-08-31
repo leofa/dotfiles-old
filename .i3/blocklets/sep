@@ -1,3 +1,0 @@
-#!/bin/sh
-#echo "<span font_weight='bold' foreground='#586E75'>〉</span>"
-echo "<span font_weight='normal' foreground='#586E75'> ⵏ</span>"

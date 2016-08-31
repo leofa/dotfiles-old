@@ -1,0 +1,14 @@
+#!/bin/bash
+
+trash=$(ls -A -1 ~/.local/share/Trash/files/ | wc -l)
+
+if [ "$trash" = "0" ];then 
+    echo -e ""
+else
+    echo -e "<span font='10' foreground='#738899'> </span><span foreground='#c5c8c6'>$trash</span>"
+fi 
+
+case $BLOCK_BUTTON in
+  1) caja trash:/// 
+esac
+

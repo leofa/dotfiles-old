@@ -106,15 +106,9 @@ pacman -S syslinux gptfdisk intel-ucode
 syslinux-install_update -i -a -m
 vim /boot/syslinux/syslinux.cfg
 - 
-    APPEND root=/dev/sda3 rw quiet vga=current noresume noswap noinitrd systemd.show_status=0 loglevel=3 i915.modeset=1 rd.udev.log-priority=3 modprobe.blacklist=ehci_pci tpm_tis.interrupts=0 elevator=noop nmi_watchdog=0
+    APPEND root=/dev/sda3 rw quiet vga=current systemd.show_status=0 loglevel=3 i915.modeset=1 rd.udev.log-priority=3 modprobe.blacklist=ehci_pci tpm_tis.interrupts=0 elevator=noop nmi_watchdog=0
     INITRD ../intel-ucode.img,../initramfs-linux.img
 -
-
-
-archwiki for offline help
-========
-
-pacman -S arch-wiki-lite
 
 
 finish

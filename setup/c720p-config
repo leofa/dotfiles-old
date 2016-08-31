@@ -12,32 +12,34 @@ dir="${dir}/.."
 
 echo "Installing chromebook drivers..."
 pacaur --needed --noedit --noconfirm -S \
-  xf86-input-cmt-git \
+  xf86-input-libinput \
+  # kernel 4.7 add support for c720(p) touchpad 
+  # xf86-input-cmt-git \
 
-echo "Add user to input group..."
-sudo usermod -a -G input $USER
+#echo "Add user to input group..."
+#sudo usermod -a -G input $USER
 
-echo "Add my touchpad tweaks..."
-echo 'Section "InputClass"
-    Identifier      "touchpad peppy cyapa"
-    MatchIsTouchpad "on"
-    MatchDevicePath "/dev/input/event*"
-    MatchProduct    "cyapa"
-    #added tweaks by leofa: 
-    #more responsive, sensitive pointer + osx style scrolling
-    Option          "Merge Max Ratio" "0.53"
-    Option          "Split Merge Max Movement" "6.1"
-    Option          "Tap Minimum Pressure" "1.0"
-    Option          "Two Finger Pressure Diff Thresh" "10" 
-    Option          "Two Finger Pressure Diff Factor" "0.9"
-    Option          "Australian Scrolling" "1"
-    Option          "Pointer Sensitivity" "5"
-	Option          "Scroll Sensitivity" "4"    
-	Option          "T5R2 Three Finger Click Enable" "1"
-	Option          "Stationary Wiggle Filter Enabled" "1"
-EndSection' > /tmp/peppy.conf
-sudo cp /tmp/peppy.conf /etc/X11/xorg.conf.d/60-touchpad-my-cmt-peppy.conf
-rm /tmp/peppy.conf    
+#echo "Add my touchpad tweaks..."
+#echo 'Section "InputClass"
+#    Identifier      "touchpad peppy cyapa"
+#    MatchIsTouchpad "on"
+#    MatchDevicePath "/dev/input/event*"
+#    MatchProduct    "cyapa"
+#    #added tweaks by leofa: 
+#    #more responsive, sensitive pointer + osx style scrolling
+#    Option          "Merge Max Ratio" "0.53"
+#    Option          "Split Merge Max Movement" "6.1"
+#    Option          "Tap Minimum Pressure" "1.0"
+#    Option          "Two Finger Pressure Diff Thresh" "10" 
+#    Option          "Two Finger Pressure Diff Factor" "0.9"
+#    Option          "Australian Scrolling" "1"
+#    Option          "Pointer Sensitivity" "5"
+#	Option          "Scroll Sensitivity" "4"    
+#	Option          "T5R2 Three Finger Click Enable" "1"
+#	Option          "Stationary Wiggle Filter Enabled" "1"
+#EndSection' > /tmp/peppy.conf
+#sudo cp /tmp/peppy.conf /etc/X11/xorg.conf.d/60-touchpad-my-cmt-peppy.conf
+#rm /tmp/peppy.conf    
  
 echo "Set X11 keymap us chromebook"
 sudo localectl set-x11-keymap us chromebook altgr-intl eurosign:5

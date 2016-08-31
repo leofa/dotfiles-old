@@ -12,6 +12,6 @@ else
 fi
 
 case $BLOCK_BUTTON in
-    # left click, read arch linux news feeds
-    1) i3-msg exec "$BROWSER http://ald.mindbrain.io" > /dev/null
+    # left click, check arch linux homepage
+    1) $BROWSER https://www.archlinux.org ;;
 esac

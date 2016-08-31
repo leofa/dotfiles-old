@@ -37,7 +37,11 @@ fi
 export PATH="/usr/local/bin:$HOME/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 
 # Default browser
-export BROWSER="qutebrowser"
+if [ -n "$TERM" ]; then
+    export BROWSER="surf"
+else
+    export BROWSER="w3m"
+fi
 
 # Default terminal emulator
 export TERMINAL="termite"
@@ -68,6 +72,9 @@ if which ruby &>/dev/null; then
         export PATH=$GEM_DIR:$PATH
     fi
 fi
+
+# Python,VIM and UTF-8
+export PYTHONIOENCODING=utf-8
 
 # Steam native runtime
 export STEAM_RUNTIME=0

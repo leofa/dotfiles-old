@@ -79,7 +79,8 @@ END {
 case $BLOCK_BUTTON in
   3) toggle-dpms ;; # left click, control DPMS 
   2) toggle-red ;;  # right click, redshift on/off
-  1) getacpi ;; # yad dialog with battery info
-  5) xbacklight -inc 10 ;; # scroll up, increase brightness
-  4) xbacklight -dec 10 ;; # scroll down, decrease brightness
+  1) getacpi ;; # dialog with battery info
+  5) sudo brightness up ;; 
+  # xbacklight doesn't work with modesetting use brightness script
+  4) sudo brightness down ;; 
 esac

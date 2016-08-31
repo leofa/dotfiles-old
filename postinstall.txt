@@ -77,6 +77,7 @@ systemctl enable fstrim.timer
 /etc/sysctl.d/99-sysctl.conf
 -
   vm.swappiness=10
+  vm.vfs_cache_pressure = 50
 -
 
 

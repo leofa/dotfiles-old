@@ -7,6 +7,6 @@ export pacdiff_program="sudo pacdiff"
 
 echo 'Check news then upgrade...' 
 #sudo pacmatic -Suu
-sudo pacmatic -Syu 
+sudo pacmatic -Su 
 #read -p "Press enter to continue..."
 echo 'done'

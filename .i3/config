@@ -27,7 +27,7 @@ bar {
      #separator_symbol "|"
      workspace_buttons yes
      strip_workspace_numbers yes
-     bindsym button2 exec rofi -show ssh  
+     bindsym button2 exec i3-msg kill
      bindsym button4 nop 
      bindsym button5 nop
      tray_output eDP1
@@ -118,7 +118,7 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="etcher|(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
+for_window [class="(?i)deja-dup|etcher|(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
 
 # modifier
 floating_modifier $mod 
@@ -257,7 +257,7 @@ bindsym $mod1+Down  exec cmus-remote -u && playerctl play-pause
 
 bindsym $mod+XF86AudioLowerVolume       exec termite --title "C* Music Player" --name "cmus_termite" -e cmus 
 bindsym $mod+XF86AudioRaiseVolume       exec termite --title "Radio" --name "radio" -e "sh -c 'radio'"
-bindsym $mod+Shift+XF86AudioRaiseVolume exec chromium --app=https://play.google.com/music
+bindsym $mod+Shift+XF86AudioRaiseVolume exec qutebrowser --backend webengine https://play.google.com/music
 
 # }}}
 
@@ -410,6 +410,7 @@ mode "  " {
 
 # terminal
 bindsym $mod+Return exec termite --name 'ws1_termite'
+#bindsym $mod+Return exec urxvt -name 'ws1_termite'
 bindsym $mod+backslash exec i3-sensible-terminal
 
 # search files/ websearch
@@ -430,7 +431,7 @@ bindsym $mod+Shift+b exec rofi-fb
 # mail
 bindsym $mod+m exec soc #script to start rtv turses & mutt 
 #termite --title "Mutt E-Mail Client" --name "mutt" -e "mutt"
-bindsym $mod+Shift+m exec $BROWSER https://mail.google.com
+bindsym $mod+Shift+m exec qutebrowser --backend webengine https://mail.google.com
 
 # text-editor
 bindsym $mod+g exec gvim -geom=120x42+200+23

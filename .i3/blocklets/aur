@@ -1,10 +1,8 @@
 #!/bin/bash
-# AUR updates
-#------------------------------------------------------------------------
+#
+# show AUR updates
 
 AUR=$(pacaur -k | wc -l)
-
-#------------------------------------------------------------------------
 
 if [ "$AUR" -gt 0 ]
    then
@@ -13,8 +11,7 @@ if [ "$AUR" -gt 0 ]
        exit 0
    fi
 
-#------------------------------------------------------------------------
-
 case $BLOCK_BUTTON in
-  1) $BROWSER http://ald.mindbrain.io ;; # left click, read arch linux news feeds 
+    # left click, check arch linux homepage 
+    1) $BROWSER https://www.archlinux.org ;; 
 esac
