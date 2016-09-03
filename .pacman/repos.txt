@@ -1,6 +1,7 @@
 acpi
 alsa-utils
 android-tools
+arandr
 arch-install-scripts
 asciidoc
 asciiquarium
