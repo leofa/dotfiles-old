@@ -85,7 +85,6 @@ gimp-help-nl
 git
 glances
 glibc
-gnome-chess
 gnome-disk-utility
 gnome-keyring
 gnome-themes-standard
@@ -180,7 +179,6 @@ npm
 ntfs-3g
 ntp
 nxproxy
-openbox
 openresolv
 openssh
 os-prober
@@ -234,7 +232,6 @@ reiserfsprogs
 rng-tools
 rofi
 rsync
-runc
 s-nail
 sane
 scrot
@@ -249,8 +246,6 @@ speedtest-cli
 sshfs
 startup-notification
 sudo
-supertux
-supertuxkart
 surf
 syncthing
 syncthing-inotify

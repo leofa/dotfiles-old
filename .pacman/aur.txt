@@ -50,5 +50,4 @@ vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
 xcursor-openzone
-yaourt
 zathura-epub-git
