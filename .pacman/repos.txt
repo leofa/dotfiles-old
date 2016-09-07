@@ -272,6 +272,7 @@ unace
 unrar
 unzip
 upower
+urxvt-perls
 usbutils
 util-linux
 vi
