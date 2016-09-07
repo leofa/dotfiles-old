@@ -45,6 +45,7 @@ device-mapper
 dhcpcd
 dialog
 diffutils
+distcc
 dmenu
 dmidecode
 dnsmasq
