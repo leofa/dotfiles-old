@@ -26,6 +26,7 @@ pacaur
 pdfjs
 pkgcacheclean
 playerctl
+pulseaudio-equalizer-ladspa
 python-babelfish
 python-colorlog
 python-enzyme
@@ -49,5 +50,6 @@ update-hosts-git
 vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
+webcamoid
 xcursor-openzone
 zathura-epub-git

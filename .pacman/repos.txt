@@ -149,7 +149,6 @@ libvncserver
 licenses
 linux
 linux-headers
-linux-lts
 linux-zen
 lm_sensors
 logrotate
@@ -207,7 +206,6 @@ protobuf
 psmisc
 pulseaudio-alsa
 pulseaudio-bluetooth
-pulseaudio-equalizer
 pulseaudio-gconf
 pulseaudio-zeroconf
 python
