@@ -52,4 +52,5 @@ vim-startify-git
 vim-tmuxline-git
 webcamoid
 xcursor-openzone
+yaourt
 zathura-epub-git
