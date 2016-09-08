@@ -214,13 +214,11 @@ python-crypto
 python-cssutils
 python-html2text
 python-pip
-python-praw
 python-pylast
 python-pysmbc
 python-pyudev
 python-service-identity
 python-setproctitle
-python-update_checker
 python2-pip
 qemu-arch-extra
 qt5-webengine
