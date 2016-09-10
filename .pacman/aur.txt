@@ -28,7 +28,6 @@ pkgcacheclean
 playerctl
 pulseaudio-equalizer-ladspa
 python-babelfish
-python-colorlog
 python-enzyme
 python-guessit
 python-prawcore-git
