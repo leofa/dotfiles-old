@@ -175,6 +175,7 @@ ncdu
 netctl
 newsbeuter
 nfs-utils
+notmuch
 npm
 ntfs-3g
 ntp

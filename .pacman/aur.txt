@@ -20,6 +20,7 @@ minecraft
 nbwmon
 ncurses5-compat-libs
 neofetch-git
+neomutt
 numix-circle-icon-theme-git
 overdue
 pacaur
@@ -47,6 +48,7 @@ turses-git
 ubuntu-device-flash-bin
 unclutter-xfixes-git
 update-hosts-git
+urlview
 vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
