@@ -14,7 +14,6 @@ i3ipc-python-git
 imv
 isl29018_driver
 ix
-jmtpfs
 lostfiles
 minecraft
 nbwmon
@@ -29,9 +28,6 @@ pkgcacheclean
 playerctl
 pulseaudio-equalizer-ladspa
 python-babelfish
-python-enzyme
-python-guessit
-python-prawcore-git
 python3-kitchen
 qemu-user-static
 qt5-styleplugins
@@ -45,14 +41,12 @@ setroot-git
 thermald
 ttf-font-awesome
 turses-git
-ubuntu-device-flash-bin
 unclutter-xfixes-git
 update-hosts-git
 urlview
 vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
-webcamoid
 xcursor-openzone
 yaourt
 zathura-epub-git
