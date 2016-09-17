@@ -31,7 +31,6 @@ python-babelfish
 python3-kitchen
 qemu-user-static
 qt5-styleplugins
-qtpass
 qutebrowser-git
 redshift-minimal
 rtv

@@ -52,6 +52,7 @@ dnsmasq
 docbook-xml
 docbook-xsl
 docker
+doge
 dosfstools
 dropbear
 dunst
@@ -225,6 +226,7 @@ python2-pip
 qemu-arch-extra
 qt5-webengine
 qt5ct
+qtpass
 ranger
 reflector
 reiserfsprogs
