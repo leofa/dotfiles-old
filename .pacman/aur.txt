@@ -4,9 +4,9 @@ chromium-pepper-flash
 chromium-widevine
 cower
 downgrade
+gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
-gtksu-git
 hda-verb
 i3-gaps
 i3blocks
