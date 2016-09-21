@@ -9,7 +9,7 @@ gnome-xcf-thumbnailer
 gtk-theme-arc-git
 hda-verb
 i3-gaps
-i3blocks
+i3blocks-gaps-git
 i3ipc-python-git
 imv
 isl29018_driver
