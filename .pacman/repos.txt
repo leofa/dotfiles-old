@@ -14,6 +14,7 @@ bash-completion
 bc
 binutils
 bison
+blueman
 bluez
 bluez-firmware
 bluez-plugins

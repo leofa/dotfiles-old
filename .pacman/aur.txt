@@ -1,6 +1,5 @@
 arch-wiki-man
 binfmt-support
-chromium-pepper-flash
 chromium-widevine
 cower
 downgrade
@@ -12,6 +11,7 @@ i3-gaps
 i3blocks-gaps-git
 i3ipc-python-git
 imv
+insync
 isl29018_driver
 ix
 lostfiles
@@ -24,6 +24,7 @@ numix-circle-icon-theme-git
 overdue
 pacaur
 pdfjs
+pepper-flash
 pkgcacheclean
 playerctl
 pulseaudio-equalizer-ladspa
