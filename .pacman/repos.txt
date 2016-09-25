@@ -70,6 +70,8 @@ figlet
 file
 filesystem
 findutils
+firefox
+firefox-i18n-nl
 firejail
 flashrom
 flattr-icon-theme
@@ -177,6 +179,7 @@ ncdu
 netctl
 newsbeuter
 nfs-utils
+nmap
 notmuch
 npm
 ntfs-3g
