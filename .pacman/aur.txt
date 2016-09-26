@@ -7,7 +7,7 @@ gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
 hda-verb
-i3-gaps
+i3-gaps-next-git
 i3blocks-gaps-git
 i3ipc-python-git
 imv

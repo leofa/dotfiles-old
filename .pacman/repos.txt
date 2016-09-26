@@ -160,7 +160,6 @@ logrotate
 lvm2
 lxappearance
 lxc
-lxtask
 m4
 make
 man-db
@@ -289,6 +288,7 @@ vim-airline-themes
 vim-spell-nl
 vim-systemd
 w3m
+weechat
 wget
 which
 wireless_tools
@@ -299,7 +299,6 @@ x11-ssh-askpass
 xcb-util-keysyms
 xcb-util-wm
 xclip
-xdg-user-dirs-gtk
 xdotool
 xf86-input-keyboard
 xf86-input-libinput
