@@ -79,7 +79,7 @@ flex
 fontconfig-infinality-ultimate
 fortune-mod
 freetype2-infinality-ultimate
-galculator-gtk2
+galculator
 gawk
 gcc
 gcc-libs
