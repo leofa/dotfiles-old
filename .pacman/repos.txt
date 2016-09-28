@@ -170,11 +170,13 @@ memtest86+
 mesa-demos
 mlocate
 moreutils
+mpd
 mpv
 mtools
 namcap
 nano
 ncdu
+ncmpcpp
 netctl
 newsbeuter
 nfs-utils

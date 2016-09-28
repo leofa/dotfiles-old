@@ -1,6 +1,7 @@
 arch-wiki-man
 binfmt-support
 chromium-widevine
+clerk
 cower
 downgrade
 gksu-polkit-git
@@ -16,6 +17,7 @@ isl29018_driver
 ix
 lostfiles
 minecraft
+mpd-sima
 nbwmon
 ncurses5-compat-libs
 neofetch-git
