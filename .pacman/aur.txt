@@ -25,6 +25,7 @@ neomutt
 numix-circle-icon-theme-git
 overdue
 pacaur
+paper-gtk-theme-git
 pdfjs
 pepper-flash
 pkgcacheclean
