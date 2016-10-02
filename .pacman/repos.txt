@@ -171,6 +171,7 @@ mesa-demos
 mlocate
 moreutils
 mpd
+mps-youtube
 mpv
 mtools
 namcap
