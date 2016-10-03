@@ -26,6 +26,7 @@ numix-circle-icon-theme-git
 overdue
 pacaur
 paper-gtk-theme-git
+papirus-icons-git
 pdfjs
 pepper-flash
 pkgcacheclean
