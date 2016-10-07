@@ -47,6 +47,7 @@ dhcpcd
 dialog
 diffutils
 distcc
+dkms
 dmenu
 dmidecode
 dnsmasq
