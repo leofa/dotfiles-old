@@ -255,7 +255,6 @@ sshfs
 startup-notification
 sudo
 surf
-sway
 syncthing
 syncthing-inotify
 sysfsutils
