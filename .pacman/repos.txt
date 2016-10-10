@@ -47,7 +47,6 @@ dhcpcd
 dialog
 diffutils
 distcc
-dkms
 dmenu
 dmidecode
 dnsmasq
@@ -153,7 +152,6 @@ libva-intel-driver
 libvdpau-va-gl
 libvncserver
 licenses
-linux
 linux-headers
 linux-zen
 lm_sensors
