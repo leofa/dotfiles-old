@@ -1,6 +1,5 @@
 arch-wiki-man
 binfmt-support
-chromium-dev
 chromium-widevine
 clerk
 cower
