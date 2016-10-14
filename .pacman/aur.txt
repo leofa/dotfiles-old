@@ -20,7 +20,7 @@ minecraft
 mpd-sima
 nbwmon
 ncurses5-compat-libs
-neofetch-git
+neofetch
 neomutt
 numix-circle-icon-theme-git
 overdue
