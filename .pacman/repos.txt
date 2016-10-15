@@ -21,6 +21,7 @@ bluez-firmware
 bluez-plugins
 bluez-utils
 boost
+bspwm
 btrfs-progs
 bzip2
 bzr
@@ -254,6 +255,7 @@ sshfs
 startup-notification
 sudo
 surf
+sxhkd
 syncthing
 syncthing-inotify
 sysfsutils

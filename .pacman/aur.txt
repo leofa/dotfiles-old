@@ -15,6 +15,7 @@ imv
 insync
 isl29018_driver
 ix
+lemonbar-git
 lostfiles
 minecraft
 mpd-sima
