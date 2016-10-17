@@ -4,6 +4,7 @@ chromium-widevine
 clerk
 cower
 downgrade
+gcolor3
 gksu-polkit-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
