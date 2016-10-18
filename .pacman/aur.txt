@@ -1,5 +1,6 @@
 arch-wiki-man
 binfmt-support
+chromium-snapshot-bin
 chromium-widevine
 clerk
 cower
@@ -47,6 +48,7 @@ setroot-git
 thermald
 ttf-font-awesome
 turses-git
+ubuntu-device-flash-bin
 unclutter-xfixes-git
 update-hosts-git
 urlview
@@ -54,5 +56,6 @@ vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
 xcursor-openzone
+xournalpp-git
 yaourt
 zathura-epub-git

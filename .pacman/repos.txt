@@ -32,7 +32,6 @@ caja-extensions-common
 calc
 ccache
 ccze
-chromium
 clipit
 cmus
 colordiff
@@ -81,21 +80,18 @@ flex
 fontconfig-infinality-ultimate
 fortune-mod
 freetype2-infinality-ultimate
-galculator
+galculator-gtk2
 gawk
 gcc
 gcc-libs
-gcolor2
 gettext
 gimp
 gimp-help-nl
 git
 glances
 glibc
-gnome-disk-utility
 gnome-keyring
 gnome-themes-standard
-gnuchess
 gpart
 gparted
 gptfdisk
@@ -105,11 +101,6 @@ grub
 gsimplecal
 gst-libav
 gst-plugins-good
-gstreamer0.10-bad-plugins
-gstreamer0.10-base-plugins
-gstreamer0.10-ffmpeg
-gstreamer0.10-good-plugins
-gstreamer0.10-ugly-plugins
 gtk-engine-murrine
 gucharmap
 guvcview
@@ -165,6 +156,7 @@ m4
 make
 man-db
 man-pages
+mate-desktop
 mdadm
 mediainfo
 memtest86+
@@ -300,6 +292,7 @@ wol
 wpa_actiond
 wpa_supplicant
 x11-ssh-askpass
+xarchiver-gtk2
 xcb-util-keysyms
 xcb-util-wm
 xclip
@@ -326,7 +319,6 @@ xorg-xset
 xorg-xsetroot
 xorg-xvinfo
 xorg-xwininfo
-xournal
 xsel
 youtube-dl
 zathura
