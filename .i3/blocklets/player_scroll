@@ -32,16 +32,21 @@ else
     INFO_TITLE=$(playerctl metadata title)
     INFO_ALBUM=$(playerctl metadata album)
     INFO_ARTIST=$(playerctl metadata artist)
-  else
+ else
     PROG="cmus-remote"
     INFO_CMUS=$(cmus-remote -Q 2>/dev/null)
-    if [[ $? -eq 0 ]]; then
-      INFO_TITLE=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*title//p' | head -n 1)
-      INFO_ALBUM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*album//p' | head -n 1)
-      INFO_ARTIST=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*artist//p' | head -n 1)
-      INFO_STREAM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*stream//p' | head -n 1)     
-    else
-      sleep 1
+  if [[ $? -eq 0 ]]; then
+    INFO_TITLE=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*title//p' | head -n 1)
+    INFO_ALBUM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*album//p' | head -n 1)
+    INFO_ARTIST=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*artist//p' | head -n 1)
+    INFO_STREAM=$(echo "${INFO_CMUS}" | sed -n -e 's/^.*stream//p' | head -n 1)
+    elif [[ $? -eq 0 ]]; then
+    PROG="mpd"
+    INFO_TITLE=$(mpc current)
+    INFO_ALBUM=$(mpc current -f %album%)
+    INFO_ARTIST=$(mpc current -f %artist)
+  else
+    sleep 1
       exit
     fi
   fi

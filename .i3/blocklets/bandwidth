@@ -54,18 +54,18 @@ tx_rate=$(( $tx_diff / $time_diff ))
 tx_kib=$(( $tx_rate >> 10 ))
 if [[ "$tx_rate" -gt 1048576 ]]; then
     tx_mbs=$(printf '%s' "`echo "scale=1; $tx_kib / 1024" | bc`")
-  echo -n "${tx_mbs}<span font='8' foreground='#969896'>M</span><span foreground='#B294BB'>↑</span><span font='3' foreground='#282A2E'>.</span>"
+  echo -n " ${tx_mbs}<span foreground='#c5c8c6'>M</span><span foreground='#b294bb'>↑</span><span font='3'> </span>"
 else
-  echo -n "${tx_kib}<span font='8' foreground='#969896'>K</span><span foreground='#B294BB'>↑</span><span font='3' foreground='#282A2E'>.</span>"
+  echo -n " ${tx_kib}<span foreground='#c5c8c6'>K</span><span foreground='#b294bb'>↑</span><span font='4'> </span>"
 fi
 
 # incoming
 rx_kib=$(( $rx_rate >> 10 ))
 if [[ "$rx_rate" -gt 1048576 ]]; then
     rx_mbs=$( printf '%s' "`echo "scale=1; $rx_kib / 1024" | bc`")
-  echo -n "${rx_mbs}<span font='8' foreground='#969896'>M</span><span foreground='#81A2BE'>↓</span>"
+  echo -n "${rx_mbs}<span foreground='#c5c8c6'>M</span><span foreground='#81a2be'>↓</span> "
 else
-  echo -n "${rx_kib}<span font='8' foreground='#969896'>K</span><span foreground='#81A2BE'>↓</span>"
+  echo -n "${rx_kib}<span foreground='#c5c8c6'>K</span><span foreground='#81a2be'>↓</span> "
 fi
 
 # mouse buttons  

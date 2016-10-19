@@ -5,7 +5,7 @@
 PACMAN=$(checkupdates | wc -l)
 
 if [ "$PACMAN" -gt 0 ]; then
-    echo "<span foreground='#81A2BE'> </span>$PACMAN"
+    echo " <span foreground='#81a2be'> </span>$PACMAN "
     #     
 else
     exit 0

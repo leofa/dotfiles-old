@@ -30,10 +30,10 @@ END {
 	gsub(/%$/,"",use)
 	if (100 - use < alert_low) {
 		# color
-		print "#CC6666"
+		print "#a54242"
 	}}')
 
-echo "<span foreground='#87AFAF' > </span>$usage"
+echo " <span foreground='#8abeb7' > </span>$usage "
 
 case $BLOCK_BUTTON in
  1) i3-msg exec rofi-find ;; #left click, locate +xdg-open files with rofi

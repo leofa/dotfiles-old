@@ -6,11 +6,11 @@ load2="$(cut -d ' ' -f2 /proc/loadavg)"
 load3="$(cut -d ' ' -f3 /proc/loadavg)"
 
 # short text
-echo "<span foreground='#b4b7b4'> </span><span foreground='#c5c8c6'>$load1</span><span foreground='#b294bb'>₁</span>"
+echo "  $load1<span foreground='#b294bb'>₁</span> "
 
 # long text
 #echo "<span foreground='#b4b7b4'> </span><span foreground='#e0e0e0'>$load1₁ </span><span foreground='#c5c8c6'>$load2₅ </span><span foreground='#b4b7b4'>$load3₁₀</span>"
 
 case $BLOCK_BUTTON in
-  1) termite --exec glances --name 'glances_term' --hold 
+  1) termite -e glances --title glances --name 'glances' --hold 
 esac

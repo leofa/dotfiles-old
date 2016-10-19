@@ -11,17 +11,17 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 # if the machine has no battery or wireless connection, the corresponding block should display error.
 [[ ! -d /sys/class/net/${INTERFACE}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo "<span foreground='#969896'>/</span><span font='10' rise='-1500' foreground='#B294BB'>  </span><span foreground='#969896'>/</span><span foreground='#282A2E'>/</span>"
+    [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]] && echo " <span foreground='#707880'>/</span><span font='10' rise='-1500' foreground='#b294bb'>  </span><span foreground='#707880'>/</span><span foreground='#282a2e'>/</span>"
 
 
   if [[ $QUALITY -ge 80 ]]; then
-      echo "<span foreground='#87afaf'></span><span foreground='#282A2E'>/</span>"
+      echo " <span foreground='#8abeb7'></span><span foreground='#282a2e'>/</span>"
   elif [[ $QUALITY -lt 80 ]]; then
-      echo "<span foreground='#87afaf'></span><span foreground='#282A2E'>/</span>" 
+      echo " <span foreground='#5e8d87'></span><span foreground='#282a2e'>/</span>" 
   elif [[ $QUALITY -lt 60 ]]; then
-      echo "<span foreground='#b0925a'></span><span foreground='#282A2E'>/</span>" #orange   
+      echo " <span foreground='#de935f'></span><span foreground='#282a2e'>/</span>" #orange   
   elif [[ $QUALITY -lt 40 ]]; then
-      echo "<span foreground='#a3685a'></span><span foreground='#282A2E'>/</span>" #red
+      echo " <span foreground='#a54242'></span><span foreground='#282a2e'>/</span>" #red
 fi
 
 # mouse buttons  

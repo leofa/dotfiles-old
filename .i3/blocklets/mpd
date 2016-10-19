@@ -1,0 +1,62 @@
+#!/bin/bash 
+
+INTERVAL=0.5
+MAX_LENGTH=35
+ADD_STR="🞄  "
+#♫  ♬  ♪  ♩  ♭  ♪
+ADD_LENGTH=${#ADD_STR}
+
+MPC=$(mpc | grep "^\[playing\]" | awk '{print $1}')
+INFO_TITLE=$(mpc current -f %title%)
+INFO_ARTIST=$(mpc current -f %artist%)
+INFO_ALBUM=$(mpc current -f %album%)
+INFO_YEAR=$(mpc current -f %date%)
+
+if [ "$MPC" = "[playing]" ];then 
+    OUT_TEXT=$(echo " ${INFO_ARTIST} 🞄  ♫ ${INFO_TITLE} ♪ 🞄  ${INFO_ALBUM} (${INFO_YEAR}) ")
+  fi
+
+  if [[ "${OUT_TEXT}" ]]; then
+  CHECK_SUM=$(echo "${PROG}" | md5sum | awk '{print $1}')
+  
+  TMP_FILE="/tmp/.scroll-${CHECK_SUM}"
+  if [[ -f "${TMP_FILE}" ]]; then
+    SCROLL_POS=$(cat "${TMP_FILE}")
+  else
+    SCROLL_POS=0
+  fi
+
+  TEXT_LENGTH=${#OUT_TEXT}
+  MAX_OFFSET=$((TEXT_LENGTH +ADD_LENGTH -2))
+
+  if [[ "${TEXT_LENGTH}" -lt "${MAX_LENGTH}" ]]; then
+    MAX_LENGTH="${TEXT_LENGTH}"
+  fi
+
+  if [[ "${SCROLL_POS}" -gt "${MAX_OFFSET}" ]]; then
+    SCROLL_POS=0
+  fi
+
+  TEXT_LINE="${OUT_TEXT}${ADD_STR}${OUT_TEXT}${ADD_STR}${OUT_TEXT}"
+  TEXT_LINE=${TEXT_LINE:$SCROLL_POS:$MAX_LENGTH}   
+
+  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro Semibold'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
+  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro SemiBold'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
+  echo ""
+
+  SCROLL_POS=$((SCROLL_POS +1))
+
+  echo "${SCROLL_POS}" > "${TMP_FILE}"
+  sleep 0.5
+else
+  sleep 1
+fi
+
+# add mouse buttons  
+case $BLOCK_BUTTON in
+    1) exec mpc toggle ;; #left click play/pause
+    3) exec mpc stop ;;   #right click stop
+    4) exec mpc prev ;;   #scroll down previous
+    5) exec mpc next      #scroll up next
+esac
+

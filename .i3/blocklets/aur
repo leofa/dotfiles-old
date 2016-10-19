@@ -6,7 +6,7 @@ AUR=$(pacaur -k | wc -l)
 
 if [ "$AUR" -gt 0 ]
    then
-       echo "<span foreground='#87AFAF'> </span>$AUR"
+       echo " <span foreground='#87AFAF'> </span>$AUR "
    else 
        exit 0
    fi

@@ -15,8 +15,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-#------------------------------------------------------------------------
-
 # The second parameter overrides the mixer selection
 # For PulseAudio users, use "pulse"
 # For Jack/Jack2 users, use "jackplug"
@@ -39,8 +37,6 @@ SCONTROL="${BLOCK_INSTANCE:-$(amixer -D $MIXER scontrols |
 # This may be in in % or dB (eg. 5% or 3dB)
 STEP="${1:-5%}"
 
-#------------------------------------------------------------------------
-
 capability() { # Return "Capture" if the device is a capture device
   amixer -D $MIXER get $SCONTROL |
     sed -n "s/  Capabilities:.*cvolume.*/Capture/p"
@@ -54,16 +50,14 @@ format() {
   perl_filter='if (/.*\[(\d+%)\] (\[(-?\d+.\d+dB)\] )?\[(on|off)\]/)'
   perl_filter+='{CORE::say $4 eq "off" ? "X" : "'
   # If dB was selected, print that instead
-  perl_filter+=$([[ $STEP = *dB ]] && echo '$3' || echo '$1')
+  perl_filter+=$([[ $STEP = *dB ]] && echo '$3 ' || echo '$1 ')
   perl_filter+='"; exit}'
   perl -ne "$perl_filter"
 }
 
-#------------------------------------------------------------------------
-
 case $BLOCK_BUTTON in
-  1) i3-msg exec pavucontrol > /dev/null ;; # left click, sosund settings 
-  2) i3-msg exec 'termite --name "radio" -e "sh -c 'radio'"' > /dev/null ;; # middle click, launch radio script
+  1) pavucontrol & > /dev/null ;; # left click, sosund settings 
+  2) pulseaudio-equalizer-gtk & > /dev/null ;; # middle click, launch equalizer
   3) amixer -q -D $MIXER sset $SCONTROL $(capability) toggle ;;  # right click, mute/unmute
   5) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}+ unmute ;; # scroll up, increase
   4) amixer -q -D $MIXER sset $SCONTROL $(capability) ${STEP}- unmute ;; # scroll down, decrease

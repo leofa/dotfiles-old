@@ -26,8 +26,8 @@ if [[ "${TOTAL_COUNT}" -gt 1 ]]; then
   AVERAGE_TEMP="${AVERAGE_TEMP}"
 fi
 
-echo "<span font_weight='ultralight' foreground='#b9b9b9'> </span>${AVERAGE_TEMP}<span font='Hack 9' font_weight='ultraheavy' foreground='#b294bb'>°</span>"
-echo "<span font_weight='ultralight' foreground='#b9b9b9'> </span>${AVERAGE_TEMP}<span font='Hack 9' font_weight='ultraheavy' foreground='#b294bb'>°</span>"
+echo "  ${AVERAGE_TEMP}<span font_weight='ultraheavy' foreground='#b294bb'>°</span> "
+echo "  ${AVERAGE_TEMP}<span font_weight='ultraheavy' foreground='#b294bb'>°</span> "
 echo ""
 
 if [[ "${IS_URGENT}" -eq 1 ]]; then

@@ -17,7 +17,7 @@ END
 if [ -n "$WIN" ]; 
 then
     # add pango formatting
-    echo "<span font='Source Code Pro Bold 9'>$WIN</span>"
+    echo "<span weight='heavy'> $WIN </span>"
 else 
     exit 0
 fi
