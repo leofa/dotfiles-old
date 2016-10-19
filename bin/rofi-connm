@@ -69,6 +69,7 @@ case $conn in
     $bctl)
         termite \
             --title "bluetoothctl" \
+            --class "info" \
             --name "bctl" \
             -e "bluetoothctl" ;;
  esac

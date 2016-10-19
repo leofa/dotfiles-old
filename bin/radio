@@ -46,7 +46,7 @@ stations=(
 #'- Jazz'="http://icecast.omroep.nl/radio6-jazz-bb-mp3"
 #'- Grooves'="http://icecast.omroep.nl/radio6-grooves-bb-mp3"
 #'- Blues'="http://icecast.omroep.nl/radio6-blues-bb-mp3"
-#'Jupiter Broadcasting Radio'="http://jbradio.out.airtime.pro:8000/jbradio_a"
+#'- Jupiter Broadcasting Radio'="http://jbradio.out.airtime.pro:8000/jbradio_a"
 #'Digitally Imported: Chillout'="http://listen.di.fm/public3/chillout.pls"
 #'- Chillout Dreams'="http://listen.di.fm/public3/chilloutdreams.pls"
 #'- Soulful House'="http://listen.di.fm/public3/soulfulhouse.pls"
@@ -104,7 +104,7 @@ stations=(
   capture="-capture -dumpfile ${stations[$sta]%%=*}_`date "+%T_%F"`.mp3"
 
  # tfile=`mktemp`
-  mpv -vo null --quiet --no-ytdl `echo ${stations[$sta]} | cut -d '=' -f2`
+  mpv -vo null --quiet --no-ytdl --no-resume-playback `echo ${stations[$sta]} | cut -d '=' -f2`
  
   echo -ne "${cyan}\nPress enter to change station ${norm}"
   read -t 5

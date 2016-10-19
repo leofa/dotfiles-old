@@ -38,7 +38,7 @@ export PATH="/usr/local/bin:$HOME/bin:$HOME/bin:$HOME/.local/bin:$PATH"
 
 # Default browser
 if [ -n "$TERM" ]; then
-    export BROWSER="surf"
+    export BROWSER="qutebrowser"
 else
     export BROWSER="w3m"
 fi
@@ -63,7 +63,8 @@ export GDK_USE_XFT=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
 # QT5 style
-export QT_STYLE_OVERRIDE=GTK+
+#export QT_STYLE_OVERRIDE=GTK+
+export QT_QPA_PLATFORMTHEME=gtk2
 
 # Ruby support
 if which ruby &>/dev/null; then

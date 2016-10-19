@@ -20,38 +20,67 @@ font pango: Source Code Pro Medium, FontAwesome Regular 9
 
 # I3bar + Colors {{{
 
+# colors from X
+set_from_resource $darkred     color1  #000000
+set_from_resource $red         color9  #000000
+set_from_resource $darkgreen   color2  #000000
+set_from_resource $green       color10 #000000
+set_from_resource $darkyellow  color3  #000000
+set_from_resource $yellow      color11 #000000
+set_from_resource $darkblue    color4  #000000
+set_from_resource $blue        color12 #000000
+set_from_resource $darkmagenta color5  #000000
+set_from_resource $magenta     color13 #000000
+set_from_resource $darkcyan    color6  #000000
+set_from_resource $cyan        color14 #000000
+set_from_resource $darkwhite   color7  #000000
+set_from_resource $white       color15 #000000
+
+# set custom black colors
+set $black       #282a2e
+set $darkblack   #1d1f21
+set $transparent #00000099
+set $brightwhite #f9f9f9
+
+# add special colors
+set $brightslate #526b77
+set $slate #455a64
+set $darkslate #37474f
+
 bar {
      status_command i3blocks
+     i3bar_command i3bar -t
      position top
-     height 21    
-     #separator_symbol "|"
+     height 24
+     #separator_symbol ">"
      workspace_buttons yes
      strip_workspace_numbers yes
      bindsym button2 exec i3-msg kill
-     bindsym button4 nop 
-     bindsym button5 nop
-     tray_output eDP1
-     tray_padding 3     
+     bindsym button4 exec rofi -width 45 -show window
+     bindsym button5 exec rofi -show run
+     tray_output eDP-1
+     tray_padding 6
      colors {    
          # <bar>
-         separator           #586e75 
-         background          #282a2e
-         statusline          #c5c8c6
+         separator           $darkwhite
+         background          $transparent
+         statusline          $white
          
-         # <workclass>       <border> <bg>     <text>
-         focused_workspace   #586e75  #4e6269  #ffffff
-         inactive_workspace  #455057  #3b444a  #c7c7c7
-         active_workspace    #282a2e  #373F45  #ffffff
-         urgent_workspace    #282a2e  #943b3a  #ffffff
-         binding_mode        #943b3a  #943b3a  #ffffff
+         # <workclass>       <border>      <bg>     <text>
+         focused_workspace   $darkblack   $brightslate $brightwhite
+         inactive_workspace  $transparent $black       $white
+         active_workspace    $darkblack   $darkwhite   $brightwhite
+         urgent_workspace    $darkblack   $darkred     $brightwhite
+         binding_mode        $darkblack   $darkmagenta $brightwhite
      }
 }
 
-# <clientclass>          <border> <bg>     <text>   <indicator>
-client.focused           #282a2e  #4e6269  #f9f9f9  #3d9fb8
-client.focused_inactive  #282a2e  #3b444a  #c7c7c7  #205360
-client.unfocused         #282a2e  #373F45  #c7c7c7  #354347
-client.urgent            #282a2e  #ae4544  #f9f9f9  #ae4544
+# <clientclass>         <border>   <bg>    <text> <indicator> <childborder>
+client.focused          $darkblack $darkblue    $brightwhite $darkwhite $darkblue 
+client.unfocused        $black     $slate       $white       $darkwhite $slate
+client.focused_inactive $black     $darkslate   $white       $black     $darkslate 
+client.urgent           $darkblack $darkred     $brightwhite $darkred   $darkred
+client.background       $black
 
 # }}}
 
@@ -78,29 +107,29 @@ set $WS0 10 
 
 # Fixed workspace layout {{{
 
-for_window [workspace="$WS2|$WS3|$WS4"] layout tabbed
+for_window [workspace="$WS2|$WS4"] layout tabbed
 # }}}
 
 # Window title format {{{
 
-for_window [class="(?i)"] title_format "<span weight='ultraheavy' foreground='#282a2e'>   </span><span font='Source Code Pro 9' weight='bold' >%title</span>"
+for_window [class="(?i)"] title_format "<span weight='ultraheavy' foreground='$darkblack'>   </span><span weight='bold' >%title</span>"
 
 # }}}
 
 # Gaps {{{
 
-smart_gaps on
-gaps outer 0
-gaps inner 0
+#smart_gaps on
+gaps outer 2
+gaps inner 4
 
 # }}}
 
 # Borders {{{
 
 bindsym $mod+Shift+t border toggle
-smart_borders on
-new_window pixel 4
-new_float pixel 4
+smart_borders no_gaps
+new_window pixel 3
+new_float pixel 3
 
 # }}}
 
@@ -118,7 +147,7 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="(?i)deja-dup|etcher|(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
+for_window [class="(?i)gcolor3|imv|(?i)pulseaudio-equalizer.py|(?i)deja-dup|etcher|(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
 
 # modifier
 floating_modifier $mod 
@@ -149,7 +178,7 @@ bindsym $mod+plus scratchpad show
 # Sticky windows {{{
 
 bindsym $mod+Shift+s sticky toggle
-for_window [class="info|Mate-color-select|gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable
+for_window [class="info|Mate-color-select|(?i)gcolor3|timesup|QtPass|GtkFileChooserDialog"] sticky enable
 for_window [instance="file_progress"]  sticky enable
 
 # }}}
@@ -173,15 +202,16 @@ bindsym $mod+y fullscreen disable, floating enable, resize set 422 240, sticky e
 assign [instance="scows"] $WL0
 assign [instance="urxvt|ws1_termite"] $WS1
 assign [window_role="browser"] $WS2
-assign [class="(?i)qutebrowser"] $WS2
+assign [class="(?i)qutebrowser|surf"] $WS2
 assign [instance="bookmarks|file_properties|property_browser|caja"] $WS3
-assign [instance="libreoffice*|abiword|gucharmap|mutt|geary|xournal"] $WS4
+assign [instance="newsbeuter|libreoffice*|abiword|gucharmap|mutt|geary|xournal"] $WS4
 assign [instance="atom|subl3|sublime_text|geany"] $WS5
-assign [instance="cmus_termite|lollypop|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
+assign [instance="cmus|lollypop|audacious|quodlibet|banshee|deadbeef|google-musicmanager|gmusicbrowser|spotify|audacious|deadbeef|Plex|Kodi"] $WS6
 assign [instance="cheese|guvcview|(?i)pinta|gimp|inkscape|krita|simple-scan|gthumb"] $WS7
 assign [class="(?i)Steam"] 7  
 assign [instance="sol|frogatto|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|supertuxkart|gnome-chess"] $WS8
-assign [instance="remmina|htop|(?i)gnome-boxes|virt-manager|log_term|glances_term|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
+assign [instance="remmina|htop|(?i)gnome-boxes|virt-manager|journalctl|glances|htop_term|pacaur|gparted|gnome-disks|gitg|seahorse"] $WS9
+assign [instance="turses|rtv|weechat"] $WS0
 
 # chromium-apps
 assign [instance="crx_apdfllckaahabafndbhieahigkjlhalf"] "$WS4" # Drive
@@ -250,13 +280,20 @@ bindsym $mod+XF86AudioMute   exec pavucontrol
 
 # Mediaplayer control {{{
 
-bindsym $mod1+Right exec cmus-remote -n && playerctl next
-bindsym $mod1+Left  exec cmus-remote -p && playerctl previous
-bindsym $mod1+Up    exec cmus-remote -s && playerctl stop
-bindsym $mod1+Down  exec cmus-remote -u && playerctl play-pause
+#bindsym $mod1+Right exec 'sh -c "cmus-remote -n; playerctl next; mpc next"'
+#bindsym $mod1+Left  exec 'sh -c "cmus-remote -p; playerctl previous; mpc prev"'
+#bindsym $mod1+Up    exec 'sh -c "cmus-remote -s; playerctl stop; mpc stop"'
+#bindsym $mod1+Down  exec 'sh -c "cmus-remote -u; playerctl play-pause; mpc toggle"'
 
-bindsym $mod+XF86AudioLowerVolume       exec termite --title "C* Music Player" --name "cmus_termite" -e cmus 
-bindsym $mod+XF86AudioRaiseVolume       exec termite --title "Radio" --name "radio" -e "sh -c 'radio'"
+bindsym $mod1+Right exec mpc next
+bindsym $mod1+Left  exec mpc prev
+bindsym $mod1+Up    exec mpc stop
+bindsym $mod1+Down  exec mpc toggle
+
+
+#bindsym $mod+XF86AudioLowerVolume       exec termite --title "cmus" --name "cmus" -e cmus 
+bindsym $mod+XF86AudioLowerVolume       exec termite --name "cmus" -e ncmpcpp
+bindsym $mod+XF86AudioRaiseVolume       exec termite --title "radio" --name "radio" -e "sh -c 'radio'"
 bindsym $mod+Shift+XF86AudioRaiseVolume exec qutebrowser --backend webengine https://play.google.com/music
 
 # }}}
@@ -375,17 +412,17 @@ bindsym $mod+Shift+0 move container to workspace $WS0
 # }}}
 
 # Multimonitor support {{{
-workspace "$WL0" output HDMI1
-workspace "$WS1" output eDP1
-workspace "$WS2" output eDP1
-workspace "$WS3" output eDP1
-workspace "$WS4" output eDP1
-workspace "$WS5" output eDP1
-workspace "$WS6" output HDMI1
-workspace "$WS7" output HDMI1
-workspace "$WS8" output HDMI1
-workspace "$WS9" output HDMI1
-workspace "$WS0" output HDMI1
+workspace "$WL0" output HDMI-1
+workspace "$WS1" output eDP-1
+workspace "$WS2" output HDMI-1
+workspace "$WS3" output eDP-1
+workspace "$WS4" output eDP-1
+workspace "$WS5" output eDP-1
+workspace "$WS6" output HDMI-1
+workspace "$WS7" output HDMI-1
+workspace "$WS8" output HDMI-1
+workspace "$WS9" output eDP-1
+workspace "$WS0" output HDMI-1
 
 # }}}
 
@@ -418,20 +455,22 @@ bindsym $mod1+space exec rofi-find
 bindsym $mod+slash exec rofi-s
 
 # webbrowser
-bindsym $mod+Shift+slash exec rofi-ssb
-bindsym $mod+c exec chromium
-bindsym $mod+n exec qutebrowser
+bindsym $mod+c exec chrome_app  
+bindsym $mod+n exec qutebrowser 
 bindsym $mod+Shift+n exec qutebrowser ~/docs/bookmarks_18-03-16.html
 bindsym $mod+i exec chromium --incognito
 
+# change wallpaper when set with wallch script
+bindsym $mod+Shift+slash exec pkill wallch && wallch
+
 # filemanager
-bindsym $mod+b exec caja ~/
+bindsym $mod+b exec caja; exec _caja
 bindsym $mod+Shift+b exec rofi-fb
 
 # mail
 bindsym $mod+m exec soc #script to start rtv turses & mutt 
-#termite --title "Mutt E-Mail Client" --name "mutt" -e "mutt"
-bindsym $mod+Shift+m exec qutebrowser --backend webengine https://mail.google.com
+bindsym $mod+Shift+m exec termite --title mutt --name mutt -e mutt
+#qutebrowser --backend webengine https://mail.google.com
 
 # text-editor
 bindsym $mod+g exec gvim -geom=120x42+200+23
@@ -479,5 +518,7 @@ bindsym $mod+XF86PowerOff exec systemctl suspend
 
 #exec sleep 2 && termite --name "scows" --title="Fortune Cookie (^-^)/" -e "scows wisdom linux cookie linuxcookie"
 exec i3-msg workspace 1 " " #fix workspace 1 name not applied at login (race condition?)
+#exec xdotool behave_screen_edge top-right exec rofi-apps &
+#exec xdotool behave_screen_edge top-right exec gsimplecal
 
 # }}}

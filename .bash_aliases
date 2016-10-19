@@ -67,13 +67,16 @@ alias diskact="sudo iotop -Po"  # disk activity
 alias big='ncdu -x'
 alias freemem='sudo /sbin/sysctl -w vm.drop_caches=3'
 alias disks='df -h; btrfs filesystem df /'
-alias err='dmesg -l err; systemctl --failed'
+alias err='dmesg -l err; systemctl --failed --all'
+alias usrerr='systemctl --failed --all --user'
 alias warn='dmesg -l warn'
 alias errors="sudo journalctl -p 0..3 -xn"  # high priority errors
 alias blame='systemd-analyze; systemd-analyze blame'
 alias log='journalctl -f | ccze -A'  # follow log
 alias log0='journalctl -b -0 | ccze -A'  # current log 
 alias log1='journalctl -b -1 | ccze -A'  # previous log
+alias list='systemctl list-unit-files'
+alias usrlist='systemctl --user list-unit-files'
 
 # Saves journal logs to file
 getlog() { local file=~/logs/system/log-$(date +%Y%m%d-%H:%M).txt; sudo journalctl -b > "$file" && xdg-open "$file"; }
@@ -142,9 +145,8 @@ alias cwrt='echo Latest AsusWRT-Merlin firmware for RT-N66U: $(curl -s http://as
 
 alias aw='awman'
 alias ws='awman'
-alias g="s -p duckduckgo"
+alias g="s -p google"
 alias wi="s -p wikipedia"
-alias yt="s -p youtube"
 
 # }}}
 
@@ -216,6 +218,7 @@ alias bctl="bluetoothctl"
 alias gl="glxinfo | grep -i opengl && glxgears"
 alias drm="dmesg | grep drm"
 alias mp3='parallel -j4 ffmpeg -i {} -qscale:a 0 {.}.mp3 ::: *.flac *.m4a'
+alias yt="mpsyt"
 
 # }}}
 

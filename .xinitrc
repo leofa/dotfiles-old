@@ -55,13 +55,13 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #/usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately &
 #gsettings-data-convert &
-start-pulseaudio-x11 &
+#start-pulseaudio-x11 &
 #xdg-user-dirs-gtk-update &
 #/usr/lib/lxpolkit/lxpolkit &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-#feh --bg-fill ~/dotfiles/resources/blue-ridge-mountain.jpg &
-#setroot -fw ~/dotfiles/resources/blue-ridge-mountain.jpg &
-wallch &
+setroot -fw ~/dotfiles/resources/blue-ridge-mountain.jpg &
+#setroot --blank-color '#1d1f21'
+#wallch &
 compton -b --config ~/.config/compton.conf &
 #lightsOn 120 &
 redshift &
@@ -76,10 +76,15 @@ redshift &
 #chromium --no-startup-window &
 #caja --no-default-window --no-desktop &
 #qutebrowser --nowindow &
+#mount_home &
+#mpd &
+umd &
 
 #------------------------------------------------
 # start WM/DE
 
+#sxhd &
+#exec bspwm
 exec i3
 
 #i3-shmlog exec i3-with-shmlog 
