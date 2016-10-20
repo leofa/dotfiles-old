@@ -85,7 +85,6 @@ gawk
 gcc
 gcc-libs
 gettext
-gimp
 gimp-help-nl
 git
 gksu

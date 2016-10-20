@@ -7,6 +7,7 @@ clerk
 cower
 downgrade
 gcolor3
+gimp-git
 gnome-xcf-thumbnailer
 gtk-theme-arc-git
 hda-verb
