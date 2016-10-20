@@ -1,3 +1,4 @@
+arc-icon-theme-git
 arch-wiki-man
 binfmt-support
 chromium-snapshot-bin
