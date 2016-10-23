@@ -95,6 +95,7 @@ gnome-themes-standard
 gpart
 gparted
 gptfdisk
+gradm
 grep
 groff
 grub
@@ -145,8 +146,10 @@ libva-intel-driver
 libvdpau-va-gl
 libvncserver
 licenses
-linux-headers
+linux-grsec
+linux-grsec-headers
 linux-zen
+linux-zen-headers
 lm_sensors
 logrotate
 lvm2
@@ -192,6 +195,7 @@ parallel
 pass
 patch
 pavucontrol
+paxd
 pciutils
 pcmciautils
 perl
