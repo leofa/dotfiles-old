@@ -47,7 +47,6 @@ setroot-git
 thermald
 ttf-font-awesome
 turses-git
-ubuntu-device-flash-bin
 unclutter-xfixes-git
 update-hosts-git
 urlview
