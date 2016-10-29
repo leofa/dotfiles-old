@@ -160,7 +160,6 @@ m4
 make
 man-db
 man-pages
-mate-desktop
 mdadm
 mediainfo
 memtest86+
@@ -227,7 +226,6 @@ python-pyudev
 python-service-identity
 python-setproctitle
 python2-pip
-qemu-arch-extra
 qt5-webengine
 qt5ct
 qtpass

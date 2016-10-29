@@ -36,7 +36,6 @@ playerctl
 pulseaudio-equalizer-ladspa
 python-babelfish
 python3-kitchen
-qemu-user-static
 qt5-styleplugins
 qutebrowser-git
 redshift-minimal
@@ -54,6 +53,5 @@ vim-promptline-git
 vim-startify-git
 vim-tmuxline-git
 xcursor-openzone
-xournalpp-git
 yaourt
 zathura-epub-git
