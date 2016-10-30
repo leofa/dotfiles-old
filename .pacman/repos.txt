@@ -60,7 +60,6 @@ dropbear
 dunst
 e2fsprogs
 ebtables
-engrampa
 ethtool
 exfat-utils
 f2fs-tools
