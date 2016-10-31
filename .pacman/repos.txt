@@ -1,4 +1,5 @@
 acpi
+adobe-source-code-pro-fonts
 alsa-utils
 android-tools
 arandr
@@ -25,7 +26,7 @@ bspwm
 btrfs-progs
 bzip2
 bzr
-cairo-infinality-ultimate
+cairo
 caja
 caja-actions
 caja-extensions-common
@@ -76,9 +77,9 @@ firejail
 flashrom
 flattr-icon-theme
 flex
-fontconfig-infinality-ultimate
+fontconfig
 fortune-mod
-freetype2-infinality-ultimate
+freetype2
 galculator-gtk2
 gawk
 gcc
@@ -116,8 +117,6 @@ htop
 hunspell-nl
 hyphen
 i3lock
-ibfonts-meta-base
-ibfonts-meta-extended-lt
 ifplugd
 inetutils
 inkscape
@@ -178,6 +177,9 @@ newsbeuter
 nfs-utils
 nmap
 notmuch
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
 npm
 ntfs-3g
 ntp
@@ -186,7 +188,6 @@ openresolv
 openssh
 os-prober
 otf-cantarell-ib
-otf-source-code-pro-pwl-ibx
 p7zip
 pacman
 pacmatic
@@ -205,6 +206,7 @@ perl-term-readkey
 pkg-config
 pkgstats
 polkit-gnome
+powerline-fonts
 powertop
 procps-ng
 protobuf
@@ -264,14 +266,7 @@ tk
 tmux
 transmission-cli
 transmission-remote-cli
-ttf-archivo-black-ibx
-ttf-hack-ibx
-ttf-libre-baskerville-ibx
-ttf-noto-fonts-cjk-ib
-ttf-noto-fonts-emoji-ib
-ttf-noto-fonts-nonlatin-ib
-ttf-source-code-pro-ibx
-ttf-weblysleek-ui-ibx
+ttf-hack
 ufw
 unace
 unrar
