@@ -128,10 +128,8 @@ iproute2
 iputils
 ipython
 iw
-jdk8-openjdk-infinality
 jfsutils
 jhead
-jre8-openjdk-infinality
 jshon
 less
 libchamplain
@@ -188,7 +186,6 @@ nxproxy
 openresolv
 openssh
 os-prober
-otf-cantarell-ib
 p7zip
 pacman
 pacmatic

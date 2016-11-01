@@ -16,6 +16,8 @@ imv
 insync
 isl29018_driver
 ix
+jdk8-openjdk-infinality
+jre8-openjdk-infinality
 lemonbar-git
 lostfiles
 minecraft
@@ -25,6 +27,7 @@ ncurses5-compat-libs
 neofetch
 neomutt
 numix-circle-icon-theme-git
+otf-cantarell-ib
 overdue
 pacaur
 paper-gtk-theme-git
