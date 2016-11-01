@@ -128,8 +128,11 @@ iproute2
 iputils
 ipython
 iw
+jdk8-openjdk
 jfsutils
 jhead
+jre8-openjdk
+jre8-openjdk-headless
 jshon
 less
 libchamplain
@@ -176,7 +179,6 @@ newsbeuter
 nfs-utils
 nmap
 notmuch
-noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 npm
@@ -263,7 +265,10 @@ tk
 tmux
 transmission-cli
 transmission-remote-cli
+ttf-bitstream-vera
+ttf-croscore
 ttf-dejavu
+ttf-freefont
 ttf-hack
 ufw
 unace

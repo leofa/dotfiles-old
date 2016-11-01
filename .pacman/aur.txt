@@ -16,8 +16,6 @@ imv
 insync
 isl29018_driver
 ix
-jdk8-openjdk-infinality
-jre8-openjdk-infinality
 lemonbar-git
 lostfiles
 minecraft
