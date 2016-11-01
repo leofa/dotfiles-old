@@ -100,6 +100,7 @@ gradm
 grep
 groff
 grub
+gsfonts
 gsimplecal
 gst-libav
 gst-plugins-good
@@ -258,7 +259,6 @@ sysfsutils
 sysstat
 systemd-swap
 systemd-sysvcompat
-t1-urw-fonts-ib
 tar
 termite
 texinfo
@@ -266,6 +266,7 @@ tk
 tmux
 transmission-cli
 transmission-remote-cli
+ttf-dejavu
 ttf-hack
 ufw
 unace
