@@ -25,7 +25,6 @@ ncurses5-compat-libs
 neofetch
 neomutt
 numix-circle-icon-theme-git
-otf-cantarell-ib
 overdue
 pacaur
 paper-gtk-theme-git
