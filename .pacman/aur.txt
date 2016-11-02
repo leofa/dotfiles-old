@@ -25,6 +25,7 @@ ncurses5-compat-libs
 neofetch
 neomutt
 numix-circle-icon-theme-git
+office-code-pro
 overdue
 pacaur
 paper-gtk-theme-git
@@ -44,6 +45,7 @@ rxvt-unicode-256xresources
 s
 setroot-git
 thermald
+ttf-fira-code
 ttf-font-awesome
 turses-git
 unclutter-xfixes-git
