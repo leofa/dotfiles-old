@@ -108,6 +108,7 @@ gtk-engine-murrine
 gucharmap
 guvcview
 gvfs
+gvfs-mtp
 gvfs-smb
 gvim
 gzip
