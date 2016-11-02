@@ -195,7 +195,6 @@ parallel
 pass
 patch
 pavucontrol
-paxd
 pciutils
 pcmciautils
 perl
