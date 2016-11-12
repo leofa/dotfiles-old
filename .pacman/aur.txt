@@ -44,6 +44,7 @@ rtv
 rxvt-unicode-256xresources
 s
 setroot-git
+terminix
 thermald
 ttf-fira-code
 ttf-font-awesome

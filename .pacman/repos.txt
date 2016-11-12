@@ -184,7 +184,6 @@ npm
 ntfs-3g
 ntp
 nxproxy
-openra
 openresolv
 openssh
 os-prober
