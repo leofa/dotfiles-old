@@ -46,6 +46,7 @@ s
 setroot-git
 terminix
 thermald
+tmuxline-git
 ttf-fira-code
 ttf-font-awesome
 turses-git
@@ -54,7 +55,6 @@ update-hosts-git
 urlview
 vim-promptline-git
 vim-startify-git
-vim-tmuxline-git
 xcursor-openzone
 yaourt
 zathura-epub-git
