@@ -148,6 +148,8 @@ libva-intel-driver
 libvdpau-va-gl
 libvncserver
 licenses
+linux-ck
+linux-ck-headers
 linux-zen
 linux-zen-headers
 lm_sensors
