@@ -33,7 +33,6 @@ calc
 cantarell-fonts
 ccache
 ccze
-clipit
 cmus
 colordiff
 compton
@@ -295,6 +294,7 @@ wpa_actiond
 wpa_supplicant
 x11-ssh-askpass
 xarchiver-gtk2
+xcb-util-cursor
 xcb-util-keysyms
 xcb-util-wm
 xclip

@@ -4,6 +4,7 @@ binfmt-support
 chromium-snapshot-bin
 chromium-widevine
 clerk
+clipit
 cower
 downgrade
 gcolor3
@@ -16,7 +17,6 @@ imv
 insync
 isl29018_driver
 ix
-lemonbar-git
 lostfiles
 minecraft
 mpd-sima
@@ -44,7 +44,6 @@ rtv
 rxvt-unicode-256xresources
 s
 setroot-git
-terminix
 thermald
 tmuxline-git
 ttf-fira-code
