@@ -1,3 +1,4 @@
+arc-gotham-gtk-theme-git
 arc-icon-theme-git
 arch-wiki-man
 binfmt-support
@@ -8,7 +9,6 @@ clipit
 cower
 downgrade
 gcolor3
-gtk-theme-arc-git
 hda-verb
 i3-gaps-next-git
 i3blocks-gaps-git
@@ -46,6 +46,7 @@ s
 setroot-git
 thermald
 tmuxline-git
+ttf-fantasque-sans
 ttf-fira-code
 ttf-font-awesome
 turses-git
