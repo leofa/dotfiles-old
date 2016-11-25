@@ -1,9 +1,11 @@
 ! ## Font settings
+Xft.autohint:   0
 Xft.dpi:        96
-Xft.antialias:  true
+Xft.lcdfilter:  lcdefault
+Xft.antialias:  1
 Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hinstyle:   full
+Xft.hinting:    0
+Xft.hinstyle:   hintslight
 
 ! === fusion color scheme ===
 ! special

@@ -77,7 +77,7 @@ redshift &
 #caja --no-default-window --no-desktop &
 #qutebrowser --nowindow &
 #mount_home &
-#mpd &
+#mpi &
 umd &
 
 #------------------------------------------------

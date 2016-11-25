@@ -14,7 +14,7 @@ set $mod3 control
 
 # Font {{{
 
-font pango: Source Code Pro Medium, FontAwesome Regular 9
+font pango: Office Code Pro Medium, FontAwesome 9
 
 # }}}
 
@@ -67,8 +67,8 @@ bar {
          statusline          $white
          
          # <workclass>       <border>      <bg>     <text>
-         focused_workspace   $darkblack   $brightslate $brightwhite
-         inactive_workspace  $transparent $black       $white
+         focused_workspace   $transparent $brightslate $brightwhite
+         inactive_workspace  $transparent $slate       $white
          active_workspace    $darkblack   $darkwhite   $brightwhite
          urgent_workspace    $darkblack   $darkred     $brightwhite
          binding_mode        $darkblack   $darkmagenta $brightwhite
@@ -76,10 +76,10 @@ bar {
 }
 
 # <clientclass>         <border>   <bg>    <text> <indicator> <childborder>
-client.focused          $darkblack $darkblue    $brightwhite $darkwhite $darkblue 
-client.unfocused        $black     $slate       $white       $darkwhite $slate
-client.focused_inactive $black     $darkslate   $white       $black     $darkslate 
-client.urgent           $darkblack $darkred     $brightwhite $darkred   $darkred
+client.focused          $darkblack $brightslate  $brightwhite   $white $darkblue
+client.unfocused        $black     $slate     $white       $darkwhite $slate
+client.focused_inactive $black     $darkslate $white       $black     $darkslate 
+client.urgent           $darkblack $darkred   $brightwhite $darkred   $darkred
 client.background       $black
 
 # }}}
@@ -112,13 +112,13 @@ for_window [workspace="$WS2|$WS4"] layout tabbed
 
 # Window title format {{{
 
-for_window [class="(?i)"] title_format "<span weight='ultraheavy' foreground='$darkblack'>   </span><span weight='bold' >%title</span>"
+for_window [class="(?i)"] title_format "<span foreground='$darkblack'>    </span><span >%title</span>"
 
 # }}}
 
 # Gaps {{{
 
-#smart_gaps on
+smart_gaps on
 gaps outer 2
 gaps inner 4
 
@@ -127,7 +127,7 @@ gaps inner 4
 # Borders {{{
 
 bindsym $mod+Shift+t border toggle
-smart_borders no_gaps
+smart_borders on
 new_window pixel 3
 new_float pixel 3
 
@@ -147,7 +147,7 @@ for_window [class="(?i)"] focus
 for_window [window_role="task_dialog|bubble|page-info|Preferences"] floating enable
 for_window [title="Steam - Update*|Event Tester|glxgears|Taakbeheer -*"] floating enable
 for_window [instance="gvim|chromium_app_list|radio|gufw.py|Minecraft 1.*|sun-awt-X11-XFramePeer|net-minecraft-bootstrap-Bootstrap|yad|wifi-menu"] floating enable
-for_window [class="(?i)gcolor3|imv|(?i)pulseaudio-equalizer.py|(?i)deja-dup|etcher|(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
+for_window [class="(?i)gcolor3|imv|(?i)pulseaudio-equalizer.py|(?i)deja-dup|etcher|(?i)gksu-properties|(?i)dconf-editor|mpv|feh|(?i)qtpass|xfontsel|xfd|arandr|(?i)blueberry.py|blueman-manager|blueman-services|lxappearance|pavucontrol|transmission-gtk|xpad|galculator|xarchiver|engrampa|eom|guvcview|mirage|gpicview|simplescreenrecorder|zenity|info|gsimplecal|deluge|(?i)gcr-viewer"] floating enable
 
 # modifier
 floating_modifier $mod 

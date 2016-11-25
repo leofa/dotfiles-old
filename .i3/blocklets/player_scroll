@@ -86,8 +86,8 @@ if [[ "${OUT_TEXT}" ]]; then
   TEXT_LINE="${OUT_TEXT}${ADD_STR}${OUT_TEXT}${ADD_STR}${OUT_TEXT}"
   TEXT_LINE=${TEXT_LINE:$SCROLL_POS:$MAX_LENGTH}
 
-  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro Semibold'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
-  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Source Code Pro SemiBold'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
+  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Office Code Pro Medium'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
+  echo "<span foreground='#B294BB'> </span><span foreground='#ABB59F' font='Office Code Pro Medium'>${TEXT_LINE}</span>" | sed -r 's/[&]+/+/g'
   echo ""
 
   SCROLL_POS=$((SCROLL_POS +1))

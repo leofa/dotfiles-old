@@ -160,10 +160,10 @@ alias sysinfo='sudo inxi -Fflprxxxm'
 alias weather='curl -4 wttr.in/epe,netherlands'
 
 # https://github.com/dylanaraps/neofetch
-alias nf="neofetch --memory_display barinfo; echo"
-alias nfs="neofetch --image ~/pics/neofetch --memory_display barinfo; echo"
-alias nfa="neofetch --image ascii --memory_display barinfo; echo"
-alias nfn="c; neofetch --image off; echo"
+alias nf="neofetch"
+alias nfs="neofetch --image ~/pics/neofetch"
+alias nfa="clear; neofetch --image ascii"
+alias nfn="clear; neofetch --image off"
 
 # }}}
 
