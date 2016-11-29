@@ -1,4 +1,3 @@
-arc-gotham-gtk-theme-git
 arc-icon-theme-git
 arch-wiki-man
 binfmt-support
